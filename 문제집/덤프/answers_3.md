@@ -1,6 +1,7 @@
 # Q201 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/89080-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명
@@ -13,13 +14,13 @@ Amazon Pinpoint 를 사용하면 고객이 특정 키워드가 포함된 메시�
 Pinpoint 를 사용하여 대상 고객 그룹을 생성한 다음 캠페인 기반 메시지를 보낼 수
 있습니다. Amazon Pinpoint 를 사용하여 약속 확인, 주문 업데이트, 일회용 암호와 같은
 다이렉트 메시지를 보낼 수도 있습니다.
-~~~
 
 ---
 
 # Q202 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/89081-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -86,13 +87,13 @@ Amazon S3 관리형 암호화 키(SSE-S3)로 서버 측 암호화를 사용하�
 https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html
 https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html
 https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html
-~~~
 
 ---
 
 # Q203 
 
-~~~ 설명
+**정답: D**
+
 https://www.examtopics.com/discussions/amazon/view/89082-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명
@@ -101,13 +102,13 @@ ions-architect-associate-saa-c03/
 확장되도록 Auto Scaling 그룹을 구성하도록 권장할 수 있습니다. 이렇게 하면 약속 요청
 수가 증가함에 따라 애플리케이션이 확장되어 회의 초대의 성능 및 배달 시간이
 향상됩니다.
-~~~
 
 ---
 
 # Q204 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/89083-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -157,13 +158,13 @@ AWS Glue JDBC 연결을 만들고, Lake Formation 에 S3 버킷을 등록할 수
 다음 솔루션 설계자는 Lake Formation 액세스 제어를 사용하여 데이터에 대한 액세스를
 제한할 수 있습니다. 이 솔루션은 데이터에 대한 세분화된 권한을 관리하고 운영
 오버헤드를 최소화하는 기능을 제공합니다.
-~~~
 
 ---
 
 # Q205 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/89085-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -182,13 +183,13 @@ D. AWS Transfer for SFTP 를 사용하면 SFTP 업로드가 가능하지만 AWS 
 있습니다.
 참고:
 https://docs.aws.amazon.com/cli/latest/reference/transfer/describe-server.html
-~~~
 
 ---
 
 # Q206 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/89086-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -207,13 +208,13 @@ Amazon EventBridge 는 자체 애플리케이션, 통합 SaaS(Software as a Serv
 참고
 https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/WindowsGuide/monitor-ami-events.
 html
-~~~
 
 ---
 
 # Q207 
 
-~~~ 설명
+**정답: D**
+
 https://www.examtopics.com/discussions/amazon/view/89087-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명
@@ -226,13 +227,13 @@ ions-architect-associate-saa-c03/
 프런트 엔드와 독립적으로 처리 마이크로서비스를 확장할 수 있으므로 수요가 많은
 기간에도 사용자가 API를 계속 사용할 수 있습니다.
 즉 사용자 요청을 잃고 있음 = SQS로 해결. 정답은 D.
-~~~
 
 ---
 
 # Q208 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/89088-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -255,13 +256,13 @@ D. 공개적으로 사용 가능한 ip-ranges.json 파일을 사용하여 S3 버
 참고
 https://aws.amazon.com/blogs/security/how-to-restrict-amazon-s3-bucket-access-to-
 a-specific-iamrole/
-~~~
 
 ---
 
 # Q209 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/89089-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -296,13 +297,13 @@ D(X) : STS 는 임시 보안 자격 증명 서비스. ""AWS Security Token Servi
 사용하면 AWS 리소스에 대한 액세스를 제어할 수 있는 임시 보안 자격 증명을 생성하여
 신뢰받는 사용자에게 제공할 수 있습니다.
 https://docs.aws.amazon.com/ko_kr/IAM/latest/UserGuide/id_credentials_temp.html
-~~~
 
 ---
 
 # Q210 
 
-~~~ 설명
+**정답: D**
+
 https://www.examtopics.com/discussions/amazon/view/94992-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -323,13 +324,13 @@ C. SQS 대기열을 사용하는 것이 올바른 방향으로 나아가는 단�
 기반으로 메트릭을 생성하고, 이에 따라 Auto Scaling 그룹을 확장하는 옵션 D 는 리소스
 활용을 최적화하고 보장하면서 확장 문제를 해결하는 가장 적합한 솔루션입니다. 신뢰할 수
 있는 메시지 처리
-~~~
 
 ---
 
 # Q211 
 
-~~~ 설명
+**정답: D**
+
 https://www.examtopics.com/discussions/amazon/view/95145-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -348,13 +349,13 @@ Editor 를 활용하므로 가장 빠른 솔루션입니다. 여러 서비스 �
 구성 요소에 대한 보고서를 생성하는 중앙 집중식의 효율적인 접근 방식을 제공합니다.
 참고:
 https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html
-~~~
 
 ---
 
 # Q212 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/95300-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -371,13 +372,13 @@ ions-architect-associate-saa-c03/
 스토리지 클래스입니다. 그러나 데이터에 대한 액세스 패턴이 가변적이고 빠르게 변경되기
 때문에 S3 Standard-IA 는 빈번한 액세스에 대한 추가 검색 비용이 발생하므로 가장 비용
 효율적인 솔루션이 아닐 수 있습니다.
-~~~
 
 ---
 
 # Q213 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/95301-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -401,13 +402,13 @@ AWS WAF 규칙을 구성하고 이를 ALB 와 연결함으로써 회사는 악�
 않습니다.
 옵션 D 는 추가 인프라를 유지하고 보호하는 것과 관련되며, 이는 책임을 줄이고 최소한의
 운영 직원에 의존해야 한다는 요구 사항에 위배됩니다.
-~~~
 
 ---
 
 # Q214 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/95154-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -427,13 +428,13 @@ Lambda는 변환을 처리할 수 있지만 ETL 작업을 위해 특별히 설�
 참고:
 https://docs.aws.amazon.com/ko_kr/prescriptive-guidance/latest/patterns/three-aws-glu
 e-etl-job-types-for-converting-data-to-apache-parquet.html
-~~~
 
 ---
 
 # Q215 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/94983-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 해설:
@@ -441,13 +442,13 @@ ions-architect-associate-saa-c03/
 것은 굉장히 많은 시간이 소요됨.
 https://kindloveit.tistory.com/68
 https://www.omnicalculator.com/other/data-transfer
-~~~
 
 ---
 
 # Q216 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/95040-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -466,13 +467,13 @@ D. 기본 암호화 설정을 적용하기 위해 S3 의 각 개체를 수동으
 선택하고 수정해야 하므로 많은 수의 개체에 비실용적입니다.
 참고:
 https://spin.atomicobject.com/2020/09/15/aws-s3-encrypt-existing-objects/
-~~~
 
 ---
 
 # Q217 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/95015-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -489,13 +490,13 @@ Region Replica)를 사용하면 됨. 그리고 글로벌 웹 애플리케이션�
 지역에서 읽기 쿼리를 할 때 지연시간을 줄이는 것이 더 좋음.
 참고:
 https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-types.html
-~~~
 
 ---
 
 # Q218 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/95056-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -505,13 +506,13 @@ ions-architect-associate-saa-c03/
 443을 허용합니다.
 이렇게 하면 포트 443 에 대한 트래픽이 보안 그룹 수준과 네트워크 ACL 수준 모두에서
 허용되어 포트 443의 모든 위치에서 웹 서버에 액세스할 수 있습니다.
-~~~
 
 ---
 
 # Q219 
 
-~~~ 설명
+**정답: D**
+
 https://www.examtopics.com/discussions/amazon/view/95162-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -529,13 +530,13 @@ C. 내장된 EC2 메모리 메트릭에만 의존하면 메모리 내 작업을 
 세분성을 제공하지 못할 수 있습니다.
 가장 효율적인 솔루션은 CloudFormation 템플릿을 수정하고, R5 인스턴스로 교체하고,
 사용자 지정 메트릭을 위해 CloudWatch 에이전트를 배포하는 것입니다.
-~~~
 
 ---
 
 # Q220 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/95306-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -554,13 +555,13 @@ C. EKS 는 확장성과 유연성을 제공하지만 가변적인 API 요청 볼
 D. 이전 옵션과 마찬가지로 EC2 와 함께 ECS 를 사용하려면 인프라 관리 및 확장을 위한
 추가 노력이 필요하며, 이는 간헐적이고 가변적인 API 요청 볼륨을 처리하는 데 필요하지
 않을 수 있습니다.
-~~~
 
 ---
 
 # Q221 
 
-~~~ 설명
+**정답: D**
+
 https://www.examtopics.com/discussions/amazon/view/95307-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -578,13 +579,13 @@ C. 인스턴스 스토어는 EC2 인스턴스에 물리적으로 연결된 임�
 좋은 스토리지 솔루션입니다.
 참고:
 https://docs.aws.amazon.com/efs/latest/ug/transfer-data-to-efs.html
-~~~
 
 ---
 
 # Q222 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/95160-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -605,13 +606,13 @@ B 는 암호가 있는 IAM 사용자를 생성하려면 벤더와 자격 증명�
 참고:
 https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_third-p
 arty.html
-~~~
 
 ---
 
 # Q223 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/95310-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -634,13 +635,13 @@ https://docs.aws.amazon.com/ko_kr/amazondynamodb/latest/developerguide/vpc-endpo
 ints-dynamodb.html
 https://aws.amazon.com/ko/about-aws/whats-new/2019/09/amazon-eks-adds-support
 -to-assign-iam-permissions-to-kubernetes-service-accounts/
-~~~
 
 ---
 
 # Q224 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/95311-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -660,13 +661,13 @@ D. 여러 AZ 에서 인스턴스를 시작하는 것은 내결함성을 위해 �
 참고
 https://aws.amazon.com/premiumsupport/knowledge-center/multivalue-versus-simple-p
 olicies/
-~~~
 
 ---
 
 # Q225 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/94985-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -692,13 +693,13 @@ D. 이 옵션은 EC2 인스턴스 및 RDS 데이터베이스 인프라를 수동
 따라서 Redshift 클러스터에 데이터를 제공하는 KDF 가 포함된 옵션 B 는 주어진
 시나리오에서 사용자 활동 데이터를 수집하고 분석하기 위한 가장 간소화되고 운영상
 효율적인 솔루션을 제공합니다.
-~~~
 
 ---
 
 # Q226 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/95312-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -720,13 +721,13 @@ B. 확장 가능한 데이터 처리 및 저장의 필요성을 직접적으로 
 C. 더 많은 EC2 를 추가하면 인스턴스 관리 및 확장 측면에서 운영 오버헤드가 증가할 수
 있습니다.
 D. 데이터 처리에 SQS 및 EC2를 사용하면 더 복잡해지고 운영 오버헤드가 발생합니다.
-~~~
 
 ---
 
 # Q227 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/95314-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -742,13 +743,13 @@ D. S3 버킷에 있는 객체의 소유권을 변경해도 3년 이상 된 객�
 참고:
 https://docs.aws.amazon.com/ko_kr/awscloudtrail/latest/userguide/best-practices-securi
 ty.html
-~~~
 
 ---
 
 # Q228 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/95318-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -769,13 +770,13 @@ B. DB 인스턴스를 다중 AZ 인스턴스로 수정하고 모든 활성 인�
 최소화하는 문제는 해결되지 않습니다.
 D. SNS와 Lambda를 사용하면 디커플링과 확장성을 제공할 수 있지만 많은 쓰기 트래픽을
 효율적으로 처리하고 데이터베이스에 대한 연결을 최소화하는 데 적합하지 않습니다.
-~~~
 
 ---
 
 # Q229 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/95319-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -791,13 +792,13 @@ D. 데이터베이스 계층에 대해 EC2 Auto Scaling 그룹을 사용하려�
 수동으로 관리해야 하기 때문에 올바르지 않습니다.
 참고:
 https://aws.amazon.com/rds/aurora/serverless/
-~~~
 
 ---
 
 # Q230 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/95322-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -820,13 +821,13 @@ A는 올바르지 않습니다.
 인스턴스에 권장되는 접근 방식이 아니기 때문에 올바르지 않습니다.
 옵션 D 는 스팟 인스턴스가 NAT 인스턴스와 같은 중요한 인프라 구성 요소에 적합하지
 않기 때문에 올바르지 않습니다.
-~~~
 
 ---
 
 # Q231 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/95323-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -857,13 +858,13 @@ VPC A 와 VPC B 간에 VPC 피어링 연결을 구성하면 VPC A 의 EC2 인스
 옵션 D 는 VPC B 에서 추가 EC2 인스턴스를 시작하고 이를 통해 모든 요청을 프록시하여
 불필요한 복잡성을 추가합니다. 이는 이 시나리오에서 가장 효율적이고 안전한 접근 방식이
 아닙니다.
-~~~
 
 ---
 
 # Q232 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/95324-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -883,13 +884,13 @@ RDP 또는 SSH 액세스가 설정된 시기를 구체적으로 감지하거나 
 참고:
 https://aws.amazon.com/blogs/security/how-to-monitor-and-visualize-failed-ssh-acce
 ss-attemptsto-amazon-ec2-linux-instances/
-~~~
 
 ---
 
 # Q233 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/95084-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -912,13 +913,13 @@ https://docs.aws.amazon.com/accounts/latest/reference/best-practices-root-user.h
 * 강력한 암호를 사용하여 AWS Management Console에 대한 액세스를 보호하십시오. AWS
 계정 루트 사용자 암호 관리에 대한 자세한 내용은 루트 사용자 암호 변경 단원을
 참조하십시오.
-~~~
 
 ---
 
 # Q234 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/95325-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -965,13 +966,13 @@ BitLocker는 AWS 서비스에서 데이터를 암호화하는 데 적합한 솔�
 틀렸습니다. 주로 Windows 기반 운영 체제에서 데이터를 암호화하는 데 사용됩니다. 또한
 TLS 인증서 키를 AWS KMS 로 가져와 ALB 에 연결하는 것은 전송 중인 데이터를
 암호화하는 데 권장되는 접근 방식이 아닙니다.
-~~~
 
 ---
 
 # Q235 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/95326-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -989,13 +990,13 @@ AWS DataSync 를 단독으로 사용하는 것은 데이터베이스 마이그�
 가장 적합한 선택이 아니기 때문에 옵션 D는 올바르지 않습니다.
 참고
 https://repost.aws/ko/knowledge-center/dms-memory-optimization
-~~~
 
 ---
 
 # Q236 
 
-~~~ 설명
+**정답: D**
+
 https://www.examtopics.com/discussions/amazon/view/94990-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -1023,13 +1024,13 @@ https://docs.aws.amazon.com/AmazonECS/latest/userguide/what-is-fargate.html
 "고가용성"의 경우: 다중 AZ 및 "애플리케이션에 대한 최소 변경 사항"의 경우: Elastic
 Beanstalk 는 용량 프로비저닝, 로드 밸런싱, 자동 확장에서 애플리케이션 상태 모니터링에
 이르기까지 배포를 자동으로 처리합니다.
-~~~
 
 ---
 
 # Q237 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/95144-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -1051,13 +1052,13 @@ AWS 는 VPC 의 기존 인프라를 사용하여 VPC 피어링 연결을 생성�
 VPN 연결이 아니며 별도의 물리적 하드웨어에 의존하지 않습니다. 통신 또는 대역폭 병목
 현상에 대한 단일 장애 지점이 없습니다.
 https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html
-~~~
 
 ---
 
 # Q238 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/94996-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -1078,13 +1079,13 @@ AWS 예산을 사용하면 AWS 계정에 대한 예산을 생성하고 사용량
 지정하고 범위를 EC2 인스턴스로 지정하면 각 계정의 EC2 사용량을 효과적으로 추적하고
 임계값을 초과할 때 알림을 받을 수 있습니다. 이 솔루션은 Amazon Athena 또는 Amazon
 EventBridge와 같은 추가 리소스가 필요하지 않기 때문에 가장 비용 효율적인 옵션입니다.
-~~~
 
 ---
 
 # Q239 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/95365-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -1100,13 +1101,13 @@ IAM 인증을 제공할 수 있지만 요청 유효성 검사, 속도 제한 및
 C 와 D 에는 CloudFront, Lambda@Edge 및 CloudFront 함수 사용이 포함됩니다. 이러한
 서비스는 유연성과 에지 위치에서 논리를 실행할 수 있는 기능을 제공하지만 추가적인
 복잡성을 야기하며 지정된 요구 사항에 필요하지 않을 수 있습니다.
-~~~
 
 ---
 
 # Q240 
 
-~~~ 설명
+**정답: D**
+
 https://www.examtopics.com/discussions/amazon/view/94998-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -1124,13 +1125,13 @@ C. 온프레미스에서 시각화 도구를 호스팅하고 동일한 AWS 리�
 참고:
 https://aws.amazon.com/directconnect/pricing/
 https://aws.amazon.com/blogs/aws/aws-data-transfer-prices-reduced/
-~~~
 
 ---
 
 # Q241 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/95000-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -1148,13 +1149,13 @@ RDS 의 다중 AZ 기능은 동일한 리전 내에서 자동으로 조치를 �
 지역 간 지원하지 않음(동일한 지역에서만 작동)
 https://aws.amazon.com/ko/about-aws/whats-new/2018/01/amazon-rds-read-replicas-
 now-support-multi-az-deployments/
-~~~
 
 ---
 
 # Q242 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/95001-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -1180,13 +1181,13 @@ Route 53 은 여러 IP 주소를 무작위 순서로 반환하여 모든 정상 
 않습니다.
 따라서 다중 값 라우팅 정책은 DNS 쿼리에 대한 응답으로 모든 정상 EC2 인스턴스의 IP
 주소를 반환하는 데 가장 적합한 옵션입니다.
-~~~
 
 ---
 
 # Q243 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/95002-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -1210,13 +1211,13 @@ C. 파일 수준의 접근보다는 데이터에 대한 블록 수준의 접근�
 D. 확장 가능한 파일 스토리지 서비스인 Amazon EFS 를 사용하여 데이터에 대한 파일
 수준 액세스를 제공합니다. 그러나 파일 게이트웨이 솔루션을 사용할 때보다 복잡성과 대기
 시간이 추가로 발생할 수 있습니다.
-~~~
 
 ---
 
 # Q244 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/95336-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -1237,13 +1238,13 @@ EC2 인스턴스를 수동으로 시작하면 해당 AZ 에 장애가 발생하�
 인스턴스에 걸쳐 확장성과 부하 분산이 보장됩니다.
 옵션 D 는 회사에서 요구하는 고가용성 및 확장성을 제공하지 않습니다. S3 에 예약된
 백업은 데이터 보호를 다루지만 웹사이트 가용성이나 확장성에 기여하지는 않습니다.
-~~~
 
 ---
 
 # Q245 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/95337-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명
@@ -1258,13 +1259,13 @@ ions-architect-associate-saa-c03/
 처리하고 효율적으로 확장하는 환경의 기능에 영향을 미칠 수 있습니다.
 전반적으로 옵션 A 는 기능 설정을 유지하면서 개발 환경에 할당된 리소스를
 최소화함으로써 비용 효율적인 접근 방식을 제공합니다.
-~~~
 
 ---
 
 # Q246 
 
-~~~ 설명
+**정답: D**
+
 https://www.examtopics.com/discussions/amazon/view/95003-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -1281,13 +1282,13 @@ D.가 정답입니다. 퍼블릭 서브넷을 생성하고 이를 ALB 와 연결
 도달하도록 허용하면서 애플리케이션에 대한 보안 액세스가 가능합니다.
 참고:
 https://repost.aws/ko/knowledge-center/public-load-balancer-private-ec2
-~~~
 
 ---
 
 # Q247 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/95004-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -1312,13 +1313,13 @@ Amazon RDS는 첫 번째 생성 작업 시작 시 하나의 스냅샷만 찍습�
 이 요구 사항은 다른 읽기 전용 복제본의 원본 DB 인스턴스인 읽기 전용 복제본에도
 적용됩니다."
 https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html
-~~~
 
 ---
 
 # Q248 
 
-~~~ 설명
+**정답: D**
+
 https://www.examtopics.com/discussions/amazon/view/95329-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -1335,13 +1336,13 @@ D. 들어오는 요청을 SQS 로 라우팅하고, 대기열 크기에 따라 EC
 로드에 따라 확장성이 제공됩니다.
 따라서 옵션 D 는 높은 CPU 사용률을 해결하고 시스템 성능을 개선하며 사용자 부하에
 따라 확장성을 활성화하므로 올바른 선택입니다.
-~~~
 
 ---
 
 # Q249 
 
-~~~ 설명
+**정답: D**
+
 https://www.examtopics.com/discussions/amazon/view/95006-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -1366,13 +1367,13 @@ Amazon FSx는 Windows 파일 시스템 기능과 업계 표준 서버를 기본�
 https://docs.aws.amazon.com/fsx/latest/WindowsGuide/what-is.html
 온프레미스-AWS 간 스토리지 서비스 중 SMB 지원하는 건 Storage Gateway File
 Gateway나 Amazon FSx for Windows라고 보면 됨.
-~~~
 
 ---
 
 # Q250 
 
-~~~ 설명
+**정답: D**
+
 https://www.examtopics.com/discussions/amazon/view/95007-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -1392,13 +1393,13 @@ D. S3 를 VPC 흐름 로그의 대상으로 사용하고 S3 수명 주기 정책
 CloudTrail을 거쳐 S3로 이동할 필요가 없습니다. CW를 통해서도 아닙니다.
 https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resourcep
 olicy.html#AWS-logs-i
-~~~
 
 ---
 
 # Q251 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/95023-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -1424,13 +1425,13 @@ NAT 게이트웨이는 AWS 및 일반적으로 NAT 인스턴스보다 선호됩�
 서브넷 경로 테이블을 구성합니다. 이렇게 하면 모든 아웃바운드 트래픽이 NAT
 게이트웨이를 통해 전달되어 EC2 인스턴스가 프라이빗 서브넷의 보안을 유지하면서
 인터넷에 액세스할 수 있습니다.
-~~~
 
 ---
 
 # Q252 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/95024-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -1454,22 +1455,22 @@ Amazon EFS 는 여러 EC2 인스턴스에서 동시에 액세스할 수 있는 �
 우수하도록 설계되었습니다. 데이터를 페타바이트까지 확장할 수 있고 수천 개의 동시
 연결을 처리할 수 있으며 대량의 데이터를 저장하고 액세스하기 위한 비용 효율적인
 솔루션입니다.
-~~~
 
 ---
 
 # Q253 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/95008-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q254 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/95009-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -1485,13 +1486,13 @@ D. 서브넷 CIDR 블록을 기반으로 트래픽을 제한하므로 애플리�
 트래픽을 정밀하게 제어할 수 있으므로 권장되는 접근 방식입니다.
 참고
 https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/security-group-rules.html
-~~~
 
 ---
 
 # Q255 
 
-~~~ 설명
+**정답: D**
+
 https://www.examtopics.com/discussions/amazon/view/95026-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -1518,13 +1519,13 @@ DynamoDB 용 VPC 엔드포인트를 사용하면 VPC 의 Amazon EC2 인스턴스
 또는 가상 프라이빗 게이트웨이가 필요하지 않습니다. 엔드포인트 정책을 사용하여
 DynamoDB 에 대한 액세스를 제어합니다. VPC 와 AWS 서비스 간의 트래픽은 Amazon
 네트워크를 벗어나지 않습니다.
-~~~
 
 ---
 
 # Q256 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/95460-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -1539,13 +1540,13 @@ A. 사용자가 문서를 수정하거나 업로드하는 것을 제한합니다
 C. 버킷에 대한 액세스 권한을 제어할 수 있지만 우발적인 삭제를 방지하거나 문서의 모든
 버전의 가용성을 보장하는 요구 사항을 구체적으로 다루지는 않습니다.
 E. 암호화는 버전 관리 및 삭제 방지보다는 데이터 보호에 중점을 둡니다.
-~~~
 
 ---
 
 # Q257 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/95027-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -1565,13 +1566,13 @@ D. 추가 종속성 및 관리 오버헤드를 도입합니다. 또한 피해야
 데이터 레이크에 전달하는 Amazon Kinesis Data Firehose 전달 스트림으로 보냅니다.
 https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Metric
 -Streams.html
-~~~
 
 ---
 
 # Q258 
 
-~~~ 설명
+**정답: D**
+
 https://www.examtopics.com/discussions/amazon/view/95028-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -1589,13 +1590,13 @@ C. 추가 복잡성을 도입하고 가장 효율적인 솔루션이 아닐 수 
 참고:
 https://docs.aws.amazon.com/ko_kr/prescriptive-guidance/latest/patterns/three-aws-glu
 e-etl-job-types-for-converting-data-to-apache-parquet.html
-~~~
 
 ---
 
 # Q259 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/95030-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -1633,13 +1634,13 @@ Amazon S3 에 스트리밍합니다. 2 년 후 스냅샷을 삭제하도록 S3 �
 인스턴스 및 CDC 작업과 같은 추가 리소스 및 구성이 필요합니다.
 참조 URL:
 https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html
-~~~
 
 ---
 
 # Q260 
 
-~~~ 설명
+**정답: D**
+
 https://www.examtopics.com/discussions/amazon/view/95343-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -1659,13 +1660,13 @@ FSx for Windows File Server 파일 시스템을 온프레미스 Active Directory
 회사에서 기존 Active Directory 그룹을 사용하여 AWS 로 이동한 후 파일 공유, 폴더 및
 파일에 대한 액세스를 제한할 수 있습니다. 이 옵션을 사용하면 회사는 기존 액세스 제어
 및 관리 구조를 계속 사용하여 AWS로 보다 원활하게 전환할 수 있습니다.
-~~~
 
 ---
 
 # Q261 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/95011-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -1685,13 +1686,13 @@ C 의 경우: 향상된 사용자 경험 Lambda@Edge 는 성능 저하 없이 �
 또는 태블릿)에 따라 이미지 크기를 조정할 수 있습니다. 또한 CloudFront Edge 위치에서
 변환된 이미지를 캐싱하여 이미지를 제공할 때 성능을 더욱 향상시킬 수 있습니다.
 https://aws.amazon.com/lambda/edge/
-~~~
 
 ---
 
 # Q262 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/95463-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -1715,13 +1716,13 @@ ElastiCache 클러스터에 액세스할 수 있습니다.
 발생합니다. Transit VPC 솔루션에는 추가 비용이 발생하는 추가 VPC 및 관련 리소스가
 필요합니다.
 https://aws.amazon.com/certification/policies/before-testing/
-~~~
 
 ---
 
 # Q263 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/95012-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -1740,13 +1741,13 @@ AWS Fargate 는 Amazon EC2 인스턴스의 서버 또는 클러스터를 관리�
 사용하면 더 이상 컨테이너를 실행하기 위해 가상 머신의 클러스터를 프로비저닝, 구성
 또는 확장할 필요가 없습니다.
 https://docs.aws.amazon.com/AmazonECS/latest/userguide/what-is-fargate.html
-~~~
 
 ---
 
 # Q264 
 
-~~~ 설명
+**정답: D**
+
 https://www.examtopics.com/discussions/amazon/view/95345-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -1769,13 +1770,13 @@ ALB(Application Load Balancer)를 사용하면 들어오는 트래픽을 여러 
 라우팅함으로써 로드 밸런서는 인스턴스에 대한 상태 확인을 수행하고 정상 인스턴스로만
 트래픽을 라우팅할 수 있으므로 비정상 인스턴스로 인한 시간 초과 오류를 줄이거나
 제거하는 데 도움이 됩니다.
-~~~
 
 ---
 
 # Q265 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/95013-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -1793,13 +1794,13 @@ C. 퍼블릭 ALB 를 오리진으로 하는 CloudFront 를 사용하여 고가�
 퍼블릭 ALB 를 통해 인터넷을 통해 트래픽을 제공할 수 있습니다. 이렇게 하면 웹 서버가
 공용 인터넷에 노출되지 않으므로 공격 표면이 줄어들고 애플리케이션에 안전하게 액세스할
 수 있습니다.
-~~~
 
 ---
 
 # Q266 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/95014-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -1821,13 +1822,13 @@ AWS Global Accelerator 는 상태 확인을 기반으로 최적의 정상 엔드
 리디렉션하여 대기 시간을 줄이고 애플리케이션이 최적으로 실행되도록 함으로써 사용자
 경험을 개선합니다. 이 솔루션은 트래픽이 가장 가까운 정상 엔드포인트로 전달되도록 하고
 전반적인 사용자 경험을 개선하는 데 도움이 됩니다.
-~~~
 
 ---
 
 # Q267 
 
-~~~ 설명
+**정답: D**
+
 https://www.examtopics.com/discussions/amazon/view/95347-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -1849,13 +1850,13 @@ C. Kinesis Data Analytics 가 보다 간소화되고 자동화된 방식으로 �
 또한 Amazon Kinesis Data Analytics 애플리케이션을 생성하여 인프라를 관리하거나
 Lambda 함수를 호출할 필요 없이 거의 실시간으로 데이터를 분석할 수 있습니다. 이렇게
 하면 최소한의 운영 오버헤드로 많은 양의 데이터를 처리할 수 있습니다.
-~~~
 
 ---
 
 # Q268 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/95016-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -1872,13 +1873,13 @@ D. DynamoDB 는 확장 가능한 고성능 NoSQL 데이터베이스이지만 MyS
 따라서 옵션 B 는 RDS Proxy 를 활용하여 데이터베이스 연결을 최적화하고 읽기 성능을
 개선하고 애플리케이션 아키텍처의 변경을 최소화하며 데이터베이스 읽기 성능 문제를
 해결하기 위한 확장 가능하고 효율적인 솔루션을 제공하므로 가장 적합한 솔루션입니다.
-~~~
 
 ---
 
 # Q269 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/95032-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -1900,13 +1901,13 @@ Redshift 의 열 기반 아키텍처에 적용하려면 애플리케이션 및 �
 복사본으로, 기본 데이터베이스의 부하를 줄이고 웹 애플리케이션의 성능을 향상시킵니다.
 이 솔루션은 기존 웹 애플리케이션에 대한 최소한의 변경으로 구현할 수 있습니다.
 분석가는 코드를 수정하지 않고 읽기 복제본에서 쿼리를 계속 실행할 수 있습니다.
-~~~
 
 ---
 
 # Q270 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/95031-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -1915,13 +1916,13 @@ ions-architect-associate-saa-c03/
 있습니다. 클라이언트 측 암호화를 사용하면 Amazon S3 가 암호화 키나 암호화되지 않은
 데이터에 액세스할 수 없기 때문에 솔루션은 유휴 및 전송 중에 데이터를 암호화할 수
 있습니다.
-~~~
 
 ---
 
 # Q271 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/95018-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -1929,22 +1930,22 @@ ions-architect-associate-saa-c03/
 컴퓨팅 수준으로 자동으로 확장한 다음 작업이 완료되면 자동으로 축소하도록 Auto Scaling
 그룹을 설정할 수 있습니다. 이렇게 하면 원하는 EC2 용량에 빠르게 도달할 수 있고 비용
 절감에도 도움이 됩니다.
-~~~
 
 ---
 
 # Q272 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/99865-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q273 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/99505-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -1967,13 +1968,13 @@ Amazon RDS 다중 AZ 배포는 단일 AWS 리전 내의 데이터베이스 인�
 가용성을 제공합니다.
 https://aws.amazon.com/ko/about-aws/whats-new/2018/01/amazon-rds-read-replicas-
 now-support-multi-az-deployments/
-~~~
 
 ---
 
 # Q274 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/99459-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -1985,13 +1986,13 @@ Amazon 머신 이미지(AMI)를 생성하여 EC2 인스턴스를 백업하고 AM
 자동화함으로써 회사는 재해 발생 시 템플릿에서 리소스 스택을 신속하게 시작할 수
 있습니다. 이는 EC2 인스턴스용 DR 솔루션을 구현하는 비용 효율적이고 운영 효율적인
 방법입니다.
-~~~
 
 ---
 
 # Q275 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/99584-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -2006,13 +2007,13 @@ ions-architect-associate-saa-c03/
 * 그러나 고정된 최소/최대 용량을 설정하는 예약된 작업과 달리 대상 추적을 사용하면
 수요에 따라 근무 외 시간에도 그룹을 축소할 수 있습니다. 이는 비용을 최소화하는 데
 도움이 됩니다.
-~~~
 
 ---
 
 # Q276 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/99739-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -2021,13 +2022,13 @@ Auto Scaling Storage RDS 는 스토리지 문제를 완화하고 Oracle Pl/Sql �
 기능이 있습니다.
 https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.
 html#USER_PIOPS.Autoscaling
-~~~
 
 ---
 
 # Q277 
 
-~~~ 설명
+**정답: D**
+
 https://www.examtopics.com/discussions/amazon/view/99509-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -2038,25 +2039,25 @@ ions-architect-associate-saa-c03/
 소요되는 시간을 최소화합니다.
 * EBS 볼륨은 활성 처리에 필요한 워크로드에 맞게 크기를 조정하여 비용을 낮출 수
 있습니다. 볼륨은 전체 비디오 라이브러리를 장기간 저장할 필요가 없습니다.
-~~~
 
 ---
 
 # Q278 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/99940-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 참고:
 https://docs.aws.amazon.com/ko_kr/prescriptive-guidance/latest/dynamodb-hierarchical
 -data-model/introduction.html
-~~~
 
 ---
 
 # Q279 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/99793-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -2068,13 +2069,13 @@ ions-architect-associate-saa-c03/
 * 백업 계획에서 7년 보존 기간을 설정하면 필요에 따라 각 백업이 7년 동안 보존됩니다.
 * AWS Backup 은 백업 작업 및 수명 주기 정책을 관리하므로 사용자 지정 스크립팅 또는
 관리가 필요하지 않습니다.
-~~~
 
 ---
 
 # Q280 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/99508-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -2083,13 +2084,13 @@ Athena를 사용하여 S3 버킷의 CloudFront 로그를 쿼리하고 QuickSight
 시각화하는 것이 비용 효율적이고 확장 가능하며 인프라 설정이 필요하지 않기 때문에
 최상의 솔루션입니다. 또한 전담 개발자 팀 없이 회사에서 고급 분석을 수행하고 대화형
 시각화를 구축할 수 있는 강력한 솔루션을 제공합니다.
-~~~
 
 ---
 
 # Q281 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/99511-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -2113,13 +2114,13 @@ DMS(AWS Database Migration Service) 변경 데이터 캡처(CDC) 작업을 사�
 효율성이 떨어집니다. 그러나 AWS DMS 는 비동기식 복제를 사용하고 소스
 데이터베이스보다 지연될 수 있으므로 모든 프로덕션 데이터베이스에 대해 1 초 미만의
 RPO를 제공하지 않습니다.
-~~~
 
 ---
 
 # Q282 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/99660-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -2127,31 +2128,31 @@ ALB 에서 EC2 인스턴스로의 인바운드 트래픽을 제한하려면 EC2 
 ALB 의 보안 그룹에서 들어오는 트래픽만 허용해야 합니다. 이렇게 하면 EC2 인스턴스는
 ALB 에서만 요청을 받을 수 있으며 프라이빗 서브넷 내부 또는 외부의 다른 소스에서는
 요청을 받을 수 없습니다.
-~~~
 
 ---
 
 # Q283 
 
-~~~ 설명
+**정답: D**
+
 https://www.examtopics.com/discussions/amazon/view/99512-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q284 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/99513-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q285 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/99680-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -2172,22 +2173,22 @@ ions-architect-associate-saa-c03/
 SES)로 알리도록 AWS 예산에서 비용 예산을 수정할 수 있지만 이렇게 하면 사용자별로
 AWS 청구 항목 보고서가 생성되지 않습니다. 이는 실제 또는 예상 비용이 예산 금액을
 초과하거나 초과할 것으로 예상되는 경우에만 알려줍니다.
-~~~
 
 ---
 
 # Q286 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/99669-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q287 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/99670-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -2195,13 +2196,13 @@ ions-architect-associate-saa-c03/
 Windows 기반 파일 공유를 제공하면서 Amazon EC2 인스턴스에서 세 계층을 모두
 호스팅할 수 있습니다. 이를 통해 회사는 기본 백업 및 데이터 품질 서비스와 같은 SQL
 Server의 특정 기능을 사용하면서 계층 간에 처리를 위해 파일을 공유할 수 있습니다.
-~~~
 
 ---
 
 # Q288 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/99671-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -2216,13 +2217,13 @@ NFS 파일 시스템 서비스이므로 이 사용 사례에 적합합니다. Am
 콘텐츠 전송 성능을 개선하는 데 사용할 수 있지만 이 요구 사항에는 필요하지 않습니다.
 또한 Amazon EBS 볼륨은 한 번에 하나의 인스턴스에만 탑재할 수 있으므로 여러
 인스턴스에서 파일을 공유하는 데 적합하지 않습니다.
-~~~
 
 ---
 
 # Q289 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/99756-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -2234,34 +2235,34 @@ ions-architect-associate-saa-c03/
 옵션 C는 손상되거나 노출될 수 있는 자격 증명을 코드에 내장하기 때문에 덜 안전합니다.
 옵션 D 는 계정의 모든 S3 버킷에 대한 읽기 액세스 권한을 부여하기 때문에 덜
 안전합니다. 이는 Lambda 함수에 필요한 것보다 많을 수 있습니다.
-~~~
 
 ---
 
 # Q290 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/100006-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
 참고
 https://docs.aws.amazon.com/ko_kr/autoscaling/ec2/userguide/ec2-auto-scaling-mixed
 -instances-groups.html
-~~~
 
 ---
 
 # Q291 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/99831-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q292 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/99834-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -2276,13 +2277,13 @@ Amazon MSK 는 데이터 스트리밍을 위한 인기 있는 오픈 소스 플�
 스크립트를 사용하여 데이터를 변환하고 Amazon S3 또는 기타 대상에 데이터를 쓸 수
 있습니다. Amazon Athena 는 표준 SQL 을 사용하여 Amazon S3 에서 변환된 데이터를
 쿼리할 수도 있습니다.
-~~~
 
 ---
 
 # Q293 
 
-~~~ 설명
+**정답: D**
+
 https://www.examtopics.com/discussions/amazon/view/99692-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -2314,13 +2315,13 @@ ions-architect-associate-saa-c03/
 집합만 로컬로 캐시되기 때문에 모든 데이터에 대한 로컬 액세스를 제공하지는 않습니다.
 또한 로컬로 캐시할 데이터의 비율을 구성하므로 저장된 볼륨 게이트웨이를 사용하는
 것보다 더 높은 비용과 복잡성이 발생할 수 있습니다.
-~~~
 
 ---
 
 # Q294 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/99954-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -2342,35 +2343,35 @@ NAT(Network Address Translation) 서비스입니다. 그러나 이것은 인터�
 옵션 D는 온프레미스 네트워크와 VPC 간의 안전하고 암호화된 네트워크 연결인 S3 버킷과
 VPC 간에 AWS Site-to-Site VPN 연결을 사용하기 때문에 효율성이 떨어집니다. 그러나
 이것은 인터넷을 통과하지 않는다는 요구 사항을 충족하지 않습니다.
-~~~
 
 ---
 
 # Q295 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/99956-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q296 
 
-~~~ 설명
+**정답: D**
+
 https://www.examtopics.com/discussions/amazon/view/99651-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
 허용되는 블록 크기는 /28 넷마스크와 /16 넷마스크 사이입니다. CIDR 블록은 VPC 와
 연결된 기존 CIDR 블록과 겹치지 않아야 합니다.
 https://docs.aws.amazon.com/vpc/latest/userguide/configure-your-vpc.html
-~~~
 
 ---
 
 # Q297 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/99652-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -2385,25 +2386,25 @@ Scaling 그룹은 기존 로드 밸런서 설정에 연결됩니다.
 인스턴스를 확장할 수 있는 기능을 제공합니다.
 * 단 3 개의 인스턴스(원하는 용량)로 시작하고 필요에 따라 확장하여 비용을 최적화합니다.
 CPU 사용량이 떨어지면 원하는 용량에 맞게 인스턴스가 종료됩니다.
-~~~
 
 ---
 
 # Q298 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/99653-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 참고:
 https://aws.amazon.com/ko/vpc/faqs/#:~:text=Can%20a%20subnet%20span%20Availabil
 ity
-~~~
 
 ---
 
 # Q299 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/99676-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명:
@@ -2413,16 +2414,15 @@ for Lustre 파일 시스템 생성 Amazon S3 에서 데이터를 가져오고 �
 시간과 최대 6GBps의 처리량을 위해 SSD 스토리지를 사용하고 Amazon S3에서 데이터를
 가져오고 내보낼 수 있습니다. 또한 영구 SSD 스토리지를 선택하는 옵션은 데이터가
 디스크에 저장되고 파일 시스템이 중지되어도 손실되지 않도록 합니다.
-~~~
 
 ---
 
 # Q300 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/99948-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 참고:
 https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.AuroraMySQL.
 html
-~~~

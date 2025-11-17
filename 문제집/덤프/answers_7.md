@@ -1,78 +1,79 @@
 # Q601 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/121210-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q602 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/121212-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q603 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/121211-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q604 
 
-~~~ 설명
+**정답: D**
+
 https://www.examtopics.com/discussions/amazon/view/121186-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q605 
 
-~~~ 설명
+**정답: D**
+
 https://www.examtopics.com/discussions/amazon/view/121170-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q606 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/121214-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q607 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/121215-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q608 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/121216-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q609 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/121162-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
 설명:
@@ -96,40 +97,40 @@ Lambda 함수를 사용하기 때문에 효율성이 떨어집니다. 이는 서
 Formation 테이블에서 민감한 정보를 주기적으로 쿼리하고 제거하는 AWS Lambda 함수를
 사용하기 때문에 효율성이 떨어집니다. 그러나 여기에는 애플리케이션 코드 및 논리에 대한
 상당한 변경이 포함될 수 있으며 데이터 손실 또는 불일치가 발생할 수도 있습니다.
-~~~
 
 ---
 
 # Q610 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/121217-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q611 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/121218-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q612 
 
-~~~ 설명
+**정답: D**
+
 https://www.examtopics.com/discussions/amazon/view/121159-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q613 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/121158-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
 설명:
@@ -138,31 +139,31 @@ utions-architect-associate-saa-c03/
 Management Service(AWS KMS)를 사용하여 저장된 비밀을 암호화하고 해독하기 위한
 암호화 키를 생성하고 관리할 수 있습니다. 이는 EKS 클러스터의 중요한 정보를 보호하는
 간단하고 안전한 방법입니다.
-~~~
 
 ---
 
 # Q614 
 
-~~~ 설명
+**정답: D**
+
 https://www.examtopics.com/discussions/amazon/view/121157-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q615 
 
-~~~ 설명
+**정답: D**
+
 https://www.examtopics.com/discussions/amazon/view/121154-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q616 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/121177-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
 설명:
@@ -175,95 +176,95 @@ GuardDuty 는 AWS 계정 및 워크로드의 보안 상태에 대한 포괄적�
 서비스 및 파트너 솔루션의 보안 경고를 집계, 구성 및 우선순위를 지정하여 대시보드에
 표시합니다. 이 솔루션은 AWS 계정의 악의적인 활동, 워크로드 및 S3 버킷에 대한 액세스
 패턴을 지속적으로 모니터링, 보고 및 시각화할 수 있으므로 요구 사항을 충족합니다.
-~~~
 
 ---
 
 # Q617 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/121176-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
 102문제와 중복
-~~~
 
 ---
 
 # Q618 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/121219-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q619 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/121220-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q620 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/121221-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q621 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/121222-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q622 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/121223-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q623 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/121172-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q624 
 
-~~~ 설명
+**정답: D**
+
 https://www.examtopics.com/discussions/amazon/view/125336-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q625 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/125337-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q626 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/125338-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
 설명:
@@ -274,22 +275,22 @@ utions-architect-associate-saa-c03/
 수행하도록 DataSync 에이전트를 구성함으로써 회사는 암호화, 압축, 대역폭 조절, 데이터
 검증과 같은 DataSync 의 기능을 활용할 수 있습니다. DataSync 는 각 전송 작업 후에
 소스와 대상 모두에서 데이터 무결성을 자동으로 확인합니다.
-~~~
 
 ---
 
 # Q627 
 
-~~~ 설명
+**정답: D**
+
 https://www.examtopics.com/discussions/amazon/view/125541-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q628 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/125459-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
 설명:
@@ -300,132 +301,132 @@ S3 Storage Lens 는 AWS Organizations 의 여러 AWS 계정에 걸친 객체 스
 위해 CSV 또는 Parquet 형식의 지표를 S3 버킷으로 내보낼 수도 있습니다. 이 솔루션은
 코드 개발이나 정책 변경이 필요하지 않으므로 최소한의 운영 오버헤드로 요구 사항을
 충족합니다.
-~~~
 
 ---
 
 # Q629 
 
-~~~ 설명
+**정답: D**
+
 https://www.examtopics.com/discussions/amazon/view/125460-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q630 
 
-~~~ 설명
+**정답: D**
+
 https://www.examtopics.com/discussions/amazon/view/125541-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q631 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/125113-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
 B??
-~~~
 
 ---
 
 # Q632 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/125114-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q633 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/125513-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q634 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/125544-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q635 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/125545-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q636 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/125546-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q637 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/125547-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q638 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/125574-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q639 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/125575-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q640 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/125579-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
 ??
-~~~
 
 ---
 
 # Q641 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/125580-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q642 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/125215-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
 설명:
@@ -447,104 +448,104 @@ https://aws.amazon.com/blogs/aws/new-udp-load-balancing-for-network-load-balanc
 er/
 https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html
 A : UDP 패킷을 사용한다고 했으니 네트워크 계층 서비스인 NLB가 적합.
-~~~
 
 ---
 
 # Q643 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/125581-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q644 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/125582-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q645 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/125583-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q646 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/125584-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q647 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/125212-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
 C??
-~~~
 
 ---
 
 # Q648 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/125586-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q649 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/125588-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q650 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/125589-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q651 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/125244-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q652 
 
-~~~ 설명
+**정답: B**
+
 https://www.examtopics.com/discussions/amazon/view/125591-exam-aws-certified-sol
 utions-architect-associate-saa-c03/
-~~~
 
 ---
 
 # Q653 
 
-~~~ 설명
+**정답: C**
+
 설명
 Amazon Athena 는 Amazon S3 에 저장된 데이터에 대해 SQL 쿼리를 실행할 수 있는
 서비스입니다. 서버리스이므로 인프라를 프로비저닝하거나 관리할 필요가 없습니다. 실행한
@@ -563,13 +564,13 @@ Amazon Athena를 사용하여 Amazon S3에서 데이터를 쿼리하면 다음�
 대한 걱정 없이 S3 에 대량의 데이터를 저장하고 Athena 로 쿼리할 수 있습니다. 또한
 다양한 형식, 압축 방법 및 파티셔닝 체계를 사용하여 데이터 스토리지 및 쿼리 성능을
 최적화할 수 있습니다.
-~~~
 
 ---
 
 # Q654 
 
-~~~ 설명
+**정답: B**
+
 설명
 Amazon RDS Proxy 는 Amazon RDS 및 Aurora 데이터베이스를 위한 완전관리형 고가용성
 데이터베이스 프록시를 제공하는 서비스입니다. 이를 통해 데이터베이스 연결 풀링 및 공유,
@@ -587,24 +588,24 @@ Amazon RDS Proxy 를 사용하면 장애 조치 시간이 66 초에서 53 초로
 * 데이터베이스 액세스의 보안 및 규정 준수를 향상시킬 수 있습니다. Amazon RDS
 Proxy는 AWS Secrets Manager 및 AWS Identity and Access Management(IAM)와 통합되어
 데이터베이스 연결에 대한 안전하고 세분화된 인증 및 권한 부여를 지원합니다.
-~~~
 
 ---
 
 # Q655 
 
-~~~ 설명
+**정답: C**
+
 설명
 AWS Lambda는 호출 수와 함수 실행 시간에 따라 요금을 부과합니다. 데이터 처리 작업이
 상대적으로 작기 때문에(데이터 2MB) Lambda 가 비용 효율적인 선택입니다. 인프라를
 프로비저닝하고 유지 관리할 필요 없이 실제 사용량에 대해서만 비용을 지불하면 됩니다.
-~~~
 
 ---
 
 # Q656 
 
-~~~ 설명
+**정답: B**
+
 설명
 AWS ParallelCluster는 AWS에서 고성능 컴퓨팅(HPC) 클러스터를 생성하고 관리할 수 있는
 서비스입니다. 여러 EC2 인스턴스에서 분산 워크로드를 실행할 수 있는 AWS Batch 를
@@ -620,13 +621,13 @@ AWS ParallelCluster 및 MPI 라이브러리를 사용하면 다음과 같은 이
 애플리케이션의 성능과 효율성을 최적화할 수 있습니다.
 * Open MPI, Intel MPI 및 MPICH와 같이 AWS ParallelCluster와 호환되는 다양한 MPI 구현
 중에서 선택할 수 있습니다.
-~~~
 
 ---
 
 # Q657 
 
-~~~ 설명
+**정답: B**
+
 설명
 Application Load Balancer 는 OSI 모델의 애플리케이션 계층(계층 7)에서 작동하는 일종의
 Elastic Load Balancer입니다. Amazon EC2 인스턴스, 컨테이너, IP 주소 및 Lambda 함수와
@@ -645,13 +646,13 @@ Balancer를 프로비저닝하면 다음과 같은 이점을 얻을 수 있습�
 * Amazon EKS 및 Kubernetes 와 통합되는 단일 컨트롤러를 사용하여 로드 밸런서 관리
 비용과 복잡성을 줄일 수 있습니다. 로드 밸런서를 수동으로 생성 또는 구성하거나
 클러스터가 변경될 때 업데이트할 필요가 없습니다.
-~~~
 
 ---
 
 # Q658 
 
-~~~ 설명
+**정답: A**
+
 설명:
 Auto Scaling 그룹은 유사한 특성을 공유하고 수요에 따라 자동으로 확장 또는 축소될 수
 있는 EC2 인스턴스 모음입니다. Auto Scaling 그룹은 여러 가용 영역의 여러 대상에 수신
@@ -663,13 +664,13 @@ Balancer 뒤에 배치될 수 있습니다. 이 솔루션은 고가용성, 확�
 자동으로 대기 인스턴스로 장애 조치됩니다. 이 솔루션은 데이터 중복성, 백업 지원 및
 가용성을 제공하여 데이터베이스 계층의 복원성을 향상시킵니다. 이 단계 조합은
 마이그레이션 중에 애플리케이션을 최소한으로 변경하여 요구 사항을 충족합니다.
-~~~
 
 ---
 
 # Q659 
 
-~~~ 설명
+**정답: A**
+
 설명:
 스팟 인스턴스는 온디맨드 가격에 비해 최대 90% 할인된 가격으로 제공되는 EC2
 인스턴스입니다. 스팟 인스턴스는 중단을 허용할 수 있는 상태 비저장, 내결함성 및 유연한
@@ -680,13 +681,13 @@ Balancer 뒤에 배치될 수 있습니다. 이 솔루션은 고가용성, 확�
 관리형 노드 그룹은 스팟 인스턴스의 가용성과 복원력을 향상시키기 위해 용량 재조정 및
 용량 최적화 할당 전략과 같은 기능도 지원합니다. 이 솔루션은 가장 저렴한 EC2 용량을
 활용하고 수동 개입이 필요하지 않으므로 가장 비용 효율적으로 요구 사항을 충족합니다.
-~~~
 
 ---
 
 # Q660 
 
-~~~ 설명
+**정답: B**
+
 설명:
 Amazon S3 파일 게이트웨이는 네트워크 파일 공유로 표시되는 Amazon S3 에 파일 기반
 인터페이스를 제공하는 서비스입니다. SMB 와 같은 표준 파일 스토리지 프로토콜을 통해
@@ -699,26 +700,26 @@ Amazon S3 객체를 저장하고 검색할 수 있습니다. S3 파일 게이트
 솔루션은 회사가 SMB 파일 액세스를 통해 S3 에 대용량 파일을 저장하고, 비용 절감 및
 규정 준수를 위해 7 일 후에 파일을 S3 Glacier Deep Archive 로 이동할 수 있도록 하므로
 요구 사항을 충족합니다.
-~~~
 
 ---
 
 # Q661 
 
-~~~ 설명
+**정답: A**
+
 설명:
 AWS DataSync 는 AWS 스토리지 서비스와 온프레미스 스토리지 시스템 간에 대량의
 데이터를 쉽게 이동할 수 있게 해주는 서비스입니다. AWS DataSync 는 S3 버킷에서 EFS
 파일 시스템 및 다른 S3 버킷으로 파일을 지속적으로 복사할 수 있을 뿐만 아니라
 소스에서 변경된 파일만 덮어쓸 수 있습니다. 이 솔루션은 코드 개발이나 수동 개입이
 필요하지 않으므로 최소한의 운영 오버헤드로 요구 사항을 충족합니다.
-~~~
 
 ---
 
 # Q663 
 
-~~~ 설명
+**정답: B**
+
 설명:
 게이트웨이 엔드포인트는 지원되는 AWS 서비스로 향하는 트래픽에 사용되는 라우팅
 테이블의 지정된 경로에 대한 대상인 게이트웨이입니다. Amazon S3 는 게이트웨이
@@ -736,13 +737,13 @@ AWS Transit Gateway는 Amazon Virtual Private Cloud(VPC)와 온프레미스 네�
 게이트웨이에 연결할 수 있게 해주는 서비스입니다. AWS Transit Gateway 에서
 게이트웨이를 생성하면 AWS Direct Connect를 사용하여 리전과 온프레미스 위치 모두에서
 Amazon S3에 안전하게 액세스할 수 있습니다. 따라서 선택 B가 맞습니다.
-~~~
 
 ---
 
 # Q663 
 
-~~~ 설명
+**정답: A**
+
 설명:
 DynamoDB Accelerator(DAX)는 Amazon DynamoDB 용으로 구축된 완전 관리형 고가용성
 캐싱 서비스입니다. DAX 는 초당 수백만 건의 요청에서도 밀리초에서 마이크로초로 최대
@@ -753,13 +754,13 @@ DynamoDB Accelerator(DAX)는 Amazon DynamoDB 용으로 구축된 완전 관리�
 호출과 호환되므로 애플리케이션 로직을 수정할 필요가 없습니다. 이 솔루션은 코드
 개발이나 수동 개입이 필요하지 않으므로 최소한의 운영 오버헤드로 요구 사항을
 충족합니다.
-~~~
 
 ---
 
 # Q664 
 
-~~~ 설명
+**정답: A**
+
 설명:
 클러스터 배치 그룹은 네트워크 지연 시간을 최소화하기 위해 서로 가깝게 배치되는 단일
 가용 영역 내 EC2 인스턴스의 논리적 그룹입니다. 이는 높은 네트워크 성능이 요구되는
@@ -769,13 +770,13 @@ NetApp ONTAP 용 Amazon FSx 는 파일 시스템에서 NFS 및 SMB 다중 프로
 물론 데이터 중복 제거, 압축, 씬 프로비저닝, 스냅샷과 같은 기능을 제공하는 완전관리형
 서비스입니다. 이 솔루션은 AWS 의 짧은 지연 시간 네트워크 및 스토리지 성능을
 활용하므로 가장 짧은 지연 시간으로 요구 사항을 충족합니다.
-~~~
 
 ---
 
 # Q665 
 
-~~~ 설명
+**정답: A**
+
 설명:
 Microsoft SQL Server용 Amazon RDS는 SQL Server 2014, 2016, 2017 및 2019 에디션을
 제공하는 동시에 백업, 패치, 확장과 같은 데이터베이스 관리 작업을 오프로드하는
@@ -784,13 +785,13 @@ Microsoft SQL Server용 Amazon RDS는 SQL Server 2014, 2016, 2017 및 2019 에�
 복제본을 지원합니다.
 이 솔루션은 코드 변경이나 수동 개입이 필요하지 않으므로 최소한의 운영 오버헤드로 요구
 사항을 충족합니다.
-~~~
 
 ---
 
 # Q666 
 
-~~~ 설명
+**정답: B**
+
 설명:
 AWS Lambda 는 서버를 프로비저닝하거나 관리하지 않고도 코드를 실행할 수 있는
 서버리스 컴퓨팅 서비스입니다. Lambda 를 사용하면 사용자를 비용 센터에 매핑하는 RDS
@@ -802,13 +803,13 @@ EventBridge 는 특정 AWS 계정에 리소스가 생성될 때 Lambda 함수를
 자격 증명 및 리소스 정보를 매개 변수로 전달할 수 있습니다. 이 솔루션은 사용자 및 비용
 센터 매핑을 기반으로 리소스에 자동으로 태그를 지정할 수 있으므로 요구 사항을
 충족합니다.
-~~~
 
 ---
 
 # Q667 
 
-~~~ 설명
+**정답: D**
+
 설명:
 EBS 스냅샷은 데이터를 복원하거나 새 볼륨을 생성하는 데 사용할 수 있는 EBS 볼륨의
 특정 시점 백업입니다. EBS 스냅샷 잠금이라는 기능을 사용하여 실수로 삭제되는 것을
@@ -816,13 +817,13 @@ EBS 스냅샷은 데이터를 복원하거나 새 볼륨을 생성하는 데 사
 때까지 루트 사용자를 포함한 어떤 사용자도 삭제할 수 없습니다. 잠금 정책은 스냅샷을
 삭제할 수 있는 보존 기간을 지정할 수도 있습니다. 이 솔루션은 코드 개발이나 정책
 변경이 필요하지 않으므로 최소한의 관리 노력으로 요구 사항을 충족합니다.
-~~~
 
 ---
 
 # Q668 
 
-~~~ 설명
+**정답: D**
+
 설명:
 요구 사항을 충족하는 솔루션은 AWS Security Token Service(AWS STS)를 사용하여 단기
 자격 증명을 얻는 온프레미스 사용자 지정 자격 증명 브로커 애플리케이션 또는 프로세스를
@@ -843,13 +844,13 @@ AWS IAM Identity Center(AWS Single Sign-On)를 활성화하려면 SAML 2.0을 �
 업데이트될 때마다 IAM 자격 증명을 교체하는 프로세스를 설정하면 AWS Management
 콘솔에 대한 액세스가 제공되지 않고 AWS CLI 에만 액세스할 수 있습니다. 따라서 이러한
 솔루션은 주어진 요구 사항에 적합하지 않습니다.
-~~~
 
 ---
 
 # Q669 
 
-~~~ 설명
+**정답: B**
+
 설명:
 AWS WAF 는 애플리케이션 가용성에 영향을 미치거나 보안을 손상시키거나 과도한
 리소스를 소비할 수 있는 일반적인 웹 공격으로부터 웹 애플리케이션을 보호하는 데 도움이
@@ -865,13 +866,13 @@ EC2 인스턴스를 수정하는 것은 네트워크 ACL 이 상태 비저장이
 트래픽을 평가하지 않기 때문에 작동하지 않습니다. 보안 그룹은 상태 저장형이고 로드
 밸런서 수준이 아닌 인스턴스 수준에서만 트래픽을 평가하기 때문에 ALB 뒤의 대상 그룹에
 있는 EC2 인스턴스에 대한 보안 그룹을 수정하면 작동하지 않습니다.
-~~~
 
 ---
 
 # Q670 
 
-~~~ 설명
+**정답: C**
+
 설명:
 요구 사항을 충족하는 솔루션은 Amazon Elastic Container Service(Amazon ECS)에서
 서비스 자동 확장 기능을 갖춘 마이크로서비스로 애플리케이션을 실행하는 것입니다. 이
@@ -899,13 +900,13 @@ EC2 인스턴스를 수정하는 것은 네트워크 ACL 이 상태 비저장이
 실행하면 모놀리스를 마이크로서비스로 분해하지도 않고 애플리케이션 가동 중지 시간을
 최소화하지도 않기 때문에 요구 사항을 충족하지 못합니다. 일괄 배포 전략은 업데이트를
 모든 인스턴스에 동시에 배포하므로 애플리케이션이 잠시 중단됩니다.
-~~~
 
 ---
 
 # Q671 
 
-~~~ 설명
+**정답: A**
+
 설명:
 이 회사는 고가용성과 애플리케이션 변경을 최소화하면서 3 개의 가용 영역에 걸쳐
 컨테이너화된 애플리케이션 워크로드를 VPC 에 배포하려고 합니다. 최소한의 운영
@@ -927,13 +928,13 @@ ECS 서비스 Auto Scaling 을 사용하면 수요 또는 사용자 지정 지�
 작업이 클러스터의 가용 영역에 고르게 분산되어 서비스 가용성이 극대화됩니다.
 이 솔루션은 가용 영역 전반에 걸쳐 고가용성을 제공하고 애플리케이션 변경을 최소화하며
 자체 클러스터 인프라 관리에 따른 운영 오버헤드를 줄입니다.
-~~~
 
 ---
 
 # Q672 
 
-~~~ 설명
+**정답: D**
+
 설명:
 회사는 메시지 대기열에서 지속적으로 증가하는 메시지 수를 처리하는 Lambda 함수에
 대해 컴퓨팅 비용을 줄이고 서비스 지연 시간을 유지하려고 합니다.
@@ -953,13 +954,13 @@ Optimizer 는 사용률 데이터를 기반으로 최적의 AWS 리소스 구성
 이 솔루션은 메모리 및 CPU 리소스의 불필요한 과잉 프로비저닝을 방지하여 컴퓨팅
 비용을 절감하고, 프로비저닝된 동시성 및 Lambda 함수에 대한 최적의 메모리 크기를
 사용하여 서비스 대기 시간을 유지합니다.
-~~~
 
 ---
 
 # Q673 
 
-~~~ 설명
+**정답: B**
+
 설명:
 현재 Amazon S3 버킷에 저장된 기록 값을 사용하여 매월 제조 프로세스에 필요한
 리소스를 예측하려면 솔루션 설계자는 Amazon SageMaker 를 사용하여 S3 버킷의 기록
@@ -972,13 +973,13 @@ Optimizer 는 사용률 데이터를 기반으로 최적의 AWS 리소스 구성
 확장 가능하고 안전한 웹 서비스인 SageMaker 엔드포인트에 배포할 수 있습니다. 솔루션
 아키텍트는 SageMaker 를 사용하기 위해 ML 경험이 있거나 인프라를 관리할 필요가
 없습니다.
-~~~
 
 ---
 
 # Q674 
 
-~~~ 설명
+**정답: A**
+
 설명:
 회사는 애플리케이션의 가용성과 성능을 향상하는 동시에 일반적인 웹 공격으로부터
 애플리케이션을 보호하기를 원합니다. 회사에는 애플리케이션에 대한 고정 IP 주소도
@@ -1002,21 +1003,21 @@ AWS Global Accelerator 는 로컬 또는 글로벌 사용자를 대상으로 애
 이 솔루션은 가용 영역 및 지역 전반에 걸쳐 고가용성을 제공하고, AWS 글로벌 네트워크를
 통해 트래픽을 라우팅하여 성능을 향상시키며, 일반적인 웹 공격으로부터 애플리케이션을
 보호하고, 애플리케이션에 고정 IP 주소를 제공합니다.
-~~~
 
 ---
 
 # Q675 
 
-~~~ 설명
+**정답: D**
 
-~~~
+
 
 ---
 
 # Q676 
 
-~~~ 설명
+**정답: B**
+
 설명:
 AWS WAF 는 애플리케이션 가용성에 영향을 미치거나 보안을 손상시키거나 과도한
 리소스를 소비할 수 있는 일반적인 웹 공격으로부터 웹 애플리케이션을 보호하는 데 도움이
@@ -1040,13 +1041,13 @@ AWS 네트워크 방화벽을 사용하여 애플리케이션과 데이터베이
 상태 저장 방화벽 서비스이기 때문입니다. 서로 다른 기능을 위해 애플리케이션 코드에서
 서로 다른 데이터베이스 계정을 사용하는 것은 좋은 습관이지만 SQL 주입 공격이
 애플리케이션 코드의 취약점을 악용하는 것을 방지할 수는 없습니다.
-~~~
 
 ---
 
 # Q677 
 
-~~~ 설명
+**정답: B**
+
 설명:
 회사의 요구 사항에 가장 적합한 솔루션은 AWS Migration Hub 에서 홈 AWS 리전을
 설정하고 AWS Application Discovery Service를 사용하여 온프레미스 서버에 대한 데이터를
@@ -1083,13 +1084,13 @@ SCT 는 사용자가 데이터베이스 스키마와 코드 객체를 한 데이
 데이터베이스 엔진으로 변환하는 데 도움이 되는 도구입니다. AWS DMS 는 사용자가 가동
 중지 시간을 최소화하면서 관계형 데이터베이스, 비관계형 데이터베이스 및 기타 유형의
 데이터 스토어를 AWS로 마이그레이션하는 데 도움이 되는 서비스입니다.
-~~~
 
 ---
 
 # Q678 
 
-~~~ 설명
+**정답: C**
+
 설명:
 자체 계정 권한을 포기하지 않고 다른 회사에 SQS 대기열에 대한 액세스를 제공하려면
 솔루션 설계자는 SQS 대기열에 대한 다른 회사 액세스를 제공하는 SQS 액세스 정책을
@@ -1099,13 +1100,13 @@ SCT 는 사용자가 데이터베이스 스키마와 코드 객체를 한 데이
 같은 작업에 대한 권한을 부여할 수 있습니다. 이렇게 하면 다른 회사가 역할을 맡거나
 교차 계정 액세스 키를 사용할 필요 없이 자체 자격 증명을 사용하여 대기열을 폴링할 수
 있습니다.
-~~~
 
 ---
 
 # Q679 
 
-~~~ 설명
+**정답: B**
+
 설명:
 요구 사항을 충족하는 솔루션은 캐시된 볼륨을 사용하여 AWS Storage Gateway를 배포하고
 Storage Gateway 를 사용하여 자주 액세스하는 데이터 하위 집합의 복사본을 로컬에서
@@ -1136,13 +1137,13 @@ S3 보다 검색 시간이 더 깁니다. 신속 검색은 데이터에 더 빠�
 네트워크 연결을 설정하는 서비스로, 이를 통해 네트워크 비용을 절감하고 대역폭을 늘릴
 수 있습니다. 그러나 이 솔루션은 온프레미스에 필요한 스토리지 용량을 줄이지 않으며
 클라우드 스토리지의 이점을 활용하지도 않습니다.
-~~~
 
 ---
 
 # Q680 
 
-~~~ 설명
+**정답: C**
+
 설명:
 다음 테스트 단계에서 애플리케이션 시작 시간을 줄이는 솔루션은 최대 절전 모드가 설정된
 EC2 온디맨드 인스턴스를 시작하고 EC2 Auto Scaling 웜 풀을 구성하는 것입니다. 이
@@ -1162,13 +1163,13 @@ EC2 스팟 인스턴스를 시작한다고 해서 가용성이 보장되는 것�
 예약을 통해 EC2 온디맨드 인스턴스를 시작하면 인스턴스에 사용할 수 있는 용량이
 충분한지 확인만 할 뿐 사전 초기화는 하지 않으므로 애플리케이션 시작 시간이 줄어들지
 않습니다.
-~~~
 
 ---
 
 # Q681 
 
-~~~ 설명
+**정답: D**
+
 설명:
 보안 요구 사항을 충족하려면 솔루션 아키텍트는 AWS 에서 제공하는 루트 인증서를
 다운로드하고 RDS 인스턴스에 대한 모든 연결에 인증서를 제공해야 합니다. 이렇게 하면
@@ -1192,13 +1193,13 @@ RDS 인스턴스의 스냅샷을 찍어 암호화가 활성화된 새 인스턴�
 않습니다. 이 옵션은 전송 중 암호화가 아닌 유휴 암호화만 활성화하기 때문입니다. 미사용
 암호화는 디스크에 저장된 데이터를 보호하지만 클라이언트와 서버 간에 이동하는 데이터는
 보호하지 않습니다.
-~~~
 
 ---
 
 # Q682 
 
-~~~ 설명
+**정답: D**
+
 설명:
 데이터 계층의 성능을 향상시키는 솔루션은 기존 DB 인스턴스 앞에 Redis 용 Amazon
 ElastiCache 클러스터를 배포하고 Redis를 사용하도록 게임을 수정하는 것입니다. Redis는
@@ -1220,13 +1221,13 @@ OpenSearch Service 는 주로 실시간 위치 추적이 아닌 전체 텍스트
 Accelerator(DAX)를 배포하고 DAX 를 사용하도록 게임을 수정해도 데이터 계층의 성능은
 향상되지 않습니다. 왜냐하면 DAX 는 PostgreSQL 용 RDS 가 아닌 DynamoDB 하고만
 호환되기 때문입니다. DAX는 지리공간 데이터 유형 및 명령도 지원하지 않습니다.
-~~~
 
 ---
 
 # Q683 
 
-~~~ 설명
+**정답: B**
+
 설명:
 회사의 규정 준수 정책에 가장 적합한 솔루션은 제한된 SSH AWS Config 관리형 규칙을
 활성화하고 비준수 규칙이 생성될 때 Amazon Simple 알림 서비스(Amazon SNS) 알림을
@@ -1249,13 +1250,13 @@ Accelerator(DAX)를 배포하고 DAX 를 사용하도록 게임을 수정해도 
 구성하고, 사용자가 관리자 권한이 필요한 규칙을 요청할 때 티켓팅 시스템에서 알림을
 생성하는 것은 자동화된 솔루션을 제공하지 않기 때문에 올바르지 않습니다. 정책 집행 및
 통지를 위해 사용자의 유연성과 생산성을 제한할 수 있습니다.
-~~~
 
 ---
 
 # Q684 
 
-~~~ 설명
+**정답: D**
+
 설명:
 고가용성, 성능, 보안 및 고정 IP 주소 요구 사항을 충족하는 솔루션은 Amazon CloudFront,
 ALB(Application Load Balancer), Amazon Route 53 및 AWS WAF를 사용하는 것입니다. 이
@@ -1269,13 +1270,13 @@ ALB(Application Load Balancer), Amazon Route 53 및 AWS WAF를 사용하는 것�
 애플리케이션을 지원하지 않는 NLB(Network Load Balancer)를 사용하거나 AWS Global
 Accelerator 보다 더 나은 성능과 보안을 제공하는 CloudFront 를 사용하지 않기 때문에
 모든 요구 사항을 충족하지 못합니다.
-~~~
 
 ---
 
 # Q685 
 
-~~~ 설명
+**정답: C**
+
 설명:
 온라인 비디오 게임 회사를 위한 가장 비용 효율적인 솔루션은 인터넷 트래픽에 필요한
 프로토콜과 포트로 Network Load Balancer를 구성하고 EC2 인스턴스를 대상으로 지정하는
@@ -1288,13 +1289,13 @@ Amazon VPC 내의 대상(EC2 인스턴스, 마이크로서비스 또는 컨테�
 TCP 및 UDP 트래픽의 로드 밸런싱에 이상적입니다. 또한 Network Load Balancer 는
 백엔드 애플리케이션에 대한 클라이언트의 소스 IP 주소를 보존하므로 로깅이나 보안
 목적으로 유용할 수 있습니다.
-~~~
 
 ---
 
 # Q686 
 
-~~~ 설명
+**정답: B**
+
 설명:
 요구 사항을 충족하는 솔루션은 Amazon Rekognition 을 사용하여 원치 않는 콘텐츠를
 감지하는 AWS Lambda 함수를 생성하고 새 사진이 업로드될 때 웹 애플리케이션이
@@ -1320,13 +1321,13 @@ AWS Lambda 함수를 생성하는 것은 사진에서는 작동하지 않습니�
 Video 는 정적 이미지가 아닌 비디오 스트림을 분석하도록 설계되었기 때문입니다. Amazon
 Rekognition Video 는 비디오 스트림에서 활동, 객체, 얼굴, 유명인, 텍스트 등을 감지할 수
 있습니다.
-~~~
 
 ---
 
 # Q687 
 
-~~~ 설명
+**정답: C**
+
 설명:
 회사의 애플리케이션에 가장 적합한 디자인 변경은 테이블에 대해 강력하고 일관된 읽기를
 요청하는 것입니다. 이렇게 변경하면 테이블에 대한 요청이 모든 이전 쓰기 작업의
@@ -1356,13 +1357,13 @@ GSI 는 기본 테이블의 것과 다른 파티션 키와 선택적 정렬 키�
 있습니다. 테이블에 대한 최종적 일관된 읽기 요청은 올바르지 않습니다. 이 옵션은 이미
 DynamoDB 의 기본 동작이고 최신 데이터를 반환하지 않는 요청 문제를 해결하지 못하기
 때문입니다.
-~~~
 
 ---
 
 # Q688 
 
-~~~ 설명
+**정답: C**
+
 설명:
 회사의 요구 사항에 가장 적합한 솔루션은 DataBrew 레시피를 사용하여 데이터를 변환하고
 변환 단계를 직원과 공유하도록 AWS Glue DataBrew 를 구성하는 것입니다. 이 솔루션은
@@ -1384,13 +1385,13 @@ DataBrew 는 또한 사용자가 데이터 품질을 이해하고 개선하는 �
 및 데이터 프로파일링 기능을 제공합니다. 데이터 계보는 각 데이터세트의 소스와 대상,
 그리고 각 레시피 단계에서 데이터가 변환되는 방식을 보여줍니다. 데이터 프로파일링은
 열과 같은 각 데이터세트에 대한 다양한 통계 및 측정항목을 표시합니다.
-~~~
 
 ---
 
 # Q689 
 
-~~~ 설명
+**정답: A**
+
 설명:
 가장 안전한 방식으로 웹 애플리케이션의 요구 사항을 충족하려면 회사는 Route 53
 Resolver 아웃바운드 엔드포인트를 생성하고, 확인자 규칙을 생성하고, 확인자 규칙을
@@ -1416,13 +1417,13 @@ VPC 와 연결해야 합니다. 이 솔루션을 사용하면 애플리케이션
 서비스에 대한 레코드를 생성하는 것은 올바르지 않습니다. 이 솔루션은 온프레미스
 서비스를 안전하지 않은 퍼블릭 인터넷에 노출시키기 때문입니다. 퍼블릭 호스팅 영역은
 인터넷 어디에서나 액세스할 수 있는 DNS 레코드의 컨테이너입니다.
-~~~
 
 ---
 
 # Q690 
 
-~~~ 설명
+**정답: C**
+
 설명:
 임의 IP 주소에서 발생하는 DDoS 공격으로부터 웹 애플리케이션을 보호하려면 솔루션
 아키텍트가 AWS Shield Advanced를 구독하고 AWS DDoS 대응 팀(DRT)과 협력하여 완화
@@ -1433,13 +1434,13 @@ DRT 는 도시에서 AWS WAF 규칙, 속도 기반 규칙 및 네트워크 ACL �
 도움을 줄 수 있습니다.
 또한 이 서비스는 자세한 공격 보고서와 Amazon CloudWatch 지표를 통해 DDoS 소스에
 대한 감사 추적을 제공합니다.
-~~~
 
 ---
 
 # Q691 
 
-~~~ 설명
+**정답: B**
+
 설명:
 Amazon EFS 는 여러 컨테이너 간에 공유할 수 있는 탄력적이고 확장 가능한 완전관리형
 파일 시스템입니다. 여러 가용 영역에 걸쳐 데이터를 복제하여 고가용성과 내결함성을
@@ -1450,13 +1451,13 @@ StorageClass 객체에 등록할 수 있습니다. Amazon EBS 볼륨은 AWS Farg
 동일한 가용 영역에 있어야 하므로 가용성과 내결함성이 줄어듭니다. AWS Lambda 를
 사용하여 여러 EFS 파일 시스템 간에 데이터를 동기화하는 것은 불필요하고 복잡하며
 오류가 발생하기 쉽습니다.
-~~~
 
 ---
 
 # Q692 
 
-~~~ 설명
+**정답: C**
+
 설명:
 최소한의 운영 오버헤드로 요구 사항을 충족하는 솔루션은 웹 계층을 퍼블릭 서브넷의
 Amazon EC2 인스턴스로 마이그레이션하고, 애플리케이션 계층을 프라이빗 서브넷의 EC2
@@ -1476,13 +1477,13 @@ MySQL 로 마이그레이션하는 것입니다. 이 솔루션을 사용하면 �
 마이그레이션하면 더 많은 보안 위험에 노출되고 서브넷 오류가 발생할 경우 가용성이
 줄어듭니다. 데이터베이스 계층을 퍼블릭 서브넷으로 마이그레이션하면 보안과 성능이
 손상될 수도 있습니다.
-~~~
 
 ---
 
 # Q693 
 
-~~~ 설명
+**정답: B**
+
 설명:
 콘텐츠 업로드에 대한 지연 시간을 최소화하여 사용자 경험을 최적화하는 가장 적합한
 솔루션은 Amazon S3에 콘텐츠를 업로드 및 저장하고 업로드에 S3 Transfer Acceleration을
@@ -1516,13 +1517,13 @@ S3 에 데이터를 복사하는 것은 프로세스에 불필요한 복잡성�
 높은 전송 속도로 콘텐츠를 전 세계에 배포할 수 있도록 지원하는 CDN 입니다. 그러나 각
 지역에 대해 여러 CloudFront 배포를 생성하면 추가 비용과 관리 오버헤드가 발생하고
 콘텐츠의 90%가 업로드된 동일한 지역 내에서 소비되므로 필요하지 않습니다.
-~~~
 
 ---
 
 # Q694 
 
-~~~ 설명
+**정답: B**
+
 설명:
 AWS DataSync 는 온프레미스 스토리지와 AWS 스토리지 서비스 간에 대량의 데이터를
 온라인으로 쉽게 이동할 수 있게 해주는 서비스입니다. AWS DataSync 는 특별히 구축된
@@ -1544,13 +1545,13 @@ Amazon S3 로 데이터를 동기화하기 위해 AWS Transfer for SFTP 를 사�
 데이터를 복사하는 것은 비용 효율적이지 않습니다. 왜냐하면 AWS Direct Connect 는
 AWS 와 온프레미스 위치 간의 전용 네트워크 연결이기 때문입니다. 초기 비용이 높고 추가
 구성이 필요합니다.
-~~~
 
 ---
 
 # Q695 
 
-~~~ 설명
+**정답: B**
+
 설명:
 예측 가능한 데이터베이스 성능을 유지하고 Lambda 호출이 너무 많은 연결로 인해
 데이터베이스에 과부하를 주지 않도록 하려면 솔루션 설계자는 RDS 프록시
@@ -1563,13 +1564,13 @@ AWS 와 온프레미스 위치 간의 전용 네트워크 연결이기 때문입
 효율적으로 액세스할 수 있습니다. 참조:
 AWS Lambda 와 함께 Amazon RDS 프록시 사용 VPC 의 리소스에 액세스하도록 Lambda
 함수를 구성합니다.
-~~~
 
 ---
 
 # Q696 
 
-~~~ 설명
+**정답: A**
+
 설명:
 요구 사항을 충족하는 솔루션은 데이터 수집을 위한 Amazon Kinesis 데이터 스트림을
 생성하고, Kinesis 데이터 스트림을 사용하기 위한 Amazon Kinesis Data Firehose 전송
@@ -1597,13 +1598,13 @@ DMS 에서는 복제 인스턴스, 소스 엔드포인트 및 대상 엔드포�
 서비스이기 때문입니다.
 AWS Direct Connect 를 사용하려면 AWS Direct Connect 위치에 대한 물리적 연결도
 필요합니다.
-~~~
 
 ---
 
 # Q697 
 
-~~~ 설명
+**정답: A**
+
 설명:
 옵션 A 는 애플리케이션 코드를 크게 변경하지 않고도 복제 지연을 줄이고 지속적인 운영
 오버헤드를 최소화하는 데 가장 적합한 솔루션입니다. 데이터베이스를 Amazon Aurora
@@ -1612,13 +1613,13 @@ MySQL 로 마이그레이션하면 Amazon RDS for MySQL 에 비해 복제 성능
 Aurora Auto Scaling 은 들어오는 트래픽을 처리하기에 충분한 Aurora 복제본이 있는지
 확인합니다. 또한 Aurora MySQL 기본 기능은 저장 프로시저를 대체하여 데이터베이스의
 로드를 줄이고 성능을 향상시킬 수 있습니다.
-~~~
 
 ---
 
 # Q698 
 
-~~~ 설명
+**정답: A**
+
 설명:
 가장 운영 효율성이 뛰어나며 요구 사항을 충족하는 솔루션은 기존 VPC 에 퍼블릭
 서브넷을 구성하고 퍼블릭 서브넷에 MSK 클러스터를 배포하는 것입니다. 이 솔루션을
@@ -1635,13 +1636,13 @@ Aurora Auto Scaling 은 들어오는 트래픽을 처리하기에 충분한 Auro
 NLB 는 추가 단계와 유지 관리가 필요한 HTTPS 리스너 및 인증서로 구성되지 않는 한
 전송 중인 데이터를 자체적으로 암호화하지 않습니다. 따라서 이러한 솔루션은 주어진 요구
 사항에 최적이 아닙니다.
-~~~
 
 ---
 
 # Q699 
 
-~~~ 설명
+**정답: B**
+
 설명:
 AWS 상태 API 는 AWS Personal Health Dashboard 에 표시되는 AWS 상태 정보에 대한
 프로그래밍 방식의 액세스를 제공합니다. API 작업을 사용하여 AWS 서비스 및 리소스에
@@ -1651,13 +1652,13 @@ API 를 사용하여 AWS 인프라 상태를 확인하고 API 가 문제를 반�
 배포를 일시 중지할 수 있습니다.
 참조:
 https://docs.aws.amazon.com/health/latest/APIReference/Welcome.html
-~~~
 
 ---
 
 # Q700 
 
-~~~ 설명
+**정답: B**
+
 설명:
 Amazon RDS 프록시는 Amazon Relational Database Service(RDS)를 위한 완전 관리형
 고가용성 데이터베이스 프록시로, 애플리케이션의 확장성과 데이터베이스 오류에 대한
@@ -1667,4 +1668,3 @@ Amazon RDS 프록시는 Amazon Relational Database Service(RDS)를 위한 완전
 66%까지 줄이고 데이터베이스 액세스를 위한 IAM 인증 및 Secrets Manager 통합을
 지원합니다. 코드 변경 없이 대부분의 애플리케이션에 대해 RDS Proxy 를 활성화할 수
 있습니다.
-~~~

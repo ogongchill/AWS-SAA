@@ -16,7 +16,7 @@
 | C | 모든 EC2 인스턴스에 Amazon Elastic File System(Amazon EFS) 파일 시스템을 탑재합니다. 직원에게 EC2 인스턴스의 파일에 액세스하도록 지시합니다. |
 | D | EC2 인스턴스에서 Amazon 머신 이미지(AMI)를 생성합니다. 인스턴스 스토어 볼륨을 사용하는 AMI 에서 새 EC2 인스턴스를 구성합니다. 직원에게 EC2 인스턴스의 파일에 액세스하도록 지시합니다. |
 
-정답: C
+[[answers_8#Q701|정답]]
 
 ---
 
@@ -37,7 +37,7 @@
 | C | 프라이빗 서브넷의 인스턴스가 사용하는 보안 그룹으로부터의 수신을 허용하는 보안 그룹을 생성합니다. 보안 그룹을 Amazon RDS DB 인스턴스에 연결합니다. |
 | D | 퍼블릭 서브넷과 프라이빗 서브넷 사이에 새로운 피어링 연결을 생성합니다. 프라이빗 서브넷과 데이터베이스 서브넷 간에 다른 피어링 연결을 만듭니다. |
 
-정답: C
+[[answers_8#Q702|정답]]
 
 ---
 
@@ -61,7 +61,7 @@
 | E | Outposts 구성 요소의 물리적 유지 관리. |
 | F | 서버 장애 및 유지 관리 이벤트를 완화하기 위해 Amazon ECS 클러스터에 추가 용량을 제공합니다. |
 
-정답: A
+[[answers_8#Q703|정답]]
 
 ---
 
@@ -83,7 +83,7 @@
 | D | EC2 인스턴스에 대한 Auto Scaling 그룹을 생성합니다. 여러 가용 영역을 사용하도록 Auto Scaling 그룹을 구성합니다. 인스턴스에서 애플리케이션 상태 확인을 실행하도록 Auto Scaling 그룹을 구성합니다. |
 | E | Amazon CloudWatch 경보를 생성합니다. 중지된 상태로 전환되는 EC2 인스턴스를 다시 시작하도록 경보를 구성합니다. |
 
-정답: A
+[[answers_8#Q704|정답]]
 
 ---
 
@@ -104,7 +104,7 @@
 | C | 현재 실행 중인 워크로드 가격 세부 정보에 대한 AWS 가격 계산기 추정치를 생성합니다. |
 | D | Amazon CloudWatch를 사용하여 비용을 모니터링하고 비정상적인 지출을 식별합니다. |
 
-정답: B
+[[answers_8#Q705|정답]]
 
 ---
 
@@ -126,7 +126,7 @@
 | C | Amazon S3 Standard에 이미지를 저장합니다. S3 Standard를 사용하면 정적 웹사이트를 통해 이미지를 직접 전달할 수 있습니다. |
 | D | Amazon S3 Standard-InfrequentAccess(S3 Standard-IA)에 이미지를 저장합니다. S3 Standard-IA를 사용하면 정적 웹 사이트를 통해 이미지를 직접 전달할 수 있습니다. |
 
-정답: C
+[[answers_8#Q706|정답]]
 
 ---
 
@@ -148,7 +148,7 @@
 | C | 템플릿 객체에 대해 미리 서명된 URL 을 생성합니다. 미리 서명된 URL 을 사용하도록 CloudFormation 스택을 구성합니다. |
 | D | S3 버킷의 템플릿 객체에 대한 공개 액세스를 허용합니다. 테스트 환경이 생성된 후 공개 접근을 차단합니다. |
 
-정답: C
+[[answers_8#Q707|정답]]
 
 ---
 
@@ -167,7 +167,7 @@
 | C | 로그를 Amazon DynamoDB 테이블로 보내도록 CloudTrail 을 구성합니다. Amazon QulCkSight에서 대시보드를 생성하여 테이블의 로그를 쿼리합니다. |
 | D | Amazon Athena 를 사용하여 Athena 노트북을 생성합니다. 로그를 노트북으로 보내도록 CloudTrail을 구성합니다. Athena에서 쿼리를 실행합니다. |
 
-정답: A
+[[answers_8#Q708|정답]]
 
 ---
 
@@ -189,7 +189,7 @@
 | C | 더 큰 인스턴스 크기를 선택하여 기존 RDS DB 인스턴스를 수정합니다. |
 | D | 기존 ROS DB 인스턴스를 수정하고 인스턴스를 Auto Scaling 그룹에 넣습니다. |
 
-정답: A
+[[answers_8#Q709|정답]]
 
 ---
 
@@ -209,7 +209,7 @@
 | C |  |
 | D |  |
 
-정답: A
+[[answers_8#Q710|정답]]
 
 ---
 
@@ -229,7 +229,7 @@
 | C | 가장 가까운 AWS 리전으로 데이터를 전송하도록 매일 AWS Snowball 작업을 예약합니다. S3 교차 리전 복제를 사용하여 객체를 대상 버킷에 복사합니다. |
 | D | 가장 가까운 리전의 Amazon EC2 인스턴스에 데이터를 업로드합니다. Amazon Elastic Block Store(Amazon EBS) 볼륨에 데이터를 저장합니다. 하루에 한 번 EBS 스냅샷을 찍어 중앙 집중식 리전에 복사합니다. 중앙 집중식 리전에서 EBS 볼륨을 복원하고 매일 데이터에 대한 분석을 실행합니다. |
 
-정답: A
+[[answers_8#Q711|정답]]
 
 ---
 
@@ -250,7 +250,7 @@
 | C | 파티션 배치 그룹을 사용합니다. Amazon Elastic File System(Amazon EFS)을 사용하여 인스턴스 간에 공유 파일 시스템을 생성합니다. |
 | D | 스프레드 배치 그룹을 사용합니다. Amazon EBS 다중 연결을 사용하여 단일 프로비저닝된 IOPS SSD Amazon Elastic Block Store(Amazon EBS) 볼륨을 모든 인스턴스에 연결합니다. |
 
-정답: A
+[[answers_8#Q712|정답]]
 
 ---
 
@@ -272,7 +272,7 @@
 | C | Aurora 복제본을 리더 노드로 추가합니다. 작성기 엔드포인트가 아닌 OB 클러스터의 판독기 엔드포인트에 연결하도록 Lambda 함수를 구성합니다. |
 | D | Amazon ROS 프록시를 사용하여 프록시를 생성합니다. DB 클러스터를 대상 데이터베이스로 설정 DB 클러스터가 아닌 프록시에 연결하도록 Lambda 함수를 구성합니다. |
 
-정답: D
+[[answers_8#Q713|정답]]
 
 ---
 
@@ -294,7 +294,7 @@ Auto Scaling 그룹에서 실행됩니다. 응용 프로그램은 항상 사용�
 | C | 두 개의 EC2 예약 인스턴스를 구매합니다. 필요에 따라 최대 3 개의 추가 EC2 스팟 인스턴스를 사용합니다. 사용하지 않을 때는 RDS 데이터베이스를 중지합니다. |
 | D | 2개의 EC2 인스턴스를 포함하는 EC2 Instance Savings Plan을 구매합니다. 필요에 따라 최대 3 개의 추가 EC2 온디맨드 인스턴스를 사용합니다. RDS 예약 DB 인스턴스를 구매합니다. |
 
-정답: C
+[[answers_8#Q714|정답]]
 
 ---
 
@@ -315,7 +315,7 @@ Access(S3 Standard-IA) 스토리지 클래스를 사용하는 Amazon S3 버킷�
 | C | S3 Docket에서 S3 Transfer Acceleration을 켭니다. |
 | D | Amazon CloudFront를 사용하여 S3 버킷에 대한 모든 요청을 처리합니다. |
 
-정답: D
+[[answers_8#Q715|정답]]
 
 ---
 
@@ -336,7 +336,7 @@ Access(S3 Standard-IA) 스토리지 클래스를 사용하는 Amazon S3 버킷�
 | C | Amazon FSx for Windows File Server 파일 공유에 이미지를 저장합니다. AWS Key Management Service(AWS KMS) 고객 마스터 키(CMK)를 사용하여 파일 공유의 이미지를 암호화하도록 Amazon FSx 파일 공유를 구성합니다. 우발적인 삭제를 방지하려면 이미지에 NTFS 권한 집합을 사용하십시오. |
 | D | Infrequent Access 스토리지 클래스의 Amazon Elastic File System(Amazon EFS) 파일 공유에 이미지를 저장합니다. AWS Key Management Service(AWS KMS) 고객 마스터 키(CMK)를 사용하여 파일 공유의 이미지를 암호화하도록 EFS 파일 공유를 구성합니다. 우발적인 삭제를 방지하려면 이미지에 NFS 권한 집합을 사용하십시오. |
 
-정답: B
+[[answers_8#Q716|정답]]
 
 ---
 
@@ -360,7 +360,7 @@ Access(S3 Standard-IA) 스토리지 클래스를 사용하는 Amazon S3 버킷�
 | D | Amazon Kinesis Data Analytics를 사용하여 일괄 처리 작업의 팬으로 쿼리를 실행합니다. |
 | E | AWS Glue 추출, 변환 및 로드(ETL) 프로세스를 사용하여 csv 파일을 Apache Parquet 형식으로 변환합니다. |
 
-정답: C
+[[answers_8#Q717|정답]]
 
 ---
 
@@ -380,7 +380,7 @@ Access(S3 Standard-IA) 스토리지 클래스를 사용하는 Amazon S3 버킷�
 | C | IAM 역할에 대해 지정된 읽기 전용 액세스 정책이 있는 교차 계정 IAM 역할을 생성합니다. |
 | D | 공급업체 사용자에게 읽기 전용 액세스 권한을 부여하는 사용자 정책 및 공급업체 사용자 그룹을 만듭니다. |
 
-정답: C
+[[answers_8#Q718|정답]]
 
 ---
 
@@ -401,7 +401,7 @@ Access(S3 Standard-IA) 스토리지 클래스를 사용하는 Amazon S3 버킷�
 | C | 프로비저닝된 IOPS 와 함께 Amazon RDS 를 사용합니다. 데이터베이스 감사 매개변수 활성화 5시간마다 데이터베이스 스냅샷을 수행합니다. |
 | D | Auto Scaling 과 함께 Amazon Aurora MySQL 을 사용합니다. 데이터베이스 감사 매개변수를 활성화하십시오. |
 
-정답: D
+[[answers_8#Q719|정답]]
 
 ---
 
@@ -422,7 +422,7 @@ Access(S3 Standard-IA) 스토리지 클래스를 사용하는 Amazon S3 버킷�
 | C | 동적 스케일링을 사용하여 Auto Scaling 그룹의 크기를 변경합니다. |
 | D | 일정 조정을 사용하여 Auto Scaling 그룹의 크기를 변경합니다. |
 
-정답: C
+[[answers_8#Q720|정답]]
 
 ---
 
@@ -444,7 +444,7 @@ Access(S3 Standard-IA) 스토리지 클래스를 사용하는 Amazon S3 버킷�
 | C | 서버리스 애플리케이션과 Amazon RDS 간에 Amazon RDS 프록시를 배포합니다. |
 | D | Amazon RDS 용 예약 인스턴스를 구입하여 피크 로드 트래픽 동안 데이터베이스의 가용성을 높입니다. |
 
-정답: C
+[[answers_8#Q721|정답]]
 
 ---
 
@@ -464,7 +464,7 @@ Access(S3 Standard-IA) 스토리지 클래스를 사용하는 Amazon S3 버킷�
 | C | us-east-1 지역의 AWS Certificate Manager(ACU)에서 Amazon 발급 공인 인증서를 요청합니다. |
 | D | us-west-1 지역의 AWS Certificate Manager(ACU)에서 Amazon 발급 공인 인증서를 요청합니다. |
 
-정답: C
+[[answers_8#Q722|정답]]
 
 ---
 
@@ -485,7 +485,7 @@ Access(S3 Standard-IA) 스토리지 클래스를 사용하는 Amazon S3 버킷�
 | C | Amazon EC2 인스턴스를 시작하는 동안 Elastic Inference 액셀러레이터를 선택합니다. |
 | D | Amazon EC2 인스턴스를 시작하는 동안 필요한 용량 예약을 선택합니다. |
 
-정답: A
+[[answers_8#Q723|정답]]
 
 ---
 
@@ -505,7 +505,7 @@ Access(S3 Standard-IA) 스토리지 클래스를 사용하는 Amazon S3 버킷�
 | C | Amazon CloudWatch 경보를 생성하여 매일 시작 시 경보 대상으로 Lambda 함수를 시작합니다. |
 | D | Lambda 함수 메모리를 늘립니다. |
 
-정답: B
+[[answers_8#Q724|정답]]
 
 ---
 
@@ -526,4 +526,4 @@ Access(S3 Standard-IA) 스토리지 클래스를 사용하는 Amazon S3 버킷�
 | C | 복제 그룹에 둘 이상의 읽기 전용 복제본이 있는 다중 AZ Redis 클러스터를 사용합니다. |
 | D | Auto Scaling이 켜진 여러 노드를 포함하는 Redis 샤드를 사용합니다. |
 
-정답: A
+[[answers_8#Q725|정답]]

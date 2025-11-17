@@ -1,19 +1,19 @@
 # Q701 
 
-~~~ 설명
+**정답: C**
+
 설명:
-여러 EC2 인스턴스와 여러 가용 영역에 걸쳐 25GB 이상의 파일을 저장하고 액세스하려면
-Amazon Elastic File System(Amazon EFS)이 적합한 솔루션입니다. Amazon EFS 는 여러
+여러 EC2 인스턴스와 여러 가용 영역에 걸쳐 25GB 이상의 파일을 저장하고 액세스하려면Amazon Elastic File System(Amazon EFS)이 적합한 솔루션입니다. Amazon EFS 는 여러
 EC2 인스턴스에 동시에 탑재할 수 있는 간단하고 확장 가능하며 탄력적인 파일 시스템을
 제공합니다. Amazon EFS는 한 지역 내의 여러 가용 영역에 데이터를 저장하여 고가용성과
 내구성을 지원합니다.
-~~~
 
 ---
 
 # Q702 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/85409-exam-aws-certified-solut
 ions-architect-associate-saa-c03/
 설명1:
@@ -38,13 +38,13 @@ https://docs.aws.amazon.com/ko_kr/vpc/latest/userguide/VPC_SecurityGroups.html
 다른 호스트에서 시작하여 인스턴스로 들어오는 인바운드 트래픽은 허용되지 않습니다.
 https://docs.aws.amazon.com/ko_kr/vpc/latest/userguide/vpc-security-groups.html#VPC
 SecurityGroups
-~~~
 
 ---
 
 # Q703 
 
-~~~ 설명
+**정답: A**
+
 설명:
 이러한 답변은 솔루션의 일부로 AWS Outposts 를 사용하는 데 대한 고객의 책임을
 반영하기 때문에 정확합니다. AWS 공유 책임 모델에 따르면 고객은 Outposts 랙에
@@ -57,39 +57,39 @@ Outposts 에서 실행되는 AWS 서비스를 관리할 뿐만 아니라 Outpost
 참조:
 https://docs.aws.amazon.com/outposts/latest/userguide/what-is-outposts.html
 https://www.contino.io/insights/the-sandwich-responsibility-model-aws-outposts/
-~~~
 
 ---
 
 # Q704 
 
-~~~ 설명
+**정답: A**
+
 설명:
 EC2 인스턴스에서 실행되는 애플리케이션의 고가용성을 달성하려면 애플리케이션을 여러
 가용 영역에 배포하고 로드 밸런서를 사용하여 트래픽을 분산해야 합니다. Auto Scaling
 그룹을 사용하면 여러 가용 영역에서 EC2 인스턴스를 시작 및 관리하고 상태 확인을
 수행할 수 있습니다. Network Load Balancer 를 사용하여 EC2 인스턴스에 대한 전송 계층
 트래픽을 처리할 수 있습니다.
-~~~
 
 ---
 
 # Q705 
 
-~~~ 설명
+**정답: B**
+
 설명:
 이를 통해 회사는 비용을 모니터링하고 비정상적인 지출이 발생할 경우 책임 있는
 이해관계자에게 알릴 수 있습니다. AWS Billing and Cost Management 콘솔에서 AWS 비용
 이상 탐지 모니터를 생성함으로써 회사는 비정상적인 지출을 자동으로 탐지하고 경고하는
 기계 학습 서비스를 사용할 수 있습니다. 경고 임계값, 알림 기본 설정 및 근본 원인
 분석을 구성함으로써 회사는 비정상적인 지출을 방지하고 그 출처를 식별할 수 있습니다.
-~~~
 
 ---
 
 # Q706 
 
-~~~ 설명
+**정답: C**
+
 설명:
 이를 통해 회사는 가용성이 높고 비용 효율적인 방식으로 이미지를 저장하고 사용자에게
 전달할 수 있습니다. Amazon S3 Standard 에 이미지를 저장함으로써 회사는 고가용성과
@@ -97,13 +97,13 @@ EC2 인스턴스에서 실행되는 애플리케이션의 고가용성을 달성
 있습니다. S3 Standard 를 사용하여 정적 웹 사이트를 통해 이미지를 직접 전달함으로써
 회사는 웹 서버 실행을 방지하고 운영 오버헤드를 줄일 수 있습니다. S3 Standard 는 또한
 AWS 리전 내에서 저렴한 스토리지 가격과 무료 데이터 전송을 제공합니다.
-~~~
 
 ---
 
 # Q707 
 
-~~~ 설명
+**정답: C**
+
 설명:
 이를 통해 CloudFormation 은 공개 액세스 권한을 부여하거나 추가 리소스를 생성하지
 않고도 S3 버킷의 템플릿에 액세스할 수 있습니다. 미리 서명된 URL 은 객체에 액세스할
@@ -112,13 +112,13 @@ AWS 리전 내에서 저렴한 스토리지 가격과 무료 데이터 전송을
 대해 미리 서명된 URL 을 생성하고 이를 사용하도록 CloudFormation 스택을 구성함으로써
 회사는 특정 사용자 요청에 따라 템플릿에 대한 CloudFormation 액세스 권한을 부여하고
 보안 모범 사례를 따를 수 있습니다.
-~~~
 
 ---
 
 # Q708 
 
-~~~ 설명
+**정답: A**
+
 설명:
 이를 통해 회사는 CloudTrail 로그를 유지하고 언제든지 쿼리할 수 있습니다. 회사는 중앙
 집중식 계정의 CloudTrail 이벤트 기록을 사용하여 여러 AWS 계정의 최근 API 활동을 보고,
@@ -126,26 +126,26 @@ AWS 리전 내에서 저렴한 스토리지 가격과 무료 데이터 전송을
 생성함으로써 회사는 표준 SQL 을 사용하여 S3 의 데이터를 쉽게 분석할 수 있는 서버리스
 대화형 쿼리 서비스를 사용할 수 있습니다. Athena 에서 CloudTrail 로그를 쿼리함으로써
 회사는 사용자 활동 및 리소스 변경 사항에 대한 통찰력을 얻을 수 있습니다.
-~~~
 
 ---
 
 # Q709 
 
-~~~ 설명
+**정답: A**
+
 설명:
 이를 통해 회사는 RDS 데이터베이스의 읽기 전용 복제본을 생성하고 데이터베이스 계층의
 로드를 줄일 수 있습니다. 읽기 전용 복제본을 생성하면 회사는 기본 데이터베이스
 인스턴스의 읽기 트래픽을 하나 이상의 복제본으로 오프로드할 수 있습니다. 새로운 읽기
 전용 복제본을 사용하도록 보고서를 구성함으로써 회사는 데이터베이스 계층의 성능과
 가용성을 향상시킬 수 있습니다.
-~~~
 
 ---
 
 # Q710 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/46383-exam-aws-certified-solut
 ions-architect-associate-saa-c02/
 설명1:
@@ -176,13 +176,13 @@ ListBucket 작업에는 버킷에 대한 권한이 필요하고 다른 작업에
 이름)을 사용해야 합니다.
 첫 번째 Resource 요소는 애플리케이션이 AdminTools 버킷의 모든 객체를 나열할 수
 있도록 ListBucket 작업에 대해 arn:aws:s3:::AdminTools를 지정합니다.
-~~~
 
 ---
 
 # Q711 
 
-~~~ 설명
+**정답: A**
+
 설명
 다음과 같은 다양한 이유로 버킷에서 Transfer Acceleration을 사용할 수 있습니다.
 전 세계에서 중앙 집중식 버킷에 업로드하는 고객이 있습니다.
@@ -198,13 +198,13 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html
 "개선된 처리량 - 처리량을 개선하기 위해 부품을 병렬로 업로드할 수 있습니다."
 여러 대륙의 도시에서 온도, 습도 및 대기압 데이터를 수집한다고 했으므로 여러 지역에서
 업로드를 하는 상황. 즉 S3 Transfer Acceleration을 사용하는 A가 정답.
-~~~
 
 ---
 
 # Q712 
 
-~~~ 설명
+**정답: A**
+
 설명
 노드 간 통신에 가장 낮은 지연 시간 = 클러스터 배치 그룹. A,B 둘 중 하나가 정답.
 A(O) : Amazon EBS 다중 연결을 사용하면 단일 프로비저닝된 IOPS SSD(io1 또는 io2)
@@ -230,13 +230,13 @@ Standard 스토리지 클래스가 있는 파일 시스템의 경우 기본 범�
 성능 모드를 사용할 수 있습니다.
 ◎최대 I/O 모드 : 500,000+ IOPS 를 지원하며 범용 모드에 비해 작업당 지연 시간이 더
 깁니다. https://docs.aws.amazon.com/ko_kr/efs/latest/ug/performance.html
-~~~
 
 ---
 
 # Q713 
 
-~~~ 설명
+**정답: D**
+
 설명1:
 A(X) : 노드 크기 조절은 아무 상관 없음.
 B(X) : 데이터베이스 자체에 부하가 걸리는 것이 아니므로 읽기 부하를 분산하는
@@ -256,13 +256,13 @@ https://docs.aws.amazon.com/ko_kr/AmazonRDS/latest/UserGuide/rds-proxy.html
 3. ROS 프록시: 자주 사용되지 않는 연결을 공유합니다. 장애 조치를 통한 고가용성.
 효율성 향상==>프록시는 장애 조치를 활용하여 시간 초과 rds 인스턴스에서 정상 rds
 인스턴스로 트래픽을 리디렉션할 수 있습니다. 그래서 D가 맞습니다.
-~~~
 
 ---
 
 # Q714 
 
-~~~ 설명
+**정답: C**
+
 설명:
 이 솔루션은 하루 중 시간에 따라 수요가 가변적이며 전체 비용을 최소화하면서 항상
 사용할 수 있어야 하는 2 계층 애플리케이션의 요구 사항을 충족합니다. EC2 예약
@@ -288,13 +288,13 @@ https://docs.aws.amazon.com/ko_kr/AmazonRDS/latest/UserGuide/rds-proxy.html
 https://aws.amazon.com/ec2/pricing/reserved-instances/
 https://aws.amazon.com/ec2/spot/
 https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StopInstance.html
-~~~
 
 ---
 
 # Q715 
 
-~~~ 설명
+**정답: D**
+
 설명:
 이 옵션은 .html, .css, .js 및 이미지 파일과 같은 정적 및 동적 웹 콘텐츠를 사용자에게
 빠르게 배포하는 웹 서비스인 Amazon CloudFront 를 사용하기 때문에 가장 효율적입니다.
@@ -316,13 +316,13 @@ https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StopInstance.html
 속도를 높이는 방법인 S3 버킷에 대해 S3 Transfer Acceleration 을 활성화하기 때문에
 효율성이 떨어집니다. 그러나 S3 Transfer Acceleration 에는 데이터 전송 및 요청에 대한
 추가 요금이 있으므로 총 S3 비용은 줄어들지 않습니다.
-~~~
 
 ---
 
 # Q716 
 
-~~~ 설명
+**정답: B**
+
 설명:
 서버리스 웹 애플리케이션과 호환되는 온프레미스 파일 공유에 대한 탄력적이고 내구성
 있는 대체를 제공하기 때문에 이 대답은 정확합니다. Amazon S3 는 모든 양의 데이터를
@@ -345,13 +345,13 @@ S3 Standard-Infrequent Access(S3 Standard-IA) 스토리지 클래스는 거의 �
 않지만 필요할 때 즉시 사용할 수 있어야 하는 이미지를 저장하는 데 적합합니다. S3
 Standard 와 동일한 높은 내구성, 처리량 및 짧은 대기 시간을 제공하지만 GB 당 스토리지
 비용은 더 낮고 요청당 비용은 더 높습니다.
-~~~
 
 ---
 
 # Q717 
 
-~~~ 설명
+**정답: C**
+
 https://www.examtopics.com/discussions/amazon/view/86458-exam-aws-certified-solut
 ions-architect-associate-saa-c02/
 문제에서 보면 S3 2 페타바이트의 개체이고 쿼리 실행이 예상보다 오래 걸리는 상황입니다.
@@ -367,13 +367,13 @@ https://aws.amazon.com/ko/about-aws/whats-new/2018/12/amazon-s3-announces-par
 quet-output-format-for-inventory/
 객체의 크기가 100MB 를 넘는 경우, 멀티파트 업로드 기능을 사용하는 방법을 고려해야
 합니다. https://aws.amazon.com/ko/s3/faqs/ 따라서 A는 오답.
-~~~
 
 ---
 
 # Q718 
 
-~~~ 설명
+**정답: C**
+
 설명:
 교차 계정 IAM 역할은 한 AWS 계정의 사용자에게 다른 AWS 계정의 리소스에 대한
 액세스 권한을 부여하는 방법입니다. 교차 계정 IAM 역할에는 읽기 전용 액세스 정책이
@@ -386,13 +386,13 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-walkthroughs-mana
 ging-accessexample2.html
 https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.h
 tml
-~~~
 
 ---
 
 # Q719 
 
-~~~ 설명
+**정답: D**
+
 설명1:
 A(X) : DynamoDB Streams 는 수정/변경 사항을 최대 24 시간까지밖에 로그에 저장할 수
 없음. 이를 변경할 수도 없음.
@@ -419,13 +419,13 @@ Amazon Aurora MySQL 의 고성능 고급 감사 기능을 사용하여 데이터
 활성화합니다. 콘솔을 사용하여 감사 로그를 확인하고 다운로드할 수 있습니다.
 https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Auditin
 g.html
-~~~
 
 ---
 
 # Q720 
 
-~~~ 설명
+**정답: C**
+
 설명:
 동적 조정은 수요 또는 부하에 따라 Auto Scaling 그룹의 EC2 인스턴스 수를 자동으로
 조정하는 일종의 자동 조정입니다. 지정된 지표가 임계값을 초과하면 CloudWatch 경보를
@@ -450,13 +450,13 @@ CLI 또는 콘솔을 통해 인스턴스 수를 수동으로 늘리거나 줄여
 참조:
 https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-ondemand.ht
 ml
-~~~
 
 ---
 
 # Q721 
 
-~~~ 설명
+**정답: C**
+
 설명:
 Amazon RDS Proxy 는 애플리케이션의 확장성, 데이터베이스 장애에 대한 복원력, 보안을
 강화하는 완전 관리형 데이터베이스 프록시입니다. RDS Proxy 는 애플리케이션과 관계형
@@ -468,13 +468,13 @@ Amazon RDS Proxy 는 애플리케이션의 확장성, 데이터베이스 장애�
 솔루션은 또한 운영 비용을 절감하고 애플리케이션의 가용성을 향상시킵니다.
 참조:
 https://aws.amazon.com/rds/proxy/
-~~~
 
 ---
 
 # Q722 
 
-~~~ 설명
+**정답: C**
+
 설명:
 이 옵션은 AWS 서비스와 함께 사용할 공개 및 비공개 SSL/TLS 인증서를 쉽게 프로비저닝,
 관리 및 배포할 수 있는 서비스인 AWS Certificate Manager(ACM)에서 Amazon에서 발급한
@@ -496,13 +496,13 @@ CloudFront 배포를 구성해야 하는 요구 사항을 충족하지 않습니
 떨어집니다. 이는 올바른 것입니다.
 하지만 us-west-1 리전에서 인증서를 요청합니다. 이는 CloudFront 가 us-east-1 리전의
 인증서를 요구하기 때문에 올바르지 않습니다.
-~~~
 
 ---
 
 # Q723 
 
-~~~ 설명
+**정답: A**
+
 https://www.examtopics.com/discussions/amazon/view/35884-exam-aws-certified-solut
 ions-architect-associate-saa-c02/
 설명
@@ -511,13 +511,13 @@ https://docs.aws.amazon.com/ko_kr/AWSCloudFormation/latest/UserGuide/aws-resourc
 "클러스터 배치 그룹은 네트워크 대기 시간이 짧고 네트워크 처리량이 높은 단일 가용 영역
 내 인스턴스의 논리적 그룹입니다."
 -> 긴밀하게 결합된 노드 = Cluster Deployment Group.
-~~~
 
 ---
 
 # Q724 
 
-~~~ 설명
+**정답: B**
+
 설명:
 AWS Lambda 는 서버를 프로비저닝하거나 관리하지 않고도 코드를 실행할 수 있는
 서버리스 컴퓨팅 서비스입니다. Lambda 는 들어오는 요청에 따라 자동으로 확장되지만
@@ -529,13 +529,13 @@ AWS Lambda 는 서버를 프로비저닝하거나 관리하지 않고도 코드�
 있습니다.
 참조:
 https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html
-~~~
 
 ---
 
 # Q725 
 
-~~~ 설명
+**정답: A**
+
 설명:
 Redis 솔루션용 ElastiCache 에 대해 노드 수준 및 리전 수준에서 고가용성을 제공하기
 때문에 이 대답은 정확합니다. 다중 AZ Redis 복제 그룹은 각각 다른 가용 영역에 있는
@@ -547,4 +547,3 @@ Redis 솔루션용 ElastiCache 에 대해 노드 수준 및 리전 수준에서 
 참조:
 https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html
 https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Shards.html
-~~~

@@ -15,7 +15,7 @@
 | C | Amazon Simple Queue Service(Amazon SQS)를 사용하여 SMS 메시지를 배포합니다. AWS Lambda를 사용하여 응답을 처리합니다. |
 | D | Amazon Simple Notification Service(Amazon SNS) FIFO 주제를 생성합니다. 분석 및 보관을 위해 Amazon Kinesis 데이터 스트림을 SNS 주제에 구독합니다. |
 
-정답: B
+[[answers_3#Q201|정답]]
 
 ---
 
@@ -34,7 +34,7 @@
 | C | AWS Key Management Service(AWS KMS) 고객 관리형 키를 생성합니다. 고객 관리형 KMS 키를 사용하도록 S3 버킷의 기본 암호화 동작을 설정합니다. 데이터를 S3 버킷으로 이동합니다. 매년 KMS 키를 수동으로 교체합니다. |
 | D | 데이터를 S3 버킷으로 이동하기 전에 고객 키 자료로 데이터를 암호화합니다. 키 자료 없이 AWS Key Management Service(AWS KMS) 키를 생성합니다. 고객 키 자료를 KMS 키로 가져옵니다. 자동 키 순환을 활성화합니다. |
 
-정답: B
+[[answers_3#Q202|정답]]
 
 ---
 
@@ -59,7 +59,7 @@ DynamoDB 데이터베이스에 저장합니다.
 | C | Amazon CloudFront 배포를 추가합니다. 오리진을 약속 요청을 수락하는 웹 애플리케이션으로 설정합니다. |
 | D | 회의 초대를 보내는 애플리케이션에 대한 Auto Scaling 그룹을 추가합니다. SQS 대기열의 깊이에 따라 확장되도록 Auto Scaling 그룹을 구성합니다. |
 
-정답: D
+[[answers_3#Q203|정답]]
 
 ---
 
@@ -82,7 +82,7 @@ S3에 저장합니다. 추가 고객 데이터는 Amazon RDS에 저장됩니다.
 | C | AWS Lake Formation 을 사용하여 데이터 레이크를 생성합니다. Amazon RDS 에 대한 AWS Glue JDBC 연결을 생성합니다. Lake Formation 에 S3 버킷을 등록합니다. Lake Formation 액세스 제어를 사용하여 액세스를 제한하십시오. |
 | D | Amazon Redshift 클러스터를 생성합니다. Amazon S3 및 Amazon RDS 에서 Amazon Redshift 로 데이터를 주기적으로 복사하도록 AWS Lambda 함수를 예약합니다. Amazon Redshift 액세스 제어를 사용하여 액세스를 제한하십시오. |
 
-정답: C
+[[answers_3#Q204|정답]]
 
 ---
 
@@ -106,7 +106,7 @@ S3에 저장합니다. 추가 고객 데이터는 Amazon RDS에 저장됩니다.
 | C | 프라이빗 Amazon S3 버킷을 생성합니다. S3 버킷 정책을 사용하여 CloudFront 원본 액세스 ID(OAI)에서 액세스를 허용합니다. AWS CLI 를 사용하여 웹사이트 콘텐츠를 업로드합니다. |
 | D | 퍼블릭 Amazon S3 버킷을 생성합니다. SFTP 용 AWS 전송을 구성합니다. 웹 사이트 호스팅을 위해 S3 버킷을 구성합니다. SFTP 클라이언트를 사용하여 웹 사이트 콘텐츠를 업로드합니다. |
 
-정답: C
+[[answers_3#Q205|정답]]
 
 ---
 
@@ -127,7 +127,7 @@ S3에 저장합니다. 추가 고객 데이터는 Amazon RDS에 저장됩니다.
 | C | CreateImage API 호출에 대한 Amazon EventBridge(Amazon CloudWatch Events) 규칙을 생성합니다. CreateImage API 호출이 감지되면 알림을 보내도록 대상을 Amazon Simple Notification Service(Amazon SNS) 주제로 구성합니다. |
 | D | Amazon Simple Queue Service(Amazon SQS) FIFO 대기열을 AWS CloudTrail 로그의 대상으로 구성합니다. CreateImage API 호출이 감지되면 Amazon Simple Notification Service(Amazon SNS) 주제에 알림을 보내는 AWS Lambda 함수를 생성합니다. |
 
-정답: C
+[[answers_3#Q206|정답]]
 
 ---
 
@@ -152,7 +152,7 @@ Gateway를 사용하여 API 프런트 엔드를 배포하고 Amazon DynamoDB를 
 | C | 사용자 요청이 있는 테이블에 대해 DynamoDB에서 보조 인덱스를 생성합니다. |
 | D | Amazon Simple Queue Service(Amazon SQS) 대기열과 Lambda 를 사용하여 DynamoDB에 대한 쓰기를 버퍼링합니다. |
 
-정답: D
+[[answers_3#Q207|정답]]
 
 ---
 
@@ -172,7 +172,7 @@ API 호출 및 데이터가 공용 인터넷 경로를 통해 라우팅되지 �
 | C | EC2 인스턴스 내부에서 nslookup 도구를 실행하여 S3 버킷 서비스 API 엔드포인트의 프라이빗 IP 주소를 얻습니다. S3 버킷에 대한 액세스 권한을 EC2 인스턴스에 제공하기 위해 VPC 경로 테이블에 경로를 생성합니다. EC2 인스턴스의 IAM 역할만 액세스할 수 있도록 리소스 정책을 S3 버킷에 연결합니다. |
 | D | AWS 에서 제공하고 공개적으로 사용 가능한 ip-ranges.json 파일을 사용하여 S3 버킷 서비스 API 엔드포인트의 프라이빗 IP 주소를 얻습니다. S3 버킷에 대한 액세스 권한을 EC2 인스턴스에 제공하기 위해 VPC 경로 테이블에 경로를 생성합니다. EC2 인스턴스의 IAM 역할만 액세스할 수 있도록 리소스 정책을 S3 버킷에 연결합니다. |
 
-정답: A
+[[answers_3#Q208|정답]]
 
 ---
 
@@ -195,7 +195,7 @@ Application Load Balancer(ALB)는 부하 분산을 처리합니다. 아키텍처
 | C | AWS Systems Manager의 Session Manager를 사용하여 세션을 관리합니다. |
 | D | AWS Security Token Service(AWS STS)에서 GetSessionToken API 작업을 사용하여 세션을 관리합니다. |
 
-정답: A
+[[answers_3#Q209|정답]]
 
 ---
 
@@ -224,7 +224,7 @@ Amazon EC2 인스턴스 그룹입니다.
 | C | 두 개의 Amazon Simple Queue Service(Amazon SQS) 대기열을 프로비저닝합니다. 하나는 주문 수집용이고 다른 하나는 주문 이행용입니다. 각 대기열을 폴링하도록 EC2 인스턴스를 구성합니다. 대기열이 보내는 알림을 기반으로 Auto Scaling 그룹을 조정합니다. |
 | D | 2개의 Amazon Simple Queue Service(Amazon SQS) 대기열을 프로비저닝합니다. 하나는 주문 수집용이고 다른 하나는 주문 이행용입니다. 각 대기열을 폴링하도록 EC2 인스턴스를 구성합니다. 인스턴스 계산당 백로그를 기반으로 지표를 만듭니다. 이 지표를 기반으로 Auto Scaling 그룹을 조정합니다. |
 
-정답: D
+[[answers_3#Q210|정답]]
 
 ---
 
@@ -247,7 +247,7 @@ Service(Amazon SNS) 및 Amazon Simple Queue Service(Amazon SQS)의 리소스로
 | C | Amazon CloudWatch Logs Insights에서 쿼리를 실행하여 애플리케이션 태그가 있는 구성 요소에 대해 보고합니다. |
 | D | AWS Resource Groups Tag Editor 로 쿼리를 실행하여 애플리케이션 태그를 사용하여 전역적으로 리소스에 대해 보고합니다. |
 
-정답: D
+[[answers_3#Q211|정답]]
 
 ---
 
@@ -269,7 +269,7 @@ Service(Amazon SNS) 및 Amazon Simple Queue Service(Amazon SQS)의 리소스로
 | C | S3 표준(S3 Standard) |
 | D | S3 Standard-Infrequent Access(S3 Standard-IA) |
 
-정답: A
+[[answers_3#Q212|정답]]
 
 ---
 
@@ -291,7 +291,7 @@ Service(Amazon SNS) 및 Amazon Simple Queue Service(Amazon SQS)의 리소스로
 | C | AWS Shield Advanced를 배포하고 ALB를 보호된 리소스로 추가합니다. |
 | D | 타사 방화벽을 실행하는 Amazon EC2 인스턴스로 트래픽을 보낸 다음 트래픽을 현재 ALB로 전달하는 새 ALB를 생성합니다. |
 
-정답: A
+[[answers_3#Q213|정답]]
 
 ---
 
@@ -311,7 +311,7 @@ Service(Amazon SNS) 및 Amazon Simple Queue Service(Amazon SQS)의 리소스로
 | C | AWS Batch 를 사용하여 Bash 구문으로 작업 정의를 생성하여 데이터를 변환하고 데이터를 변환된 데이터 버킷으로 출력합니다. 작업 정의를 사용하여 작업을 제출합니다. 어레이 작업을 작업 유형으로 지정합니다. |
 | D | 데이터를 변환하고 변환된 데이터 버킷으로 데이터를 출력하는 AWS Lambda 함수를 생성합니다. S3 버킷에 대한 이벤트 알림을 구성합니다. 이벤트 알림의 대상으로 Lambda 함수를 지정합니다. |
 
-정답: B
+[[answers_3#Q214|정답]]
 
 ---
 
@@ -334,7 +334,7 @@ Service(Amazon SNS) 및 Amazon Simple Queue Service(Amazon SQS)의 리소스로
 | C | 500Mbps AWS Direct Connect 연결을 프로비저닝하고 데이터를 Amazon S3 로 전송합니다. 수명 주기 정책을 사용하여 파일을 Amazon S3 Glacier Deep Archive 로 전환합니다. |
 | D | AWS DataSync 를 사용하여 데이터를 전송하고 온프레미스에 DataSync 에이전트를 배포합니다. DataSync 작업을 사용하여 온프레미스 NAS 스토리지에서 Amazon S3 Glacier로 파일을 복사합니다. |
 
-정답: A
+[[answers_3#Q215|정답]]
 
 ---
 
@@ -355,7 +355,7 @@ Service(Amazon SNS) 및 Amazon Simple Queue Service(Amazon SQS)의 리소스로
 | C | AWS Key Management Service(AWS KMS)를 사용하여 새 암호화 키를 생성합니다. AWS KMS 관리형 암호화 키(SSE-KMS)로 서버 측 암호화를 사용하도록 S3 버킷의 설정을 변경합니다. S3 버킷에 대한 버전 관리를 켭니다. |
 | D | AWS Management Console에서 Amazon S3로 이동합니다. S3 버킷의 객체를 찾습니다. 암호화 필드를 기준으로 정렬합니다. 암호화되지 않은 각 개체를 선택합니다. 수정 버튼을 사용하여 S3 버킷의 모든 암호화되지 않은 객체에 기본 암호화 설정을 적용합니다. |
 
-정답: B
+[[answers_3#Q216|정답]]
 
 ---
 
@@ -377,7 +377,7 @@ Service(Amazon SNS) 및 Amazon Simple Queue Service(Amazon SQS)의 리소스로
 | C | 두 번째 AWS 리전에서 기본 인프라를 복제합니다. Amazon Route 53 을 사용하여 활성-활성 장애 조치를 구성합니다. 최신 스냅샷에서 복원된 Aurora 데이터베이스를 생성합니다. |
 | D | AWS Backup 으로 데이터를 백업합니다. 백업을 사용하여 두 번째 AWS 리전에 필요한 인프라를 생성합니다. Amazon Route 53을 사용하여 활성-수동 장애 조치를 구성합니다. 두 번째 리전에서 Aurora 두 번째 기본 인스턴스를 생성합니다. |
 
-정답: A
+[[answers_3#Q217|정답]]
 
 ---
 
@@ -399,7 +399,7 @@ Service(Amazon SNS) 및 Amazon Simple Queue Service(Amazon SQS)의 리소스로
 | D | 소스 0.0.0.0/0 에서 대상 0.0.0.0/0 으로 인바운드/아웃바운드 TCP 포트 443 을 허용하도록 네트워크 ACL을 업데이트합니다. |
 | E | 소스 0.0.0.0/0 에서 인바운드 TCP 포트 443 을 허용하고 대상 0.0.0.0/0 으로 아웃바운드 TCP 포트 32768-65535를 허용하도록 네트워크 ACL을 업데이트합니다. |
 
-정답: A
+[[answers_3#Q218|정답]]
 
 ---
 
@@ -421,7 +421,7 @@ Service(Amazon SNS) 및 Amazon Simple Queue Service(Amazon SQS)의 리소스로
 | C | CloudFormation 템플릿을 수정합니다. EC2 인스턴스를 R5 EC2 인스턴스로 교체합니다. Amazon CloudWatch 내장 EC2 메모리 메트릭을 사용하여 향후 용량 계획을 위해 애플리케이션 성능을 추적합니다. |
 | D | CloudFormation 템플릿을 수정합니다. EC2 인스턴스를 R5 EC2 인스턴스로 교체합니다. EC2 인스턴스에 Amazon CloudWatch 에이전트를 배포하여 향후 용량 계획을 위한 사용자 지정 애플리케이션 지연 시간 메트릭을 생성합니다. |
 
-정답: D
+[[answers_3#Q219|정답]]
 
 ---
 
@@ -443,7 +443,7 @@ Service(Amazon SNS) 및 Amazon Simple Queue Service(Amazon SQS)의 리소스로
 | C | Amazon Elastic Kubernetes Service(Amazon EKS)에서 호스팅되는 컨테이너화된 서비스 |
 | D | Amazon EC2와 함께 Amazon ECS에서 호스팅되는 컨테이너화된 서비스 |
 
-정답: B
+[[answers_3#Q220|정답]]
 
 ---
 
@@ -463,7 +463,7 @@ Service(Amazon SNS) 및 Amazon Simple Queue Service(Amazon SQS)의 리소스로
 | C | Amazon EC2 인스턴스 스토어 |
 | D | Amazon S3 |
 
-정답: D
+[[answers_3#Q221|정답]]
 
 ---
 
@@ -483,7 +483,7 @@ Service(Amazon SNS) 및 Amazon Simple Queue Service(Amazon SQS)의 리소스로
 | C | 회사 계정에 IAM 그룹을 생성합니다. 공급업체 계정의 도구 IAM 사용자를 그룹에 추가합니다. 공급업체에 필요한 권한에 대해 적절한 IAM 정책을 그룹에 연결합니다. |
 | D | IAM 콘솔에서 공급자 유형으로 "AWS 계정"을 선택하여 새 자격 증명 공급자를 만듭니다. 공급업체의 AWS 계정 ID 와 사용자 이름을 제공합니다. 벤더가 요구하는 권한에 대해 적절한 IAM 정책을 새 제공자에 연결하십시오. |
 
-정답: A
+[[answers_3#Q222|정답]]
 
 ---
 
@@ -506,7 +506,7 @@ Amazon DynamoDB 테이블에 데이터를 써야 합니다. 솔루션 설계자�
 | D | DynamoDB용 VPC 엔드포인트를 생성합니다. |
 | E | Java Spring Boot 코드에 액세스 키를 삽입합니다. |
 
-정답: A
+[[answers_3#Q223|정답]]
 
 ---
 
@@ -529,7 +529,7 @@ EC2 인스턴스에 무작위로 도달해야 합니다.
 | D | 3 개의 EC2 인스턴스를 시작합니다. 하나의 가용 영역에 있는 2 개의 인스턴스와 다른 가용 영역에 있는 하나의 인스턴스입니다. |
 | E | 4 개의 EC2 인스턴스를 시작합니다. 하나의 가용 영역에 2 개의 인스턴스와 다른 가용 영역에 2개의 인스턴스가 있습니다. |
 
-정답: C
+[[answers_3#Q224|정답]]
 
 ---
 
@@ -550,7 +550,7 @@ EC2 인스턴스에 무작위로 도달해야 합니다.
 | C | 활동 데이터를 Amazon S3 버킷에 배치합니다. 데이터가 S3 버킷에 도착하면 데이터에서 AWS Lambda 함수를 실행하도록 Amazon S3를 구성합니다. |
 | D | 여러 가용 영역에 분산된 Amazon EC2 인스턴스에서 수집 서비스를 생성합니다. 데이터를 Amazon RDS 다중 AZ 데이터베이스로 전달하도록 서비스를 구성합니다. |
 
-정답: B
+[[answers_3#Q225|정답]]
 
 ---
 
@@ -574,7 +574,7 @@ EC2 인스턴스에 무작위로 도달해야 합니다.
 | D | 원시 데이터를 Amazon Simple Queue Service(Amazon SQS)로 보냅니다. EC2 인스턴스를 사용하여 데이터를 처리합니다. |
 | E | Amazon API Gateway 를 사용하여 원시 데이터를 Amazon Kinesis 데이터 스트림으로 보냅니다. 데이터 스트림을 소스로 사용하여 데이터를 Amazon S3 에 전달하도록 Amazon Kinesis Data Firehose를 구성합니다. |
 
-정답: A
+[[answers_3#Q226|정답]]
 
 ---
 
@@ -597,7 +597,7 @@ S3 버킷에 전달되는 새 CloudTrail 로그의 수는 일관되게 유지되
 | C | Amazon S3 에서 3 년 이상 된 객체를 열거하고 삭제하는 AWS Lambda 함수를 생성합니다. |
 | D | 상위 계정을 S3 버킷으로 전달되는 모든 객체의 소유자로 구성합니다. |
 
-정답: B
+[[answers_3#Q227|정답]]
 
 ---
 
@@ -621,7 +621,7 @@ API 로 보내는 데이터의 양은 변동합니다. 트래픽이 많은 기�
 | C | 수신 데이터를 Amazon Simple Queue Service(Amazon SQS) 대기열에 쓰도록 API 를 수정합니다. Amazon SQS 가 호출하는 AWS Lambda 함수를 사용하여 대기열에서 데이터베이스로 데이터를 씁니다. |
 | D | 수신 데이터를 Amazon Simple Notification Service(Amazon SNS) 주제에 쓰도록 API를 수정합니다. Amazon SNS 가 호출하는 AWS Lambda 함수를 사용하여 주제에서 데이터베이스로 데이터를 씁니다. |
 
-정답: C
+[[answers_3#Q228|정답]]
 
 ---
 
@@ -643,7 +643,7 @@ API 로 보내는 데이터의 양은 변동합니다. 트래픽이 많은 기�
 | C | 데이터베이스를 하나의 더 큰 MySQL 데이터베이스로 결합합니다. 더 큰 EC2 인스턴스에서 더 큰 데이터베이스를 실행합니다. |
 | D | 데이터베이스 계층에 대한 EC2 Auto Scaling 그룹을 생성합니다. 기존 데이터베이스를 새 환경으로 마이그레이션합니다. |
 
-정답: A
+[[answers_3#Q229|정답]]
 
 ---
 
@@ -663,7 +663,7 @@ API 로 보내는 데이터의 양은 변동합니다. 트래픽이 많은 기�
 | C | 2개의 NAT 인스턴스를 제거하고 서로 다른 가용 영역에 있는 2개의 NAT 게이트웨이로 교체합니다. |
 | D | 두 개의 NAT 인스턴스를 서로 다른 가용 영역의 스팟 인스턴스로 교체하고 Network Load Balancer를 배포합니다. |
 
-정답: C
+[[answers_3#Q230|정답]]
 
 ---
 
@@ -683,7 +683,7 @@ API 로 보내는 데이터의 양은 변동합니다. 트래픽이 많은 기�
 | C | DB 인스턴스를 공개적으로 액세스할 수 있도록 합니다. 퍼블릭 IP 주소를 DB 인스턴스에 할당합니다. |
 | D | 탄력적 IP 주소가 있는 EC2 인스턴스를 VPC B로 시작합니다. 새 EC2 인스턴스를 통해 모든 요청을 프록시합니다. |
 
-정답: B
+[[answers_3#Q231|정답]]
 
 ---
 
@@ -702,7 +702,7 @@ VPC 에서 격리됩니다. 환경에 대한 RDP 또는 SSH 액세스가 설정�
 | C | Amazon CloudWatch Logs 에 VPC 흐름 로그를 게시합니다. 필요한 메트릭 필터를 만듭니다. 경보가 ALARM 상태일 때 알림 작업이 포함된 Amazon CloudWatch 지표 경보를 생성합니다. |
 | D | EC2 인스턴스 상태 변경 알림 유형의 이벤트를 수신하도록 Amazon EventBridge 규칙을 구성합니다. Amazon Simple Notification Service(Amazon SNS) 주제를 대상으로 구성합니다. 주제에 대한 운영 팀을 구독하십시오. |
 
-정답: C
+[[answers_3#Q232|정답]]
 
 ---
 
@@ -722,7 +722,7 @@ VPC 에서 격리됩니다. 환경에 대한 RDP 또는 SSH 액세스가 설정�
 | D | 관리 권한이 포함된 그룹에 루트 사용자를 추가합니다. |
 | E | 인라인 정책 문서를 사용하여 루트 사용자에게 필요한 권한을 적용합니다. |
 
-정답: A
+[[answers_3#Q233|정답]]
 
 ---
 
@@ -744,7 +744,7 @@ Store(Amazon EBS) 볼륨이 지원하는 여러 Amazon EC2 인스턴스를 사�
 | C | AWS Key Management Service(AWS KMS)를 사용하여 유휴 상태의 EBS 볼륨 및 Aurora 데이터베이스 스토리지를 암호화합니다. ALB 에 AWS Certificate Manager(ACM) 인증서를 연결하여 전송 중인 데이터를 암호화합니다. |
 | D | BitLocker 를 사용하여 유휴 상태의 모든 데이터를 암호화합니다. 회사의 TLS 인증서 키를 AWS Key Management Service(AWS KMS)로 가져옵니다. KMS 키를 ALB에 연결하여 전송 중인 데이터를 암호화합니다. |
 
-정답: C
+[[answers_3#Q234|정답]]
 
 ---
 
@@ -766,7 +766,7 @@ Store(Amazon EBS) 볼륨이 지원하는 여러 Amazon EC2 인스턴스를 사�
 | C | 메모리 최적화 복제 인스턴스를 사용하여 AWS DMS(AWS Database Migration Service)와 함께 AWS Schema Conversion Tool 을 사용합니다. 전체 로드 및 CDC(변경 데이터 캡처) 복제 작업과 테이블 매핑을 생성하여 모든 테이블을 선택합니다. |
 | D | 컴퓨팅 최적화 복제 인스턴스를 사용하여 AWS DMS(AWS Database Migration Service)와 함께 AWS Schema Conversion Tool 을 사용합니다. 전체 로드 및 변경 데이터 캡처(CDC) 복제 작업과 테이블 매핑을 생성하여 가장 큰 테이블을 선택합니다. |
 
-정답: C
+[[answers_3#Q235|정답]]
 
 ---
 
@@ -788,7 +788,7 @@ Store(Amazon EBS) 볼륨이 지원하는 여러 Amazon EC2 인스턴스를 사�
 | C | Amazon S3 를 사용하여 프런트 엔드 계층을 호스팅합니다. 애플리케이션 계층에 대한 Auto Scaling 그룹의 EC2 인스턴스 플릿을 사용합니다. 데이터베이스를 메모리 최적화 인스턴스 유형으로 이동하여 사용자 이미지를 저장하고 제공합니다. |
 | D | 프런트엔드 계층과 애플리케이션 계층에 로드 밸런싱된 다중 AZ AWS Elastic Beanstalk 환경을 사용합니다. 데이터베이스를 Amazon RDS 다중 AZ DB 인스턴스로 이동합니다. Amazon S3를 사용하여 사용자 이미지를 저장하고 제공합니다. |
 
-정답: D
+[[answers_3#Q236|정답]]
 
 ---
 
@@ -809,7 +809,7 @@ VPC-A 의 Amazon EC2 인스턴스에서 실행 중인 애플리케이션은 VPC-
 | C | 가상 프라이빗 게이트웨이를 VPC-B에 연결하고 VPC-A에서 라우팅을 설정합니다. |
 | D | VPC-B에서 실행 중인 EC2 인스턴스에 대한 프라이빗 가상 인터페이스(VIF)를 생성하고 VPC-A에서 적절한 경로를 추가합니다. |
 
-정답: A
+[[answers_3#Q237|정답]]
 
 ---
 
@@ -830,7 +830,7 @@ Amazon EC2 인스턴스 사용량이 각 계정의 특정 임계값을 초과하
 | C | AWS 예산을 사용하여 각 계정에 대한 비용 예산을 생성합니다. 기간을 매월로 설정합니다. 범위를 EC2 인스턴스로 설정합니다. 예산에 대한 경고 임계값을 설정합니다. 임계값 초과 시 알림을 받도록 Amazon Simple Notification Service(Amazon SNS) 주제를 구성합니다. |
 | D | AWS 비용 및 사용 보고서를 사용하여 시간 단위로 보고서를 생성합니다. 보고서 데이터를 Amazon Athena 와 통합합니다. Amazon EventBridge를 사용하여 Athena 쿼리를 예약합니다. 임계값 초과 시 알림을 받도록 Amazon Simple Notification Service(Amazon SNS) 주제를 구성합니다. |
 
-정답: C
+[[answers_3#Q238|정답]]
 
 ---
 
@@ -852,7 +852,7 @@ Amazon EC2 인스턴스 사용량이 각 계정의 특정 임계값을 초과하
 | C | Amazon CloudFront 배포를 생성합니다. 함수를 Lambda@Edge에 배포합니다. IAM 인증 로직을 Lambda@Edge 함수에 통합합니다. |
 | D | Amazon CloudFront 배포를 생성합니다. CloudFront Functions 에 함수를 배포합니다. 인증 유형으로 AWS_IAM을 지정합니다. |
 
-정답: A
+[[answers_3#Q239|정답]]
 
 ---
 
@@ -874,7 +874,7 @@ AWS Direct Connect 연결도 있습니다. 본사 사용자는 시각화 도구�
 | C | 온프레미스에서 시각화 도구를 호스팅하고 동일한 AWS 리전의 위치에서 Direct Connect 연결을 통해 직접 데이터 웨어하우스를 쿼리합니다. |
 | D | 데이터 웨어하우스와 동일한 AWS 리전에서 시각화 도구를 호스팅하고 동일한 리전의 위치에서 Direct Connect 연결을 통해 액세스합니다. |
 
-정답: D
+[[answers_3#Q240|정답]]
 
 ---
 
@@ -894,7 +894,7 @@ AWS Direct Connect 연결도 있습니다. 본사 사용자는 시각화 도구�
 | C | PostgreSQL 데이터베이스를 Amazon RDS for PostgreSQL DB 인스턴스로 마이그레이션합니다. 다른 리전에서 읽기 전용 복제본을 생성합니다. |
 | D | PostgreSQL 데이터베이스를 Amazon RDS for PostgreSQL DB 인스턴스로 마이그레이션합니다. 다른 리전에 복사할 DB 스냅샷을 설정합니다. |
 
-정답: C
+[[answers_3#Q241|정답]]
 
 ---
 
@@ -914,7 +914,7 @@ AWS Direct Connect 연결도 있습니다. 본사 사용자는 시각화 도구�
 | C | 다중값 라우팅 정책(Multivalue routing policy) |
 | D | 지리적 위치 라우팅 정책(Geolocation routing policy) |
 
-정답: C
+[[answers_3#Q242|정답]]
 
 ---
 
@@ -935,7 +935,7 @@ AWS Direct Connect 연결도 있습니다. 본사 사용자는 시각화 도구�
 | C | 각 클리닉에서 온프레미스로 AWS Storage Gateway 볼륨 게이트웨이를 가상 머신(VM)으로 배포합니다. |
 | D | Amazon Elastic File System(Amazon EFS) 파일 시스템을 각 클리닉의 온프레미스 서버에 연결합니다. |
 
-정답: A
+[[answers_3#Q243|정답]]
 
 ---
 
@@ -956,7 +956,7 @@ AWS Direct Connect 연결도 있습니다. 본사 사용자는 시각화 도구�
 | C | 다른 가용 영역에 읽기 전용 복제본이 있는 Amazon Aurora 로 데이터베이스를 이동합니다. EC2 인스턴스에서 Amazon 머신 이미지(AMI)를 생성합니다. 두 가용 영역에서 Application Load Balancer를 구성합니다. 두 가용 영역에서 AMI를 사용하는 Auto Scaling 그룹을 연결합니다. |
 | D | 데이터베이스를 별도의 EC2 인스턴스로 이동하고 Amazon S3 로 백업을 예약합니다. 원래 EC2 인스턴스에서 Amazon 머신 이미지(AMI)를 생성합니다. 두 가용 영역에서 Application Load Balancer를 구성합니다. 두 가용 영역에서 AMI를 사용하는 Auto Scaling 그룹을 연결합니다. |
 
-정답: C
+[[answers_3#Q244|정답]]
 
 ---
 
@@ -977,7 +977,7 @@ Balancer(ALB)를 사용하여 단일 대상 그룹에 있는 최소 2 개의 Ama
 | C | 두 환경 모두에서 EC2 인스턴스의 크기를 줄입니다. |
 | D | 개발 환경의 Auto Scaling 그룹에서 최대 EC2 인스턴스 수를 줄입니다. |
 
-정답: A
+[[answers_3#Q245|정답]]
 
 ---
 
@@ -998,7 +998,7 @@ ALB(Application Load Balancer)를 구현하고 EC2 인스턴스를 대상 그룹
 | C | 인터넷 게이트웨이 경로를 통해 0.0.0.0/0 트래픽을 보내도록 EC2 인스턴스의 서브넷에 대한 경로 테이블을 업데이트합니다. EC2 인스턴스의 보안 그룹에 규칙을 추가하여 0.0.0.0/0으로의 아웃바운드 트래픽을 허용합니다. |
 | D | 각 가용 영역에서 퍼블릭 서브넷을 생성합니다. 퍼블릭 서브넷을 ALB 와 연결합니다. 프라이빗 서브넷에 대한 경로로 퍼블릭 서브넷에 대한 경로 테이블을 업데이트합니다. |
 
-정답: D
+[[answers_3#Q246|정답]]
 
 ---
 
@@ -1020,7 +1020,7 @@ ALB(Application Load Balancer)를 구현하고 EC2 인스턴스를 대상 그룹
 | D | 글로벌 테이블을 생성하고 테이블을 사용할 수 있는 AWS 리전을 지정합니다. |
 | E | 백업 보존 기간을 0 이외의 값으로 설정하여 원본 인스턴스에서 자동 백업을 활성화합니다. |
 
-정답: C
+[[answers_3#Q247|정답]]
 
 ---
 
@@ -1042,7 +1042,7 @@ S3 에 업로드된 데이터를 처리하기 위해 사용자의 작업 요청�
 | C | EC2 인스턴스를 중지합니다. CPU 와 메모리가 더 강력한 인스턴스 유형으로 인스턴스 유형을 수정합니다. 인스턴스를 다시 시작하십시오. |
 | D | 들어오는 요청을 Amazon Simple Queue Service(Amazon SQS)로 라우팅합니다. 대기열 크기에 따라 EC2 Auto Scaling 그룹을 구성합니다. 대기열에서 읽을 수 있도록 소프트웨어를 업데이트합니다. |
 
-정답: D
+[[answers_3#Q248|정답]]
 
 ---
 
@@ -1062,7 +1062,7 @@ S3 에 업로드된 데이터를 처리하기 위해 사용자의 작업 요청�
 | C | Amazon EC2 Windows 인스턴스를 생성합니다. 인스턴스에 Windows 파일 공유 역할을 설치하고 구성합니다. 응용 프로그램 서버를 파일 공유에 연결합니다. |
 | D | Windows 파일 서버 파일 시스템용 Amazon FSx 를 생성합니다. 원본 서버에 파일 시스템을 연결합니다. 애플리케이션 서버를 파일 시스템에 연결하십시오. |
 
-정답: D
+[[answers_3#Q249|정답]]
 
 ---
 
@@ -1082,7 +1082,7 @@ S3 에 업로드된 데이터를 처리하기 위해 사용자의 작업 요청�
 | C | AWS CloudTrail 을 대상으로 사용합니다. Amazon S3 버킷에 저장하도록 CloudTrail 을 구성하고 S3 Intelligent-Tiering을 활성화합니다. |
 | D | Amazon S3를 대상으로 사용합니다. S3 수명 주기 정책을 활성화하여 90일 후에 로그를 S3 Standard-Infrequent Access(S3 Standard-IA)로 전환합니다. |
 
-정답: D
+[[answers_3#Q250|정답]]
 
 ---
 
@@ -1102,7 +1102,7 @@ Amazon EC2 인스턴스는 새 VPC 의 프라이빗 서브넷에 있습니다. �
 | C | NAT 인스턴스를 생성하고 EC2 인스턴스가 있는 동일한 서브넷에 배치합니다. NAT 인스턴스를 기본 경로로 사용하도록 프라이빗 서브넷 경로 테이블을 구성합니다. |
 | D | 인터넷 게이트웨이를 생성하고 VPC 에 연결합니다. NAT 인스턴스를 생성하고 EC2 인스턴스가 있는 동일한 서브넷에 배치합니다. 인터넷 게이트웨이를 기본 경로로 사용하도록 프라이빗 서브넷 경로 테이블을 구성합니다. |
 
-정답: B
+[[answers_3#Q251|정답]]
 
 ---
 
@@ -1123,7 +1123,7 @@ Amazon EC2 인스턴스는 새 VPC 의 프라이빗 서브넷에 있습니다. �
 | C | Amazon S3 Glacier Deep 아카이브(Amazon S3 Glacier Deep Archive) |
 | D | AWS 백업(AWS Backup) |
 
-정답: A
+[[answers_3#Q252|정답]]
 
 ---
 
@@ -1143,7 +1143,7 @@ Amazon EC2 인스턴스는 새 VPC 의 프라이빗 서브넷에 있습니다. �
 | C | Amazon EC2 인스턴스 삭제 |
 | D | Amazon CloudWatch Logs에서 로그 삭제 |
 
-정답: C
+[[answers_3#Q253|정답]]
 
 ---
 
@@ -1163,7 +1163,7 @@ Amazon EC2 인스턴스는 새 VPC 의 프라이빗 서브넷에 있습니다. �
 | C | VPC CIDR 블록을 소스 또는 대상으로 사용하여 보안 그룹 규칙을 생성합니다. |
 | D | 서브넷 CIDR 블록을 소스 또는 대상으로 사용하여 보안 그룹 규칙을 생성합니다. |
 
-정답: B
+[[answers_3#Q254|정답]]
 
 ---
 
@@ -1185,7 +1185,7 @@ Amazon EC2 인스턴스는 새 VPC 의 프라이빗 서브넷에 있습니다. �
 | C | 데이터베이스에 주문을 저장합니다. 주문 번호가 포함된 메시지를 Amazon Simple Notification Service(Amazon SNS)로 보냅니다. Amazon SNS를 폴링하고 메시지를 검색하고 주문을 처리하도록 결제 서비스를 설정합니다. |
 | D | 데이터베이스에 주문을 저장합니다. 주문 번호가 포함된 메시지를 Amazon Simple Queue Service(Amazon SQS) FIFO 대기열로 보냅니다. 메시지를 검색하고 주문을 처리하도록 결제 서비스를 설정합니다. 대기열에서 메시지를 삭제합니다. |
 
-정답: D
+[[answers_3#Q255|정답]]
 
 ---
 
@@ -1207,7 +1207,7 @@ Amazon EC2 인스턴스는 새 VPC 의 프라이빗 서브넷에 있습니다. �
 | D | 버킷에서 MFA 삭제를 활성화합니다. |
 | E | AWS KMS를 사용하여 버킷을 암호화합니다. |
 
-정답: B
+[[answers_3#Q256|정답]]
 
 ---
 
@@ -1230,7 +1230,7 @@ Amazon EC2 인스턴스는 새 VPC 의 프라이빗 서브넷에 있습니다. �
 | C | Amazon EventBridge 규칙을 생성하여 일정에 따라 AWS Lambda 함수를 호출합니다. EC2 Auto Scaling 상태 데이터를 Amazon S3로 직접 보내도록 Lambda 함수를 구성합니다. |
 | D | EC2 인스턴스를 시작하는 동안 부트스트랩 스크립트를 사용하여 Amazon Kinesis 에이전트를 설치합니다. EC2 Auto Scaling 상태 데이터를 수집하고 데이터를 Amazon Kinesis Data Firehose로 보내도록 Kinesis 에이전트를 구성합니다. 데이터를 Amazon S3에 저장합니다. |
 
-정답: A
+[[answers_3#Q257|정답]]
 
 ---
 
@@ -1250,7 +1250,7 @@ Parquet 형식으로 변환하고 출력 파일을 S3 버킷에 배치해야 합
 | C | 애플리케이션이 .csv 파일을 배치하는 S3 버킷에 대한 AWS Glue 테이블과 AWS Glue 크롤러를 생성합니다. Amazon Athena를 주기적으로 사용하여 AWS Glue 테이블을 쿼리하고, 쿼리 결과를 Parquet 형식으로 변환하고, 출력 파일을 S3 버킷에 배치하도록 AWS Lambda 함수를 예약합니다. |
 | D | AWS Glue 추출, 변환 및 로드(ETL) 작업을 생성하여 .csv 파일을 Parquet 형식으로 변환하고 출력 파일을 S3 버킷에 배치합니다. 각 S3 PUT 이벤트에 대한 AWS Lambda 함수를 생성하여 ETL 작업을 호출합니다. |
 
-정답: D
+[[answers_3#Q258|정답]]
 
 ---
 
@@ -1270,7 +1270,7 @@ Parquet 형식으로 변환하고 출력 파일을 S3 버킷에 배치해야 합
 | C | 만료 기간이 2 년인 Amazon CloudWatch Logs 에 자동으로 백업되도록 데이터베이스 트랜잭션 로그를 구성합니다. |
 | D | AWS Database Migration Service(AWS DMS) 복제 작업을 구성합니다. 복제 인스턴스를 배포하고 변경 데이터 캡처(CDC) 작업을 구성하여 데이터베이스 변경 사항을 대상으로 Amazon S3 에 스트리밍합니다. 2 년 후 스냅샷을 삭제하도록 S3 수명 주기 정책을 구성합니다. |
 
-정답: A
+[[answers_3#Q259|정답]]
 
 ---
 
@@ -1294,7 +1294,7 @@ SMB 규정 준수 공유, 폴더 및 파일에 대한 액세스를 제한하는�
 | C | 액세스를 제한하기 위해 FSx for Windows File Server 에 직접 연결된 IAM 서비스 연결 역할을 생성합니다. |
 | D | 파일 시스템을 Active Directory에 연결하여 액세스를 제한합니다. |
 
-정답: D
+[[answers_3#Q260|정답]]
 
 ---
 
@@ -1318,7 +1318,7 @@ SMB 규정 준수 공유, 폴더 및 파일에 대한 액세스를 제한하는�
 | D | AWS Global Accelerator 를 구성합니다. NLB(Network Load Balancer)에 요청을 전달합니다. 다른 EC2 인스턴스에 대한 호스트 기반 라우팅을 설정하도록 NLB 를 구성합니다. |
 | E | AWS Global Accelerator 를 구성합니다. NLB(Network Load Balancer)에 요청을 전달합니다. 다른 EC2 인스턴스에 대한 경로 기반 라우팅을 설정하도록 NLB 를 구성합니다. |
 
-정답: A
+[[answers_3#Q261|정답]]
 
 ---
 
@@ -1340,7 +1340,7 @@ VPC를 생성합니다. 두 VPC 모두 us-east-1 리전에 있습니다.
 | C | VPC 간에 피어링 연결을 생성합니다. 두 VPC 모두에서 피어링 연결을 위한 라우팅 테이블 항목을 추가합니다. 애플리케이션의 보안 그룹에서 인바운드 연결을 허용하도록 피어링 연결의 보안 그룹에 대한 인바운드 규칙을 구성합니다. |
 | D | 전송 VPC 를 생성합니다. 전송 VPC 를 통해 트래픽을 라우팅하도록 캐시 VPC 및 앱 VPC 의 VPC 라우팅 테이블을 업데이트합니다. 애플리케이션의 보안 그룹에서 인바운드 연결을 허용하도록 Transit VPC의 보안 그룹에 대한 인바운드 규칙을 구성합니다. |
 
-정답: A
+[[answers_3#Q262|정답]]
 
 ---
 
@@ -1363,7 +1363,7 @@ VPC를 생성합니다. 두 VPC 모두 us-east-1 리전에 있습니다.
 | D | Fargate 시작 유형으로 Amazon Elastic Container Service(Amazon ECS) 서비스를 배포합니다. 2보다 크거나 같은 원하는 태스크 번호 레벨을 지정하십시오. |
 | E | 여러 가용 영역에 걸쳐 있는 Amazon EC2 인스턴스에 Kubernetes 작업자 노드를 배포합니다. 각 마이크로 서비스에 대해 두 개 이상의 복제본을 지정하는 배포를 만듭니다. |
 
-정답: A
+[[answers_3#Q263|정답]]
 
 ---
 
@@ -1384,7 +1384,7 @@ VPC를 생성합니다. 두 VPC 모두 us-east-1 리전에 있습니다.
 | C | EC2 인스턴스를 원본으로 사용하여 Amazon CloudFront 배포를 생성합니다. 상태 확인을 EC2 인스턴스와 연결합니다. |
 | D | EC2 인스턴스 앞에서 상태 확인을 통해 Application Load Balancer(ALB)를 생성합니다. 루트 53에서 ALB로 이동합니다. |
 
-정답: D
+[[answers_3#Q264|정답]]
 
 ---
 
@@ -1404,7 +1404,7 @@ VPC를 생성합니다. 두 VPC 모두 us-east-1 리전에 있습니다.
 | C | 프라이빗 서브넷에서 여러 중복 Amazon EC2 인스턴스로 퍼블릭 ALB(Application Load Balancer)를 구성합니다. 퍼블릭 ALB 를 오리진으로 사용하여 HTTPS 콘텐츠를 제공하도록 Amazon CloudFront를 구성합니다. |
 | D | 퍼블릭 서브넷에서 여러 중복 Amazon EC2 인스턴스로 퍼블릭 Application Load Balancer를 구성합니다. EC2 인스턴스를 오리진으로 사용하여 HTTPS 콘텐츠를 제공하도록 Amazon CloudFront를 구성합니다. |
 
-정답: C
+[[answers_3#Q265|정답]]
 
 ---
 
@@ -1427,7 +1427,7 @@ Application Load Balancer(ALB) 뒤에 구성된 Auto Scaling 그룹의 일부인
 | C | Amazon CloudFront 배포를 생성하고 Amazon S3를 원본 서버로 지정합니다. 원본 캐시 헤더를 사용하도록 캐시 동작을 구성합니다. AWS Lambda 함수를 사용하여 트래픽을 최적화하십시오. |
 | D | 애플리케이션의 데이터 저장소 역할을 하도록 Amazon DynamoDB 데이터베이스를 구성합니다. 애플리케이션 데이터를 호스팅하는 DynamoDB 의 인 메모리 캐시 역할을 할 DynamoDB Accelerator(DAX) 클러스터를 생성합니다. |
 
-정답: A
+[[answers_3#Q266|정답]]
 
 ---
 
@@ -1447,7 +1447,7 @@ Application Load Balancer(ALB) 뒤에 구성된 Auto Scaling 그룹의 일부인
 | C | Amazon Kinesis Data Firehose 전송 스트림을 생성하여 Amazon S3 에 데이터를 저장합니다. 데이터를 분석할 Amazon EMR 클러스터를 생성합니다. |
 | D | Amazon Kinesis Data Firehose 전송 스트림을 생성하여 Amazon S3 에 데이터를 저장합니다. 데이터를 분석할 Amazon Kinesis Data Analytics 애플리케이션을 생성합니다. |
 
-정답: D
+[[answers_3#Q267|정답]]
 
 ---
 
@@ -1469,7 +1469,7 @@ for MySQL 데이터베이스에 데이터를 저장합니다. 사용자는 데�
 | C | 애플리케이션을 EC2 인스턴스에서 AWS Lambda로 마이그레이션합니다. |
 | D | MySQL 용 Amazon RDS 에서 Amazon DynamoDB 로 데이터베이스를 마이그레이션합니다. |
 
-정답: B
+[[answers_3#Q268|정답]]
 
 ---
 
@@ -1490,7 +1490,7 @@ for MySQL 데이터베이스에 데이터를 저장합니다. 사용자는 데�
 | C | 기본 데이터베이스의 읽기 복제본을 생성하고 비즈니스 분석가가 쿼리를 실행하도록 합니다. |
 | D | 데이터를 Amazon Redshift 클러스터로 복사하고 비즈니스 분석가가 쿼리를 실행하도록 합니다. |
 
-정답: C
+[[answers_3#Q269|정답]]
 
 ---
 
@@ -1510,7 +1510,7 @@ for MySQL 데이터베이스에 데이터를 저장합니다. 사용자는 데�
 | C | S3 업로드를 위해 S3 관리형 암호화 키(SSE-S3)로 서버 측 암호화를 사용해야 하는 버킷 정책을 만듭니다. |
 | D | 기본 AWS Key Management Service(AWS KMS) 키를 사용하여 S3 버킷을 암호화하는 보안 옵션을 활성화합니다. |
 
-정답: A
+[[answers_3#Q270|정답]]
 
 ---
 
@@ -1532,7 +1532,7 @@ for MySQL 데이터베이스에 데이터를 저장합니다. 사용자는 데�
 | C | 원하는 컴퓨팅 수준으로 확장하도록 예약된 확장을 구성합니다. |
 | D | 각 조정 작업 중에 더 많은 EC2 인스턴스를 추가하도록 조정 정책을 변경합니다. |
 
-정답: C
+[[answers_3#Q271|정답]]
 
 ---
 
@@ -1555,7 +1555,7 @@ for MySQL 데이터베이스에 데이터를 저장합니다. 사용자는 데�
 | C | ALB와 통합되는 Amazon API Gateway API를 생성합니다. HTTP 통합 유형을 사용하도록 API 를 구성합니다. Accept-Language 요청 헤더를 기반으로 API 캐시를 활성화하도록 API Gateway 단계를 설정합니다. |
 | D | 각 추가 지역에서 EC2 인스턴스를 시작하고 해당 지역의 캐시 서버 역할을 하도록 NGINX를 구성합니다. 지리적 위치 라우팅 정책을 사용하여 Amazon Route 53 레코드 세트 뒤에 모든 EC2 인스턴스와 ALB를 배치합니다. |
 
-정답: B
+[[answers_3#Q272|정답]]
 
 ---
 
@@ -1577,7 +1577,7 @@ for MySQL 데이터베이스에 데이터를 저장합니다. 사용자는 데�
 | C | 파일럿 라이트 배포와 함께 Amazon RDS 다중 AZ DB 인스턴스를 사용합니다. |
 | D | 웜 대기 배포와 함께 Amazon RDS 다중 AZ DB 인스턴스를 사용합니다. |
 
-정답: B
+[[answers_3#Q273|정답]]
 
 ---
 
@@ -1598,7 +1598,7 @@ for MySQL 데이터베이스에 데이터를 저장합니다. 사용자는 데�
 | C | 보조 AWS 리전에서 EC2 인스턴스를 시작합니다. 보조 리전의 EC2 인스턴스를 항상 활성 상태로 유지하십시오. |
 | D | 보조 가용 영역에서 EC2 인스턴스를 시작합니다. 보조 가용 영역의 EC2 인스턴스를 항상 활성 상태로 유지합니다. |
 
-정답: B
+[[answers_3#Q274|정답]]
 
 ---
 
@@ -1621,7 +1621,7 @@ Load Balancer 뒤의 Amazon EC2 인스턴스에서 실행됩니다. 인스턴스
 | C | 더 낮은 CPU 임계값에서 트리거되는 대상 추적 작업을 구현하고 휴지 기간을 줄입니다. |
 | D | 사무실이 열리기 직전에 최소 및 최대 수용 인원을 20 명으로 설정하는 예약 조치를 구현합니다. |
 
-정답: C
+[[answers_3#Q275|정답]]
 
 ---
 
@@ -1647,7 +1647,7 @@ Load Balancer 뒤의 Amazon EC2 인스턴스에서 실행됩니다. 인스턴스
 | D | 평균 CPU를 조정 지표로 사용하도록 Auto Scaling 그룹을 구성합니다. |
 | E | 평균 여유 메모리를 조정 지표로 사용하도록 Auto Scaling 그룹을 구성합니다. |
 
-정답: A
+[[answers_3#Q276|정답]]
 
 ---
 
@@ -1669,7 +1669,7 @@ System(Amazon EFS) Standard 를 사용하여 여러 Amazon EC2 Linux 인스턴�
 | C | Amazon EFS를 사용하여 비디오 콘텐츠를 저장합니다. 처리가 완료되면 파일을 Amazon Elastic Block Store(Amazon EBS)로 전송합니다. |
 | D | 동영상 콘텐츠 저장을 위해 Amazon S3 를 사용합니다. 처리를 위해 파일을 서버에 연결된 Amazon Elastic Block Store(Amazon EBS) 볼륨으로 임시로 이동합니다. |
 
-정답: D
+[[answers_3#Q277|정답]]
 
 ---
 
@@ -1692,7 +1692,7 @@ System(Amazon EFS) Standard 를 사용하여 여러 Amazon EC2 Linux 인스턴�
 | D | Amazon Athena 를 사용하여 Amazon S3 에서 직원 데이터를 분석합니다. Athena 를 Amazon QuickSight 와 통합하여 분석 대시보드를 게시하고 사용자와 대시보드를 공유합니다. |
 | E | AWS 계정에 대해 Amazon Macie 를 구성합니다. Macie 를 Amazon EventBridge 와 통합하여 Amazon Simple Notification Service(Amazon SNS) 구독을 통해 월별 알림을 보냅니다. |
 
-정답: B
+[[answers_3#Q278|정답]]
 
 ---
 
@@ -1712,7 +1712,7 @@ System(Amazon EFS) Standard 를 사용하여 여러 Amazon EC2 Linux 인스턴�
 | C | AWS SDK 를 사용하여 DynamoDB 테이블의 온디맨드 백업을 생성하는 스크립트를 개발합니다. 매월 1 일에 스크립트를 실행하는 Amazon EventBridge 규칙을 설정합니다. 6 개월 이상 된 DynamoDB 백업을 콜드 스토리지로 전환하고 7 년 이상 된 백업을 삭제하기 위해 매월 2일에 실행할 두 번째 스크립트를 생성합니다. |
 | D | AWS CLI를 사용하여 DynamoDB 테이블의 온디맨드 백업을 생성합니다. Cron 표현식을 사용하여 매월 1 일에 명령을 실행하는 Amazon EventBridge 규칙을 설정합니다. 6 개월 후 백업을 콜드 스토리지로 전환하고 7년 후 백업을 삭제하도록 명령에 지정합니다. |
 
-정답: A
+[[answers_3#Q279|정답]]
 
 ---
 
@@ -1732,7 +1732,7 @@ System(Amazon EFS) Standard 를 사용하여 여러 Amazon EC2 Linux 인스턴�
 | C | Amazon DynamoDB 에서 표준 SQL 쿼리를 사용하여 S3 버킷의 CloudFront 로그를 분석합니다. AWS Glue로 결과를 시각화합니다. |
 | D | Amazon DynamoDB 에서 표준 SQL 쿼리를 사용하여 S3 버킷의 CloudFront 로그를 분석합니다. Amazon QuickSight로 결과를 시각화합니다. |
 
-정답: B
+[[answers_3#Q280|정답]]
 
 ---
 
@@ -1752,7 +1752,7 @@ System(Amazon EFS) Standard 를 사용하여 여러 Amazon EC2 Linux 인스턴�
 | C | 하나의 가용 영역에서 DB 인스턴스를 구성하고 별도의 가용 영역에서 여러 읽기 전용 복제본을 생성합니다. |
 | D | 하나의 가용 영역에서 DB 인스턴스를 구성하고 AWS DMS(AWS Database Migration Service) 변경 데이터 캡처(CDC) 작업을 구성합니다. |
 
-정답: A
+[[answers_3#Q281|정답]]
 
 ---
 
@@ -1774,7 +1774,7 @@ EC2 인스턴스로 보냅니다. 회사는 ALB 에서 EC2 인스턴스로의 �
 | C | EC2 인스턴스를 퍼블릭 서브넷으로 이동합니다. EC2 인스턴스에 탄력적 IP 주소 집합을 제공합니다. |
 | D | 모든 포트에서 모든 TCP 트래픽을 허용하도록 ALB에 대한 보안 그룹을 구성합니다. |
 
-정답: B
+[[answers_3#Q282|정답]]
 
 ---
 
@@ -1798,7 +1798,7 @@ EC2 인스턴스로 보냅니다. 회사는 ALB 에서 EC2 인스턴스로의 �
 | C | 시뮬레이션 애플리케이션을 Linux Amazon EC2 인스턴스로 마이그레이션합니다. 시각화 애플리케이션을 Windows EC2 인스턴스로 마이그레이션합니다. 애플리케이션 간에 데이터를 교환하도록 Amazon Simple Queue Service(Amazon SQS)를 구성합니다. |
 | D | 시뮬레이션 애플리케이션을 Linux Amazon EC2 인스턴스로 마이그레이션합니다. 시각화 애플리케이션을 Windows EC2 인스턴스로 마이그레이션합니다. 스토리지용 NetApp ONTAP용 Amazon FSx를 구성합니다. |
 
-정답: D
+[[answers_3#Q283|정답]]
 
 ---
 
@@ -1818,7 +1818,7 @@ EC2 인스턴스로 보냅니다. 회사는 ALB 에서 EC2 인스턴스로의 �
 | C | 청구 대시보드에서 청구서 세부 정보에 액세스하고 청구서를 다운로드합니다. |
 | D | Amazon Simple Email Service(Amazon SES)로 알리도록 AWS 예산에서 비용 예산을 수정합니다. |
 
-정답: B
+[[answers_3#Q284|정답]]
 
 ---
 
@@ -1839,7 +1839,7 @@ EC2 인스턴스로 보냅니다. 회사는 ALB 에서 EC2 인스턴스로의 �
 | C | Amazon Lightsail 을 배포하여 정적 웹 페이지를 동적으로 변환합니다. 클라이언트 측 스크립팅을 사용하여 연락처 양식을 작성하십시오. 양식을 Amazon WorkMail과 통합합니다. |
 | D | t2.micro Amazon EC2 인스턴스를 생성합니다. LAMP(Linux, Apache, MySQL, PHP/Perl/Python) 스택을 배포하여 웹 페이지를 호스팅합니다. 클라이언트 측 스크립팅을 사용하여 연락처 양식을 작성하십시오. 양식을 Amazon WorkMail과 통합합니다. |
 
-정답: B
+[[answers_3#Q285|정답]]
 
 ---
 
@@ -1863,7 +1863,7 @@ Git 리포지토리와 Amazon S3 간의 지속적 통합 및 지속적 전달(CI
 | C | CloudFront 캐시를 무효화합니다. |
 | D | AWS Certificate Manager(ACM)를 사용하여 웹 사이트의 SSL 인증서를 확인합니다. |
 
-정답: C
+[[answers_3#Q286|정답]]
 
 ---
 
@@ -1885,7 +1885,7 @@ Microsoft SQL Server 가 포함된 데이터베이스 계층의 세 가지 계�
 | C | Amazon EC2 인스턴스에서 애플리케이션 계층과 비즈니스 계층을 호스팅합니다. Amazon RDS 에서 데이터베이스 계층을 호스팅합니다. 계층 간 파일 공유를 위해 Amazon Elastic File System(Amazon EFS)을 사용합니다. |
 | D | Amazon EC2 인스턴스에서 애플리케이션 계층과 비즈니스 계층을 호스팅합니다. Amazon RDS 에서 데이터베이스 계층을 호스팅합니다. 계층 간 파일 공유를 위해 프로비저닝된 IOPS SSD(io2) Amazon Elastic Block Store(Amazon EBS) 볼륨을 사용합니다. |
 
-정답: B
+[[answers_3#Q287|정답]]
 
 ---
 
@@ -1905,7 +1905,7 @@ Microsoft SQL Server 가 포함된 데이터베이스 계층의 세 가지 계�
 | C | Amazon Elastic File System(Amazon EFS) 파일 시스템을 생성합니다. 모든 웹 서버에 EFS 파일 시스템을 마운트합니다. |
 | D | 범용 SSD(gp3) Amazon Elastic Block Store(Amazon EBS) 볼륨을 구성합니다. 모든 웹 서버에 EBS 볼륨을 마운트합니다. |
 
-정답: C
+[[answers_3#Q288|정답]]
 
 ---
 
@@ -1924,7 +1924,7 @@ AWS Lambda 함수가 있습니다.
 | C | Lambda 함수의 코드에 액세스 키와 비밀 키를 내장하여 S3 버킷에 대한 읽기 액세스에 필요한 IAM 권한을 부여합니다. |
 | D | Lambda 함수에 IAM 역할을 적용합니다. 역할에 IAM 정책을 적용하여 계정의 모든 S3 버킷에 대한 읽기 액세스 권한을 부여합니다. |
 
-정답: B
+[[answers_3#Q289|정답]]
 
 ---
 
@@ -1945,7 +1945,7 @@ AWS Lambda 함수가 있습니다.
 | C | 온디맨드 인스턴스와 스팟 인스턴스의 혼합 |
 | D | 온디맨드 인스턴스와 예약 인스턴스의 혼합 |
 
-정답: C
+[[answers_3#Q290|정답]]
 
 ---
 
@@ -1969,7 +1969,7 @@ AWS Lambda 함수가 있습니다.
 | D | JSON 웹 토큰(JWT) |
 | E | AWS Secrets Manager |
 
-정답: A
+[[answers_3#Q291|정답]]
 
 ---
 
@@ -1990,7 +1990,7 @@ AWS Lambda 함수가 있습니다.
 | D | Amazon Managed Streaming for Apache Kafka(Amazon MSK)를 사용하여 데이터를 스트리밍합니다. Amazon Kinesis Data Analytics 를 사용하여 데이터를 변환하고 데이터를 Amazon S3 에 씁니다. Amazon RDS 쿼리 편집기를 사용하여 Amazon S3 에서 변환된 데이터를 쿼리합니다. |
 | E | Amazon Kinesis Data Streams 를 사용하여 데이터를 스트리밍합니다. AWS Glue 를 사용하여 데이터를 변환합니다. Amazon Kinesis Data Firehose를 사용하여 Amazon S3에 데이터를 씁니다. Amazon RDS 쿼리 편집기를 사용하여 Amazon S3 에서 변환된 데이터를 쿼리합니다. |
 
-정답: A
+[[answers_3#Q292|정답]]
 
 ---
 
@@ -2011,7 +2011,7 @@ AWS Lambda 함수가 있습니다.
 | C | AWS Storage Gateway 를 사용하고 캐시된 볼륨 게이트웨이를 구성합니다. 온프레미스에서 Storage Gateway 소프트웨어 어플라이언스를 실행하고 로컬로 캐시할 데이터 비율을 구성합니다. 데이터에 대한 로컬 액세스를 제공하기 위해 게이트웨이 스토리지 볼륨을 마운트합니다. |
 | D | AWS Storage Gateway 를 사용하고 저장된 볼륨 게이트웨이를 구성합니다. 온프레미스에서 Storage Gateway 소프트웨어 어플라이언스를 실행하고 게이트웨이 스토리지 볼륨을 온프레미스 스토리지에 매핑합니다. 데이터에 대한 로컬 액세스를 제공하기 위해 게이트웨이 스토리지 볼륨을 마운트합니다. |
 
-정답: D
+[[answers_3#Q293|정답]]
 
 ---
 
@@ -2030,7 +2030,7 @@ Amazon EC2 인스턴스에서 호스팅되는 애플리케이션은 Amazon S3 �
 | C | NAT 게이트웨이를 사용하여 S3 버킷에 액세스하도록 EC2 인스턴스를 구성합니다. |
 | D | VPC와 S3 버킷 간에 AWS Site-to-Site VPN 연결을 설정합니다. |
 
-정답: C
+[[answers_3#Q294|정답]]
 
 ---
 
@@ -2051,7 +2051,7 @@ Amazon EC2 인스턴스에서 호스팅되는 애플리케이션은 Amazon S3 �
 | C | 데이터를 처리하고 변환된 데이터를 3 개의 개별 Amazon S3 버킷에 저장하여 각 애플리케이션이 고유한 사용자 지정 데이터 세트를 갖도록 합니다. 각 애플리케이션이 해당 S3 버킷을 가리키도록 합니다. |
 | D | 데이터를 처리하고 변환된 데이터를 3개의 별도 Amazon DynamoDB 테이블에 저장하여 각 애플리케이션이 자체 사용자 지정 데이터 세트를 갖도록 합니다. 각 애플리케이션이 해당 DynamoDB 테이블을 가리키도록 합니다. |
 
-정답: B
+[[answers_3#Q295|정답]]
 
 ---
 
@@ -2073,7 +2073,7 @@ VPC 피어링 연결에 대해 유효해야 합니다.
 | C | 192.168.1.0/32 |
 | D | 10.0.1.0/24 |
 
-정답: D
+[[answers_3#Q296|정답]]
 
 ---
 
@@ -2096,7 +2096,7 @@ Load Balancer)는 대상 그룹을 사용하여 인스턴스에 트래픽을 분
 | C | EC2 Auto Scaling 그룹을 생성합니다. 기존 ALB 를 로드 밸런서로 선택하고 기존 대상 그룹을 대상 그룹으로 선택하십시오. 최소 인스턴스를 2 로, 원하는 용량을 3 으로, 최대 인스턴스를 6으로 설정합니다. Auto Scaling 그룹에 EC2 인스턴스를 추가합니다. |
 | D | 두 개의 Amazon CloudWatch 경보를 생성합니다. 평균 CPUUtilization 지표가 20% 미만일 때 ALARM 상태로 들어가도록 첫 번째 CloudWatch 경보를 구성합니다. 평균 CPUUtilization 지표가 50%를 초과하면 ALARM 상태로 들어가도록 두 번째 CloudWatch 경보를 구성합니다. 이메일 메시지를 보내기 위해 Amazon Simple Notification Service(Amazon SNS) 주제에 게시하도록 경보를 구성합니다. 메시지를 받은 후 로그인하여 실행 중인 EC2 인스턴스 수를 줄이거나 늘립니다. |
 
-정답: B
+[[answers_3#Q297|정답]]
 
 ---
 
@@ -2119,7 +2119,7 @@ EC2 인스턴스와 DB 인스턴스가 모두 단일 가용 영역에 있기 때
 | C | 각 가용 영역에서 서브넷을 프로비저닝합니다. 두 가용 영역에 EC2 인스턴스를 배포하도록 Auto Scaling 그룹을 구성합니다. 다중 AZ 배포를 위해 DB 인스턴스를 구성합니다. |
 | D | 두 가용 영역에 걸쳐 확장되는 서브넷을 프로비저닝합니다. 두 가용 영역에 EC2 인스턴스를 배포하도록 Auto Scaling 그룹을 구성합니다. 다중 AZ 배포를 위해 DB 인스턴스를 구성합니다. |
 
-정답: C
+[[answers_3#Q298|정답]]
 
 ---
 
@@ -2139,7 +2139,7 @@ EC2 인스턴스와 DB 인스턴스가 모두 단일 가용 영역에 있기 때
 | C | 원시 데이터를 저장할 Amazon S3 버킷을 생성합니다. 영구 HDD 스토리지를 사용하는 Amazon FSx for Lustre 파일 시스템을 생성합니다. Amazon S3 에서 데이터를 가져오고 내보내는 옵션을 선택합니다. EC2 인스턴스에 파일 시스템을 탑재합니다. |
 | D | NetApp ONTAP 파일 시스템용 Amazon FSx 를 생성합니다. 각 볼륨의 계층화 정책을 NONE 으로 설정합니다. 원시 데이터를 파일 시스템으로 가져옵니다. EC2 인스턴스에 파일 시스템을 탑재합니다. |
 
-정답: B
+[[answers_3#Q299|정답]]
 
 ---
 
@@ -2161,4 +2161,4 @@ EC2 인스턴스와 DB 인스턴스가 모두 단일 가용 영역에 있기 때
 | C | 애플리케이션 계층을 Amazon EC2 예약 인스턴스로 마이그레이션합니다. 데이터 스토리지 계층을 Amazon Aurora 예약 인스턴스로 마이그레이션합니다. |
 | D | 애플리케이션 계층을 Amazon EC2 온디맨드 인스턴스로 마이그레이션합니다. 데이터 스토리지 계층을 Amazon RDS 예약 인스턴스로 마이그레이션합니다. |
 
-정답: C
+[[answers_3#Q300|정답]]
