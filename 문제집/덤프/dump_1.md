@@ -1,5 +1,5 @@
 # Q1 
-
+#Storage
 ```
 회사는 여러 대륙에 걸쳐 도시의 온도, 습도 및 대기압에 대한 데이터를 수집합니다.
 회사가 매일 각 사이트에서 수집하는 데이터의 평균 볼륨은 500GB 입니다. 각 사이트에는
@@ -22,7 +22,7 @@
 ---
 
 # Q2 
-
+#Analytics 
 ```
 회사는 독점 애플리케이션의 로그 파일을 분석할 수 있는 능력이 필요합니다. 로그는
 Amazon S3 버킷에 JSON 형식으로 저장됩니다. 쿼리는 간단하고 주문형으로 실행됩니다.
@@ -31,19 +31,20 @@ Amazon S3 버킷에 JSON 형식으로 저장됩니다. 쿼리는 간단하고 �
 합니까?
 ```
 
-| |      |
-|-|------|
-| A | Amazon Redshift를 사용하여 모든 콘텐츠를 한 곳에 로드하고 필요에 따라 SQL 쿼리를 실행합니다. |
-| B | Amazon CloudWatch Logs 를 사용하여 로그를 저장합니다. Amazon CloudWatch 콘솔에서 필요에 따라 SQL 쿼리를 실행합니다. |
-| C | Amazon S3와 함께 Amazon Athena를 직접 사용하여 필요에 따라 쿼리를 실행합니다. |
-| D | AWS Glue 를 사용하여 로그를 분류합니다. Amazon EMR 에서 임시 Apache Spark 클러스터를 사용하여 필요에 따라 SQL 쿼리를 실행합니다. |
+|     |                                                                                                                                             |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| A   | [[Analytics#Amazon Redshift\|Amazon Redshift]]를 사용하여 모든 콘텐츠를 한 곳에 로드하고 필요에 따라 SQL 쿼리를 실행합니다.                                                |
+| B   | [[Management & Governance#Amazon CloudWatch\|Amazon CloudWatch]] Logs 를 사용하여 로그를 저장합니다. Amazon CloudWatch 콘솔에서 필요에 따라 SQL 쿼리를 실행합니다.        |
+| C   | Amazon S3와 함께 [[Analytics#Amazon Athena\|Amazon Athena]]를 직접 사용하여 필요에 따라 쿼리를 실행합니다.                                                         |
+| D   | [[Analytics#AWS Glue\|AWS Glue]] 를 사용하여 로그를 분류합니다. [[Analytics#Amazon EMR\|Amazon EMR]] 에서 임시 Apache Spark 클러스터를 사용하여 필요에 따라 SQL 쿼리를 실행합니다. |
+|     |                                                                                                                                             |
 
 [[answers_1#Q2|정답]]
 
 ---
 
 # Q3 
-
+#Storage
 ```
 회사는 AWS Organizations 를 사용하여 여러 부서의 여러 AWS 계정을 관리합니다. 관리
 계정에는 프로젝트 보고서가 포함된 Amazon S3 버킷이 있습니다. 회사는 이 S3 버킷에
@@ -51,19 +52,19 @@ Amazon S3 버킷에 JSON 형식으로 저장됩니다. 쿼리는 간단하고 �
 최소한의 운영 오버헤드로 이러한 요구 사항을 충족하는 솔루션은 무엇입니까?
 ```
 
-| |      |
-|-|------|
-| A | 조직 ID 에 대한 참조와 함께 aws PrincipalOrgID 전역 조건 키를 S3 버킷 정책에 추가합니다. |
-| B | 각 부서에 대한 조직 단위(OU)를 만듭니다. aws:PrincipalOrgPaths 전역 조건 키를 S3 버킷 정책에 추가합니다. |
-| C | AWS CloudTrail 을 사용하여 CreateAccount, InviteAccountToOrganization, LeaveOrganization 및 RemoveAccountFromOrganization 이벤트를 모니터링합니다. 그에 따라 S3 버킷 정책을 업데이트합니다. |
-| D | S3 버킷에 액세스해야 하는 각 사용자에 태그를 지정합니다. aws:PrincipalTag 전역 조건 키를 S3 버킷 정책에 추가합니다. |
+|     |                                                                                                                                                            |
+| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A   | 조직 ID 에 대한 참조와 함께 aws PrincipalOrgID 전역 조건 키를 S3 버킷 정책에 추가합니다.                                                                                             |
+| B   | 각 부서에 대한 조직 단위(OU)를 만듭니다. aws:PrincipalOrgPaths 전역 조건 키를 S3 버킷 정책에 추가합니다.                                                                                  |
+| C   | AWS CloudTrail 을 사용하여 CreateAccount, InviteAccountToOrganization, LeaveOrganization 및 RemoveAccountFromOrganization 이벤트를 모니터링합니다. 그에 따라 S3 버킷 정책을 업데이트합니다. |
+| D   | S3 버킷에 액세스해야 하는 각 사용자에 태그를 지정합니다. aws:PrincipalTag 전역 조건 키를 S3 버킷 정책에 추가합니다.                                                                               |
 
 [[answers_1#Q3|정답]]
 
 ---
 
 # Q4 
-
+#Storage
 ```
 애플리케이션은 VPC 의 Amazon EC2 인스턴스에서 실행됩니다. 애플리케이션은 Amazon
 S3 버킷에 저장된 로그를 처리합니다. EC2 인스턴스는 인터넷 연결 없이 S3 버킷에
@@ -71,19 +72,19 @@ S3 버킷에 저장된 로그를 처리합니다. EC2 인스턴스는 인터넷 
 Amazon S3에 대한 프라이빗 네트워크 연결을 제공하는 솔루션은 무엇입니까?
 ```
 
-| |      |
-|-|------|
-| A | S3 버킷에 대한 게이트웨이 VPC 엔드포인트를 생성합니다. |
-| B | Amazon CloudWatch Logs로 로그를 스트리밍합니다. 로그를 S3 버킷으로 내보냅니다. |
-| C | Amazon EC2에 인스턴스 프로파일을 생성하여 S3 액세스를 허용합니다. |
-| D | S3 엔드포인트에 액세스하기 위한 프라이빗 링크가 있는 Amazon API Gateway API 를 생성합니다. |
+|     |                                                                |
+| --- | -------------------------------------------------------------- |
+| A   | S3 버킷에 대한 게이트웨이 VPC 엔드포인트를 생성합니다.                              |
+| B   | Amazon CloudWatch Logs로 로그를 스트리밍합니다. 로그를 S3 버킷으로 내보냅니다.        |
+| C   | Amazon EC2에 인스턴스 프로파일을 생성하여 S3 액세스를 허용합니다.                     |
+| D   | S3 엔드포인트에 액세스하기 위한 프라이빗 링크가 있는 Amazon API Gateway API 를 생성합니다. |
 
 [[answers_1#Q4|정답]]
 
 ---
 
 # Q5 
-
+#Storage
 ```
 회사는 사용자 업로드 문서를 Amazon EBS 볼륨에 저장하는 단일 Amazon EC2 인스턴스를
 사용하여 AWS 에서 웹 애플리케이션을 호스팅하고 있습니다. 더 나은 확장성과 가용성을
@@ -94,19 +95,19 @@ Amazon S3에 대한 프라이빗 네트워크 연결을 제공하는 솔루션�
 솔루션 설계자는 사용자가 모든 문서를 한 번에 볼 수 있도록 무엇을 제안해야 합니까?
 ```
 
-| |      |
-|-|------|
-| A | 두 EBS 볼륨에 모든 문서가 포함되도록 데이터를 복사합니다. |
-| B | 문서가 있는 서버로 사용자를 안내하도록 Application Load Balancer를 구성합니다. |
-| C | 두 EBS 볼륨의 데이터를 Amazon EFS 로 복사합니다. 새 문서를 Amazon EFS 에 저장하도록 애플리케이션을 수정합니다. |
-| D | 두 서버 모두에 요청을 보내도록 Application Load Balancer 를 구성합니다. 올바른 서버에서 각 문서를 반환합니다. |
+|     |                                                                                                    |
+| --- | -------------------------------------------------------------------------------------------------- |
+| A   | 두 [[Storage#Amazon EBS\|EBS]] 볼륨에 모든 문서가 포함되도록 데이터를 복사합니다.                                         |
+| B   | 문서가 있는 서버로 사용자를 안내하도록 Application Load Balancer를 구성합니다.                                            |
+| C   | 두 EBS 볼륨의 데이터를 [[Storage#Amazon EFS\|Amazon EFS]] 로 복사합니다. 새 문서를 Amazon EFS 에 저장하도록 애플리케이션을 수정합니다. |
+| D   | 두 서버 모두에 요청을 보내도록 Application Load Balancer 를 구성합니다. 올바른 서버에서 각 문서를 반환합니다.                         |
 
 [[answers_1#Q5|정답]]
 
 ---
 
 # Q6 
-
+#Storage
 ```
 회사는 NFS 를 사용하여 온프레미스 네트워크 연결 스토리지에 대용량 비디오 파일을
 저장합니다. 각 비디오 파일의 크기 범위는 1MB 에서 500GB 입니다. 총 스토리지는
@@ -116,19 +117,19 @@ Amazon S3에 대한 프라이빗 네트워크 연결을 제공하는 솔루션�
 어떤 솔루션이 이러한 요구 사항을 충족합니까?
 ```
 
-| |      |
-|-|------|
-| A | S3 버킷을 생성합니다. S3 버킷에 대한 쓰기 권한이 있는 IAM 역할을 생성합니다. AWS CLI를 사용하여 모든 파일을 S3 버킷에 로컬로 복사합니다. |
-| B | AWS Snowball Edge 작업을 생성합니다. 온프레미스에서 Snowball Edge 장치를 받습니다. Snowball Edge 클라이언트를 사용하여 장치로 데이터를 전송합니다. AWS 가 데이터를 Amazon S3로 가져올 수 있도록 디바이스를 반환합니다. |
-| C | 온프레미스에 S3 파일 게이트웨이를 배포합니다. S3 파일 게이트웨이에 연결할 퍼블릭 서비스 엔드포인트를 생성합니다. S3 버킷을 생성합니다. S3 파일 게이트웨이에서 새 NFS 파일 공유를 생성합니다. 새 파일 공유가 S3 버킷을 가리키도록 합니다. 기존 NFS 파일 공유에서 S3 파일 게이트웨이로 데이터를 전송합니다. |
-| D | 온프레미스 네트워크와 AWS 간에 AWS Direct Connect 연결을 설정합니다. 온프레미스에 S3 파일 게이트웨이를 배포합니다. S3 파일 게이트웨이에 연결할 공용 VIF(가상 인터페이스)를 생성합니다. S3 버킷을 생성합니다. S3 파일 게이트웨이에서 새 NFS 파일 공유를 생성합니다. 새 파일 공유가 S3 버킷을 가리키도록 합니다. 기존 NFS 파일 공유에서 S3 파일 게이트웨이로 데이터를 전송합니다. |
+|     |                                                                                                                                                                                                                                                                                                 |     |
+| --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| A   | S3 버킷을 생성합니다. S3 버킷에 대한 쓰기 권한이 있는 IAM 역할을 생성합니다. AWS CLI를 사용하여 모든 파일을 S3 버킷에 로컬로 복사합니다.                                                                                                                                                                                                         |     |
+| B   | [[Storage#AWS Snowball\|AWS Snowball Edge]] 작업을 생성합니다. 온프레미스에서 Snowball Edge 장치를 받습니다. Snowball Edge 클라이언트를 사용하여 장치로 데이터를 전송합니다. AWS 가 데이터를 Amazon S3로 가져올 수 있도록 디바이스를 반환합니다.                                                                                                                   |     |
+| C   | 온프레미스에 S3 파일 게이트웨이를 배포합니다. S3 파일 게이트웨이에 연결할 퍼블릭 서비스 엔드포인트를 생성합니다. S3 버킷을 생성합니다. S3 파일 게이트웨이에서 새 NFS 파일 공유를 생성합니다. 새 파일 공유가 S3 버킷을 가리키도록 합니다. 기존 NFS 파일 공유에서 S3 파일 게이트웨이로 데이터를 전송합니다.                                                                                                            |     |
+| D   | 온프레미스 네트워크와 AWS 간에 [[Network & Content Delivery#**AWS Direct Connect**\|AWS Direct Connect]] 연결을 설정합니다. 온프레미스에 S3 파일 게이트웨이를 배포합니다. S3 파일 게이트웨이에 연결할 공용 VIF(가상 인터페이스)를 생성합니다. S3 버킷을 생성합니다. S3 파일 게이트웨이에서 새 NFS 파일 공유를 생성합니다. 새 파일 공유가 S3 버킷을 가리키도록 합니다. 기존 NFS 파일 공유에서 S3 파일 게이트웨이로 데이터를 전송합니다. |     |
 
 [[answers_1#Q6|정답]]
 
 ---
 
 # Q7 
-
+#ApplicationIntegration 
 ```
 회사에 들어오는 메시지를 수집하는 응용 프로그램이 있습니다. 그러면 수십 개의 다른
 애플리케이션과 마이크로서비스가 이러한 메시지를 빠르게 소비합니다. 메시지 수는
@@ -137,19 +138,19 @@ Amazon S3에 대한 프라이빗 네트워크 연결을 제공하는 솔루션�
 어떤 솔루션이 이러한 요구 사항을 충족합니까?
 ```
 
-| |      |
-|-|------|
-| A | Amazon Kinesis Data Analytics에 대한 메시지를 유지합니다. 메시지를 읽고 처리하도록 소비자 애플리케이션을 구성합니다. |
-| B | Auto Scaling 그룹의 Amazon EC2 인스턴스에 수집 애플리케이션을 배포하여 CPU 지표를 기반으로 EC2 인스턴스 수를 확장합니다. |
-| C | 단일 샤드를 사용하여 Amazon Kinesis Data Streams에 메시지를 씁니다. AWS Lambda 함수를 사용하여 메시지를 사전 처리하고 Amazon DynamoDB 에 저장합니다. 메시지를 처리하기 위해 DynamoDB에서 읽도록 소비자 애플리케이션을 구성합니다. |
-| D | 여러 Amazon Simple Queue Service(Amazon SOS) 구독이 있는 Amazon Simple Notification Service(Amazon SNS) 주제에 메시지를 게시합니다. 대기열의 메시지를 처리하도록 소비자 애플리케이션을 구성합니다. |
+|     |                                                                                                                                                                                                                                                                                          |
+| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A   | [[Analytics#Amazon Kinesis\|Amazon Kinesis]] Data Analytics에 대한 메시지를 유지합니다. 메시지를 읽고 처리하도록 소비자 애플리케이션을 구성합니다.                                                                                                                                                                             |
+| B   | Auto Scaling 그룹의 Amazon EC2 인스턴스에 수집 애플리케이션을 배포하여 CPU 지표를 기반으로 EC2 인스턴스 수를 확장합니다.                                                                                                                                                                                                        |
+| C   | 단일 샤드를 사용하여 Amazon Kinesis Data Streams에 메시지를 씁니다. AWS Lambda 함수를 사용하여 메시지를 사전 처리하고 Amazon DynamoDB 에 저장합니다. 메시지를 처리하기 위해 DynamoDB에서 읽도록 소비자 애플리케이션을 구성합니다.                                                                                                                              |
+| D   | 여러 [[Application Integration#Amazon Simple Queue Service (SQS)\|Amazon Simple Queue Service]](Amazon SOS) 구독이 있는 [[Application Integration#Amazon Simple Notification Service (SNS)\|Amazon Simple Notification Service]](Amazon SNS) 주제에 메시지를 게시합니다. 대기열의 메시지를 처리하도록 소비자 애플리케이션을 구성합니다. |
 
 [[answers_1#Q7|정답]]
 
 ---
 
 # Q8 
-
+#ApplicationIntegration 
 ```
 회사에서 분산 애플리케이션을 AWS 로 마이그레이션하고 있습니다. 애플리케이션은 다양한
 워크로드를 처리합니다. 레거시 플랫폼은 여러 컴퓨팅 노드에서 작업을 조정하는 기본
@@ -158,19 +159,19 @@ Amazon S3에 대한 프라이빗 네트워크 연결을 제공하는 솔루션�
 솔루션 설계자는 이러한 요구 사항을 충족하기 위해 아키텍처를 어떻게 설계해야 합니까?
 ```
 
-| |      |
-|-|------|
-| A | 작업의 대상으로 Amazon Simple Queue Service(Amazon SQS) 대기열을 구성합니다. Auto Scaling 그룹에서 관리되는 Amazon EC2 인스턴스로 컴퓨팅 노드를 구현합니다. 예약된 조정을 사용하도록 EC2 Auto Scaling을 구성합니다. |
-| B | 작업의 대상으로 Amazon Simple Queue Service(Amazon SQS) 대기열을 구성합니다. Auto Scaling 그룹에서 관리되는 Amazon EC2 인스턴스로 컴퓨팅 노드를 구현합니다. 대기열 크기에 따라 EC2 Auto Scaling을 구성합니다. |
-| C | Auto Scaling 그룹에서 관리되는 Amazon EC2 인스턴스로 기본 서버와 컴퓨팅 노드를 구현합니다. 작업의 대상으로 AWS CloudTrail 을 구성합니다. 기본 서버의 부하를 기반으로 EC2 Auto Scaling을 구성합니다. |
-| D | Auto Scaling 그룹에서 관리되는 Amazon EC2 인스턴스로 기본 서버와 컴퓨팅 노드를 구현합니다. 작업의 대상으로 Amazon EventBridge(Amazon CloudWatch Events)를 구성합니다. 컴퓨팅 노드의 부하를 기반으로 EC2 Auto Scaling을 구성합니다. |
+|     |                                                                                                                                                                                                                           |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A   | 작업의 대상으로 [[Application Integration#Amazon Simple Queue Service (SQS)\|Amazon Simple Queue Service]](Amazon SQS) 대기열을 구성합니다. Auto Scaling 그룹에서 관리되는 Amazon EC2 인스턴스로 컴퓨팅 노드를 구현합니다. 예약된 조정을 사용하도록 EC2 Auto Scaling을 구성합니다. |
+| B   | 작업의 대상으로 Amazon Simple Queue Service(Amazon SQS) 대기열을 구성합니다. Auto Scaling 그룹에서 관리되는 Amazon EC2 인스턴스로 컴퓨팅 노드를 구현합니다. 대기열 크기에 따라 EC2 Auto Scaling을 구성합니다.                                                                   |
+| C   | Auto Scaling 그룹에서 관리되는 Amazon EC2 인스턴스로 기본 서버와 컴퓨팅 노드를 구현합니다. 작업의 대상으로 AWS CloudTrail 을 구성합니다. 기본 서버의 부하를 기반으로 EC2 Auto Scaling을 구성합니다.                                                                                   |
+| D   | Auto Scaling 그룹에서 관리되는 Amazon EC2 인스턴스로 기본 서버와 컴퓨팅 노드를 구현합니다. 작업의 대상으로 [[Application Integration#Amazon EventBridge\|Amazon EventBridge]](Amazon CloudWatch Events)를 구성합니다. 컴퓨팅 노드의 부하를 기반으로 EC2 Auto Scaling을 구성합니다.     |
 
 [[answers_1#Q8|정답]]
 
 ---
 
 # Q9 
-
+#Storage #S3
 ```
 회사는 데이터 센터에서 SMB 파일 서버를 실행하고 있습니다. 파일 서버는 파일이 생성된
 후 처음 며칠 동안 자주 액세스하는 대용량 파일을 저장합니다. 7 일이 지나면 파일에 거의
@@ -182,19 +183,19 @@ Amazon S3에 대한 프라이빗 네트워크 연결을 제공하는 솔루션�
 어떤 솔루션이 이러한 요구 사항을 충족합니까?
 ```
 
-| |      |
-|-|------|
-| A | AWS DataSync 를 사용하여 SMB 파일 서버에서 AWS 로 7 일이 지난 데이터를 복사합니다. |
-| B | Amazon S3 파일 게이트웨이를 생성하여 회사의 스토리지 공간을 확장합니다. S3 수명 주기 정책을 생성하여 7일 후에 데이터를 S3 Glacier Deep Archive로 전환합니다. |
-| C | Windows 파일 서버용 Amazon FSx 파일 시스템을 생성하여 회사의 저장 공간을 확장합니다. |
-| D | 각 사용자의 컴퓨터에 유틸리티를 설치하여 Amazon S3 에 액세스합니다. S3 수명 주기 정책을 생성하여 7일 후 데이터를 S3 Glacier Flexible Retrieval로 전환합니다. |
+|     |                                                                                                                                    |
+| --- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| A   | [[Migration & Transfer#AWS DataSync\|AWS DataSync]] 를 사용하여 [[기타 잡것들...#SMB\|SMB]] 파일 서버에서 AWS 로 7 일이 지난 데이터를 복사합니다.                |
+| B   | Amazon S3 파일 게이트웨이를 생성하여 회사의 스토리지 공간을 확장합니다. S3 수명 주기 정책을 생성하여 7일 후에 데이터를 [[S3#Stroage Class\|S3 Glacier Deep Archive]] 로 전환합니다.   |
+| C   | Windows 파일 서버용 [[Storage#Amazon FSx\|Amazon FSx]] 파일 시스템을 생성하여 회사의 저장 공간을 확장합니다.                                                   |
+| D   | 각 사용자의 컴퓨터에 유틸리티를 설치하여 Amazon S3 에 액세스합니다. S3 수명 주기 정책을 생성하여 7일 후 데이터를 [[S3#Stroage Class\|S3 Glacier Flexible Retrieval]]로 전환합니다. |
 
 [[answers_1#Q9|정답]]
 
 ---
 
 # Q10 
-
+#ApplicationIntegration 
 ```
 회사는 AWS 에서 전자 상거래 웹 애플리케이션을 구축하고 있습니다. 애플리케이션은
 처리할 Amazon API Gateway REST API에 새 주문에 대한 정보를 보냅니다. 회사는 주문이
@@ -202,19 +203,19 @@ Amazon S3에 대한 프라이빗 네트워크 연결을 제공하는 솔루션�
 어떤 솔루션이 이러한 요구 사항을 충족합니까?
 ```
 
-| |      |
-|-|------|
-| A | API Gateway 통합을 사용하여 애플리케이션이 주문을 수신할 때 Amazon Simple Notification Service(Amazon SNS) 주제에 메시지를 게시합니다. AWS Lambda 함수를 주제에 구독하여 처리를 수행합니다. |
-| B | API Gateway 통합을 사용하여 애플리케이션이 주문을 수신할 때 Amazon Simple Queue Service(Amazon SQS) FIFO 대기열에 메시지를 보냅니다. 처리를 위해 AWS Lambda 함수를 호출하도록 SQS FIFO 대기열을 구성합니다. |
-| C | API Gateway 권한 부여자를 사용하여 애플리케이션이 주문을 처리하는 동안 모든 요청을 차단합니다. |
-| D | API Gateway 통합을 사용하여 애플리케이션이 주문을 수신할 때 Amazon Simple Queue Service(Amazon SQS) 표준 대기열에 메시지를 보냅니다. 처리를 위해 AWS Lambda 함수를 호출하도록 SQS 표준 대기열을 구성합니다. |
+|     |                                                                                                                                                                                                                     |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A   | API Gateway 통합을 사용하여 애플리케이션이 주문을 수신할 때 [[Application Integration#Amazon Simple Notification Service (SNS)\|Amazon Simple Notification Service(Amazon SNS)]] 주제에 메시지를 게시합니다. AWS Lambda 함수를 주제에 구독하여 처리를 수행합니다.      |
+| B   | API Gateway 통합을 사용하여 애플리케이션이 주문을 수신할 때 [[Application Integration#Amazon Simple Queue Service (SQS)\|Amazon Simple Queue Service(Amazon SQS)]] FIFO 대기열에 메시지를 보냅니다. 처리를 위해 AWS Lambda 함수를 호출하도록 SQS FIFO 대기열을 구성합니다. |
+| C   | API Gateway 권한 부여자를 사용하여 애플리케이션이 주문을 처리하는 동안 모든 요청을 차단합니다.                                                                                                                                                          |
+| D   | API Gateway 통합을 사용하여 애플리케이션이 주문을 수신할 때 Amazon Simple Queue Service(Amazon SQS) 표준 대기열에 메시지를 보냅니다. 처리를 위해 AWS Lambda 함수를 호출하도록 SQS 표준 대기열을 구성합니다.                                                                    |
 
 [[answers_1#Q10|정답]]
 
 ---
 
 # Q11 
-
+#Security
 ```
 회사에 Amazon EC2 인스턴스에서 실행되고 Amazon Aurora 데이터베이스를 사용하는
 애플리케이션이 있습니다. EC2 인스턴스는 파일에 로컬로 저장된 사용자 이름과 암호를
@@ -223,19 +224,19 @@ Amazon S3에 대한 프라이빗 네트워크 연결을 제공하는 솔루션�
 솔루션 설계자는 이 목표를 달성하기 위해 무엇을 해야 합니까?
 ```
 
-| |      |
-|-|------|
-| A | AWS Secrets Manager를 사용합니다. 자동 회전을 켭니다. |
-| B | AWS Systems Manager Parameter Store를 사용합니다. 자동 회전을 켭니다. |
-| C | AWS Key Management Service(AWS KMS) 암호화 키로 암호화된 객체를 저장할 Amazon S3 버킷을 생성합니다. 자격 증명 파일을 S3 버킷으로 마이그레이션합니다. 애플리케이션이 S3 버킷을 가리키도록 합니다. |
-| D | 각 EC2 인스턴스에 대해 암호화된 Amazon Elastic Block Store(Amazon EBS) 볼륨을 생성합니다. 새 EBS 볼륨을 각 EC2 인스턴스에 연결합니다. 자격 증명 파일을 새 EBS 볼륨으로 마이그레이션합니다. 애플리케이션이 새 EBS 볼륨을 가리키도록 합니다. |
+|     |                                                                                                                                                                                         |
+| --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A   | [[Security#AWS Secretes Manager\|AWS Secrets Manager]]를 사용합니다. 자동 회전을 켭니다.                                                                                                              |
+| B   | [[Management & Governance#AWS Systems Manager (SSM)\|AWS Systems Manager Parameter Store]]를 사용합니다. 자동 회전을 켭니다.                                                                          |
+| C   | [[Security#AWS Key Management Service(AWS KMS)\|AWS Key Management Service(AWS KMS)]] 암호화 키로 암호화된 객체를 저장할 Amazon S3 버킷을 생성합니다. 자격 증명 파일을 S3 버킷으로 마이그레이션합니다. 애플리케이션이 S3 버킷을 가리키도록 합니다.   |
+| D   | 각 EC2 인스턴스에 대해 암호화된 [[Storage#Amazon EBS\|Amazon Elastic Block Store(Amazon EBS)]] 볼륨을 생성합니다. 새 EBS 볼륨을 각 EC2 인스턴스에 연결합니다. 자격 증명 파일을 새 EBS 볼륨으로 마이그레이션합니다. 애플리케이션이 새 EBS 볼륨을 가리키도록 합니다. |
 
 [[answers_1#Q11|정답]]
 
 ---
 
 # Q12 
-
+#NetworkContent-Delivery 
 ```
 글로벌 회사는 ALB(Application Load Balancer) 뒤의 Amazon EC2 인스턴스에서 웹
 애플리케이션을 호스팅합니다. 웹 애플리케이션에는 정적 데이터와 동적 데이터가 있습니다.
@@ -245,19 +246,19 @@ Amazon S3에 대한 프라이빗 네트워크 연결을 제공하는 솔루션�
 솔루션 설계자는 이러한 요구 사항을 충족하기 위해 무엇을 해야 합니까?
 ```
 
-| |      |
-|-|------|
-| A | S3 버킷과 ALB 를 오리진으로 포함하는 Amazon CloudFront 배포를 생성합니다. CloudFront 배포로 트래픽을 라우팅하도록 Route 53을 구성합니다. |
-| B | ALB 가 오리진인 Amazon CloudFront 배포를 생성합니다. S3 버킷을 엔드포인트로 포함하는 AWS Global Accelerator 표준 액셀러레이터를 생성합니다. CloudFront 배포로 트래픽을 라우팅하도록 Route 53을 구성합니다. |
-| C | S3 버킷을 오리진으로 포함하는 Amazon CloudFront 배포를 생성합니다. ALB 및 CloudFront 배포를 엔드포인트로 포함하는 AWS Global Accelerator 표준 액셀러레이터를 생성합니다. 가속기 DNS 이름을 가리키는 사용자 지정 도메인 이름을 만듭니다. 사용자 지정 도메인 이름을 웹 애플리케이션의 끝점으로 사용합니다. |
-| D | ALB 가 오리진인 Amazon CloudFront 배포를 생성합니다. S3 버킷을 엔드포인트로 포함하는 AWS Global Accelerator 표준 액셀러레이터를 생성합니다. 두 개의 도메인 이름을 만듭니다. 하나의 도메인 이름이 동적 콘텐츠의 CloudFront DNS 이름을 가리키도록 합니다. 다른 도메인 이름이 정적 콘텐츠에 대한 가속기 DNS 이름을 가리키도록 합니다. 도메인 이름을 웹 애플리케이션의 끝점으로 사용합니다. |
+|     |                                                                                                                                                                                                                                                     |
+| --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A   | S3 버킷과 [[ELB#Application Load Balancer\|ALB]] 를 오리진으로 포함하는 [[Network & Content Delivery#**Amazon CloudFront**\|Amazon CloudFront]] 배포를 생성합니다. CloudFront 배포로 트래픽을 라우팅하도록 [[Network & Content Delivery#**Amazon Route 53**\|Route 53]]을 구성합니다.       |
+| B   | ALB 가 오리진인 Amazon CloudFront 배포를 생성합니다. S3 버킷을 엔드포인트로 포함하는 [[Network & Content Delivery#**AWS Global Accelerator**\|AWS Global Accelerator]] 표준 액셀러레이터를 생성합니다. CloudFront 배포로 트래픽을 라우팅하도록 Route 53을 구성합니다.                                          |
+| C   | S3 버킷을 오리진으로 포함하는 Amazon CloudFront 배포를 생성합니다. ALB 및 CloudFront 배포를 엔드포인트로 포함하는 AWS Global Accelerator 표준 액셀러레이터를 생성합니다. 가속기 DNS 이름을 가리키는 사용자 지정 도메인 이름을 만듭니다. 사용자 지정 도메인 이름을 웹 애플리케이션의 끝점으로 사용합니다.                                                 |
+| D   | ALB 가 오리진인 Amazon CloudFront 배포를 생성합니다. S3 버킷을 엔드포인트로 포함하는 AWS Global Accelerator 표준 액셀러레이터를 생성합니다. 두 개의 도메인 이름을 만듭니다. 하나의 도메인 이름이 동적 콘텐츠의 CloudFront DNS 이름을 가리키도록 합니다. 다른 도메인 이름이 정적 콘텐츠에 대한 가속기 DNS 이름을 가리키도록 합니다. 도메인 이름을 웹 애플리케이션의 끝점으로 사용합니다. |
 
 [[answers_1#Q12|정답]]
 
 ---
 
 # Q13 
-
+#Security
 ```
 회사는 AWS 인프라에 대한 월별 유지 관리를 수행합니다. 이러한 유지 관리 활동 중에
 회사는 여러 AWS 리전에서 MySQL 용 Amazon RDS 데이터베이스에 대한 자격 증명을
@@ -265,19 +266,19 @@ Amazon S3에 대한 프라이빗 네트워크 연결을 제공하는 솔루션�
 최소한의 운영 오버헤드로 이러한 요구 사항을 충족하는 솔루션은 무엇입니까?
 ```
 
-| |      |
-|-|------|
-| A | 자격 증명을 AWS Secrets Manager 에 암호로 저장합니다. 필요한 리전에 대해 다중 리전 비밀 복제를 사용합니다. 일정에 따라 보안 암호를 교체하도록 Secrets Manager 를 구성합니다. |
-| B | 보안 문자열 파라미터를 생성하여 AWS Systems Manager 에 자격 증명을 보안 암호로 저장합니다. 필요한 리전에 대해 다중 리전 비밀 복제를 사용합니다. 일정에 따라 암호를 교체하도록 Systems Manager를 구성합니다. |
-| C | 서버 측 암호화(SSE)가 활성화된 Amazon S3 버킷에 자격 증명을 저장합니다. Amazon EventBridge(Amazon CloudWatch Events)를 사용하여 AWS Lambda 함수를 호출하여 자격 증명을 교체합니다. |
-| D | AWS Key Management Service(AWS KMS) 다중 리전 고객 관리형 키를 사용하여 자격 증명을 비밀로 암호화합니다. Amazon DynamoDB 전역 테이블에 암호를 저장합니다. AWS Lambda 함수를 사용하여 DynamoDB에서 암호를 검색합니다. RDS API를 사용하여 비밀을 교체합니다. |
+|     |                                                                                                                                                                                                                                     |
+| --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A   | 자격 증명을 [[Security#AWS Secretes Manager\|AWS Secrets Manager]] 에 암호로 저장합니다. 필요한 리전에 대해 다중 리전 비밀 복제를 사용합니다. 일정에 따라 보안 암호를 교체하도록 Secrets Manager 를 구성합니다.                                                                              |
+| B   | 보안 문자열 파라미터를 생성하여 [[Management & Governance#AWS Systems Manager (SSM)\|AWS Systems Manager]] 에 자격 증명을 보안 암호로 저장합니다. 필요한 리전에 대해 다중 리전 비밀 복제를 사용합니다. 일정에 따라 암호를 교체하도록 Systems Manager를 구성합니다.                                         |
+| C   | 서버 측 암호화(SSE)가 활성화된 Amazon S3 버킷에 자격 증명을 저장합니다. [[Application Integration#Amazon EventBridge\|Amazon EventBridge(Amazon CloudWatch Events)]]를 사용하여 AWS Lambda 함수를 호출하여 자격 증명을 교체합니다.                                                |
+| D   | [[Security#AWS Key Management Service(AWS KMS)\|AWS Key Management Service(AWS KMS)]] 다중 리전 고객 관리형 키를 사용하여 자격 증명을 비밀로 암호화합니다. Amazon DynamoDB 전역 테이블에 암호를 저장합니다. AWS Lambda 함수를 사용하여 DynamoDB에서 암호를 검색합니다. RDS API를 사용하여 비밀을 교체합니다. |
 
 [[answers_1#Q13|정답]]
 
 ---
 
 # Q14 
-
+#Database
 ```
 회사는 Application Load Balancer 뒤의 Amazon EC2 인스턴스에서 전자 상거래
 애플리케이션을 실행합니다. 인스턴스는 여러 가용 영역에 걸쳐 Amazon EC2 Auto Scaling
@@ -291,19 +292,19 @@ Amazon S3에 대한 프라이빗 네트워크 연결을 제공하는 솔루션�
 어떤 솔루션이 이러한 요구 사항을 충족합니까?
 ```
 
-| |      |
-|-|------|
-| A | 리더 및 컴퓨팅 기능을 위해 단일 노드와 함께 Amazon Redshift를 사용하십시오. |
-| B | 단일 AZ 배포와 함께 Amazon RDS 사용 다른 가용 영역에 리더 인스턴스를 추가하도록 Amazon RDS를 구성합니다. |
-| C | 다중 AZ 배포와 함께 Amazon Aurora 를 사용합니다. Aurora 복제본을 사용하여 Aurora Auto Scaling을 구성합니다. |
-| D | EC2 스팟 인스턴스와 함께 Memcached용 Amazon ElastiCache를 사용합니다. |
+|     |                                                                                                              |
+| --- | ------------------------------------------------------------------------------------------------------------ |
+| A   | 리더 및 컴퓨팅 기능을 위해 단일 노드와 함께 [[Analytics#Amazon Redshift\|Amazon Redshift]]를 사용하십시오.                            |
+| B   | 단일 AZ 배포와 함께 [[Database#Amazon RDS\|Amazon RDS]] 사용 다른 가용 영역에 리더 인스턴스를 추가하도록 Amazon RDS를 구성합니다.              |
+| C   | 다중 AZ 배포와 함께 [[Database#Amazon Aurora\|Amazon Aurora]] 를 사용합니다. Aurora 복제본을 사용하여 Aurora Auto Scaling을 구성합니다. |
+| D   | EC2 스팟 인스턴스와 함께 Memcached용 [[Database#Amazon ElastiCache\|Amazon ElastiCache]]를 사용합니다.                       |
 
 [[answers_1#Q14|정답]]
 
 ---
 
 # Q15 
-
+#Security
 ```
 최근에 AWS 로 마이그레이션한 회사가 프로덕션 VPC 로 들어오고 나가는 트래픽을
 보호하는 솔루션을 구현하려고 합니다. 이 회사는 사내 데이터 센터에 검사 서버를 가지고
@@ -312,19 +313,19 @@ Amazon S3에 대한 프라이빗 네트워크 연결을 제공하는 솔루션�
 어떤 솔루션이 이러한 요구 사항을 충족합니까?
 ```
 
-| |      |
-|-|------|
-| A | 프로덕션 VPC에서 트래픽 검사 및 트래픽 필터링에 Amazon GuardDuty를 사용합니다. |
-| B | 트래픽 미러링을 사용하여 트래픽 검사 및 필터링을 위해 프로덕션 VPC 의 트래픽을 미러링합니다. |
-| C | AWS 네트워크 방화벽을 사용하여 프로덕션 VPC 에 대한 트래픽 검사 및 트래픽 필터링에 필요한 규칙을 생성합니다. |
-| D | AWS Firewall Manager 를 사용하여 프로덕션 VPC 에 대한 트래픽 검사 및 트래픽 필터링에 필요한 규칙을 생성합니다. |
+|     |                                                                                                               |
+| --- | ------------------------------------------------------------------------------------------------------------- |
+| A   | 프로덕션 VPC에서 트래픽 검사 및 트래픽 필터링에 [[Security#Amazaon GuardDuty\|Amazon GuardDuty]]를 사용합니다.                         |
+| B   | 트래픽 미러링을 사용하여 트래픽 검사 및 필터링을 위해 프로덕션 VPC 의 트래픽을 미러링합니다.                                                        |
+| C   | [[Security#AWS Network Firewall\|AWS 네트워크 방화벽]]을 사용하여 프로덕션 VPC 에 대한 트래픽 검사 및 트래픽 필터링에 필요한 규칙을 생성합니다.          |
+| D   | [[Security#AWS Firewall Manager\|AWS Firewall Manager]] 를 사용하여 프로덕션 VPC 에 대한 트래픽 검사 및 트래픽 필터링에 필요한 규칙을 생성합니다. |
 
 [[answers_1#Q15|정답]]
 
 ---
 
 # Q16 
-
+#Analytics
 ```
 회사는 AWS 에서 데이터 레이크를 호스팅합니다. 데이터 레이크는 Amazon S3 및
 PostgreSQL용 Amazon RDS의 데이터로 구성됩니다. 이 회사는 데이터 시각화를 제공하고
@@ -334,19 +335,19 @@ PostgreSQL용 Amazon RDS의 데이터로 구성됩니다. 이 회사는 데이�
 어떤 솔루션이 이러한 요구 사항을 충족합니까?
 ```
 
-| |      |
-|-|------|
-| A | Amazon QuickSight 에서 분석을 생성합니다. 모든 데이터 소스를 연결하고 새 데이터 세트를 만듭니다. 대시보드를 게시하여 데이터를 시각화합니다. 적절한 IAM 역할과 대시보드를 공유합니다. |
-| B | Amazon QuickSight 에서 분석을 생성합니다. 모든 데이터 소스를 연결하고 새 데이터 세트를 만듭니다. 대시보드를 게시하여 데이터를 시각화합니다. 적절한 사용자 및 그룹과 대시보드를 공유합니다. |
-| C | Amazon S3의 데이터에 대한 AWS Glue 테이블 및 크롤러를 생성합니다. AWS Glue 추출, 변환 및 로드(ETL) 작업을 생성하여 보고서를 생성합니다. 보고서를 Amazon S3 에 게시합니다. S3 버킷 정책을 사용하여 보고서에 대한 액세스를 제한합니다. |
-| D | Amazon S3의 데이터에 대한 AWS Glue 테이블과 크롤러를 생성합니다. Amazon Athena 연합 쿼리를 사용하여 PostgreSQL 용 Amazon RDS 내의 데이터에 액세스합니다. Amazon Athena 를 사용하여 보고서를 생성합니다. 보고서를 Amazon S3 에 게시합니다. S3 버킷 정책을 사용하여 보고서에 대한 액세스를 제한합니다. |
+|     |                                                                                                                                                                                                            |
+| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A   | [[Analytics#Amazon QuickSight\|Amazon QuickSight]] 에서 분석을 생성합니다. 모든 데이터 소스를 연결하고 새 데이터 세트를 만듭니다. 대시보드를 게시하여 데이터를 시각화합니다. 적절한 IAM 역할과 대시보드를 공유합니다.                                                          |
+| B   | Amazon QuickSight 에서 분석을 생성합니다. 모든 데이터 소스를 연결하고 새 데이터 세트를 만듭니다. 대시보드를 게시하여 데이터를 시각화합니다. 적절한 사용자 및 그룹과 대시보드를 공유합니다.                                                                                         |
+| C   | Amazon S3의 데이터에 대한 [[Analytics#AWS Glue\|AWS Glue]] 테이블 및 크롤러를 생성합니다. AWS Glue 추출, 변환 및 로드(ETL) 작업을 생성하여 보고서를 생성합니다. 보고서를 [[Storage#Amazon S3\|Amazon S3]] 에 게시합니다. S3 버킷 정책을 사용하여 보고서에 대한 액세스를 제한합니다.     |
+| D   | Amazon S3의 데이터에 대한 AWS Glue 테이블과 크롤러를 생성합니다. Amazon Athena 연합 쿼리를 사용하여 PostgreSQL 용 Amazon RDS 내의 데이터에 액세스합니다. Amazon Athena 를 사용하여 보고서를 생성합니다. 보고서를 Amazon S3 에 게시합니다. S3 버킷 정책을 사용하여 보고서에 대한 액세스를 제한합니다. |
 
 [[answers_1#Q16|정답]]
 
 ---
 
 # Q17 
-
+#IAM
 ```
 회사에서 새로운 비즈니스 애플리케이션을 구현하고 있습니다. 이 애플리케이션은 두 개의
 Amazon EC2 인스턴스에서 실행되며 문서 저장을 위해 Amazon S3 버킷을 사용합니다.
@@ -354,19 +355,19 @@ Amazon EC2 인스턴스에서 실행되며 문서 저장을 위해 Amazon S3 버
 솔루션 설계자는 이 요구 사항을 충족하기 위해 무엇을 해야 합니까?
 ```
 
-| |      |
-|-|------|
-| A | S3 버킷에 대한 액세스 권한을 부여하는 IAM 역할을 생성합니다. 역할을 EC2 인스턴스에 연결합니다. |
-| B | S3 버킷에 대한 액세스 권한을 부여하는 IAM 정책을 생성합니다. 정책을 EC2 인스턴스에 연결합니다. |
-| C | S3 버킷에 대한 액세스 권한을 부여하는 IAM 그룹을 생성합니다. 그룹을 EC2 인스턴스에 연결합니다. |
-| D | S3 버킷에 대한 액세스 권한을 부여하는 IAM 사용자를 생성합니다. 사용자 계정을 EC2 인스턴스에 연결합니다. |
+|     |                                                                                 |
+| --- | ------------------------------------------------------------------------------- |
+| A   | S3 버킷에 대한 액세스 권한을 부여하는 [[IAM#IAM Role\|IAM 역할]] 을 생성합니다. 역할을 EC2 인스턴스에 연결합니다.   |
+| B   | S3 버킷에 대한 액세스 권한을 부여하는[[IAM#Policy (정책)\| IAM 정책]]을 생성합니다. 정책을 EC2 인스턴스에 연결합니다. |
+| C   | S3 버킷에 대한 액세스 권한을 부여하는 [[IAM#요약\|IAM 그룹]]을 생성합니다. 그룹을 EC2 인스턴스에 연결합니다.          |
+| D   | S3 버킷에 대한 액세스 권한을 부여하는 [[IAM#요약\|IAM 사용자]]를 생성합니다. 사용자 계정을 EC2 인스턴스에 연결합니다.     |
 
 [[answers_1#Q17|정답]]
 
 ---
 
 # Q18 
-
+#ApplicationIntegration 
 ```
 애플리케이션 개발 팀은 큰 이미지를 더 작은 압축 이미지로 변환하는 마이크로서비스를
 설계하고 있습니다. 사용자가 웹 인터페이스를 통해 이미지를 업로드하면 마이크로
@@ -377,20 +378,20 @@ Amazon EC2 인스턴스에서 실행되며 문서 저장을 위해 Amazon S3 버
 이러한 요구 사항을 충족하는 작업 조합은 무엇입니까? (2개를 선택하세요.)
 ```
 
-| |      |
-|-|------|
-| A | Amazon Simple Queue Service(Amazon SQS) 대기열을 생성합니다. 이미지가 S3 버킷에 업로드될 때 SQS 대기열에 알림을 보내도록 S3 버킷을 구성합니다. |
-| B | Amazon Simple Queue Service(Amazon SQS) 대기열을 호출 소스로 사용하도록 Lambda 함수를 구성합니다. SQS 메시지가 성공적으로 처리되면 대기열에서 메시지를 삭제합니다. |
-| C | 새 업로드에 대해 S3 버킷을 모니터링하도록 Lambda 함수를 구성합니다. 업로드된 이미지가 감지되면 메모리의 텍스트 파일에 파일 이름을 쓰고 텍스트 파일을 사용하여 처리된 이미지를 추적합니다. |
-| D | Amazon EC2 인스턴스를 시작하여 Amazon Simple Queue Service(Amazon SQS) 대기열을 모니터링합니다. 항목이 대기열에 추가되면 EC2 인스턴스의 텍스트 파일에 파일 이름을 기록하고 Lambda 함수를 호출합니다. |
-| E | Amazon EventBridge(Amazon CloudWatch Events) 이벤트를 구성하여 S3 버킷을 모니터링합니다. 이미지가 업로드되면 추가 처리를 위해 애플리케이션 소유자의 이메일 주소와 함께 Amazon ample Notification Service(Amazon SNS) 주제에 알림을 보냅니다. |
+|     |                                                                                                                                                                                                                                |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| A   | [[Application Integration#Amazon Simple Queue Service (SQS)\|Amazon Simple Queue Service(Amazon SQS)]] 대기열을 생성합니다. 이미지가 S3 버킷에 업로드될 때 SQS 대기열에 알림을 보내도록 S3 버킷을 구성합니다.                                                          |
+| B   | Amazon Simple Queue Service(Amazon SQS) 대기열을 호출 소스로 사용하도록 Lambda 함수를 구성합니다. SQS 메시지가 성공적으로 처리되면 대기열에서 메시지를 삭제합니다.                                                                                                              |
+| C   | 새 업로드에 대해 S3 버킷을 모니터링하도록 Lambda 함수를 구성합니다. 업로드된 이미지가 감지되면 메모리의 텍스트 파일에 파일 이름을 쓰고 텍스트 파일을 사용하여 처리된 이미지를 추적합니다.                                                                                                                  |
+| D   | Amazon EC2 인스턴스를 시작하여 Amazon Simple Queue Service(Amazon SQS) 대기열을 모니터링합니다. 항목이 대기열에 추가되면 EC2 인스턴스의 텍스트 파일에 파일 이름을 기록하고 Lambda 함수를 호출합니다.                                                                                      |
+| E   | [[Application Integration#Amazon EventBridge\|Amazon EventBridge(Amazon CloudWatch Events)]] 이벤트를 구성하여 S3 버킷을 모니터링합니다. 이미지가 업로드되면 추가 처리를 위해 애플리케이션 소유자의 이메일 주소와 함께 Amazon ample Notification Service(Amazon SNS) 주제에 알림을 보냅니다. |
 
 [[answers_1#Q18|정답]]
 
 ---
 
 # Q19 
-
+#NetworkContent-Delivery 
 ```
 회사에 AWS 에 배포된 3 계층 웹 애플리케이션이 있습니다. 웹 서버는 VPC 의 퍼블릭
 서브넷에 배포됩니다. 애플리케이션 서버와 데이터베이스 서버는 동일한 VPC 의 프라이빗
@@ -402,19 +403,19 @@ Amazon EC2 인스턴스에서 실행되며 문서 저장을 위해 Amazon S3 버
 최소한의 운영 오버헤드로 이러한 요구 사항을 충족하는 솔루션은 무엇입니까?
 ```
 
-| |      |
-|-|------|
-| A | 애플리케이션 VPC의 퍼블릭 서브넷에 Network Load Balancer를 생성하여 패킷 검사를 위해 어플라이언스로 트래픽을 라우팅합니다. |
-| B | 애플리케이션 VPC 의 퍼블릭 서브넷에 Application Load Balancer 를 생성하여 패킷 검사를 위해 어플라이언스로 트래픽을 라우팅합니다. |
-| C | 전송 게이트웨이를 통해 들어오는 패킷을 라우팅하도록 라우팅 테이블을 구성하는 검사 VPC에 전송 게이트웨이를 배포합니다. |
-| D | 검사 VPC 에 게이트웨이 로드 밸런서를 배포합니다. 게이트웨이 로드 밸런서 엔드포인트를 생성하여 수신 패킷을 수신하고 패킷을 어플라이언스로 전달합니다. |
+|     |                                                                                                                          |
+| --- | ------------------------------------------------------------------------------------------------------------------------ |
+| A   | 애플리케이션 VPC의 퍼블릭 서브넷에 [[ELB#Network Load Balancer\|Network Load Balancer]]를 생성하여 패킷 검사를 위해 어플라이언스로 트래픽을 라우팅합니다.           |
+| B   | 애플리케이션 VPC 의 퍼블릭 서브넷에 [[ELB#Application Load Balancer\|Application Load Balancer]] 를 생성하여 패킷 검사를 위해 어플라이언스로 트래픽을 라우팅합니다. |
+| C   | 전송 게이트웨이를 통해 들어오는 패킷을 라우팅하도록 라우팅 테이블을 구성하는 검사 VPC에 전송 게이트웨이를 배포합니다.                                                      |
+| D   | 검사 VPC 에 [[ELB#Gateway Load Balancer\|게이트웨이 로드 밸런서]]를 배포합니다. 게이트웨이 로드 밸런서 엔드포인트를 생성하여 수신 패킷을 수신하고 패킷을 어플라이언스로 전달합니다.     |
 
 [[answers_1#Q19|정답]]
 
 ---
 
 # Q20 
-
+#Storage
 ```
 회사에서 동일한 AWS 리전의 테스트 환경에 대량의 프로덕션 데이터를 복제하는 기능을
 개선하려고 합니다. 데이터는 Amazon Elastic Block Store(Amazon EBS) 볼륨의 Amazon
@@ -426,12 +427,12 @@ EC2 인스턴스에 저장됩니다. 복제된 데이터를 수정해도 프로�
 어떤 솔루션이 이러한 요구 사항을 충족합니까?
 ```
 
-| |      |
-|-|------|
-| A | 프로덕션 EBS 볼륨의 EBS 스냅샷을 만듭니다. 테스트 환경의 EC2 인스턴스 스토어 볼륨에 스냅샷을 복원합니다. |
-| B | EBS 다중 연결 기능을 사용하도록 프로덕션 EBS 볼륨을 구성합니다. 프로덕션 EBS 볼륨의 EBS 스냅샷을 만듭니다. 테스트 환경의 EC2 인스턴스에 프로덕션 EBS 볼륨을 연결합니다. |
-| C | 프로덕션 EBS 볼륨의 EBS 스냅샷을 만듭니다. 새 EBS 볼륨을 생성하고 초기화합니다. 프로덕션 EBS 스냅샷에서 볼륨을 복원하기 전에 테스트 환경의 EC2 인스턴스에 새 EBS 볼륨을 연결합니다. |
-| D | 프로덕션 EBS 볼륨의 EBS 스냅샷을 만듭니다. EBS 스냅샷에서 EBS 빠른 스냅샷 복원 기능을 켭니다. 스냅샷을 새 EBS 볼륨으로 복원합니다. 테스트 환경의 EC2 인스턴스에 새 EBS 볼륨을 연결합니다. |
+|     |                                                                                                                        |
+| --- | ---------------------------------------------------------------------------------------------------------------------- |
+| A   | 프로덕션 [[Storage#Amazon EBS\|EBS]] 볼륨의 EBS 스냅샷을 만듭니다. 테스트 환경의 EC2 인스턴스 스토어 볼륨에 스냅샷을 복원합니다.                               |
+| B   | EBS 다중 연결 기능을 사용하도록 프로덕션 EBS 볼륨을 구성합니다. 프로덕션 EBS 볼륨의 EBS 스냅샷을 만듭니다. 테스트 환경의 EC2 인스턴스에 프로덕션 EBS 볼륨을 연결합니다.              |
+| C   | 프로덕션 EBS 볼륨의 EBS 스냅샷을 만듭니다. 새 EBS 볼륨을 생성하고 초기화합니다. 프로덕션 EBS 스냅샷에서 볼륨을 복원하기 전에 테스트 환경의 EC2 인스턴스에 새 EBS 볼륨을 연결합니다.       |
+| D   | 프로덕션 EBS 볼륨의 EBS 스냅샷을 만듭니다. EBS 스냅샷에서 EBS 빠른 스냅샷 복원 기능을 켭니다. 스냅샷을 새 EBS 볼륨으로 복원합니다. 테스트 환경의 EC2 인스턴스에 새 EBS 볼륨을 연결합니다. |
 
 [[answers_1#Q20|정답]]
 
