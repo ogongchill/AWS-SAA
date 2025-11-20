@@ -588,247 +588,505 @@ https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html#how-it-works-ec2
 
 ---
 
-# Q21 
+# Q21
 
 **정답: D**
 
-https://www.examtopics.com/discussions/amazon/view/85195-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:・
-A(X) : 전체 웹사이트를 호스팅하기에는 동적인 요소들이 들어가 있을 수 있는데
-S3+CloudFront 조합은 정적 웹사이트 호스팅을 위한 것임.
-B(X) : RDS 는 기본적으로 Auto Scaling 을 사용하지 않음. 따로 켜야하는데 해당 선택지엔
-Auto Scaling을 사용한단 언급이 없음.
-워크로드를 예측할 수 없는 경우 Amazon RDS DB 인스턴스에 대해 스토리지
-Autoscaling을 활성화할 수 있습니다.
-https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.
-html#USER_PIOPS.Autoscaling
-C(X) : B와 동일한 이유로 오답.
-D(O) : 정적인 웹사이트 요소들은 S3 + CloudFront로 빠르게 제공하고, API Gateway에서
-Lambda 함수를 호출해 DynamoDB에 데이터 저장 가능. DynamoDB는 확장성이 뛰어나고
-밀리초 단위 액세스를 지원하는 데이터베이스 유형.
-・S3 + CloudFront 조합의 정적 웹사이트 호스팅 :
-https://aws.amazon.com/ko/premiumsupport/knowledge-center/cloudfront-serve-static-
-website/
-・즉, HTTPS 엔드포인트를 통해 API 를 호출하면 API Gateway 가 Lambda 함수를
-호출합니다.
-https://docs.aws.amazon.com/ko_kr/lambda/latest/dg/services-apigateway-tutorial.html
-・개발자는 DynamoDB 를 사용해 최신 서버리스 애플리케이션을 구축하여 우선 작은
-규모에서 시작했다가 전역적으로 확장하여 초당 페타바이트 단위의 데이터와 수천만 건의
-읽기 및 쓰기 요청을 지원하도록 할 수 있습니다.....DynamoDB 는 용량에 맞게 테이블을
-자동으로 조정하므로 별도로 관리하지 않아도 성능을 유지합니다.
-https://aws.amazon.com/ko/dynamodb/features/#Enterprise_ready
-설명2:
-사용량이 많은 시간 동안 지연 시간이 밀리초이고 운영 오버헤드가 최소인 AWS 에서 하루
-1 회 거래 웹 사이트를 시작하려면 가장 좋은 옵션은 Amazon S3 버킷을 사용하여 웹
-사이트의 정적 콘텐츠를 호스팅하고 Amazon CloudFront 배포를 배포하는 것입니다.
-S3 버킷을 오리진으로 설정하고 백엔드 API 에 Amazon API Gateway 및 AWS Lambda
-함수를 사용하고 데이터를 Amazon DynamoDB에 저장합니다.
-이 옵션은 최소한의 운영 오버헤드가 필요하며 사용량이 많은 시간 동안 밀리초 대기
-시간으로 시간당 수백만 건의 요청을 처리할 수 있습니다. 따라서 보기 D가 정답입니다.
+## 문제 요약
+- 하루 24시간 동안 하나의 제품만 판매하는 전자상거래 웹사이트
+- 피크 시간에 시간당 수백만 개의 요청을 밀리초 지연시간으로 처리
+- 최소한의 운영 오버헤드 필요
+
+## 옵션 분석
+
+**A. S3 + CloudFront + S3에 주문 데이터 저장**
+- ❌ S3는 객체 스토리지로 트랜잭션 데이터 처리에 부적합
+- ❌ 동적 주문 처리 기능 없음
+
+**B. EC2 Auto Scaling + ALB + RDS MySQL**
+- ❌ EC2 인스턴스 관리 필요 (패치, 모니터링, 확장 설정)
+- ❌ RDS 관리 및 용량 계획 필요
+- ❌ 운영 오버헤드 높음
+
+**C. EKS + Kubernetes + RDS MySQL**
+- ❌ Kubernetes 클러스터 관리 복잡성 매우 높음
+- ❌ 컨테이너 오케스트레이션 운영 부담
+- ❌ 가장 높은 운영 오버헤드
+
+**D. S3 + CloudFront + API Gateway + Lambda + DynamoDB** ✅
+- ✅ 완전한 서버리스 아키텍처 → 인프라 관리 불필요
+- ✅ 정적 콘텐츠 = S3 + CloudFront (전 세계 엣지에서 밀리초 응답)
+- ✅ 백엔드 = API Gateway + Lambda (완전 서버리스, 운영 부담 없음)
+- ✅ DB = DynamoDB
+    - 초당 수백만 요청도 처리 가능
+    - 자동 확장
+    - 운영 오버헤드 없음
+```mermaid
+flowchart LR
+
+    %% 사용자 및 엣지
+    subgraph CLIENT[사용자]
+        U1[웹/모바일 사용자]
+    end
+
+    U1 --> CF[CloudFront<br>글로벌 엣지 캐시]
+
+    %% 정적 웹사이트 호스팅
+    CF --> S3[S3 정적 웹사이트<br>HTML/CSS/JS]
+
+    %% API 요청 흐름
+    CF --> APIGW[API Gateway<br>Fully Managed L7 Front Door]
+
+    %% Lambda Auto Scaling 영역
+    subgraph LAMBDA_CLUSTER[Lambda Auto Scaling Zone]
+        direction TB
+        L1[Lambda 실행환경 #1<br>Firecracker MicroVM]
+        L2[Lambda 실행환경 #2]
+        L3[Lambda 실행환경 #3]
+        L99[...요청 수만큼 자동 생성...]
+    end
+
+    APIGW --> L1
+    APIGW --> L2
+    APIGW --> L3
+    APIGW --> L99
+
+    %% 백엔드 DB
+    L1 --> DB[DynamoDB<br>초당 수백만 요청 처리]
+    L2 --> DB
+    L3 --> DB
+    L99 --> DB
+
+
+
+```
+## 선택 이유
+서버리스 아키텍처는 인프라 프로비저닝, 패치, 확장 관리가 모두 자동화되어 있어 운영 오버헤드를 최소화하면서도 피크 트래픽을 효과적으로 처리할 수 있습니다. 모든 구성 요소가 관리형 서비스로 자동 확장되어 밀리초 단위 응답 시간을 보장합니다.
 
 ---
 
-# Q22 
+# Q22
 
 **정답: B**
 
-https://www.examtopics.com/discussions/amazon/view/84943-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명:・
-S3 Intelligent-Tiering - 액세스 빈도 또는 불규칙한 사용 패턴을 모를 때 완벽한 사용
-사례입니다.
-Amazon S3 는 다양한 사용 사례를 위해 설계된 다양한 스토리지 클래스를 제공합니다.
-여기에는 자주 액세스하는 데이터의 범용 스토리지를 위한 S3 Standard 가 포함됩니다.
-액세스 패턴을 알 수 없거나 변경하는 데이터를 위한 S3 Intelligent-Tiering; S3
-Standard-Infrequent Access(S3 Standard-IA) 및 S3 One Zone-Infrequent Access(S3 One
-Zone-IA)는 수명이 길지만 액세스 빈도가 낮은 데이터를 위한 것입니다. 장기 아카이브 및
-디지털 보존을 위한 Amazon S3 Glacier(S3 Glacier) 및 Amazon S3 Glacier Deep Archive(S3
-Glacier Deep Archive). 기존 AWS 리전에서 충족할 수 없는 데이터 레지던시 요구 사항이
-있는 경우 S3 Outposts 스토리지 클래스를 사용하여 S3 데이터를 온프레미스에 저장할 수
-있습니다.
-Amazon S3는 수명 주기 동안 데이터를 관리하는 기능도 제공합니다. S3 수명 주기 정책이
-설정되면 애플리케이션을 변경하지 않고도 데이터가 자동으로 다른 스토리지 클래스로
-전송됩니다.
-https://aws.amazon.com/getting-started/hands-on/getting-started-using-amazon-s3-in
-telligent-tiering/?nc1=h_ls
-예측할 수 없는 패턴 = S3 Intelligent Tiering.
+## 문제 요구사항
+- 가용 영역 손실에 대한 복원력 필요
+- 일부 파일은 자주 액세스, 다른 파일은 예측 불가능한 패턴으로 거의 액세스
+- 저장 및 검색 비용 최소화
+
+## 옵션 분석
+
+**A. S3 Standard**
+- ✅ 가용 영역 복원력 (최소 3개 AZ)
+- ❌ 모든 파일에 높은 스토리지 비용 → 거의 액세스 안 되는 파일 비효율
+- ❌ 액세스 패턴 최적화 없음
+
+**B. S3 Intelligent-Tiering** ✅
+- ✅ 가용 영역 복원력 (최소 3개 AZ에 복제)
+- ✅ 자동으로 액세스 패턴 모니터링
+- ✅ 자주 액세스: Frequent Access 계층 유지
+- ✅ 30일 미액세스: Infrequent Access 계층으로 자동 이동
+- ✅ 90일 미액세스: Archive 계층으로 추가 절감
+- ✅ **예측 불가능한 패턴에 최적** → 자동 비용 최적화
+- ✅ 검색 비용 없음 (Retrieval charge 없음)
+- ✅ 관리 오버헤드 없음
+
+**C. S3 Standard-IA**
+- ✅ 가용 영역 복원력
+- ❌ 자주 액세스되는 파일에는 비효율 (검색 비용 발생)
+- ❌ 혼합된 액세스 패턴에 부적합
+- ❌ 수동으로 파일을 분류해야 함
+
+**D. S3 One Zone-IA**
+- ❌ **단일 가용 영역만 사용** → AZ 손실 시 데이터 손실
+- ❌ 복원력 요구사항 미충족
+
+## 선택 이유
+핵심 키워드는 **"예측 불가능한 액세스 패턴 (unpredictable patterns)"**입니다. S3 Intelligent-Tiering은 액세스 빈도를 자동으로 모니터링하여 적절한 스토리지 계층으로 객체를 이동시킵니다. 자주 액세스되는 파일은 빠른 액세스를, 거의 사용하지 않는 파일은 저렴한 비용을 자동으로 제공하므로 혼합된 액세스 패턴에 최적입니다.
 
 ---
 
-# Q23 
+# Q23
 
 **정답: B**
 
-https://www.examtopics.com/discussions/amazon/view/85092-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명:・
-이러한 요구 사항을 가장 비용 효율적으로 충족하는 스토리지 솔루션은 B입니다.
-1 개월 후에 객체를 S3 Standard 에서 S3 Glacier Deep Archive 로 전환하는 S3 수명 주기
-구성을 생성합니다. Amazon S3 Glacier Deep Archive 는 거의 액세스하지 않고 몇 시간의
-검색 시간이 허용되는 데이터의 장기 보존을 위한 안전하고 내구성이 있으며 매우 저렴한
-Amazon S3 스토리지 클래스입니다. Amazon S3 에서 가장 저렴한 스토리지 옵션이므로
-1 개월 후에 액세스하지 않는 백업 파일을 저장하는 데 비용 효율적인 선택입니다. S3 수명
-주기 구성을 사용하여 1 개월 후에 객체를 S3 Standard 에서 S3 Glacier Deep Archive 로
-자동 전환할 수 있습니다. 이렇게 하면 자주 액세스하지 않는 백업 파일의 저장 비용이
-최소화됩니다.
-1개월 이후 파일에 접근하지 않음 = S3 Glacier Deep Archive. 답은 B.
+## 문제 요구사항
+- S3 Standard에 백업 파일 저장
+- 1개월 동안 자주 액세스
+- 1개월 이후에는 액세스하지 않음
+- 파일을 무기한 보관 필요
+- 가장 비용 효율적인 솔루션
+
+## 옵션 분석
+
+**A. S3 Intelligent-Tiering**
+- ❌ 객체 모니터링 비용 발생
+- ❌ 액세스 패턴이 명확한 경우 (1개월 후 미액세스) 불필요한 오버헤드
+- ❌ 예측 가능한 패턴에는 비효율적
+
+**B. S3 Glacier Deep Archive로 전환** ✅
+- ✅ **S3에서 가장 저렴한 스토리지 클래스**
+- ✅ 1개월 후 액세스 안 함 → 장기 아카이브에 최적
+- ✅ 무기한 보관에 적합 (11 nines 내구성)
+- ✅ S3 수명 주기 정책으로 자동 전환
+- ✅ 최대 비용 절감 (Standard 대비 약 95% 이상 저렴)
+- ✅ 검색 시간: 12시간 (백업 파일이므로 문제 없음)
+
+**C. S3 Standard-IA로 전환**
+- ❌ 1개월 후 액세스 안 하는데 IA 사용은 비효율
+- ❌ Glacier Deep Archive보다 훨씬 비쌈
+- ❌ 장기 아카이브용이 아닌 가끔 액세스용
+
+**D. S3 One Zone-IA로 전환**
+- ❌ Standard-IA보다는 저렴하지만 Glacier Deep Archive보다 비쌈
+- ❌ 단일 AZ → 내구성 낮음 (백업 파일에 부적합)
+- ❌ 비용 최적화 부족
+
+## 선택 이유
+핵심 키워드는 **"1개월 이후 액세스하지 않음 + 무기한 보관"**입니다. 이는 전형적인 장기 아카이브 시나리오입니다. S3 Glacier Deep Archive는 장기 보관용 데이터에 최적화되어 있으며 S3 스토리지 클래스 중 가장 저렴합니다. 검색에 최대 12시간이 걸리지만, 액세스하지 않는 백업 파일이므로 문제가 되지 않습니다.
 
 ---
 
-# Q24 
+# Q24
 
 **정답: B**
 
-https://www.examtopics.com/discussions/amazon/view/85038-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명
-AWS Cost Explorer는 비용과 사용량을 보고 분석할 수 있는 도구입니다. 기본 그래프, Cost
-Explorer 비용 및 사용량 보고서 또는 Cost Explorer RI 보고서를 사용하여 사용량 및
-비용을 탐색할 수 있습니다. 최대 지난 12 개월 동안의 데이터를 보고 향후 12 개월 동안
-지출할 가능성이 있는 금액을 예측하고 구매할 예약 인스턴스에 대한 추천을 받을 수
-있습니다. 비용 탐색기를 사용하여 추가 조사가 필요한 영역을 식별하고 비용을 이해하는
-데 사용할 수 있는 추세를 볼 수 있습니다.
-https://docs.aws.amazon.com/cost-management/latest/userguide/ce-what-is.html
+## 문제 요구사항
+- 지난 2개월간 EC2 비용 비교 그래프 생성
+- 인스턴스 유형별 심층 분석 수행
+- 수직적 확장의 근본 원인 식별
+- 운영 오버헤드가 가장 적은 방법
+
+## 옵션 분석
+
+**A. AWS Budgets으로 예산 보고서 생성**
+- ❌ Budgets는 예산 설정 및 임계값 알림용 도구
+- ❌ 비용 분석 및 시각화 기능 제한적
+- ❌ 인스턴스 유형별 심층 분석 어려움
+- ❌ 근본 원인 분석에 부적합
+
+**B. Cost Explorer의 세분화된 필터링** ✅
+- ✅ **AWS 콘솔에서 즉시 사용 가능** → 별도 설정 불필요
+- ✅ 인스턴스 유형별 그룹화 및 필터링 지원
+- ✅ 최대 12개월 데이터 조회 가능 (2개월 비교 충분)
+- ✅ 시계열 그래프 자동 생성
+- ✅ 다양한 차원으로 드릴다운 분석 가능 (서비스, 리전, 태그 등)
+- ✅ **최소한의 운영 오버헤드** (클릭 몇 번으로 분석 완료)
+
+**C. Billing and Cost Management 대시보드**
+- ❌ 기본 대시보드는 고수준 요약만 제공
+- ❌ 인스턴스 유형별 세부 분석 기능 부족
+- ❌ Cost Explorer보다 기능 제한적
+
+**D. Cost and Usage Report + QuickSight**
+- ❌ S3 버킷 생성 및 구성 필요
+- ❌ Cost and Usage Report 활성화 및 대기 시간 필요
+- ❌ QuickSight 설정, 데이터셋 생성, 대시보드 구축 필요
+- ❌ **매우 높은 운영 오버헤드**
+- ❌ 복잡한 커스텀 분석에는 유용하지만 이 문제에는 과도함
+
+## 선택 이유
+핵심 키워드는 **"운영 오버헤드가 가장 적은"**입니다. AWS Cost Explorer는 별도 설정 없이 AWS 콘솔에서 즉시 사용할 수 있으며, 인스턴스 유형별 필터링과 시계열 비교 그래프를 손쉽게 생성할 수 있습니다. 지난 12개월 데이터를 지원하므로 2개월 비교는 물론, 심층 분석을 위한 다양한 필터링 옵션을 제공합니다.
 
 ---
 
-# Q25 
+# Q25
 
 **정답: D**
 
-https://www.examtopics.com/discussions/amazon/view/85197-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명:・
-대기열(SQS)로 병목 현상을 방지할 수 있습니다.
-대량의 데이터 처리 + 확장성 개선 = SQS queue + Lambda 조합.
+## 문제 상황
+- API Gateway → Lambda → Aurora PostgreSQL 구조
+- 대용량 데이터 처리 시 Lambda 할당량을 크게 늘려야 함
+- 확장성 개선 + 구성 노력 최소화 필요
+
+## 옵션 분석
+
+**A. Lambda를 EC2 + Tomcat + JDBC로 리팩터링**
+- ❌ 전체 아키텍처 리팩터링 필요 → 매우 높은 구성 노력
+- ❌ EC2 인스턴스 관리 오버헤드 (패치, 확장, 모니터링)
+- ❌ Auto Scaling 별도 설정 필요
+- ❌ 서버리스 장점 상실
+
+**B. Aurora를 DynamoDB + DAX로 변경**
+- ❌ 데이터베이스 플랫폼 완전 변경 → 매우 높은 구성 노력
+- ❌ PostgreSQL → DynamoDB 데이터 마이그레이션 복잡
+- ❌ 애플리케이션 로직 전체 수정 필요
+- ❌ 문제 근본 원인 미해결 (Lambda 동시성 한계는 여전함)
+
+**C. 두 개의 Lambda + SNS로 통합**
+- ❌ SNS는 pub/sub 메시징 (일대다 전송)
+- ❌ **메시지 큐/버퍼링 기능 없음** → 트래픽 제어 불가
+- ❌ 대량 데이터 처리 시 여전히 Lambda 동시성 한계
+- ❌ 메시지 지속성 보장 안 함 (휘발성)
+
+**D. 두 개의 Lambda + SQS로 통합** ✅
+- ✅ **SQS가 버퍼 역할** → Lambda 동시성 한계 해결
+- ✅ Lambda 1: API Gateway → SQS (빠르게 메시지 전송)
+- ✅ Lambda 2: SQS → Aurora (배치 처리, 속도 조절)
+- ✅ **디커플링 아키텍처** → 확장성 크게 개선
+- ✅ SQS 배치 크기 조정으로 DB 부하 최적화
+- ✅ 자동 재시도 및 DLQ(Dead Letter Queue) 지원
+- ✅ **구성 노력 최소** (기존 Lambda 코드 재사용 가능)
+- ✅ Lambda 할당량 증가 불필요
+
+## 선택 이유
+핵심 문제는 **"Lambda 동시 실행 한계"**입니다. SQS 큐를 중간에 두면:
+1. 첫 번째 Lambda는 빠르게 메시지를 SQS에 넣고 종료 → API 응답 빠름
+2. SQS가 대량의 메시지를 안전하게 버퍼링
+3. 두 번째 Lambda가 SQS에서 배치로 꺼내서 DB에 저장 → 속도 조절
+4. Lambda 동시성 한계 극복 + Aurora 부하 분산
+
+**SQS vs SNS 차이:**
+- **SQS**: 메시지 큐 (일대일, 버퍼링, 속도 조절 가능)
+- **SNS**: 메시징 서비스 (일대다, 즉시 전송, 버퍼링 없음)
 
 ---
 
-# Q26 
+# Q26
 
 **정답: A**
 
-https://www.examtopics.com/discussions/amazon/view/84940-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:・
-AWS Config는 AWS 리소스 구성을 측정, 감사 및 평가할 수 있는 서비스입니다. Config는
-AWS 리소스 구성을 지속적으로 모니터링 및 기록하고, 원하는 구성을 기준으로 기록된
-구성을 자동으로 평가해 줍니다.
-https://aws.amazon.com/ko/config/
-설명2:
-Amazon S3 버킷에 무단 구성 변경이 없도록 하려면 솔루션 설계자가 적절한 규칙으로
-AWS Config를 켜야 합니다. AWS Config는 사용자가 업계 표준 및 내부 정책을 준수하는지
-AWS 리소스 구성을 감사하고 평가할 수 있는 서비스입니다. 리소스가 서로 어떻게
-관련되어 있는지에 대한 정보를 포함하여 리소스 및 해당 구성에 대한 자세한 보기를
-제공합니다. 적절한 규칙으로 AWS Config 를 켜면 사용자는 Amazon S3 버킷에 대한 무단
-구성 변경을 식별하고 수정할 수 있습니다.
+## 문제 요구사항
+- Amazon S3 버킷에 무단 구성 변경이 없는지 확인
+- AWS 클라우드 배포 검토
+
+## 옵션 분석
+
+**A. AWS Config를 적절한 규칙으로 켜기** ✅
+- ✅ **리소스 구성 변경을 지속적으로 모니터링 및 기록**
+- ✅ S3 버킷 구성 변경 감지:
+  - 퍼블릭 액세스 설정 변경
+  - 암호화 설정 변경
+  - 버킷 정책 변경
+  - 버전 관리 설정 변경
+- ✅ 관리형 규칙 제공:
+  - `s3-bucket-public-read-prohibited`
+  - `s3-bucket-public-write-prohibited`
+  - `s3-bucket-server-side-encryption-enabled`
+  - `s3-bucket-versioning-enabled`
+- ✅ 구성 변경 이력 유지 (누가, 언제, 무엇을)
+- ✅ 규칙 위반 시 자동 알림 (SNS 통합)
+- ✅ 규정 준수 대시보드 제공
+
+**B. AWS Trusted Advisor**
+- ❌ 비용 최적화, 성능, 보안 **모범 사례 권장** 도구
+- ❌ 구성 변경 추적 기능 없음
+- ❌ 실시간 모니터링 불가
+- ❌ 일회성 검사 (지속적 모니터링 아님)
+
+**C. Amazon Inspector**
+- ❌ **애플리케이션 보안 취약점 스캔** 도구
+- ❌ EC2 인스턴스 및 컨테이너 워크로드 전용
+- ❌ S3 버킷 구성 변경 감지 불가
+- ❌ 용도가 다름 (취약점 스캔 vs 구성 변경 추적)
+
+**D. S3 서버 액세스 로깅 + EventBridge**
+- ❌ 서버 액세스 로그는 **객체 수준 액세스** 기록 (GET, PUT, DELETE)
+- ❌ **버킷 구성 변경은 기록하지 않음** (버킷 정책, 퍼블릭 액세스 등)
+- ❌ 복잡한 수동 구성 및 로그 파싱 필요
+- ❌ 구성 준수 평가 기능 없음
+
+## 선택 이유
+핵심은 **"구성 변경 감지 및 추적"**입니다. AWS Config는 AWS 리소스의 구성 변경을 지속적으로 모니터링하고 기록하며, 정의된 규칙에 따라 준수 여부를 자동으로 평가합니다. S3 버킷의 퍼블릭 액세스 설정, 암호화, 버전 관리 등의 구성 변경을 감지하고 규칙 위반 시 알림을 보냅니다.
+
+**AWS Config vs S3 액세스 로그:**
+- **AWS Config**: 버킷 구성 변경 추적 (설정 변경)
+- **S3 액세스 로그**: 객체 액세스 추적 (데이터 액세스)
 
 ---
 
-# Q27 
+# Q27
 
 **정답: A**
 
-https://www.examtopics.com/discussions/amazon/view/85227-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-해설:・
-AWS 계정에 직접 액세스할 수 없는 사람들과 CloudWatch 대시보드를 공유할 수 있습니다.
-대시보드를 공유할 때 다음 세 가지 방법으로 대시보드를 볼 수 있는 사람을 지정할 수
-있습니다.
-◎하나의 대시보드를 공유하고 대시보드를 볼 수 있는 사람들의 특정 이메일 주소를
-지정합니다. 이러한 각 사용자는 대시보드를 보기 위해 입력해야 하는 고유한 암호를
-만듭니다.
-◎링크가 있는 모든 사용자가 대시보드를 볼 수 있도록 단일 대시보드를 공개적으로
-공유합니다.
-◎계정의 모든 CloudWatch 대시보드를 공유하고 대시보드 액세스를 위한 타사 SSO(Single
-Sign-On) 공급자를 지정합니다. 이 SSO 공급자 목록의 구성원인 모든 사용자는 계정의
-모든 대시보드에 액세스할 수 있습니다. 이를 활성화하려면 SSO 공급자를 Amazon
-Cognito 와 통합합니다. SSO 공급자는 SAML(Security Assertion Markup Language)을
-지원해야 합니다.
-https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-dashbo
-ard-sharing.html
+**풀이:**
+
+문제의 핵심 요구사항:
+1. 제품 관리자는 AWS 계정이 없음
+2. CloudWatch 대시보드 접근 필요
+3. 최소 권한 원칙 적용
+
+각 보기 분석:
+
+**A. CloudWatch 대시보드 공유 기능 사용** ✅
+- AWS 계정 없이 대시보드 접근 가능
+- 이메일 주소로 고유 암호 생성하여 공유
+- 대시보드만 볼 수 있어 최소 권한 원칙 충족
+- 추가 인프라/사용자 관리 불필요
+
+**B. IAM 사용자 + CloudWatchReadOnlyAccess** ❌
+- IAM 사용자 생성 = AWS 계정 제공하는 것
+- "AWS 계정이 없다"는 요구사항 위배
+- 불필요한 IAM 사용자 관리 오버헤드
+
+**C. IAM 사용자 + ViewOnlyAccess** ❌
+- B와 동일한 이유로 부적절
+- ViewOnlyAccess는 과도한 권한 (최소 권한 원칙 위배)
+
+**D. 배스천 서버 사용** ❌
+- 과도하게 복잡한 솔루션
+- 높은 운영 오버헤드 (서버 관리, RDP 자격증명 관리)
+- 보안 위험 증가
+- 비용 증가
+
+**결론:** CloudWatch 대시보드 공유 기능은 AWS 계정 없는 외부 사용자에게 특정 대시보드만 안전하게 공유할 수 있는 AWS의 네이티브 기능입니다.
+
+https://www.examtopics.com/discussions/amazon/view/85227-exam-aws-certified-solutions-architect-associate-saa-c03/
+
+https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-dashboard-sharing.html
 
 ---
 
-# Q28 
+# Q28
 
 **정답: B**
 
-https://www.examtopics.com/discussions/amazon/view/85231-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-해설:・
-・AWS Organizations로 SSO 설정하여 Active Directory 사용 가능.
-AWS IAM Identity Center(AWS SSO 의 후속 서비스)를 설정하여 Active Directory 를 통해
-AWS 계정 및 리소스에 대한 액세스를 제공하며, 별도의 작업 역할에 따라 권한을 사용자
-지정합니다. https://aws.amazon.com/ko/organizations/features/
-・AWS Directory Service를 사용하여 AWS Managed Microsoft AD 디렉터리에 연결 가능.
-IAM Identity Center 는 AWS Identity and Access Management(IAM)를 기반으로 구축된
-서비스로, 여러 AWS 계정, AWS 애플리케이션 및 다른 SAML 사용 클라우드
-애플리케이션에 대한 액세스 관리를 간소화합니다. AWS Directory Service를 사용하여 IAM
-Identity Center 를 온프레미스 Active Directory(AD) 또는 AWS Managed Microsoft AD
-디렉터리에 연결할 수 있습니다. https://aws.amazon.com/ko/iam/identity-center/faqs/
-A(X) : SSO, AWS 관리 콘솔에는 양방향 트러스트가 필요.
-AWS Managed Microsoft AD는 수신, 발신 및 양방향(양방향)의 세 가지 신뢰 관계 방향을
-모두 지원합니다. AWS Managed Microsoft AD 는 외부 및 포리스트 트러스트를 모두
-지원합니다. Amazon Chime, Amazon Connect, Amazon QuickSight, AWS IAM Identity
-Center(AWS Single Sign-On의 후속 제품), Amazon WorkDocs, Amazon WorkMail, Amazon
-WorkSpaces 및 AWS Management Console 과 같은 AWS 엔터프라이즈 앱에는 양방향
-신뢰가 필요합니다. Amazon EC2, Amazon RDS 및 Amazon FSx 는 단방향 또는 양방향
-신뢰로 작동합니다.
+**풀이:**
+
+문제의 핵심 요구사항:
+1. AWS Organizations의 모든 계정에 SSO 필요
+2. 온프레미스 자체 관리 Microsoft AD에서 사용자/그룹 관리 유지
+3. AWS 계정과 리소스 접근을 위한 중앙 인증
+
+각 보기 분석:
+
+**A. AWS SSO + 단방향 트러스트** ❌
+- AWS SSO(IAM Identity Center)를 사용하는 것은 맞음
+- 하지만 **AWS Management Console 접근에는 양방향 트러스트 필요**
+- 단방향 트러스트는 EC2, RDS, FSx 등에만 사용 가능
+- SSO로 AWS 콘솔 접근 시 양방향 인증 필요
+
+**B. AWS SSO + 양방향 포리스트 트러스트** ✅
+- AWS SSO(IAM Identity Center) 활성화로 중앙 SSO 제공
+- AWS Directory Service로 온프레미스 AD 연결
+- 양방향 트러스트로 AWS 콘솔 및 엔터프라이즈 앱 접근 가능
+- 온프레미스 AD에서 사용자 관리 계속 가능
+- Organizations의 모든 계정에 SSO 적용 가능
+
+**C. AWS Directory Service만 사용** ❌
+- **AWS Directory Service는 디렉터리 연결만 제공** 
+	--> SSO 기능은 IAM Identity Center(AWS SSO)가 필요
+- Organizations 전체에 SSO를 제공하지 못함
+- 각 계정별로 개별 설정 필요 (중앙 관리 불가)
+
+**D. 온프레미스 IdP + AWS SSO** ❌
+- 불필요하게 복잡한 구조
+- 이미 온프레미스 Microsoft AD가 있는데 별도 IdP 배포는 중복
+- Microsoft AD를 직접 연결하는 것이 더 간단하고 효율적
+- 추가 인프라 관리 오버헤드
+
+**결론:** AWS SSO(IAM Identity Center)와 AWS Directory Service를 양방향 트러스트로 연결하면, 온프레미스 AD를 그대로 사용하면서 AWS Organizations의 모든 계정에 중앙 집중식 SSO를 제공할 수 있습니다.
+
+**핵심 개념:**
+- AWS Management Console 접근: 양방향 트러스트 필수
+- EC2, RDS, FSx 접근: 단방향 또는 양방향 트러스트 가능
+- AWS SSO(IAM Identity Center): Organizations 전체에 SSO 제공
+
+https://www.examtopics.com/discussions/amazon/view/85231-exam-aws-certified-solutions-architect-associate-saa-c03/
+https://aws.amazon.com/ko/organizations/features/
+ https://aws.amazon.com/ko/iam/identity-center/faqs/
 https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_setup_trust.ht
-ml
-B(O) : A와 같은 이유로 정답.
-C(X) : SSO는 온프레미스 Active Directory나 AWS 관리형 Microsoft AD Directory에 연결할
-수 있지, 온프레미스 Microsoft AD Direcotry에 연결할 수는 없음. ▲위의 설명 참고
-D(X) : IdP는 외부 자격 증명 서비스.
-자격 증명 공급자(IdP)를 사용하면 AWS 외부의 사용자 자격 증명을 관리할 수 있고 이
-외부 사용자 자격 증명에 계정의 AWS 리소스에 대한 사용 권한을 부여할 수 있습니다.
 https://docs.aws.amazon.com/ko_kr/IAM/latest/UserGuide/id_roles_providers.html
 
 ---
 
-# Q29 
+# Q29
 
 **정답: A**
 
-https://www.examtopics.com/discussions/amazon/view/85029-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-해설:・
-UDP 연결을 사용한다고 했으므로 NLB. 대기 시간이 가장 짧은 리전으로 라우팅 + UDP
-사용 = AWS Global Accelerator.
-AWS Global Accelerator에서 제공하는 고정 IP 주소와 AWS 엣지 로케이션의 애니캐스트를
-리전별 AWS 리소스 또는 엔드포인트(예: Network Load Balancer, Application Load Balancer
-EC2 인스턴스 및 탄력적 IP 주소)에 연결할 수 있습니다. IP 주소는 AWS 엣지
-로케이션에서 애니캐스트 되므로 사용자와 가까운 AWS 글로벌 네트워크에 온보딩 기능을
-제공합니다.
-https://aws.amazon.com/ko/global-accelerator/faqs/
-https://aws.amazon.com/global-accelerator/faqs/
-HTTP /HTTPS - ALB ; TCP and UDP - NLB; Lowest latency routing and more throughput.
-Also supports failover, uses Anycast Ip addressing - Global Accelerator Caching at Egde
-Locations - CloudFront WS Global Accelerator automatically checks the health of your
-applications and routes user traffic only to healthy application endpoints. If the health status
-changes or you make configuration updates, AWS Global Accelerator reacts instantaneously
-to route your users to the next available endpoint.
+**풀이:**
+
+문제의 핵심 요구사항:
+1. UDP 프로토콜 지원 (VoIP 서비스)
+2. 최저 지연 시간 라우팅 (여러 리전)
+3. 리전 간 자동 장애 조치
+
+**A. NLB + AWS Global Accelerator** ✅
+- NLB: TCP/UDP 프로토콜 지원 (VoIP의 UDP 요구사항 충족)
+- Global Accelerator: Anycast IP로 최저 지연 경로 자동 선택
+- AWS 엣지 로케이션에서 가장 가까운 정상 엔드포인트로 라우팅
+- 자동 헬스 체크 및 즉각적인 장애 조치 지원
+- 각 리전의 NLB를 엔드포인트로 등록하여 글로벌 분산 가능
+
+**B. ALB + AWS Global Accelerator** ❌
+- ALB는 Layer 7 (HTTP/HTTPS)만 지원
+- UDP 프로토콜 미지원 (VoIP 불가능)
+- Global Accelerator 사용은 맞지만 로드밸런서가 부적절
+
+**C. NLB + Route 53 지연 시간 라우팅 + CloudFront** ❌
+- CloudFront는 HTTP/HTTPS 콘텐츠 캐싱/배포용 서비스
+- UDP 실시간 스트리밍 미지원
+- VoIP 같은 실시간 양방향 통신에 부적합
+- Route 53만으로는 자동 장애 조치가 느림 (DNS TTL 문제)
+
+**D. ALB + Route 53 가중치 라우팅 + CloudFront** ❌
+- ALB는 UDP 미지원
+- CloudFront는 UDP 미지원
+- 가중치 라우팅은 최저 지연 시간 라우팅이 아님 (수동 설정 비율)
+
+**결론:** UDP 프로토콜과 최저 지연 시간 라우팅이 필요한 글로벌 서비스는 NLB + AWS Global Accelerator 조합이 최적입니다.
+
+**핵심 개념:**
+- **Layer 4 (NLB)**: TCP/UDP 지원
+- **Layer 7 (ALB)**: HTTP/HTTPS만 지원
+- **Global Accelerator**: Anycast IP로 최저 지연 경로 + 자동 장애 조치
+- **CloudFront**: HTTP/HTTPS 캐싱 전용 (실시간 UDP 미지원)
+
+**참고:**
+- https://www.examtopics.com/discussions/amazon/view/85029-exam-aws-certified-solutions-architect-associate-saa-c03/
+- https://aws.amazon.com/ko/global-accelerator/faqs/
+- https://aws.amazon.com/global-accelerator/faqs/
 
 ---
 
-# Q30 
+# Q30
 
 **정답: C**
 
-https://www.examtopics.com/discussions/amazon/view/85030-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-해설:・
-한 달에 한 번 48 시간 동안만 사용하고, 가장 비용 효율적인 방법을 사용해야하므로
-스냅샷이 제일 저렴.
-A(X) : DB 인스턴스를 중지해도 DB 인스턴스가 돌아가는 EBS 볼륨이나 이런 건 사용하지
-않아도 보유 중인 용량에 따라 요금이 부과됨.
-B(X) : Auto Scaling을 사용하게 되면 사용하지 않을 때에도 인스턴스가 실행 상태가 되므로
-스냅샷 보관보다 비용이 더 부과됨
-C(O) : 스냅샷으로 보관해서 저장하면 스냅샷 용량만큼만 비용이 부과됨.
-D(X) : 사용 중이 아닐 때도 인스턴스가 실행 상태이므로 스냅샷 보관보다 비용이 더
-부과됨
+**풀이:**
+
+문제의 핵심 요구사항:
+1. 한 달에 48시간만 사용 (사용률 약 6.7%)
+2. 컴퓨팅/메모리 속성 유지 (성능 저하 불가)
+3. 비용 최소화
+
+각 보기 분석:
+
+**A. DB 인스턴스 중지/재시작** ❌
+- RDS 인스턴스 중지 시에도 스토리지(EBS) 비용 계속 부과
+- 프로비저닝된 IOPS, 백업 스토리지 비용도 유지
+- 중지는 최대 7일까지만 가능 (자동 재시작됨)
+- 한 달 중 대부분 기간 동안 불필요한 스토리지 비용 발생
+
+**B. Auto Scaling 정책 사용** ❌
+- RDS는 수직 확장만 가능 (인스턴스 타입 변경)
+- Auto Scaling으로 축소해도 인스턴스는 계속 실행 상태
+- 최소 인스턴스가 항상 실행되어 컴퓨팅 비용 발생
+- 스냅샷보다 훨씬 높은 비용
+
+**C. 스냅샷 생성 후 종료, 필요시 복원** ✅
+- 테스트 후 스냅샷 생성 → DB 인스턴스 완전 종료
+- 스냅샷 스토리지 비용만 발생 (증분 백업으로 매우 저렴)
+- 필요시 스냅샷에서 동일한 사양으로 복원 (컴퓨팅/메모리 유지)
+- 인스턴스, IOPS, 백업 비용 등 모두 제거
+- 사용률 6.7%일 때 최대 93% 비용 절감 가능
+
+**D. 저용량 인스턴스로 수정** ❌
+- 컴퓨팅/메모리 속성 유지 요구사항 위배
+- 인스턴스가 계속 실행되어 컴퓨팅 비용 발생
+- 수정/재수정 시 다운타임 발생
+- 비용 절감 효과가 스냅샷보다 훨씬 낮음
+
+**결론:** 사용률이 매우 낮을 때(한 달에 48시간)는 스냅샷 생성 후 인스턴스를 완전히 종료하는 것이 가장 비용 효율적입니다.
+
+**비용 비교 (월 기준):**
+- **A (중지)**: 스토리지 비용 (~30일) + 컴퓨팅 (자동 재시작)
+- **B (Auto Scaling)**: 컴퓨팅 비용 (~30일, 축소해도)
+- **C (스냅샷)**: 스냅샷 비용 (~28일) + 컴퓨팅 비용 (2일) ← 최저
+- **D (저용량)**: 컴퓨팅 비용 (~30일, 낮은 사양)
+
+**참고:**
+- https://www.examtopics.com/discussions/amazon/view/85030-exam-aws-certified-solutions-architect-associate-saa-c03/
 
 ---
 

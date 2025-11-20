@@ -439,7 +439,7 @@ EC2 인스턴스에 저장됩니다. 복제된 데이터를 수정해도 프로�
 ---
 
 # Q21 
-
+#Containers #Storage #Database #NetworkContent-Delivery
 ```
 전자 상거래 회사는 AWS 에서 하루 1 회 웹 사이트를 시작하려고 합니다. 매일 24 시간
 동안 정확히 하나의 제품을 판매합니다. 회사는 피크 시간 동안 밀리초 지연 시간으로
@@ -447,19 +447,19 @@ EC2 인스턴스에 저장됩니다. 복제된 데이터를 수정해도 프로�
 최소한의 운영 오버헤드로 이러한 요구 사항을 충족하는 솔루션은 무엇입니까?
 ```
 
-| |      |
-|-|------|
-| A | Amazon S3 를 사용하여 다른 S3 버킷에 전체 웹 사이트를 호스팅합니다. Amazon CloudFront 배포를 추가합니다. S3 버킷을 배포의 오리진으로 설정합니다. Amazon S3 에 주문 데이터를 저장합니다. |
-| B | 여러 가용 영역의 Auto Scaling 그룹에서 실행되는 Amazon EC2 인스턴스에 전체 웹 사이트를 배포합니다. ALB(Application Load Balancer)를 추가하여 웹 사이트 트래픽을 분산합니다. 백엔드 API 에 대해 다른 ALB 를 추가하십시오. MySQL 용 Amazon RDS 에 데이터를 저장합니다. |
-| C | 컨테이너에서 실행되도록 전체 애플리케이션을 마이그레이션합니다. Amazon Elastic Kubernetes Service(Amazon EKS)에서 컨테이너를 호스팅합니다. Kubernetes 클러스터 자동 확장 처리를 사용하여 트래픽 버스트를 처리할 포드 수를 늘리거나 줄입니다. MySQL 용 Amazon RDS에 데이터를 저장합니다. |
-| D | Amazon S3 버킷을 사용하여 웹 사이트의 정적 콘텐츠를 호스팅합니다. Amazon CloudFront 배포를 배포합니다. S3 버킷을 오리진으로 설정합니다. 백엔드 API 에 Amazon API Gateway 및 AWS Lambda 함수를 사용합니다. Amazon DynamoDB 에 데이터를 저장합니다. |
+|     |                                                                                                                                                                                                                                                                    |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| A   | Amazon S3 를 사용하여 다른 S3 버킷에 전체 웹 사이트를 호스팅합니다. Amazon CloudFront 배포를 추가합니다. S3 버킷을 배포의 오리진으로 설정합니다. Amazon S3 에 주문 데이터를 저장합니다.                                                                                                                                       |
+| B   | 여러 가용 영역의 Auto Scaling 그룹에서 실행되는 Amazon EC2 인스턴스에 전체 웹 사이트를 배포합니다. ALB(Application Load Balancer)를 추가하여 웹 사이트 트래픽을 분산합니다. 백엔드 API 에 대해 다른 ALB 를 추가하십시오. MySQL 용 Amazon RDS 에 데이터를 저장합니다.                                                                           |
+| C   | 컨테이너에서 실행되도록 전체 애플리케이션을 마이그레이션합니다.[[Containers#Amazon Elastic Kubernetes Service (EKS)\|Amazon Elastic Kubernetes Service(Amazon EKS)]]에서 컨테이너를 호스팅합니다. Kubernetes 클러스터 자동 확장 처리를 사용하여 트래픽 버스트를 처리할 포드 수를 늘리거나 줄입니다. MySQL 용 Amazon RDS에 데이터를 저장합니다.               |
+| D   | Amazon S3 버킷을 사용하여 웹 사이트의 정적 콘텐츠를 호스팅합니다. Amazon CloudFront 배포를 배포합니다. S3 버킷을 오리진으로 설정합니다. 백엔드 API 에 [[Network & Content Delivery#**Amazon API Gateway**\|Amazon API Gateway]] 및 AWS Lambda 함수를 사용합니다. [[Database#Amazon DynamoDB\|Amazon DynamoDB]] 에 데이터를 저장합니다. |
 
 [[answers_1#Q21|정답]]
 
 ---
 
 # Q22 
-
+#S3
 ```
 솔루션 설계자는 Amazon S3 를 사용하여 새로운 디지털 미디어 애플리케이션의 스토리지
 아키텍처를 설계하고 있습니다. 미디어 파일은 가용 영역 손실에 대한 복원력이 있어야
@@ -469,19 +469,19 @@ EC2 인스턴스에 저장됩니다. 복제된 데이터를 수정해도 프로�
 이러한 요구 사항을 충족하는 스토리지 옵션은 무엇입니까?
 ```
 
-| |      |
-|-|------|
-| A | S3 Standard (S3 표준) |
-| B | S3 Intelligent-Tiering (S3 지능형 계층화) |
-| C | S3 Standard-Infrequent Access(S3 Standard-IA) |
-| D | S3 One Zone-Infrequent Access(S3 One Zone-IA) |
+|     |                                               |
+| --- | --------------------------------------------- |
+| A   | [[S3#Stroage Class\|S3 Standard]] (S3 표준)     |
+| B   | S3 Intelligent-Tiering (S3 지능형 계층화)           |
+| C   | S3 Standard-Infrequent Access(S3 Standard-IA) |
+| D   | S3 One Zone-Infrequent Access(S3 One Zone-IA) |
 
 [[answers_1#Q22|정답]]
 
 ---
 
 # Q23 
-
+#S3 
 ```
 회사에서 Amazon S3 Standard 스토리지를 사용하여 백업 파일을 저장하고 있습니다. 1개월
 동안 파일에 자주 액세스합니다. 단, 1 개월 이후에는 파일에 접근하지 않습니다. 회사는
@@ -489,19 +489,19 @@ EC2 인스턴스에 저장됩니다. 복제된 데이터를 수정해도 프로�
 이러한 요구 사항을 가장 비용 효율적으로 충족하는 스토리지 솔루션은 무엇입니까?
 ```
 
-| |      |
-|-|------|
-| A | 객체를 자동으로 마이그레이션하도록 S3 Intelligent-Tiering을 구성합니다. |
-| B | S3 수명 주기 구성을 생성하여 1개월 후에 S3 Standard에서 S3 Glacier Deep Archive로 객체를 전환합니다. |
-| C | S3 수명 주기 구성을 생성하여 1 개월 후에 객체를 S3 Standard 에서 S3 Standard-Infrequent Access(S3 Standard-IA)로 전환합니다. |
-| D | S3 수명 주기 구성을 생성하여 1 개월 후에 객체를 S3 Standard 에서 S3 One Zone-Infrequent Access(S3 One Zone-IA)로 전환합니다. |
+|     |                                                                                                    |
+| --- | -------------------------------------------------------------------------------------------------- |
+| A   | 객체를 자동으로 마이그레이션하도록 [[S3#Stroage Class\|S3 Intelligent-Tiering]]을 구성합니다.                            |
+| B   | S3 수명 주기 구성을 생성하여 1개월 후에 S3 Standard에서 S3 Glacier Deep Archive로 객체를 전환합니다.                         |
+| C   | S3 수명 주기 구성을 생성하여 1 개월 후에 객체를 S3 Standard 에서 S3 Standard-Infrequent Access(S3 Standard-IA)로 전환합니다. |
+| D   | S3 수명 주기 구성을 생성하여 1 개월 후에 객체를 S3 Standard 에서 S3 One Zone-Infrequent Access(S3 One Zone-IA)로 전환합니다. |
 
 [[answers_1#Q23|정답]]
 
 ---
 
 # Q24 
-
+#CloudFinancialManagement 
 ```
 회사는 가장 최근 청구서에서 Amazon EC2 비용 증가를 관찰했습니다. 청구 팀은 몇 개의
 EC2 인스턴스에 대한 인스턴스 유형의 원치 않는 수직적 확장을 발견했습니다. 솔루션
@@ -510,19 +510,19 @@ EC2 인스턴스에 대한 인스턴스 유형의 원치 않는 수직적 확장
 솔루션 설계자는 운영 오버헤드가 가장 적은 정보를 어떻게 생성해야 합니까?
 ```
 
-| |      |
-|-|------|
-| A | AWS 예산을 사용하여 예산 보고서를 생성하고 인스턴스 유형에 따라 EC2 비용을 비교합니다. |
-| B | Cost Explorer 의 세분화된 필터링 기능을 사용하여 인스턴스 유형을 기반으로 EC2 비용에 대한 심층 분석을 수행합니다. |
-| C | AWS Billing and Cost Management 대시보드의 그래프를 사용하여 지난 2 개월 동안의 인스턴스 유형을 기준으로 EC2 비용을 비교합니다. |
-| D | AWS 비용 및 사용 보고서를 사용하여 보고서를 생성하고 Amazon S3 버킷으로 보냅니다. Amazon S3 와 함께 Amazon QuickSight 를 소스로 사용하여 인스턴스 유형을 기반으로 대화형 그래프를 생성합니다. |
+|     |                                                                                                                                                                                                                           |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A   | [[Cloud Financial Management#AWS Budgets\|AWS 예산]]을 사용하여 예산 보고서를 생성하고 인스턴스 유형에 따라 EC2 비용을 비교합니다.                                                                                                                          |
+| B   | [[Cloud Financial Management#AWS Cost Explorer\|Cost Explorer]] 의 세분화된 필터링 기능을 사용하여 인스턴스 유형을 기반으로 EC2 비용에 대한 심층 분석을 수행합니다.                                                                                                |
+| C   | AWS Billing and Cost Management 대시보드의 그래프를 사용하여 지난 2 개월 동안의 인스턴스 유형을 기준으로 EC2 비용을 비교합니다.                                                                                                                                  |
+| D   | [[Cloud Financial Management#AWS Cost and Usage Report\|AWS 비용 및 사용 보고서]]를 사용하여 보고서를 생성하고 Amazon S3 버킷으로 보냅니다. Amazon S3 와 함께 [[Analytics#Amazon QuickSight\|Amazon QuickSight]] 를 소스로 사용하여 인스턴스 유형을 기반으로 대화형 그래프를 생성합니다. |
 
 [[answers_1#Q24|정답]]
 
 ---
 
 # Q25 
-
+#Database #ApplicationIntegration 
 ```
 회사에서 응용 프로그램을 설계하고 있습니다. 애플리케이션은 AWS Lambda 함수를
 사용하여 Amazon API Gateway 를 통해 정보를 수신하고 Amazon Aurora PostgreSQL
@@ -533,31 +533,31 @@ Lambda 할당량을 크게 늘려야 합니다. 솔루션 설계자는 확장성
 어떤 솔루션이 이러한 요구 사항을 충족합니까?
 ```
 
-| |      |
-|-|------|
-| A | Lambda 함수 코드를 Amazon EC2 인스턴스에서 실행되는 Apache Tomcat 코드로 리팩터링합니다. 네이티브 JDBC(Java Database Connectivity) 드라이버를 사용하여 데이터베이스를 연결합니다. |
-| B | 플랫폼을 Aurora 에서 Amazon DynamoDProvision a DynamoDB Accelerator(DAX) 클러스터로 변경합니다. DAX 클라이언트 SDK 를 사용하여 DAX 클러스터에서 기존 DynamoDB API 호출을 가리킵니다. |
-| C | 두 개의 Lambda 함수를 설정합니다. 정보를 수신할 하나의 기능을 구성하십시오. 정보를 데이터베이스에 로드하도록 다른 기능을 구성하십시오. Amazon Simple Notification Service(Amazon SNS)를 사용하여 Lambda 함수를 통합합니다. |
-| D | 두 개의 Lambda 함수를 설정합니다. 정보를 수신할 하나의 기능을 구성하십시오. 정보를 데이터베이스에 로드하도록 다른 기능을 구성하십시오. Amazon Simple Queue Service(Amazon SQS) 대기열을 사용하여 Lambda 함수를 통합합니다. |
+|     |                                                                                                                                                                                                                              |
+| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A   | Lambda 함수 코드를 Amazon EC2 인스턴스에서 실행되는 Apache Tomcat 코드로 리팩터링합니다. 네이티브 JDBC(Java Database Connectivity) 드라이버를 사용하여 데이터베이스를 연결합니다.                                                                                              |
+| B   | 플랫폼을 Aurora 에서 [[Database#Amazon DynamoDB\|Amazon DynamoDProvision a DynamoDB Accelerator(DAX)]] 클러스터로 변경합니다. DAX 클라이언트 SDK 를 사용하여 DAX 클러스터에서 기존 DynamoDB API 호출을 가리킵니다.                                                     |
+| C   | 두 개의 Lambda 함수를 설정합니다. 정보를 수신할 하나의 기능을 구성하십시오. 정보를 데이터베이스에 로드하도록 다른 기능을 구성하십시오. [[Application Integration#Amazon Simple Notification Service (SNS)\|Amazon Simple Notification Service(Amazon SNS)]]를 사용하여 Lambda 함수를 통합합니다. |
+| D   | 두 개의 Lambda 함수를 설정합니다. 정보를 수신할 하나의 기능을 구성하십시오. 정보를 데이터베이스에 로드하도록 다른 기능을 구성하십시오. [[Application Integration#Amazon Simple Queue Service (SQS)]] 대기열을 사용하여 Lambda 함수를 통합합니다.                                                    |
 
 [[answers_1#Q25|정답]]
 
 ---
 
 # Q26 
-
+#Mangement/Governance 
 ```
 회사는 AWS 클라우드 배포를 검토하여 Amazon S3 버킷에 무단 구성 변경이 없는지
 확인해야 합니다.
 솔루션 설계자는 이 목표를 달성하기 위해 무엇을 해야 합니까?
 ```
 
-| |      |
-|-|------|
-| A | 적절한 규칙으로 AWS Config를 켭니다. |
-| B | 적절한 검사를 통해 AWS Trusted Advisor를 켭니다. |
-| C | 적절한 평가 템플릿으로 Amazon Inspector를 켭니다. |
-| D | Amazon S3 서버 액세스 로깅을 켭니다. Amazon EventBridge(Amazon Cloud Watch Events)를 구성합니다. |
+|     |                                                                                                                                 |
+| --- | ------------------------------------------------------------------------------------------------------------------------------- |
+| A   | 적절한 규칙으로 [[Management & Governance#AWS Config\|AWS Config]]를 켭니다.                                                               |
+| B   | 적절한 검사를 통해 [[Management & Governance#AWS Trusted Advisor\|AWS Trusted Advisor]]를 켭니다.                                           |
+| C   | 적절한 평가 템플릿으로 [[Security#Amazon Inspector\|Amazon Inspector]]를 켭니다.                                                              |
+| D   | Amazon S3 서버 액세스 로깅을 켭니다. [[Application Integration#Amazon EventBridge\|Amazon EventBridge(Amazon Cloud Watch Events)]]를 구성합니다. |
 
 [[answers_1#Q26|정답]]
 
@@ -573,12 +573,12 @@ Lambda 할당량을 크게 늘려야 합니다. 솔루션 설계자는 확장성
 어떤 솔루션이 이러한 요구 사항을 충족합니까?
 ```
 
-| |      |
-|-|------|
-| A | CloudWatch 콘솔에서 대시보드를 공유합니다. 제품 관리자의 이메일 주소를 입력하고 공유 단계를 완료합니다. 대시보드에 대한 공유 가능한 링크를 제품 관리자에게 제공하십시오. |
-| B | 특히 제품 관리자를 위한 IAM 사용자를 생성합니다. CloudWatchReadOnlyAccess AWS 관리형 정책을 사용자에게 연결합니다. 새 로그인 자격 증명을 제품 관리자와 공유하십시오. 올바른 대시보드의 브라우저 URL을 제품 관리자와 공유하십시오. |
-| C | 회사 직원을 위한 IAM 사용자를 생성합니다. ViewOnlyAccess AWS 관리형 정책을 IAM 사용자에게 연결합니다. 새 로그인 자격 증명을 제품 관리자와 공유하십시오. 제품 관리자에게 CloudWatch 콘솔로 이동하여 대시보드 섹션에서 이름으로 대시보드를 찾으라고 요청합니다. |
-| D | 퍼블릭 서브넷에 배스천 서버를 배포합니다. 제품 관리자가 대시보드에 액세스해야 하는 경우 서버를 시작하고 RDP 자격 증명을 공유합니다. 배스천 서버에서 대시보드를 볼 수 있는 적절한 권한이 있는 캐시된 AWS 자격 증명으로 대시보드 URL 을 열도록 브라우저가 구성되어 있는지 확인합니다. |
+|     |                                                                                                                                                                    |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| A   | [[Management & Governance#Amazon CloudWatch\|CloudWatch]] 콘솔에서 대시보드를 공유합니다. 제품 관리자의 이메일 주소를 입력하고 공유 단계를 완료합니다. 대시보드에 대한 공유 가능한 링크를 제품 관리자에게 제공하십시오.                |
+| B   | 특히 제품 관리자를 위한 IAM 사용자를 생성합니다. CloudWatchReadOnlyAccess AWS 관리형 정책을 사용자에게 연결합니다. 새 로그인 자격 증명을 제품 관리자와 공유하십시오. 올바른 대시보드의 브라우저 URL을 제품 관리자와 공유하십시오.                   |
+| C   | 회사 직원을 위한 IAM 사용자를 생성합니다. ViewOnlyAccess AWS 관리형 정책을 IAM 사용자에게 연결합니다. 새 로그인 자격 증명을 제품 관리자와 공유하십시오. 제품 관리자에게 CloudWatch 콘솔로 이동하여 대시보드 섹션에서 이름으로 대시보드를 찾으라고 요청합니다.   |
+| D   | 퍼블릭 서브넷에 배스천 서버를 배포합니다. 제품 관리자가 대시보드에 액세스해야 하는 경우 서버를 시작하고 RDP 자격 증명을 공유합니다. 배스천 서버에서 대시보드를 볼 수 있는 적절한 권한이 있는 캐시된 AWS 자격 증명으로 대시보드 URL 을 열도록 브라우저가 구성되어 있는지 확인합니다. |
 
 [[answers_1#Q27|정답]]
 
@@ -594,19 +594,19 @@ Lambda 할당량을 크게 늘려야 합니다. 솔루션 설계자는 확장성
 어떤 솔루션이 이러한 요구 사항을 충족합니까?
 ```
 
-| |      |
-|-|------|
-| A | AWS SSO 콘솔에서 AWS Single Sign-On(AWS SSO)을 활성화합니다. 단방향 포리스트 트러스트 또는 단방향 도메인 트러스트를 생성하여 Microsoft Active Directory 용 AWS Directory Service 를 사용하여 회사의 자체 관리형 Microsoft Active Directory 를 AWS SSO와 연결합니다. |
-| B | AWS SSO 콘솔에서 AWS Single Sign-On(AWS SSO)을 활성화합니다. Microsoft Active Directory 용 AWS Directory Service 를 사용하여 회사의 자체 관리형 Microsoft Active Directory를 AWS SSO와 연결하는 양방향 포리스트 트러스트를 생성합니다. |
-| C | AWS 디렉터리 서비스를 사용합니다. 회사의 자체 관리 Microsoft Active Directory 와 양방향 신뢰 관계를 만드십시오. |
-| D | 온프레미스에 ID 공급자(IdP)를 배포합니다. AWS SSO 콘솔에서 AWS Single Sign-On(AWS SSO)을 활성화합니다. |
+|     |                                                                                                                                                                                                                            |
+| --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A   | [[Security#Iden\|AWS SSO]] 콘솔에서 AWS Single Sign-On(AWS SSO)을 활성화합니다. 단방향 포리스트 트러스트 또는 단방향 도메인 트러스트를 생성하여 Microsoft Active Directory 용 AWS Directory Service 를 사용하여 회사의 자체 관리형 Microsoft Active Directory 를 AWS SSO와 연결합니다. |
+| B   | AWS SSO 콘솔에서 AWS Single Sign-On(AWS SSO)을 활성화합니다. Microsoft Active Directory 용 AWS Directory Service 를 사용하여 회사의 자체 관리형 Microsoft Active Directory를 AWS SSO와 연결하는 양방향 포리스트 트러스트를 생성합니다.                                     |
+| C   | AWS 디렉터리 서비스를 사용합니다. 회사의 자체 관리 Microsoft Active Directory 와 양방향 신뢰 관계를 만드십시오.                                                                                                                                              |
+| D   | 온프레미스에 ID 공급자(IdP)를 배포합니다. AWS SSO 콘솔에서 AWS Single Sign-On(AWS SSO)을 활성화합니다.                                                                                                                                               |
 
 [[answers_1#Q28|정답]]
 
 ---
 
 # Q29 
-
+#NetworkContent-Delivery 
 ```
 회사는 UDP 연결을 사용하는 VoIP(Voice over Internet Protocol) 서비스를 제공합니다. 이
 서비스는 Auto Scaling 그룹에서 실행되는 Amazon EC2 인스턴스로 구성됩니다. 회사는
@@ -616,19 +616,19 @@ Lambda 할당량을 크게 늘려야 합니다. 솔루션 설계자는 확장성
 어떤 솔루션이 이러한 요구 사항을 충족합니까?
 ```
 
-| |      |
-|-|------|
-| A | NLB(Network Load Balancer) 및 연결된 대상 그룹을 배포합니다. 대상 그룹을 Auto Scaling 그룹과 연결합니다. 각 리전에서 NLB 를 AWS Global Accelerator 엔드포인트로 사용합니다. |
-| B | ALB(Application Load Balancer) 및 연결된 대상 그룹을 배포합니다. 대상 그룹을 Auto Scaling 그룹과 연결합니다. 각 리전에서 ALB 를 AWS Global Accelerator 엔드포인트로 사용합니다. |
-| C | NLB(Network Load Balancer) 및 연결된 대상 그룹을 배포합니다. 대상 그룹을 Auto Scaling 그룹과 연결합니다. 각 NLB 의 별칭을 가리키는 Amazon Route 53 지연 시간 레코드를 생성합니다. 지연 시간 레코드를 오리진으로 사용하는 Amazon CloudFront 배포를 생성합니다. |
-| D | ALB(Application Load Balancer) 및 연결된 대상 그룹을 배포합니다. 대상 그룹을 Auto Scaling 그룹과 연결합니다. 각 ALB의 별칭을 가리키는 Amazon Route 53 가중치 레코드를 생성합니다. 가중 레코드를 오리진으로 사용하는 Amazon CloudFront 배포를 배포합니다. |
+|     |                                                                                                                                                                                                                                         |
+| --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A   | [[ELB#Network Load Balancer\|NLB(Network Load Balancer)]] 및 연결된 대상 그룹을 배포합니다. 대상 그룹을 Auto Scaling 그룹과 연결합니다. 각 리전에서 NLB 를 [[Network & Content Delivery#**AWS Global Accelerator**\|AWS Global Accelerator]] 엔드포인트로 사용합니다.               |
+| B   | [[ELB#Application Load Balancer\|ALB(Application Load Balancer)]] 및 연결된 대상 그룹을 배포합니다. 대상 그룹을 Auto Scaling 그룹과 연결합니다. 각 리전에서 ALB 를 AWS Global Accelerator 엔드포인트로 사용합니다.                                                                  |
+| C   | NLB(Network Load Balancer) 및 연결된 대상 그룹을 배포합니다. 대상 그룹을 Auto Scaling 그룹과 연결합니다. 각 NLB 의 별칭을 가리키는 [[Network & Content Delivery#**Amazon Route 53**\|Amazon Route 53]] 지연 시간 레코드를 생성합니다. 지연 시간 레코드를 오리진으로 사용하는 Amazon CloudFront 배포를 생성합니다. |
+| D   | ALB(Application Load Balancer) 및 연결된 대상 그룹을 배포합니다. 대상 그룹을 Auto Scaling 그룹과 연결합니다. 각 ALB의 별칭을 가리키는 Amazon Route 53 가중치 레코드를 생성합니다. 가중 레코드를 오리진으로 사용하는 Amazon CloudFront 배포를 배포합니다.                                                       |
 
 [[answers_1#Q29|정답]]
 
 ---
 
 # Q30 
-
+#Database
 ```
 개발 팀은 성능 개선 도우미가 활성화된 MySQL DB 인스턴스용 범용 Amazon RDS 에서
 매월 리소스 집약적 테스트를 실행합니다. 테스트는 한 달에 한 번 48 시간 동안 지속되며
@@ -637,12 +637,12 @@ Lambda 할당량을 크게 늘려야 합니다. 솔루션 설계자는 확장성
 어떤 솔루션이 이러한 요구 사항을 가장 비용 효율적으로 충족합니까?
 ```
 
-| |      |
-|-|------|
-| A | 테스트가 완료되면 DB 인스턴스를 중지합니다. 필요한 경우 DB 인스턴스를 다시 시작합니다. |
-| B | DB 인스턴스와 함께 Auto Scaling 정책을 사용하여 테스트가 완료되면 자동으로 확장합니다. |
-| C | 테스트가 완료되면 스냅샷을 만듭니다. DB 인스턴스를 종료하고 필요한 경우 스냅샷을 복원합니다. |
-| D | 테스트가 완료되면 DB 인스턴스를 저용량 인스턴스로 수정합니다. 필요한 경우 DB 인스턴스를 다시 수정합니다. |
+|     |                                                               |
+| --- | ------------------------------------------------------------- |
+| A   | 테스트가 완료되면 DB 인스턴스를 중지합니다. 필요한 경우 DB 인스턴스를 다시 시작합니다.           |
+| B   | DB 인스턴스와 함께 Auto Scaling 정책을 사용하여 테스트가 완료되면 자동으로 확장합니다.       |
+| C   | 테스트가 완료되면 스냅샷을 만듭니다. DB 인스턴스를 종료하고 필요한 경우 스냅샷을 복원합니다.         |
+| D   | 테스트가 완료되면 DB 인스턴스를 저용량 인스턴스로 수정합니다. 필요한 경우 DB 인스턴스를 다시 수정합니다. |
 
 [[answers_1#Q30|정답]]
 
