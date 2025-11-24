@@ -1580,1561 +1580,806 @@ D. ❌ 다중 AZ 읽기 전용 복제본 활성화
 
 ---
 
-# Q40 
+# Q40
 
 **정답: A**
 
-https://www.examtopics.com/discussions/amazon/view/85204-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명:・
-수 천 개의 Edge 장치로부터 경고 수집 및 저장 = Kinesis. A,C 둘 중 하나가 답.
-A(O) : 정답.
-・Kinesis Firehose Delivery Stream에서 데이터 수집
-다양한 유형의 소스를 사용하여 Kinesis Data Firehose 전송 스트림으로 데이터를 보낼 수
-있습니다. https://docs.aws.amazon.com/firehose/latest/dev/basic-write.html
-・Kinesis Firehose에서 S3로 데이터 전송
-Kinesis Data Firehose 전송 스트림을 설정할 때 데이터의 최종 대상을 선택합니다. 대상
-옵션은 Amazon Simple Storage Service(Amazon S3), Amazon OpenSearch Service 및
-Amazon Redshift입니다.
-https://docs.aws.amazon.com/ko_kr/ses/latest/dg/event-publishing-kinesis-analytics-fir
-ehose-stream.html
-・S3에서 Life Cycle Policy를 사용해 S3 Glacier로 객체 이전
-수명 주기 규칙을 사용하여 객체 수명 주기 동안 Amazon S3 에서 수행하려는 작업을
-정의할 수 있습니다(예: 객체를 다른 스토리지 클래스로 이전, 객체 보관, 지정된 기간이
-경과한 후 객체 삭제).
-https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/userguide/how-to-set-lifecycle-c
-onfiguration-intro.html)
-C(X) : 14일이 지난 데이터를 보관하길 원한다고 했는데 삭제해버리므로 오답.
-참고:
-https://aws.amazon.com/ko/kinesis/data-firehose/features/?nc=sn&loc=2#:~:text=into%
-20Amazon%20S3%2C%20
+**해설:**
+- 수천 개의 에지 장치에서 매일 1TB의 경고 데이터를 수집하고 저장해야 하는 상황
+- 고가용성, 비용 최소화, 추가 인프라 관리 불필요, 14일 데이터 보관 후 아카이브 필요
+- **A(정답)**: Kinesis Data Firehose는 완전 관리형 서비스로 대량 스트리밍 데이터 수집에 최적화되어 있으며, 자동으로 S3에 전달하고 S3 수명 주기 정책으로 14일 후 Glacier로 자동 전환 가능
+- B(오답): EC2 인스턴스는 추가 인프라 관리 필요, 운영 효율성 낮음
+- C(오답): OpenSearch는 검색/분석용이며, 14일 후 데이터를 삭제하므로 보관 요구사항 미충족
+- D(오답): SQS는 메시지 큐 서비스로 대용량 데이터 저장에 부적합
 
 ---
 
-# Q41 
+# Q41
 
 **정답: B**
 
-https://www.examtopics.com/discussions/amazon/view/85446-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:・
-Amazon AppFlow 는 Salesforce, SAP, Zendesk, Slack 및 ServiceNow 와 같은
-SaaS(Software-as-a-Service) 애플리케이션과 Amazon S3 및 Amazon Redshift 와 같은
-AWS 서비스 간에 데이터를 안전하게 전송할 수 있는 완전 관리형 통합 서비스입니다. 클릭
-몇 번이면 됩니다.
-https://aws.amazon.com/appflow/
-설명2:
-SaaS = Appflow. Appflow는 완전 관리형 통합 서비스이기 때문에 운영 오버헤드가 적음.
-Amazon AppFlow 는 클릭 몇 번으로 Salesforce, Marketo, Slack 및 ServiceNow 와 같은
-SaaS(Software-as-a-Service) 애플리케이션과 Amazon S3 및 Amazon Redshift 와 같은
-AWS 서비스 간에 데이터를 안전하게 전송할 수 있게 해 주는 완전관리형 통합 서비스.
-https://aws.amazon.com/ko/appflow/faqs/
+**해설:**
+- EC2 인스턴스가 SaaS에서 데이터 수신, S3 업로드, 사용자 알림을 모두 처리하여 성능 저하 발생
+- 최소 운영 오버헤드로 성능 개선 필요
+- **B(정답)**: Amazon AppFlow는 SaaS 애플리케이션과 AWS 서비스 간 완전 관리형 데이터 통합 서비스로, EC2 부하를 제거하고 S3 이벤트 알림으로 자동 알림 처리
+- A(오답): Auto Scaling은 EC2 부하 문제를 해결하지 못하며, 근본적인 아키텍처 개선 필요
+- C(오답): EventBridge는 SaaS 직접 통합이 제한적이며, 복잡도 증가
+- D(오답): ECS 컨테이너화는 근본 문제 해결하지 못하며, Container Insights는 알림용이 아님
 
 ---
 
-# Q42 
+# Q42
 
 **정답: C**
 
-https://www.examtopics.com/discussions/amazon/view/85205-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-해설1:・
-데이터 전송 요금이 걱정되니 전용 전송 통로를 뚫으면 됨. VPC-S3 간 전용 통로는 S3
-VPC Gateway Endpoint. 답은 C.
-해설2:
-S3 용 게이트웨이 VPC 엔드포인트를 배포함으로써 회사는 인터넷 게이트웨이나 NAT
-게이트웨이를 거치지 않고 VPC 와 S3 사이에 직접 연결을 설정할 수 있습니다. 이렇게
-하면 EC2 와 S3 사이의 트래픽이 Amazon 네트워크 내에 머물면서 지역 데이터 전송
-요금을 피할 수 있습니다.
-A 는 각 AZ 에서 NAT 게이트웨이를 시작할 것을 제안합니다. 이는 가용성과 중복성에
-도움이 될 수 있지만 트래픽이 여전히 NAT 게이트웨이를 통과하고 데이터 전송 요금이
-발생하므로 데이터 전송 요금 문제를 해결하지 못합니다.
-B 는 NAT 게이트웨이를 NAT 인스턴스로 교체할 것을 제안합니다. 그러나 이 솔루션은
-여전히 NAT 인스턴스를 통해 인스턴스와 S3 간에 데이터를 전송하므로 데이터 전송
-요금이 발생합니다.
-D 는 EC2 를 실행하기 위해 EC2 전용 호스트를 프로비저닝할 것을 제안합니다. 이는
-인스턴스 전용 하드웨어를 제공할 수 있지만 데이터 전송 요금 문제를 직접적으로
-해결하지는 않습니다.
+**해설:**
+- 다중 AZ의 EC2 인스턴스가 S3와 통신 시 NAT 게이트웨이를 통해 데이터 전송 요금 발생
+- 지역(리전) 내 데이터 전송 요금을 피하는 것이 목표
+- **C(정답)**: S3 Gateway VPC Endpoint를 배포하면 NAT 게이트웨이 없이 VPC에서 S3로 직접 연결되어 데이터 전송 요금 없음
+- A(오답): 각 AZ마다 NAT 게이트웨이를 추가해도 여전히 NAT 게이트웨이 통과 시 요금 발생
+- B(오답): NAT 인스턴스도 여전히 데이터 전송 요금 발생
+- D(오답): 전용 호스트는 데이터 전송 요금과 무관
 
 ---
 
-# Q43 
+# Q43
 
 **정답: B**
 
-https://www.examtopics.com/discussions/amazon/view/85206-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:・
-A(X) : VPN 은 인터넷을 통과하는데다가, VPC Gateway Endpoint 는 VPC-S3,Dynamo 간
-전송을 담당.
-B(O) : Direct Connect 는 전용선을 통과하기 때문에 인터넷에 전송중인 데이터가 노출되지
-않음
-C(X) : Snowball Device 는 배송기간까지 합하면 보통 7 일 정도 걸리는데 이를 매일
-주문한다는 것은 무리수.
-D(X) : 한도 증가만 가능. 한도 제거 옵션은 없음.
-https://docs.aws.amazon.com/ko_kr/general/latest/gr/aws_service_limits.html
-설명2:
-회사의 온프레미스 애플리케이션에 대한 대역폭 제한 문제를 해결하고 내부 사용자 연결에
-대한 영향을 최소화하려면 이 새로운 연결을 통해 백업 트래픽을 전달하도록 새로운 AWS
-Direct Connect 연결을 설정해야 합니다. 이 솔루션은 회사의 데이터 센터와 AWS 간에
-안전한 고속 연결을 제공하여 회사가 인터넷 대역폭을 사용하지 않고 데이터를 빠르게
-전송할 수 있도록 합니다.
-참조:
-AWS Direct Connect 설명서: https://aws.amazon.com/directconnect/
+**해설:**
+- 온프레미스에서 S3로 대용량 백업 시 인터넷 대역폭 제한으로 사용자 불만 발생
+- 적시 백업과 내부 사용자 영향 최소화를 위한 장기 솔루션 필요
+- **B(정답)**: AWS Direct Connect는 전용 네트워크 연결로 인터넷 대역폭을 사용하지 않아 내부 사용자에게 영향 없으며, 장기적으로 안정적인 고속 전송 제공
+- A(오답): VPN은 여전히 인터넷을 사용하며, VPC Gateway Endpoint는 VPC 내부에서만 작동
+- C(오답): 매일 Snowball 주문은 비현실적이며 배송 지연 발생
+- D(오답): S3 서비스 제한 제거는 불가능하며, 대역폭 문제 해결하지 못함
 
 ---
 
-# Q44 
+# Q44
 
-**정답: A**
+**정답: A, B**
 
-https://www.examtopics.com/discussions/amazon/view/84750-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:
-A(O) : 버전 관리는 실수로 삭제했을 때 이전 버전의 파일을 불러올 수 있도록 해줌.
-Amazon S3 의 버전 관리는 동일 버킷 내에 여러 개의 객체 변형을 보유하는 수단입니다.
-S3 버전 관리를 사용하면 버킷에 저장된 모든 버전의 객체를 모두 보존, 검색 및 복원할
-수 있습니다.
-https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/userguide/Versioning.html
-B(O) : MFA Delete는 함부로 삭제하지 못하도록 막음.
-MFA Delete 는 다음 작업에 대해 추가 인증을 요구합니다. ◎버킷의 버전 관리 상태 변경
-◎객체 버전 영구 삭제
-https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/userguide/MultiFactorAuthenticatio
-nDelete.html
-C(X) : 버킷 정책은 액세스 권한에 관련된 것. 버킷 정책은 버킷과 해당 버킷의 객체에 대한
-액세스 권한을 부여할 수 있는 리소스 기반 정책입니다.
-https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/userguide/bucket-policies.html
-D(X) : 암호화는 파일 내용을 함부로 볼 수 없게하는 등의 기능은 있지만 기본적으로
-삭제는 막지 못함. 우리가 직장에서 DRM 걸린 문서는 열람 못해도 액세스 권한이 있다면
-삭제할 수 있는 거랑 비슷함.
-E(X) : 객체 수명 주기 정책은 객체를 언제 이동하고 삭제할 거냐의 문제.
-설명2:
-S3 버킷의 데이터를 실수로 삭제하지 않도록 보호하려면 S3 버킷에 있는 모든 객체의 모든
-버전을 보존, 검색 및 복원할 수 있는 버전 관리를 활성화해야 합니다.
-또한 S3 버킷에서 MFA(다단계 인증) 삭제를 활성화하면 버킷의 객체를 삭제하기 위해
-사용자의 액세스 키 외에 인증 토큰을 요구함으로써 추가 보호 계층이 추가됩니다.
-참조:
-AWS S3 버전 관리 설명서:
-https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html
-AWS S3 MFA 문서 삭제:
-https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMFADelete.html
+**해설:**
+- S3 버킷의 중요 데이터를 우발적 삭제로부터 보호 필요
+- **A(정답)**: 버전 관리를 활성화하면 삭제된 객체의 모든 버전을 보존, 검색, 복원 가능
+- **B(정답)**: MFA 삭제는 객체 영구 삭제 시 다중 인증 요구하여 우발적 삭제 방지
+- C(오답): 버킷 정책은 액세스 권한 제어용이며 삭제 보호와 직접 관련 없음
+- D(오답): 암호화는 데이터 기밀성을 위한 것이며 삭제 방지 기능 없음
+- E(오답): 수명 주기 정책은 자동 삭제/이동을 위한 것으로 우발적 삭제 보호와 무관
 
 ---
 
-# Q45 
+# Q45
+
+**정답: B, E**
+
+**해설:**
+- SNS → Lambda 구조에서 네트워크 연결 문제로 Lambda가 실패하면 데이터 손실 발생
+- 모든 데이터 수집을 보장하기 위한 안정적인 아키텍처 필요
+- **B(정답)**: SQS 대기열을 생성하여 SNS 주제를 구독하면 메시지가 대기열에 보관되어 Lambda 실패 시에도 메시지 손실 방지
+- **E(정답)**: Lambda 함수를 SQS 대기열에서 읽도록 수정하면 자동 재시도 및 내결함성 제공
+- A(오답): Lambda는 자동으로 다중 AZ에 배포되며, AZ 지정은 불필요
+- C(오답): CPU/메모리 증가는 네트워크 연결 문제 해결하지 못함
+- D(오답): Lambda에는 프로비저닝된 처리량 개념이 없음
+
+---
+
+# Q46
 
 **정답: B**
 
-https://www.examtopics.com/discussions/amazon/view/85408-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:・
-네트워크 연결 문제로 데이터 수집이 잠시 실패하는 현상이 일어남. 이런 경우 데이터
-손실이 일어날 위험성이 크므로 데이터를 보관해둘 곳이 필요하고, 대책으로는 SQS
-Queue가 적절. 또한 SQS Queue에 머물러 있는 작업들은 Lambda로 처리 가능. 답은 BE.
-SQS 를 사용하면 메시지 손실 위험을 감수하거나 다른 서비스를 가동할 필요 없이
-소프트웨어 구성 요소 간에 모든 볼륨의 메시지를 전송, 저장 및 수신할 수 있습니다.
-https://aws.amazon.com/ko/sqs/
-Lambda 함수를 사용하여 Amazon Simple Queue Service(Amazon SQS) 대기열의 메시지를
-처리할 수 있습니다.
-https://docs.aws.amazon.com/ko_kr/lambda/latest/dg/with-sqs.html
-설명2:
-간헐적인 네트워크 연결 문제에도 불구하고 Lambda 함수가 향후 모든 데이터를
-수집하도록 하려면 다음 조치를 취해야 합니다.
-Amazon Simple Queue Service(SQS) 대기열을 생성하고 SNS 주제를 구독합니다. 이를
-통해 알림과 처리를 분리할 수 있으므로 처리 Lambda 함수가 실패하더라도 나중에 추가
-처리를 위해 메시지가 대기열에 남아 있습니다.
-SNS 에서 직접 읽지 않고 SQS 대기열에서 읽도록 Lambda 함수를 수정합니다. 이 분리는
-재시도 및 내결함성을 허용하고 모든 메시지가 Lambda 함수에 의해 처리되도록 합니다.
-참조:
-AWS SNS 설명서: https://aws.amazon.com/sns/
-AWS SQS 설명서: https://aws.amazon.com/sqs/
-AWS Lambda 설명서: https://aws.amazon.com/lambda/
+**해설:**
+- SFTP로 최대 200GB 파일 업로드 시 PII가 포함되면 관리자 경고 및 자동 문제 해결 필요
+- 최소 개발 노력으로 구현
+- **B(정답)**: Amazon Macie는 S3의 PII를 자동 검색하는 완전 관리형 서비스로, 최소 개발 노력으로 PII 검출 시 SNS 알림 전송하여 관리자에게 객체 제거 요청 가능
+- A(오답): Amazon Inspector는 EC2 취약성 평가용이며 S3 콘텐츠 스캔 불가
+- C(오답): Lambda 커스텀 알고리즘은 200GB 대용량 파일 처리에 상당한 개발 노력 필요
+- D(오답): 커스텀 Lambda + SES + 수명 주기 정책은 불필요한 복잡성 증가
 
 ---
 
-# Q46 
-
-**정답: B**
-
-https://www.examtopics.com/discussions/amazon/view/85264-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:
-Amazon Macie는 AWS에서 PII와 같은 민감한 데이터를 자동으로 검색, 분류 및 보호하는
-관리형 서비스입니다. S3 에서 Macie 를 활성화하면 업로드된 객체에서 PII 를 검색할 수
-있습니다.
-A. Amazon Inspector 를 사용하여 S3 의 객체를 스캔하는 것은 PII 데이터 스캔을 위한
-최적의 선택이 아닙니다. Amazon Inspector 는 콘텐츠 스캔이 아닌 호스트 수준 취약성
-평가를 위해 설계되었습니다.
-C. AWS Lambda 함수에서 사용자 지정 검색 알고리즘을 구현하려면 대용량 파일 검색을
-처리하기 위해 상당한 개발 노력이 필요합니다.
-D. 알림에 SES 를 사용하고 S3 수명 주기 정책을 트리거하면 솔루션에 불필요한 복잡성이
-추가될 수 있습니다.
-따라서 최소한의 개발 노력으로 요구 사항을 충족하는 최상의 옵션은 S3 를 안전한 전송
-지점으로 사용하고 Amazon Macie 를 PII 스캔에 활용하고 관리자에게 SNS 알림을
-트리거하는 것입니다(옵션 B).
-설명2:
-최소한의 개발 노력으로 PII 가 공유될 때 관리자에게 탐지 및 경고하고 수정을 자동화하는
-요구 사항을 충족하려면 Amazon S3 버킷을 안전한 전송 지점으로 사용하고 Amazon
-Macie로 버킷의 객체를 스캔하는 것이 가장 좋습니다.
-Amazon Macie 는 기계 학습 및 패턴 일치를 사용하여 Amazon S3 에 저장된 중요한
-데이터를 검색하고 보호하는 완전 관리형 데이터 보안 및 데이터 개인 정보 보호
-서비스입니다. 민감한 데이터를 분류하고, 민감한 데이터에 대한 액세스를 모니터링하고,
-수정 작업을 자동화하는 데 사용할 수 있습니다.
-이 시나리오에서는 파일을 Amazon S3 버킷에 업로드한 후 Amazon Macie 에서 객체를
-스캔하여 PII를 찾을 수 있으며, PII가 감지되면 Amazon Simple Notification Service(SNS)
-알림을 트리거하여 관리자에게 제거하도록 알릴 수 있습니다. PII를 포함하는 객체. Amazon
-Macie 에는 이미 다양한 형식의 PII 를 탐지할 수 있는 사전 구축된 데이터 분류 규칙이
-있으므로 이 접근 방식은 최소한의 개발 노력이 필요합니다.
-개인정보 = Macie. 정답은 B.
-참조:
-html AWS Well-Architected 프레임워크 - 보안 기반:
-https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html
-
----
-
-# Q47 
+# Q47
 
 **정답: D**
 
-https://www.examtopics.com/discussions/amazon/view/85529-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:
-A(X) : 예약 인스턴스는 1년 또는 3년 단위 약정 방식.
-예약 인스턴스(RI)는 1 년 또는 3 년 기간으로 약정하는 경우 EC2 사용 요금을 상당히
-할인해 주는 EC2 상품입니다. https://aws.amazon.com/ko/ec2/faqs/
-B(X) : 용량 예약을 생성할 때 다음을 지정합니다. ◎용량을 예약할 가용 영역
-https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html
-C(X) : 예약 인스턴스는 1년 또는 3년 단위 약정 방식.
-D(O) : B번 참조.
-설명2:
-https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html
-예비 인스턴스: 비용 효율적이지 않은 전체 기간(1 년 또는 3 년)에 대해 비용을 지불해야
-합니다.
+**해설:**
+- 1주일간 예정된 이벤트를 위해 특정 리전의 3개 특정 AZ에서 보장된 EC2 용량 필요
+- **D(정답)**: 온디맨드 용량 예약은 특정 AZ를 지정할 수 있으며, 1주일 단기간에도 사용 가능하고 용량 보장 제공
+- A(오답): 예약 인스턴스는 리전 수준이며 특정 AZ 지정 불가
+- B(오답): 온디맨드 용량 예약은 리전만 지정하면 특정 AZ 지정 불가
+- C(오답): 예약 인스턴스는 1년 또는 3년 약정이며 1주일 단기 사용 불가
 
 ---
 
-# Q48 
+# Q48
 
 **정답: D**
 
-https://www.examtopics.com/discussions/amazon/view/85119-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:
-A(X) : ElastiCache는 캐시 서비스.
-B(X) : 인스턴스 스토어는 휘발성 스토리지. 내구성 불충족.
-C(X) : Amazon S3 Glacier Deep Archive는 콜드 스토리지. 가용성 불충족.
-D(O) : 정답.
-설명2:
-카탈로그를 Amazon Elastic File System(Amazon EFS) 파일 시스템으로 이동하면
-고가용성과 내구성이 모두 제공됩니다. Amazon EFS 는 필요에 따라 확장할 수 있도록
-구축된 완전 관리형, 가용성 및 내구성이 뛰어난 파일 시스템입니다. Amazon EFS 를
-사용하면 다양한 가용 영역에 있는 여러 EC2 인스턴스에서 카탈로그 데이터를 저장하고
-액세스할 수 있으므로 고가용성이 보장됩니다. 또한 Amazon EFS는 여러 가용 영역 내에서
-파일을 자동으로 중복 저장하므로 내구성 있는 스토리지 옵션이 됩니다.
+**해설:**
+- EC2 인스턴스 스토어는 휘발성이므로 카탈로그의 고가용성과 내구성 있는 저장 필요
+- **D(정답)**: Amazon EFS는 다중 AZ에 자동 복제되는 완전 관리형 파일 시스템으로, 고가용성과 내구성 제공하며 여러 EC2 인스턴스에서 동시 액세스 가능
+- A(오답): ElastiCache는 인메모리 캐시 서비스로 내구성 있는 저장소가 아님
+- B(오답): 더 큰 인스턴스 스토어도 여전히 휘발성이므로 내구성 미충족
+- C(오답): S3 Glacier Deep Archive는 아카이브용 콜드 스토리지로 즉시 액세스 불가
 
 ---
 
-# Q49 
+# Q49
 
 **정답: B**
 
-https://www.examtopics.com/discussions/amazon/view/85211-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-해설:
-의료 이미지, 뉴스 미디어 자산 또는 유전체학 데이터와 같이 즉각적인 액세스가 필요한
-아카이브 데이터의 경우 S3 Glacier Instant Retrieve 스토리지 클래스를 선택하십시오. S3
-Glacier Instant Retrieve 스토리지 클래스는 밀리초 검색으로 최저 비용의 스토리지를
-제공합니다.
-즉각적인 액세스가 필요하지는 않지만 백업 또는 재해 복구 사용 사례와 같이 비용 없이
-대용량 데이터 세트를 검색할 수 있는 유연성이 필요한 아카이브 데이터의 경우 S3 Glacier
-Flexible Retrieve(이전의 S3 Glacier)를 선택하고, 몇 분 내에 검색하거나 5-12 시간 내에
-대량 검색을 무료로 제공합니다.
+**해설:**
+- 1년 미만 파일은 빠른 쿼리/검색, 1년 이상 파일은 지연 허용하며 비용 효율적 솔루션 필요
+- **B(정답)**: S3 Intelligent-Tiering은 액세스 패턴에 따라 자동 비용 최적화하며, 1년 후 Glacier Flexible Retrieval로 이동, Athena로 S3 쿼리, Glacier Select로 아카이브 쿼리 가능
+- A(오답): Glacier Instant Retrieval에 모든 파일 저장은 비용 비효율적
+- C(오답): S3 Standard → Glacier Instant Retrieval은 비용 최적화 미흡
+- D(오답): RDS로 메타데이터 관리는 불필요한 복잡성 증가, Deep Archive는 검색 시간 12시간 이상
 
 ---
 
-# Q50 
+# Q50
 
 **정답: D**
 
-https://www.examtopics.com/discussions/amazon/view/85026-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-해설:・
-A(X) : 1000 개의 인스턴스에 일일이 다 Lambda 로 패치 적용한다는 것은 비효율적이고
-번거로움
-B(X) : 자동 업데이트에는 시간이 좀 걸림. ""패치 관리자는 승인 및 거부된 패치 목록과
-함께 릴리스 후 며칠 이내에 패치를 자동 승인하기 위한 규칙을 포함 하는 패치 기준선 을
-사용합니다.
-https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-pat
-ch.html
-C(X) : 가능한 빨리 패치해야한다고 했는데 예약을 하고 있어서 안 됨.
-D(O) : 리소스 그룹을 통해 한 번에 여러 인스턴스를 업데이트 가능. 리소스 그룹이 명령
-대상으로 지원됨에 따라 해당 리소스 그룹에 속한 모든 관리형 인스턴스에서 관리 및 임시
-작업을 자동화할 수 있습니다.
-https://aws.amazon.com/ko/about-aws/whats-new/2019/08/now-select-resource-group
-s-as-targets-for-aws-systems-manager-run-command/
-참고:
-https://docs.aws.amazon.com/ko_kr/systems-manager/latest/userguide/about-windows-
-app-patching.html
+**해설:**
+- 1,000개 EC2 Linux 인스턴스에 보안 취약성 패치를 가능한 빨리 적용 필요
+- **D(정답)**: AWS Systems Manager Run Command는 리소스 그룹을 대상으로 즉시 사용자 지정 명령 실행 가능하여 1,000개 인스턴스에 빠른 패치 적용 가능
+- A(오답): Lambda로 1,000개 인스턴스 패치는 비효율적이고 복잡함
+- B(오답): Patch Manager는 자동 승인 규칙이 며칠 소요되어 "가능한 빨리" 요구사항 미충족
+- C(오답): 유지 관리 기간 예약은 즉시 실행이 아니므로 긴급 패치에 부적합
 
 ---
 
-# Q51 
+# Q51
+
+**정답: B, D**
+
+**해설:**
+- REST API로 배송 통계 검색, HTML 형식으로 구성, 매일 아침 여러 이메일 주소로 보고서 전송 필요
+- **B(정답)**: Amazon SES는 HTML 형식의 이메일을 여러 수신자에게 전송할 수 있는 완전 관리형 이메일 서비스
+- **D(정답)**: EventBridge 예약 이벤트는 매일 특정 시간에 Lambda를 호출하여 API 쿼리 및 데이터 추출 가능
+- A(오답): Kinesis Data Firehose는 스트리밍 데이터 수집용이며 배치 보고서 생성에 부적합
+- C(오답): AWS Glue는 ETL 작업용이며, Lambda가 API 쿼리에 더 적합하고 가벼움
+- E(오답): S3 이벤트는 객체 업로드 시 트리거되며 예약 작업이나 이메일 전송에 직접 사용 불가
+
+---
+
+# Q52
+
+**정답: C**
+
+**해설:**
+- 온프레미스 애플리케이션 AWS 마이그레이션, 수십 GB~수백 TB 출력 파일, 표준 파일 시스템 구조, 자동 확장, 고가용성, 최소 운영 오버헤드
+- **C(정답)**: EC2 + Auto Scaling (고가용성) + Amazon EFS (표준 파일 시스템, 자동 확장, 다중 AZ, 페타바이트 규모 지원)
+- A(오답): S3는 객체 스토리지로 표준 파일 시스템 구조 미지원
+- B(오답): EBS는 단일 AZ에 종속되며 다중 EC2 동시 접근 제한적, 자동 확장 미지원
+- D(오답): EBS는 수동 볼륨 크기 조정 필요하며 수백 TB 데이터에 비효율적, 다중 인스턴스 공유 어려움
+
+---
+
+# Q53
+
+**정답: C**
+
+**해설:**
+- 회계 기록 1년 즉시 액세스, 추가 9년 보관, 10년간 누구도 삭제 불가, 최대 복원력
+- **C(정답)**: S3 Standard (1년 즉시 액세스) → S3 Glacier Deep Archive (9년 보관), S3 Object Lock 규정 준수 모드로 10년간 삭제 방지, 다중 AZ 복제로 최대 복원력
+- A(오답): S3 Glacier는 검색 시간 1-5분 소요로 "즉시 액세스" 요구사항 미충족
+- B(오답): IAM 정책은 루트 사용자가 변경 가능하므로 삭제 방지 보장 불가
+- D(오답): S3 One Zone-IA는 단일 AZ 저장으로 "최대 복원력" 요구사항 미충족, 거버넌스 모드는 특권 사용자가 삭제 가능
+
+---
+
+# Q54
+
+**정답: C**
+
+**해설:**
+- 2개 EC2 인스턴스의 Windows 파일 공유, 고가용성 및 내구성, 현재 파일 액세스 방식 보존 필요
+- **C(정답)**: Amazon FSx for Windows File Server는 완전 관리형 네이티브 Windows 파일 시스템으로 SMB 프로토콜 지원, 다중 AZ 자동 복제 및 페일오버, 기존 Windows 파일 공유 접근 방식 완전 호환
+- A(오답): S3는 객체 스토리지로 Windows 파일 공유 프로토콜(SMB) 미지원, IAM 인증은 기존 접근 방식과 상이
+- B(오답): S3 파일 게이트웨이는 S3를 NFS/SMB로 마운트하지만 완전한 Windows 파일 시스템 기능 미지원
+- D(오답): Amazon EFS는 Linux 기반 NFS 프로토콜용이며 Windows 파일 공유(SMB) 미지원
+
+---
+
+# Q55
+
+**정답: C**
+
+**해설:**
+- VPC 2개 AZ, 6개 서브넷 (퍼블릭/프라이빗/데이터베이스), 프라이빗 서브넷의 EC2만 RDS 액세스 가능
+- **C(정답)**: 프라이빗 서브넷 EC2의 보안 그룹을 소스로 허용하는 보안 그룹을 DB에 연결하면, 해당 보안 그룹을 가진 인스턴스만 DB 접근 가능 (보안 그룹 체이닝)
+- A(오답): 라우팅 테이블은 네트워크 경로 제어용이며, 특정 서브넷의 인스턴스만 선택적으로 접근 제어 불가
+- B(오답): 보안 그룹은 거부 규칙 미지원, 허용 규칙만 가능
+- D(오답): VPC 피어링은 서로 다른 VPC 간 연결용이며, 동일 VPC 내 서브넷 간에는 불필요하고 불가능
+
+---
+
+# Q56
+
+**정답: C**
+
+**해설:**
+- Route 53 도메인, API Gateway ca-central-1 리전, HTTPS 사용, 회사 도메인 및 인증서로 API Gateway URL 설계
+- **C(정답)**: 리전 API Gateway 엔드포인트 생성 → 회사 도메인 연결 → 동일 리전(ca-central-1) ACM으로 인증서 가져오기 → API Gateway 엔드포인트에 인증서 연결 → Route 53으로 트래픽 라우팅 (리전 사용자 지정 도메인은 동일 리전 인증서 필수)
+- A(오답): 단계 변수는 환경별 설정용이며 사용자 지정 도메인 설정 불가
+- B(오답): 리전 API Gateway는 us-east-1이 아닌 동일 리전(ca-central-1) 인증서 필요
+- D(오답): us-east-1 인증서는 CloudFront 배포(엣지 최적화) 전용이며, 리전 엔드포인트는 동일 리전 인증서 필요, A 레코드는 직접 IP 지정용으로 부적합
+
+---
+
+# Q57
 
 **정답: B**
 
-https://www.examtopics.com/discussions/amazon/view/85557-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:・
-https://docs.aws.amazon.com/ses/latest/dg/send-email-formatted.html
-1. 데이터에 대한 애플리케이션의 API 를 쿼리하기 위해 AWS Lambda 함수를 호출하는
-Amazon EventBridge(Amazon CloudWatch Events) 예약 이벤트를 생성합니다. 이 단계는
-AWS Lambda 를 사용하여 배송 통계를 추출하고 데이터를 HTML 형식으로 구성할 수
-있습니다.
-2. Amazon Simple Email Service(Amazon SES)를 사용하여 데이터 형식을 지정하고
-이메일로 보고서를 보냅니다.
-이 단계는 Amazon SES 를 사용하여 매일 아침 동시에 여러 이메일 주소로 보고서를
-전송함으로써 수행할 수 있습니다.
-따라서 옵션 D와 B는 이 질문에 대한 올바른 선택입니다. Kinesis Data Firehose가 이 사용
-사례에 필요하지 않기 때문에 옵션 A 는 올바르지 않습니다. 애플리케이션의 API 를
-쿼리하는 데 AWS Glue 가 필요하지 않기 때문에 옵션 C 는 올바르지 않습니다. S3 이벤트
-알림을 사용하여 이메일로 보고서를 보낼 수 없기 때문에 옵션 E는 올바르지 않습니다.
-설명2:
-B(O) : HTML형식의 이메일 요구사항을 충족
-D(O) : 매일 아침 일정 이벤트 요구사항 충족
+**해설:**
+- 소셜 미디어 이미지 업로드, 부적절한 콘텐츠 확인, 최소 개발 노력
+- **B(정답)**: Amazon Rekognition은 이미지 및 비디오 분석을 위한 완전 관리형 ML 서비스로 부적절한 콘텐츠 자동 감지 API 제공, 신뢰도 점수로 인적 검토 대상 식별 가능
+- A(오답): Amazon Comprehend는 텍스트 NLP 서비스로 이미지 콘텐츠 분석 불가
+- C(오답): SageMaker는 커스텀 ML 모델 구축/훈련 플랫폼으로 상당한 개발 노력 필요
+- D(오답): Fargate + 커스텀 모델은 최대 개발 노력 필요하며 인프라 관리 부담 증가
 
 ---
 
-# Q52 
+# Q58
 
 **정답: C**
 
-https://www.examtopics.com/discussions/amazon/view/85265-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:・
-EFS는 표준 파일 시스템으로 자동 확장되며 가용성이 높습니다.
-설명2:
-고가용성이므로 Auto Scaling이 들어간 C,D 둘 중 하나가 정답. EFS vs EBS를 비교해보면
-보통은 EFS 가 정답인 경우가 많음. 일단 EBS 는 여러 EC2 인스턴스에서 동시 접속할 수
-없다는 단점이 치명적이기 때문.
-Amazon Elastic File System 은 전체 파일 시스템 액세스 의미 체계를 지원하는 표준 파일
-시스템 인터페이스를 제공합니다.
-https://docs.aws.amazon.com/efs/latest/ug/using-fs.html
-EBS 다중 연결 볼륨에서 표준 파일 시스템 작업은 지원되는 구성이 아닙니다.
-https://aws.amazon.com/ko/premiumsupport/knowledge-center/ebs-access-volumes-us
-ing-multi-attach/
+**해설:**
+- 컨테이너 중요 애플리케이션, 확장성 및 가용성, 기본 인프라 관리 불원
+- **C(정답)**: AWS Fargate + Amazon ECS는 서버리스 컨테이너 플랫폼으로 EC2 인스턴스 프로비저닝/관리 불필요, 자동 확장 및 고가용성 제공
+- A(오답): EC2 + Docker는 인스턴스 프로비저닝, 패치, 확장 등 인프라 관리 필요
+- B(오답): EC2 작업자 노드는 인스턴스 관리 필요
+- D(오답): ECS 최적화 AMI 사용해도 EC2 인스턴스 관리 필요
 
 ---
 
-# Q53 
-
-**정답: C**
-
-https://www.examtopics.com/discussions/amazon/view/85532-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:・
-A(X) : 1년 동안 즉시 액세스할 수 있어야 한다고 했으므로 액세스 시간이 1분 이상 걸리는
-S3 Glacier는 오답.
-B(X) : 특정 기간동안 즉시 액세스할 수 있어야 하므로 Intelligent Tiering 이 아니라 Life
-Cycle Policy가 적합.
-C(O) : S3 Standard = 즉시 액세스 가능 / S3 Glacier Deep Archive = 콜드 스토리지.
-보관용으로 사용됨. Object Lock으로 객체 삭제 방지.
-S3 객체 잠금을 사용하면 write-once-read-many(WORM) 모델을 사용하여 객체를 저장할
-수 있습니다. 객체 잠금은 고정된 시간 동안 또는 무기한으로 객체의 삭제 또는 덮어쓰기를
-방지하는 데 도움이 될 수 있습니다.
-https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/userguide/object-lock.html
-D(X) : 기록은 최대한의 복원력으로 저장해야한다고 했으므로 One Zone-IA 는 적합하지
-않음.
-설명2:
-1 년 동안 즉시 액세스 가능한 레코드의 요구 사항을 충족한 다음 최대 복원력으로 추가
-9 년 동안 보관하기 위해 S3 수명 주기 정책을 사용하여 1 년 후 S3 Standard 에서 S3
-Glacier Deep Archive 로 레코드를 전환할 수 있습니다. 또한 관리자 및 루트 사용자를
-포함하여 누구도 레코드를 삭제할 수 없도록 10 년 동안 규정 준수 모드에서 S3 객체
-잠금을 사용할 수 있습니다. 따라서 정답은 옵션 C입니다.
-
----
-
-# Q54 
-
-**정답: C**
-
-https://www.examtopics.com/discussions/amazon/view/85574-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:・
-Windows File 공유가 핵심 키워드. 답은 C.
-설명2:
-https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/AmazonEFS.html
-Amazon FSx for Windows File Server 는 완전히 네이티브로 지원되는 완전히 관리되는
-Microsoft Windows 파일 서버를 제공합니다.
-윈도우 파일 시스템.
-https://docs.aws.amazon.com/fsx/latest/WindowsGuide/what-is.html
-
----
-
-# Q55 
-
-**정답: C**
-
-https://www.examtopics.com/discussions/amazon/view/85409-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명:・
-프라이빗 서브넷의 인스턴스에 할당된 보안 그룹의 인바운드 트래픽을 허용하는 보안
-그룹을 생성하면 프라이빗 서브넷에서 실행되는 EC2 만 RDS 데이터베이스에 액세스할 수
-있습니다. 보안 그룹을 DB 와 연결하여 지정된 보안 그룹에 속한 인스턴스로만 접근을
-제한합니다.
-질문에 설명된 요구 사항을 충족하는 솔루션은 옵션 C 입니다. 프라이빗 서브넷의
-인스턴스에 할당된 보안 그룹에서 인바운드 트래픽을 허용하는 보안 그룹을 생성합니다.
-보안 그룹을 DB 인스턴스에 연결합니다.
-이 솔루션에서 DB 인스턴스에 적용된 보안 그룹은 프라이빗 서브넷의 인스턴스에 할당된
-보안 그룹의 인바운드 트래픽을 허용합니다. 이렇게 하면 프라이빗 서브넷에서 실행되는
-EC2 인스턴스만 RDS 데이터베이스에 액세스할 수 있습니다.
-
----
-
-# Q56 
-
-**정답: C**
-
-https://www.examtopics.com/discussions/amazon/view/85266-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:・
-사용자 정의 도메인 이름 은 API 사용자에게 제공할 수 있는 더 간단하고 직관적인
-URL 입니다. API 를 배포한 후 귀하(및 귀하의 고객)는 다음 형식의 기본 기본 URL 을
-사용하여 API를 호출할 수 있습니다.
-https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domai
-ns.html
-리전 사용자 지정 도메인 이름은 API 와 동일한 AWS 리전에 있는 SSL/TLS 인증서를
-사용해야 합니다.
-https://aws.amazon.com/ko/premiumsupport/knowledge-center/custom-domain-name-
-amazon-api-gateway/
-・여기서 API Gateway URL 이란, Route 53 에 등록된 도메인 이름으로, 이를 통해 API 를
-호출할 수 있음.
-・인증서는 HTTPS에 사용됨. HTTPS=HTTL + SSL인데, SSL에 인증서가 필요하기 때문.
-인증서는 ACM으로 가져올 수 있음.
-1. 리전 API 게이트웨이 엔드포인트 생성 및 회사 도메인 이름과 연결
-또한 API Gateway REST API, Amazon CLI 또는 Amazon SDK 중 하나를 호출하여 사용자
-지정 도메인 이름을 호스트 이름으로 사용하여 API 의 기본 경로 매핑을 설정할 수
-있습니다.
-https://docs.amazonaws.cn/en_us/apigateway/latest/developerguide/how-to-edge-opti
-mized-custom-domain-name.html#how-to-custom-domains-mapping-console
-2. 회사 도메인 이름과 연결된 공인 인증서를 동일 리전의 ACM으로 가져옴
-API Gateway 리전 사용자 지정 도메인 이름의 경우 API 와 동일한 리전에서 인증서를
-요청하거나 가져와야 합니다......도메인 이름에 대한 인증서를 ACM으로 가져오려면....
-https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domai
-ns-prerequisites.html
-3. API 게이트웨이 엔드포인트에 인증서 연결
-ACM 인증서로 리전 사용자 지정 도메인 이름을 생성(또는 마이그레이션)하면 API
-Gateway 는 해당 계정에 서비스 연결 역할을 생성합니다(이 역할이 아직 없는 경우).
-서비스 연결 역할은 ACM 인증서를 해당 리전 엔드포인트에 연결하는 데 필요합니다.
-https://docs.aws.amazon.com/ko_kr/apigateway/latest/developerguide/apigateway-regio
-nal-api-custom-domain-create.html
-4. API 게이트웨이 엔드포인트로 트래픽 라우팅 하도록 Route 53 설정
-API Gateway 리전 사용자 지정 도메인 이름의 경우 API 와 동일한 리전에서 인증서를
-요청하거나 가져와야 합니다. 그리하여 회사의 도메인 이름과 연결된 공인 인증서는 동일
-리전의 ACM으로 가져와야됩니다. 따라서 정답은 C에 한표 입니다.
-도메인 이름을 사용하여 Amazon API Gateway API로 트래픽 라우팅
-・리전 API 엔드포인트(Regional API endpoint): 리전 API 엔드포인트로 트래픽을 라우팅하는
-Route 53 별칭 레코드를 생성합니다.
-https://docs.aws.amazon.com/ko_kr/Route53/latest/DeveloperGuide/routing-to-api-gate
-way.html
-설명2
-회사의 도메인 이름과 해당 인증서로 API Gateway URL 을 설계하려면 회사에서 다음을
-수행해야 합니다.
-1. 지역 API 게이트웨이 엔드포인트 생성: 이를 통해 회사는 지역에 특정한 엔드포인트를
-생성할 수 있습니다.
-2. API 게이트웨이 엔드포인트를 회사의 도메인 이름과 연결: 이렇게 하면 회사에서 API
-게이트웨이 URL에 자체 도메인 이름을 사용할 수 있습니다.
-3. 회사의 도메인 이름과 연결된 공인 인증서를 동일한 리전의 AWS Certificate
-Manager(ACM)로 가져옵니다. 이렇게 하면 회사에서 API 와의 보안 통신을 위해 HTTPS 를
-사용할 수 있습니다.
-4. API Gateway 엔드포인트에 인증서 첨부: 회사에서 API Gateway URL 보안을 위해
-인증서를 사용할 수 있습니다.
-5. 트래픽을 API 게이트웨이 엔드포인트로 라우팅하도록 Route 53 구성: 이를 통해 회사는
-Route 53 을 사용하여 회사의 도메인 이름을 사용하는 API 게이트웨이 URL 로 트래픽을
-라우팅할 수 있습니다.
-
----
-
-# Q57 
-
-**정답: B**
-
-https://www.examtopics.com/discussions/amazon/view/85452-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명:・
-Amazon Rekognition 을 사용하여 부적절하거나 원치 않거나 불쾌감을 주는 콘텐츠를
-감지할 수 있습니다.
-https://docs.aws.amazon.com/rekognition/latest/dg/moderation.html
-참조
-https://docs.aws.amazon.com/rekognition/latest/dg/moderation.html?pg=ln&sec=ft
-https://docs.aws.amazon.com/rekognition/latest/dg/a2i-rekognition.html
-
----
-
-# Q58 
-
-**정답: C**
-
-https://www.examtopics.com/discussions/amazon/view/85453-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:
-AWS 에서 컨테이너라고 하면 ECS, ECS 라고 하면 일단 Fargate 부터 떠올리면 됨. AWS
-Fargate Fargate 는 Amazon EC2 인스턴스의 서버나 클러스터를 관리할 필요 없이
-컨테이너를 실행하기 위해 Amazon ECS에 사용할 수 있는 기술입니다.
-https://docs.aws.amazon.com/ko_kr/AmazonECS/latest/developerguide/AWS_Fargate.ht
-ml
-설명2:
-요구 사항은 컨테이너화된 워크로드를 실행하기 위해 기본 인프라를 프로비저닝하고 관리할
-필요 없이 확장성과 가용성을 위한 것이므로 AWS Fargate에서 AWS ECS를 사용합니다.
-https://docs.aws.amazon.com/AmazonECS/latest/userguide/what-is-fargate.html
-
----
-
-# Q59 
+# Q59
 
 **정답: D**
 
-https://www.examtopics.com/discussions/amazon/view/85793-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명:・
-대량의 스트림 데이터 수집 = Kinesis Data Streams. 정답은 D.
-※실제 사례가 있음.
-◎전 세계 300 개 이상의 Hearst 웹사이트에서 스트리밍되는 하루 30 테라바이트 이상의
-클릭스트림 데이터를 전송하고 처리하는 클릭스트림 분석 플랫폼을 구축했습니다.
-◎Amazon Kinesis Firehose 는 버퍼링된 데이터를 Amazon Kinesis Data Streams 에서
-Amazon Simple Storage Service (Amazon S3) 의 영구 스토리지로 자동 이동합니다. 이는
-팀이 이전에 관리해야 했던 Amazon Elastic Compute Cloud(Amazon EC2) 인스턴스를
-대체합니다.
-◎변환된 클릭스트림 데이터는 Hearst 데이터 레이크에서 가져와 분석 쿼리 및 복잡한
-데이터 과학 작업을 위해 Amazon Redshift로 전송됩니다.
-◎Amazon Redshift 에서 데이터는 API 를 통해 회사의 콘텐츠 관리 시스템으로 최종
-사용자에게 푸시됩니다.
-https://aws.amazon.com/ko/solutions/case-studies/hearst-data-analytics/
+**해설:**
+- 300개 이상 글로벌 웹사이트, 매일 30TB 이상 클릭스트림 데이터 분석 플랫폼
+- **D(정답)**: Kinesis Data Streams (실시간 대용량 데이터 수집) → Kinesis Data Firehose (S3 데이터 레이크 자동 전송) → Redshift (대규모 분석 쿼리) 구조로 완전 관리형 스트리밍 데이터 파이프라인 구축
+- A(오답): Data Pipeline은 배치 ETL용이며 실시간 스트리밍 데이터에 부적합
+- B(오답): EC2 Auto Scaling은 운영 오버헤드 증가, 실시간 스트리밍 처리에 Kinesis보다 비효율적
+- C(오답): CloudFront는 CDN이며 데이터 수집용 아님, Lambda는 30TB 대용량 처리에 비용 및 성능 비효율적
 
 ---
 
-# Q60 
+# Q60
 
 **정답: C**
 
-https://www.examtopics.com/discussions/amazon/view/85121-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-해설:・
-Application Load Balancer 를 위한 리스너…..쿼리 문자열 조건을 사용하여 쿼리 문자열의
-키/값 페어 또는 값을 기반으로 요청을 라우팅하는 규칙을 구성할 수 있습니다.
-https://docs.aws.amazon.com/ko_kr/elasticloadbalancing/latest/application/load-balance
-r-listeners.html
-Application Load Balancer 리스너 규칙을 사용하여 HTTP 요청을 HTTPS로 리디렉션하려고
-합니다. 어떻게 해야 하나요?
-①HTTP 요청을 HTTPS로 리디렉션하는 HTTP 리스너 규칙 생성.
-②HTTPS 리스너 생성.
-③Application Load Balancer의 보안 그룹이 443의 트래픽을 허용하는지 확인
-https://aws.amazon.com/ko/premiumsupport/knowledge-center/elb-redirect-http-to-htt
-ps-using-alb/
-참조
-https://aws.amazon.com/premiumsupport/knowledge-center/elb-redirect-http-to-https-
-using-alb/
-https://repost.aws/ko/knowledge-center/elb-redirect-http-to-https-using-alb
+**해설:**
+- ALB 뒤 웹사이트, HTTP/HTTPS 별도 처리, 모든 요청을 HTTPS로 전달
+- **C(정답)**: ALB 리스너 규칙에서 HTTP(포트 80) 요청을 HTTPS(포트 443)로 리디렉션하는 규칙 생성 가능 (ALB 기본 기능)
+- A(오답): 네트워크 ACL은 서브넷 레벨 방화벽이며, ALB는 이미 VPC 내부에 있어 HTTP 트래픽 차단 시 리디렉션 불가
+- B(오답): URL 재작성 규칙은 ALB에서 지원하지 않으며, 리디렉션 규칙 사용 필요
+- D(오답): NLB는 L4 로드밸런서로 HTTP/HTTPS 프로토콜 인식 및 리디렉션 불가, SNI는 인증서 선택용
 
 ---
 
-# Q61 
+# Q61
 
 **정답: C**
 
-https://www.examtopics.com/discussions/amazon/view/85580-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명:・
-애플리케이션에 자격증명 하드코딩 안 됨 = Secrets Manager.
-Secrets Manager 를 사용하면 애플리케이션 소스 코드에서 하드 코딩된 자격 증명을
-제거하고 애플리케이션 자체에 자격 증명을 저장하지 않음으로써 보안 태세를 개선할 수
-있습니다. 사용자의 개입 없이 지정한 일정에 따라 자동으로 보안 암호를 교체하도록
-Secrets Manager 를 구성할 수 있습니다. 교체는 AWS Lambda 함수를 사용하여 정하고
-실행합니다.
-https://docs.aws.amazon.com/ko_kr/secretsmanager/latest/userguide/intro.html
-참고:
-https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.
-html
+**해설:**
+- RDS 데이터베이스 자격 증명을 안전하게 저장하고 자동으로 교체해야 하는 상황
+- **C (AWS Secrets Manager)**: Secrets Manager는 RDS 자격 증명 전용 자동 순환 기능 제공. Lambda 함수가 자동으로 RDS 비밀번호를 변경하고 동기화. EC2가 IAM 역할로 암호 검색하여 하드코딩 불필요. 최소 운영 오버헤드로 완전 자동화
+- A (인스턴스 메타데이터): 메타데이터는 자격 증명 저장 용도 아님. 수동으로 Lambda 함수 작성 및 RDS와 메타데이터 동기화 필요로 복잡함
+- B (S3 구성 파일): S3에 저장은 가능하나 RDS와 자동 동기화 불가. 수동으로 Lambda 함수 작성 필요
+- D (Systems Manager Parameter Store): Parameter Store는 자동 순환 기능 없음. Secrets Manager만 RDS 네이티브 순환 지원
 
 ---
 
-# Q62 
+# Q62
 
 **정답: D**
 
-https://www.examtopics.com/discussions/amazon/view/85524-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명:・
-외부 인증기관에서 발급한 SSL/TLS 인증서가 이미 있고 이를 사용해야하므로 ACM 쪽에서
-SSL/TLS 인증서를 발급하는 A,B는 모두 오답.
-C(X) : 인증서가 있는데 또 발급받을 필요가 없음.
-https://www.amazonaws.cn/en/certificate-manager/faqs/#Managed_renewal_and_deploy
-ment
+**해설:**
+- 외부 CA 발급 SSL/TLS 인증서를 ALB에 적용하고 매년 갱신 필요
+- **D (ACM에 인증서 가져오기 + EventBridge 알림)**: 외부 CA 인증서는 ACM으로 import 가능. 하지만 외부 CA 인증서는 ACM의 자동 갱신 불가. EventBridge로 만료 전 알림 받아 수동 교체가 유일한 방법
+- A (ACM 발급): ACM은 외부 CA가 아닌 AWS 자체 CA로 발급. 요구사항 "외부 CA 발급" 위배
+- B (키 자료 가져오기): 인증서가 아닌 키 자료만 가져오는 것은 불가능. 잘못된 설명
+- C (ACM Private CA): Private CA는 내부 사설 인증서용. 공개 웹 애플리케이션에 부적합하며 브라우저 신뢰 불가
 
 ---
 
-# Q63 
+# Q63
 
 **정답: A**
 
-https://www.examtopics.com/discussions/amazon/view/85795-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:・
-A(O) : S3에 넣으면 Lambda를 통해 자동으로 처리가 되도록 하는 거라 OK. S3는 저렴함.
-B(X) : dynamodb는 이미지 저장용으론…
-C(X) : 저렴한 S3가 있는데 굳이... 인스턴스 비용도 나감.
-D(x) : C와 마찬가지.
-설명2:
-Elastic BeanStalk는 비싸고 DocumentDB는 최대 400KB의 파일을 업로드할 수 있습니다.
-따라서 Lambda와 S3가 하나여야 합니다.
+**해설:**
+- PDF를 JPG로 변환하는 확장 가능한 서버리스 솔루션 필요
+- **A (S3 + Lambda)**: S3 PUT 이벤트가 Lambda 자동 트리거. 서버리스로 자동 확장. 원본과 변환 파일 모두 S3에 저장으로 비용 효율적. 700,000명 규모도 Lambda 동시성으로 처리 가능
+- B (DynamoDB): DynamoDB는 5MB 바이너리 파일 저장에 비효율적. 최대 400KB 아이템 크기 제한. PDF/JPG 저장은 S3가 적합
+- C (EC2 + EBS): EC2/EBS는 서버 관리 필요. EBS는 단일 인스턴스 볼륨이라 확장성 제한. Auto Scaling으로 관리 복잡도 증가
+- D (EC2 + EFS): C와 유사한 문제. 불필요한 인프라 관리. 서버리스 대비 비용 비효율
 
 ---
 
-# Q64 
+# Q64
 
 **정답: D**
 
-https://www.examtopics.com/discussions/amazon/view/85173-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:・
-Windows File Server + AWS로 이동 = Amazon FSx File Gateway.
-Amazon FSx 파일 게이트웨이는 Amazon FSx 의 Windows 파일 공유에 대한 온프레미스
-액세스를 최적화하여 사용자가 짧은 지연 시간과 공유 대역폭을 유지하면서 Windows 파일
-서버용 FSx 데이터에 쉽게 액세스할 수 있도록 합니다. 사용자는 액세스할 수 있는 자주
-사용하는 데이터의 로컬 캐시를 활용하여 성능을 높이고 데이터 전송 트래픽을 줄일 수
-있습니다. 파일 읽기 및 쓰기와 같은 파일 시스템 작업은 모두 로컬 캐시에 대해 수행되는
-반면 Amazon FSx 파일 게이트웨이는 변경된 데이터를 백그라운드에서 Windows 파일
-서버용 FSx 와 동기화합니다. 이러한 기능을 사용하면 Windows 파일 서버용 FSx 에서
-AWS 의 모든 온프레미스 파일 공유 데이터를 통합하고 보호되고 탄력적인 완전 관리형
-파일 시스템의 이점을 누릴 수 있습니다.
-https://aws.amazon.com/storagegateway/faqs/?nc1=h_ls
-설명2:
-https://docs.aws.amazon.com/filegateway/latest/filefsxw/what-is-file-fsxw.html
-대기 시간을 최소화하면서 AWS 와 온프레미스 파일 스토리지 모두에 액세스해야 하는
-회사의 요구 사항을 충족하기 위해 하이브리드 클라우드 아키텍처를 사용할 수 있습니다.
-한 가지 솔루션은 완벽하게 관리되는 Windows 파일 서버를 제공하는 AWS 에서 Windows
-파일 서버용 Amazon FSx를 배포 및 구성하는 것입니다.
-온프레미스 파일 데이터는 온프레미스와 AWS 파일 스토리지 간의 브리지 역할을 할 수
-있는 FSx 파일 게이트웨이로 이동할 수 있습니다. 클라우드 워크로드는 AWS 에서
-Windows File Server 용 FSx 를 사용하도록 구성할 수 있으며 온프레미스 워크로드는 FSx
-파일 게이트웨이를 사용하도록 구성할 수 있습니다.
-이 솔루션은 운영 오버헤드를 최소화하고 기존 파일 액세스 패턴을 크게 변경할 필요가
-없습니다. 온프레미스와 AWS 간의 연결은 AWS Site-to-Site VPN 연결을 사용하여 설정할
-수 있습니다.
-참조:
-Windows 파일 서버용 AWS FSx: https://aws.amazon.com/fsx/windows/
-AWS FSx 파일 게이트웨이: https://aws.amazon.com/fsx/file-gateway/
-AWS 사이트 간 VPN: https://aws.amazon.com/vpn/site-to-site-vpn/
+**해설:**
+- 온프레미스와 AWS 간 Windows 파일 서버 하이브리드 접근. 최소 지연 시간 필요
+- **D (FSx + FSx File Gateway)**: FSx for Windows는 AWS에서 완전 관리형 Windows 파일 서버. FSx File Gateway를 온프레미스에 배포하여 로컬 캐싱 제공. 온프레미스는 Gateway로 로컬 액세스, AWS는 FSx 직접 액세스. SMB 프로토콜 그대로 사용
+- A (FSx만): AWS FSx로 이동 시 온프레미스에서 Site-to-Site VPN 통해 접근하면 네트워크 지연 발생. 로컬 캐시 없음
+- B (S3 File Gateway 온프레미스): S3 File Gateway는 NFS/SMB로 S3 접근. 하지만 S3는 객체 스토리지라 Windows 파일 서버 기능 제한적
+- C (S3 직접): S3는 파일 시스템이 아닌 객체 스토리지. Windows 파일 액세스 패턴 변경 필요로 요구사항 위배
 
 ---
 
-# Q65 
+# Q65
 
 **정답: C**
 
-https://www.examtopics.com/discussions/amazon/view/85367-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:・
-・Textract로 텍스트 추출, Comprehend Medical을 통해 식별
-A(X) : Textract 와 Comprehend Medical 을 사용하는 것이 파이썬 코드를 별도로 관리할
-필요가 없어서 운영하기 편함.
-B(X) : SageMaker는 기계 학습 모델 서비스.
-Amazon SageMaker 는 완전관리형 인프라, 도구 및 워크플로를 사용하여 모든 사용 사례에
-대해 기계 학습(ML) 모델을 구축, 훈련 및 배포하는 완전관리형 서비스입니다.
-https://aws.amazon.com/ko/sagemaker/faqs/
-C(O) : Textract는 OCR 같은 서비스. Comprehend는 의료용 텍스트 식별 서비스.
-Amazon Textract 는 스캔한 문서에서 텍스트, 필기 및 데이터를 자동으로 추출하는 기계
-학습(ML) 서비스입니다. 단순한 광학 문자 인식(OCR) 이상으로 양식 및 표의 데이터를
-식별하고 이해하며 추출합니다.
-https://aws.amazon.com/ko/textract/
-Amazon Comprehend Medical 은 HIPAA 적격 자연어 처리(NLP) 서비스로, 미리 학습된
-기계 학습을 사용하여 처방전, 처치, 진단과 같은 의료 텍스트에서 의료 데이터를 파악하고
-추출합니다.
-https://aws.amazon.com/ko/comprehend/medical/
-D(X) : Rekognition은 이미지나 비디오 분석 서비스지 텍스트 추출 서비스가 아님.
-Amazon Rekognition 은 애플리케이션에 강력한 시각 분석 기능을 쉽게 추가할 수 있게 해
-주는 서비스입니다. Rekognition Image를 통해 수백만 개의 이미지를 검색, 확인 및 구성할
-수 있는 강력한 애플리케이션을 쉽게 구축할 수 있습니다. Rekognition Video 를 통해
-저장된 동영상 또는 실시간 스트림 동영상에서 동작 기반 컨텍스트를 추출하고 이를 분석할
-수 있습니다.
-https://aws.amazon.com/ko/rekognition/faqs/?nc=sn&loc=7
-설명2:
-대기 시간을 최소화하면서 AWS 와 온프레미스 파일 스토리지 모두에 액세스해야 하는
-회사의 요구 사항을 충족하기 위해 하이브리드 클라우드 아키텍처를 사용할 수 있습니다.
-한 가지 솔루션은 완벽하게 관리되는 Windows 파일 서버를 제공하는 AWS 에서 Windows
-파일 서버용 Amazon FSx 를 배포 및 구성하는 것입니다. 온프레미스 파일 데이터는
-온프레미스와 AWS 파일 스토리지 간의 브리지 역할을 할 수 있는 FSx 파일 게이트웨이로
-이동할 수 있습니다. 클라우드 워크로드는 AWS 에서 Windows File Server 용 FSx 를
-사용하도록 구성할 수 있으며 온프레미스 워크로드는 FSx 파일 게이트웨이를 사용하도록
-구성할 수 있습니다. 이 솔루션은 운영 오버헤드를 최소화하고 기존 파일 액세스 패턴을
-크게 변경할 필요가 없습니다. 온프레미스와 AWS 간의 연결은 AWS Site-to-Site VPN
-연결을 사용하여 설정할 수 있습니다.
-참조:
-AWS FSx for Windows File Server: https://aws.amazon.com/fsx/windows/
-AWS FSx File Gateway: https://aws.amazon.com/fsx/file-gateway/
-AWS Site-to-Site VPN: https://aws.amazon.com/vpn/site-to-site-vpn/
+**해설:**
+- PDF/JPEG 보고서에서 PHI(보호 건강 정보) 식별 필요. 최소 운영 오버헤드
+- **C (Textract + Comprehend Medical)**: Textract가 PDF/JPEG에서 텍스트 추출 전문 서비스. Comprehend Medical은 의료 데이터에서 PHI 자동 식별하는 전문 AI 서비스. 두 관리형 서비스로 코드 최소화
+- A (Python 라이브러리): 직접 구현은 복잡하고 정확도 낮음. PHI 식별 모델 직접 개발은 높은 오버헤드
+- B (Textract + SageMaker): SageMaker는 ML 모델 직접 구축/학습 필요. Comprehend Medical보다 운영 오버헤드 높음
+- D (Rekognition): Rekognition은 이미지 분석용이지만 문서 텍스트 추출은 Textract가 더 적합. Rekognition은 얼굴/물체 인식 전문
 
 ---
 
-# Q66 
+# Q66
 
 **정답: C**
 
-https://www.examtopics.com/discussions/amazon/view/85310-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명:・
-A(X) : 즉각적인 액세스가 항상 필요하다고 했기 때문에 S3 Glacier 사용은 적합하지 않음.
-B(X) : 재생산하기 쉽지 않은 중요한 비즈니스 데이터라고 했기 때문에 One Zone-IA
-보다는 S3 Standard-IA가 더 적합
-C(O) : 30 일 동안은 자주 액세스하므로 S3 Standard, 30 일 이후에는 자주 액세스하진
-않지만 즉각적인 액세스가 필요하므로 S3 Standard-IA, 4 년이 지나면 중요한 비즈니스
-데이터므로 함부로 보관해서는 안됨. 따라서 삭제.
-D(X) : 중요한 비즈니스 데이터라고 했으므로 보관기간인 4 년이 지나고 나서는 함부로
-보관해서는 안되며 삭제해야 함.
-참고:
-https://aws.amazon.com/ko/s3/storage-classes/?trk=66264cd8-3b73-416c-9693-ea7cf
-4fe846a&sc_channel=ps&s_kw
+**해설:**
+- 파일을 4년 보관. 처음 30일 후 거의 액세스 안 함. 즉시 액세스 필요
+- **C (Standard → Standard-IA)**: 30일 후 Standard-IA로 이동은 비용 절감. Standard-IA는 즉시 액세스 가능(ms 지연). 4년 후 자동 삭제로 규정 준수
+- A (Standard → Glacier): Glacier는 즉시 액세스 불가. 검색에 분~시간 소요. "즉시 액세스 필요" 요구사항 위배
+- B (Standard → One Zone-IA): One Zone-IA는 단일 AZ로 가용성 낮음. 중요한 비즈니스 데이터에 부적합
+- D (Standard → Standard-IA → Glacier): 4년 후 삭제해야 하는데 Glacier로 이동은 불필요. 비용만 추가
 
 ---
 
-# Q67 
+# Q67
 
 **정답: D**
 
-https://www.examtopics.com/discussions/amazon/view/85583-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:・
-가시성 제한 시간은 Amazon SQS 가 메시지를 반환할 때 시작됩니다. 이 시간 동안
-소비자는 메시지를 처리하고 삭제합니다. 그러나 메시지를 삭제하기 전에 소비자가
-실패하고 가시성 제한 시간이 만료되기 전에 시스템에서 해당 메시지에 대한
-DeleteMessage 작업을 호출하지 않으면 메시지가 다른 소비자에게 표시되고 메시지가
-다시 수신됩니다. 메시지를 한 번만 수신해야 하는 경우 소비자는 가시성 제한 시간 내에
-메시지를 삭제해야 합니다.
-https://docs.aws.amazon.com/ko_kr/AWSSimpleQueueService/latest/SQSDeveloperGuide
-/sqs-visibility-timeout.html
-키워드: Amazon RDS 에 대한 SQS 대기열 쓰기 여기에서 옵션 D 최상의 기타 옵션
-제외[옵션 A - 기존 대기열에 하나 이상의 대기열을 도입할 수 없습니다. 옵션 B - 권한만
-허용; 옵션 C - 메시지만 검색] FIFO 대기열은 중복 메시지를 도입하지 않도록
-설계되었습니다. 그러나 메시지 생성자는 특정 시나리오에서 중복을 생성할 수 있습니다.
-예를 들어 생성자가 메시지를 보내고 응답을 받지 못한 다음 동일한 메시지를 다시 보내는
-경우입니다. Amazon SQS API 는 메시지 생성자가 중복 전송을 방지하는 중복 제거 기능을
-제공합니다. 메시지 생성자에 의해 도입된 모든 중복 항목은 5 분 중복 제거 간격 내에
-제거됩니다. 표준 대기열의 경우 때때로 메시지의 복제본을 받을 수 있습니다(최소 1 회
-전달). 표준 대기열을 사용하는 경우 애플리케이션을 멱등적으로 설계해야 합니다(즉,
-동일한 메시지를 두 번 이상 처리할 때 부정적인 영향을 받지 않아야 함).
-설명2:
-메시지를 수신한 직후에는 메시지가 대기열에 그대로 있습니다. 다른 소비자가 메시지를
-다시 처리하지 못하게 Amazon SQS 에서는 다른 소비자가 메시지를 수신하고 처리할 수
-없도록 막는 기간인 Visibility timeout을 설정합니다.
-https://docs.aws.amazon.com/ko_kr/AWSSimpleQueueService/latest/SQSDeveloperGuide
-/sqs-visibility-timeout.html
+**해설:**
+- SQS 메시지 처리 후 RDS에 중복 레코드 발생. 대기열에는 중복 없음
+- **D (가시성 시간 초과 증가)**: 처리 중인 메시지가 가시성 시간 초과 내에 삭제 안 되면 다른 EC2가 재수신하여 중복 처리. 가시성 시간을 처리 시간보다 길게 설정하면 해결
+- A (새 대기열): 새 대기열 생성은 문제 해결 안 됨. 근본 원인 미해결
+- B (AddPermission): 권한 문제 아님. 중복 처리 문제는 가시성 시간 설정 이슈
+- C (ReceiveMessage 대기 시간): Long polling 대기 시간은 메시지 수신 효율성 개선이지 중복 처리 해결 안 됨
 
 ---
 
-# Q68 
+# Q68
 
 **정답: A**
 
-https://www.examtopics.com/discussions/amazon/view/85593-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:・
-어떤 경우에는 이 연결만으로는 충분하지 않습니다. 항상 DX 의 백업으로 폴백 연결을
-보장하는 것이 좋습니다. 여러 옵션이 있지만 AWS Site-To-Site VPN 으로 구현하는 것이
-비용 효율적입니다. 비용을 줄이기 위해 활용하거나 그 동안 두 번째 DX 설정을 기다릴 수
-있는 솔루션입니다.
-https://blog.besharp.it/hybrid-cloud-networking-backup-aws-direct-connect-network-c
-onnection-with-aws-site-to-site-vpn/
-설명2:
-VPN과 Direct Connect는 같이 사용할 수 있음.
-https://docs.aws.amazon.com/ko_kr/whitepapers/latest/aws-vpc-connectivity-options/a
-ws-direct-connect-vpn.html
+**해설:**
+- 온프레미스-AWS 간 고가용성 연결. 비용 최소화. 장애 시 느린 트래픽 허용
+- **A (Direct Connect + VPN 백업)**: Direct Connect는 일관된 저지연 고대역폭. VPN은 백업으로 저렴하지만 느림. 요구사항의 "느린 트래픽 허용" 충족. 비용 최적화
+- B (VPN + VPN): VPN은 인터넷 기반이라 일관된 짧은 지연 시간 보장 불가. 요구사항 미충족
+- C (Direct Connect 2개): 고가용성은 충족하나 비용 최소화 위배. Direct Connect 2개는 고비용
+- D (Direct Connect 자동 장애 조치): AWS CLI에 Direct Connect 자동 백업 생성 기능 없음. 잘못된 옵션
 
 ---
 
-# Q69 
+# Q69
 
 **정답: B**
 
-https://www.examtopics.com/discussions/amazon/view/85594-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:・
-A(X) : 다중 AZ 사용이 더 바람직. 게다가 뜬금없이 잘 쓰고 있던 EC2 인스턴스를 다른
-AZ도 아니고 다른 리전에 배치하는 건 무리수.
-B(O) : 다중 AZ + Auto Scaling으로 고가용성 확보.
-C(X) : 하나의 가용영역을 사용하므로 고가용성 불충족.
-D(X) : 다중 AZ가 더 바람직할 뿐더러 굳이 불필요하게 S3를 거쳐가고 있음.
-설명2:
-최소한의 가동 중지 시간과 최소한의 데이터 손실로 고가용성을 달성하려면 단일 장애
-지점이 없도록 여러 가용 영역을 사용하도록 Auto Scaling 그룹을 구성해야 합니다. 기본
-가용 영역에서 정전이 발생한 경우 자동 장애 조치를 활성화하려면 데이터베이스를 다중
-AZ로 구성해야 합니다. 또한 Amazon RDS Proxy 인스턴스를 사용하여 연결 실패를 줄이고
-장애 조치 시간을 개선하여 데이터베이스의 확장성과 가용성을 개선할 수 있습니다.
+**해설:**
+- 비즈니스 크리티컬 애플리케이션의 고가용성. 단일 AZ 배포를 다중 AZ로 개선
+- **B (Multi-AZ Auto Scaling + Multi-AZ Aurora + RDS Proxy)**: Auto Scaling을 여러 AZ로 확장하여 EC2 고가용성. Aurora Multi-AZ로 DB 자동 장애 조치. RDS Proxy가 연결 풀링과 장애 조치 가속화. 최소 운영 노력
+- A (교차 리전): 교차 리전은 과도. 리전 간 지연과 비용 증가. Multi-AZ면 충분
+- C (단일 AZ + 스냅샷): 단일 AZ는 고가용성 불충족. 수동 복구는 다운타임 발생
+- D (Multi-Region + S3 + Lambda): 불필요하게 복잡. 리전 간 복제는 요구사항 초과
 
 ---
 
-# Q70 
+# Q70
 
 **정답: C**
 
-https://www.examtopics.com/discussions/amazon/view/85734-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:・
-이 회사는 NLB 가 응용 프로그램에 대한 HTTP 오류를 감지하지 못한다고 알고
-있습니다'라는 대목에서 응용프로그램에 대한 HTTP 오류를 감지하려면 ALB(Applicaton
-Load Balancer)가 필요함을 유추할 수 있음.
-A(X) : 응용프로그램에 대한 HTTP 오류를 감지해야하므로 NLB는 부적절.
-B(X) : 자동이 아니라 정기적으로 로그를 확인하는 것이므로 오답.
-C(O) : Application Load Balancer 는 등록된 대상으로 요청을 주기적으로 전송하여 상태를
-확인합니다. 이러한 테스트를 바로 상태 확인이라고 합니다....◎HealthCheckProtocol :
-대상에 대한 상태 확인을 수행할 때 로드 밸런서가 사용하는 프로토콜입니다. HTTP, HTTPS
-등의 프로토콜이 여기에 해당됩니다. HTTP 프로토콜이 기본 설정값입니다.
-◎HealthCheckPath : 대상에 대한 상태 확인을 위한 대상입니다. 프로토콜 버전이
-HTTP/1.1 또는 HTTP/2 인 경우 유효한 URI(/path?query)를 참조하세요. 기본값은 /입니다.
-프로토콜 버전이 gRPC 인 경우, 사용자 지정 상태 확인 방법의 경로를
-/package.service/method 형식으로 지정합니다. 기본값은 /AWS.ALB/healthcheck입니다.
-https://docs.aws.amazon.com/ko_kr/elasticloadbalancing/latest/application/target-group
--health-checks.html
-D(X) : A와 같은 이유로 오답.
-설명2:
-애플리케이션 가용성: NLB 는 애플리케이션의 가용성을 보장할 수 없습니다. 이는 네트워크
-및 TCP 계층 변수에만 의존하여 결정을 내리며 애플리케이션을 전혀 인식하지 못하기
-때문입니다.
-일반적으로 NLB 는 ICMP ping 에 응답하거나 3 방향 TCP 핸드셰이크를 올바르게 완료하는
-서버의 기능을 기반으로 가용성을 결정합니다. ALB 는 훨씬 더 깊이 들어가 특정 페이지의
-성공적인 HTTP GET 뿐만 아니라 콘텐츠가 입력 매개변수를 기반으로 예상한 대로라는
-확인을 기반으로 가용성을 결정할 수 있습니다.
+**해설:**
+- NLB가 HTTP 오류 감지 못함. 사용자 정의 스크립트 없이 가용성 개선
+- **C (NLB → ALB 교체)**: NLB는 Layer 4(TCP/UDP)만 처리하여 HTTP 오류 감지 불가. ALB는 Layer 7(HTTP/HTTPS) 처리하여 HTTP 상태 코드 기반 헬스 체크 가능. Auto Scaling과 통합하여 비정상 인스턴스 자동 교체
+- A (NLB HTTP 헬스 체크): NLB는 TCP/UDP 헬스 체크만 지원. HTTP 상태 확인 불가
+- B (cron 작업): "사용자 정의 스크립트 작성하지 않고" 요구사항 위배
+- D (CloudWatch UnhealthyHostCount): NLB가 HTTP 오류를 감지하지 못하므로 UnhealthyHostCount가 증가하지 않음. 근본 문제 미해결
 
 ---
 
-# Q71 
+# Q71
 
 **정답: B**
 
-https://www.examtopics.com/discussions/amazon/view/85603-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명:・
-A(X) : 리전 장애 발생 시 리디렉션에는 탁월하나 데이터 손상에는 취약함. 글로벌
-테이블에서 새로 작성된 항목은 1 초 이내에 모든 복제본 테이블에 전파되는데, 이는
-데이터를 잘못 건드리면 1 초 이내에 모든 복제본 테이블에 해당 변경 사항이 적용되기
-때문.
-전역 테이블에서 새로 작성된 항목은 일반적으로 1 초 이내에 모든 복제본 테이블에
-전파됩니다.
-https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_H
-owItWorks.html
-B(O) : DynamoDB 는 주문형 백업 기능을 제공합니다. 이를 통해 규정 준수 요구 사항에
-대한 장기 보존 및 보관을 위해 테이블의 전체 백업을 생성할 수 있습니다. 주문형 백업을
-생성하고 Amazon DynamoDB 테이블에 대한 특정 시점 복구를 활성화할 수 있습니다.
-지정 시간 복구는 우발적인 쓰기 또는 삭제 작업으로부터 테이블을 보호하는 데 도움이
-됩니다. 특정 시점 복구를 사용하면 지난 35 일 동안의 특정 시점으로 테이블을 복원할 수
-있습니다.
-https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html
-C(X) : S3 Glacier는 콜드 스토리지로 액세스 시간이 더 김. 괜히 RTO만 늘어남.
-D(X) : DynamoDB 는 서버리스라 EBS 스냅샷을 찍을 수 있는지도 의문이고 애초에
-PITR(특정 시점으로 복구)이 더 좋은 옵션임.
-참조
-https://docs.aws.amazon.com/ko_kr/amazondynamodb/latest/developerguide/PointInTim
-eRecovery.html
+**해설:**
+- DynamoDB 데이터 손상 대비. RPO 15분, RTO 1시간
+- **B (Point-in-Time Recovery)**: DynamoDB PITR은 35일 내 임의 시점 복구. RPO는 최대 5분(연속 백업). RTO는 1시간 내 복원 가능. 자동화된 관리형 서비스
+- A (Global Tables): Global Table은 재해 복구용이지만 데이터 손상 시 손상된 데이터가 복제됨. PITR이 더 적합
+- C (S3 Glacier 일일 내보내기): 일일 내보내기는 RPO 24시간으로 15분 RPO 미충족
+- D (EBS 스냅샷): DynamoDB는 EBS 사용 안 함. DynamoDB는 관리형 서비스로 EBS 접근 불가
 
 ---
 
-# Q72 
+# Q72
 
 **정답: D**
 
-https://www.examtopics.com/discussions/amazon/view/85604-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:・
-A(X) : VPC-온프레미스 간 통신은 이루어지나 VPC 간 통신은 이루어지지 않고 있음.
-B(X) : A와 같은 이유로 오답.
-C(X) : A와 같은 이유로 오답.
-D(O) : Transit Gateway 는 동일한 리전 내에 있는 여러 VPC 들을 연결하는 전송
-'허브'이므로 Transit Gateway를 거쳐 VPC끼리 통신이 가능
-AWS Transit Gateway는 동일한 리전의 VPC를 상호 연결하여 Amazon VPC 라우팅 구성을
-한 곳에 통합하는 네트워크 전송 허브입니다.
-https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/aws-dir
-ect-connect-aws-transit-gateway.html
-설명2:
-정답은 옵션 D 입니다. S3 VPC 게이트웨이 엔드포인트를 VPC 에 배포하고 S3 버킷에 대한
-액세스를 허용하는 엔드포인트 정책을 연결합니다. S3 VPC 게이트웨이 엔드포인트를
-배포하면 애플리케이션이 VPC 내의 프라이빗 네트워크 연결을 통해 S3 버킷에 액세스할
-수 있으므로 인터넷을 통한 데이터 전송이 필요하지 않습니다. 이를 통해 데이터 전송
-비용을 줄이고 애플리케이션의 성능을 향상시킬 수 있습니다. 엔드포인트 정책을 사용하여
-애플리케이션이 액세스할 수 있는 S3 버킷을 지정할 수 있습니다.
+**해설:**
+- 동일 리전 S3 업로드/다운로드 시 데이터 전송 비용 증가 문제
+- **D (S3 VPC Gateway Endpoint)**: VPC 내에서 S3 접근 시 인터넷 게이트웨이나 NAT 통하면 데이터 전송 비용 발생. Gateway Endpoint는 AWS 내부 네트워크로 무료 전송. 동일 리전이므로 비용 절감
+- A (API Gateway): API Gateway는 REST API용이지 S3 직접 액세스 최적화 아님. 오히려 비용 증가
+- B (NAT 게이트웨이): NAT는 프라이빗 서브넷의 아웃바운드용. S3는 엔드포인트 정책으로 해결 가능. NAT는 데이터 처리 비용 발생
+- C (퍼블릭 서브넷 + IGW): 인터넷 게이트웨이 통한 S3 액세스는 데이터 전송 비용 발생. Gateway Endpoint보다 비효율
 
 ---
 
-# Q73 
+# Q73
 
-**정답: C**
+**정답: C, D**
 
-https://www.examtopics.com/discussions/amazon/view/85613-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명:・
-전체적인 프로세스는 사내네트워크 -> 외부 인터넷 -> Bastion Host(퍼블릭서브넷 내에
-NAT게이트웨이와 함께 위치) -> Application(프라이빗서브넷 내에 위치)으로 이루어짐.
-Bastion Host 는 내부네트워크(여기서는 Application 이 있는 곳)에 접속할 수 있는 유일한
-창구로, SSH 접속도 여길 통과해야만 가능함.
-일단 Bastion Host 에 오는 트래픽(인바운드 트래픽)은 외부 인터넷을 통해서 온 회사의
-IP(즉, 외부 IP)이므로 C가 정답.
-그 다음으로는 Bastion Host 로부터 Application 으로 오는 트래픽(인바운드 트래픽)을
-허용해야하는데 이미 Bastion Host에서 안쪽의 내부 네트워크와 통신하려고 프라이빗 IP를
-들고 온 상태임. 따라서 D가 정답이며 최종적으로는 C,D가 정답.
-내부 아이피는 온프레미스 환경 사내 안에서 쓰는 아이피를 보통 뜻하고 인터넷으로 나오는
-IP 는 외부 IP 개념이라 사내 네트워크에서 외부인터넷으로 나온 external ip 범위의
-대역에서 인바운드 액세스만 허용하는 C가 B보다 더 적절한 답으로 보임.
+**해설:**
+- 온프레미스에서 배스천 호스트 거쳐 프라이빗 애플리케이션 인스턴스 접근
+- **C (배스천 SG: 외부 IP만 허용)**: 배스천 호스트는 회사의 퍼블릭 IP에서만 SSH 접근 허용. 보안 강화
+- **D (앱 인스턴스 SG: 배스천 프라이빗 IP만)**: 애플리케이션 인스턴스는 배스천의 프라이빗 IP에서만 SSH 허용. VPC 내부 통신이므로 프라이빗 IP 사용
+- A (앱 인스턴스만 허용): 배스천은 온프레미스에서 접근해야 하는데 앱 인스턴스만 허용하면 접근 불가
+- B (내부 IP): 배스천 호스트는 퍼블릭 서브넷에서 인터넷 통해 접근. 내부 IP는 VPC 내부 IP 의미로 부적합. 외부 IP 필요
+- E (공용 IP): VPC 내부 통신은 프라이빗 IP 사용. 공용 IP는 인터넷 라우팅되어 비효율
 
 ---
 
-# Q74 
+# Q74
 
-**정답: A**
+**정답: A, C**
 
-https://www.examtopics.com/discussions/amazon/view/85346-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:・
-전체적인 구조는 EC2 인스턴스에서 실행되는 웹 애플리케이션(퍼블릭 서브넷 내에
-위치)---->EC2 인스턴스에서 실행되는 데이터베이스(프라이빗 서브넷 내에 위치)으로
-되어있고, 인스턴스 단위의 보안은 보안 그룹이 담당.
-보안 그룹은 기본적으로 인바운드 트래픽에 관해서는 허용만 지정할 수 있고, 허용하지
-않은 건 기본적으로 모두 차단하기 때문에 외부 인터넷->웹 애플리케이션으로의 액세스를
-허용하려면 0.0.0.0/0으로부터 온 포트 443(HTTPS)를 허용해야 함.
-그 다음으로 웹 애플리케이션->데이터베이스로의 액세스를 허용하려면 웹 애플리케이션이
-있는 웹 계층에서 오는 포트 1433(MySQL) 인바운드 트래픽을 허용하도록 보안 그룹
-설정을 해야 함. 따라서 정답은 A,C.
-설명2:
-"보안 그룹은 모든 인바운드 규칙에 대한 아웃바운드 규칙을 생성합니다." 완전히 옳지
-않습니다. Statefull 은 인바운드(또는 아웃바운드) 규칙을 생성하는 경우 아웃바운드(또는
-인바운드) 규칙을 생성한다는 의미가 아닙니다. 이것이 의미하는 바는 다음과 같습니다. X
-IP 에 대한 포트 443 에서 인바운드 규칙을 생성한다고 가정합니다. 요청이 X ip 에서 포트
-443으로 들어오면 포트 443에서 해당 요청에 대한 트래픽 아웃을 허용합니다.
-그러나 아웃바운드 규칙을 보면 명시적으로 생성하지 않는 한 포트 443 에 대한 아웃바운드
-규칙이 없을 것입니다. 상태 비저장 ACL에서는 들어오는 요청을 허용하는 인바운드 규칙과
-애플리케이션이 이러한 들어오는 요청에 응답할 수 있도록 하는 아웃바운드 규칙을
-만들어야 합니다.
-https://docs.aws.amazon.com/ko_kr/vpc/latest/userguide/VPC_SecurityGroups.html#Sec
-urityGroupRules
+**해설:**
+- 2계층 웹 애플리케이션 보안 그룹 구성. 웹 계층(퍼블릭), DB 계층(프라이빗)
+- **A (웹: 0.0.0.0/0:443 인바운드)**: 웹 계층은 인터넷에서 HTTPS(443) 접근 허용 필요. 퍼블릭 액세스
+- **C (DB: 웹 SG:1433 인바운드)**: DB 계층은 웹 계층 보안 그룹에서만 SQL Server(1433) 접근 허용. 최소 권한 원칙
+- B (웹: 0.0.0.0/0:443 아웃바운드): 아웃바운드는 기본적으로 모두 허용. 명시적 구성 불필요. 보안 그룹은 인바운드 제어 중심
+- D (DB: 웹 SG로 443, 1433 아웃바운드): DB는 클라이언트가 아닌 서버. 아웃바운드 응답은 상태 저장 방식으로 자동 허용
+- E (웹 SG에서 443, 1433): DB는 웹에서 1433만 필요. 443은 웹 계층의 인바운드 포트
 
 ---
 
-# Q75 
-
-**정답: A**
-
-https://www.examtopics.com/discussions/amazon/view/86120-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명:・
-AWS Lambda, Amazon API Gateway, AWS Amplify, Amazon DynamoDB 및 Amazon
-Cognito를 사용하여 서버리스 웹 애플리케이션을 구축하십시오. 이 예에서는 AWS Lambda,
-Amazon API Gateway, AWS Amplify, Amazon DynamoDB 및 Amazon Cognito를 사용하여
-서버리스 웹 애플리케이션 구축 질문과 유사한 설정을 보여줍니다.
-RESTful API = API Gateway 사용.
-트랜잭션 삭제되는 문제 = SQS.
-
----
-
-# Q76 
-
-**정답: B**
-
-https://www.examtopics.com/discussions/amazon/view/85801-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:・
-A(X) : 퍼블릭 인터넷으로 전송하면 노출 위험이 큼. 심지어는 VPN도 안 했음.
-B(O) : Direct Connect는 전용선 연결로 온프레미스-AWS 간 통신하는 것이고, DataSync는
-데이터 전송/마이그레이션에 사용되는 서비스.
-AWS DataSync 는 온프레미스와 AWS 스토리지 서비스 사이에서 데이터 이동을 자동화 및
-가속화하는 안전한 온라인 서비스입니다. Amazon Simple Storage Service(S3) 버킷 간에
-데이터를 복사할 수 있습니다. https://aws.amazon.com/ko/datasync/
-C(X) : A와 마찬가지 이유로 오답.
-D(X) : DMS 는 데이터베이스 마이그레이션 서비스로 S3 로 데이터를 전송해야하는 지문
-상황과는 맞지 않음.
-설명2:
-다음은 AWS DataSync 의 주요 사용 사례 중 일부입니다. * 데이터 마이그레이션 - 활성
-데이터 세트를 네트워크를 통해 Amazon S3, Amazon EFS 또는 FSx for Windows File
-Server 로 빠르게 이동합니다. DataSync 에는 자동 암호화 및 데이터 무결성 검증이
-포함되어 데이터가 안전하고 온전하며 사용할 준비가 되었는지 확인하는 데 도움이 됩니다.
-"DataSync 에는 암호화 및 무결성 검증이 포함되어 있어 데이터가 안전하고 온전하며
-사용할 준비가 되었는지 확인하는 데 도움이 됩니다."
-https://aws.amazon.com/datasync/faqs/
-
----
-
-# Q77 
-
-**정답: C**
-
-https://www.examtopics.com/discussions/amazon/view/85740-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명:
-실시간 데이터 수집 = Kinesis Data Streams. A,C 둘 중 하나가 답.
-A(X) : API는 API Gateway를 사용하여 전송.
-Amazon API Gateway 는 어떤 규모에서든 개발자가 API 를 손쉽게 생성, 게시, 유지 관리,
-모니터링 및 보안 유지할 수 있도록 하는 완전관리형 서비스입니다. API 는 애플리케이션이
-백엔드 서비스의 데이터, 비즈니스 로직 또는 기능에 액세스할 수 있는 "정문" 역할을
-합니다. https://aws.amazon.com/ko/api-gateway/
-C(O) :
-・API Gateway API를 Kinesis Data Streams와 같이 사용 가능
-API Gateway API를 Kinesis와 통합하려면 API Gateway와 Kinesis 서비스를 모두 사용할 수
-있는 리전을 선택해야 합니다.
-https://docs.aws.amazon.com/apigateway/latest/developerguide/integrating-api-with-aw
-s-services-kinesis.html
-・Kinesis Data Streams로 데이터 수집.
-Amazon Kinesis Data Streams를 사용하면 특수 요구에 맞춰 스트리밍 데이터를 처리 또는
-분석하는 사용자 지정 애플리케이션을 구축할 수 있습니다. 수십 만개의 소스에서 클릭
-스트림, 애플리케이션 로그, 소셜 미디어와 같은 다양한 유형의 데이터를 Kinesis 데이터
-스트림에 추가할 수 있습니다.
-https://aws.amazon.com/ko/kinesis/data-streams/faqs/
-・Kinesis Data Streams -> Kinesis Data Firehose
-Amazon Kinesis Data Firehose 전송 스트림에 정보를 전송하도록 Amazon Kinesis Data
-Streams를 구성할 수 있습니다.
-https://docs.aws.amazon.com/ko_kr/firehose/latest/dev/writing-with-kinesis-streams.ht
-ml
-・Lambda로 데이터 변환
-Kinesis Data Firehose Firehose 는 Lambda 함수를 호출하여 수신되는 소스 데이터를
-변환하고 변환된 데이터를 대상으로 전송할 수 있습니다.
-https://docs.aws.amazon.com/ko_kr/firehose/latest/dev/data-transformation.html
-・S3로 전송
-Amazon Kinesis Data Firehose는 실시간 스트리밍 데이터를 Amazon S3, Amazon RedShift,
-Amazon OpenSearch Service, Splunk 및 사용자 지정 HTTP 엔드포인트 또는 Datadog,
-Dynatrace, LogicMonitor, MongoDB, New Relic, Sumo Logic을 포함한 지원되는 서드파티
-소유의 HTTP 엔드포인트 대상에 전달하기 위한 완전관리형 서비스입니다.
-https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html
-
----
-
-# Q78 
-
-**정답: B**
-
-https://www.examtopics.com/discussions/amazon/view/85742-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명:・
-A(X) : 35 일 제한이 있습니다. ""특정 시점으로 복구가 설정되어 있으면 최근 35 일 중
-원하는 시점으로 테이블을 복원할 수 있습니다.
-https://docs.aws.amazon.com/ko_kr/amazondynamodb/latest/developerguide/PointInTim
-eRecovery.html
-B(O) : 한 곳에서 백업 현황 모니터링 및 콜드 스토리지에 저장, 예약 저장 가능합니다.
-AWS Backup 을 사용하면 백업 정책을 구성하고 AWS 리소스 및 온프레미스 워크로드에
-대한 활동을 한 곳에서 모니터링할 수 있습니다. AWS Backup 과 함께 DynamoDB 를
-사용하면 AWS 계정 및 리전에서 온디맨드 백업을 복사하고, 온디맨드 백업에 비용 할당
-태그를 추가하고, 온디맨드 백업을 콜드 스토리지로 전환하여 비용을 절감할 수 있습니다.
-https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/BackupRestore.h
-tml
-AWS Backup 을 사용하여 DynamoDB 온디맨드 백업을 자동으로 예약, 복사, 태그 지정 및
-수명 주기를 수행할 수 있습니다. DynamoDB 콘솔에서 이러한 백업을 계속 보고 복원할 수
-있습니다.
-https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/backuprestore_H
-owItWorksAWS.html
-C(X) : 불가능한 건 아닌데, B 가 더 유리합니다. 운영 측면에서는 한 곳에서 모니터링하는
-게 편하고, S3 버킷에 저장한다고 했는데 7 년 동안 보관할 거면 S3 콜드 스토리지에
-보관하는 게 비용이 더 저렴합니다.
-D(X) : 너무 단계가 많습니다. 아마존에서는 DynamoDB 테이블 백업에 AWS Backup 또는
-DynamoDB 콘솔을 사용할 것을 언급하고 있습니다. ""DynamoDB 온디맨드 백업을
-생성하고 관리하는 데 사용할 수 있는 두 가지 옵션이 있습니다. AWS 백업 서비스
-다이나모DB
-https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/BackupRestore.h
-tml
-
----
-
-# Q79 
-
-**정답: A**
-
-https://www.examtopics.com/discussions/amazon/view/85743-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명:・
-사용량 예측이 안 되므로 프로비저닝은 무의미. 따라서 C,D 는 제외되고 A,B 둘 중 하나가
-정답.
-A(O) : 온디맨드 모드를 사용하는 테이블의 경우 DynamoDB 는 이전에 관찰된 트래픽
-수준까지 상승하거나 하락할 때 고객의 워크로드를 즉시 수용할 수 있습니다. 트래픽
-수준이 새로운 고점에 도달하면 DynamoDB는 신속하게 대응하여 워크로드를 수용합니다.
-https://aws.amazon.com/ko/blogs/korea/amazon-dynamodb-on-demand-no-capacity-
-planning-and-pay-per-request-pricing/
-B(X) : 고가용성 언급이 없고 비용 최적화를 언급하고 있으므로 B보다는 A가 적합.
-
----
-
-# Q80 
-
-**정답: B**
-
-https://www.examtopics.com/discussions/amazon/view/85606-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:・
-A(X) : '공개적'이라는 키워드가 애초에 보안과는 거리가 멈.
-B(O) : 기존 KMS 키는 스냅샷을 암호화하는 데 사용되었기 때문에 MSP 파트너와 공유해도
-괜찮음.
-C(X) : 파트너의 KMS 키를 신뢰하면 파트너가 해당 키를 가지고 악의적인 용도로 사용할
-때 문제가 됨.
-D(X) : 파트너와 공유해야 하는데 파트너가 S3 버킷을 암호화하도록 냅둬버리면 파트너가
-공유받는 입장이 아니라 내가 공유받는 입장이 되어버리는 역전현상이 벌어짐.
-설명2:
-AMI 스냅샷을 암호화하는 데 이미 사용되었기 때문에 기존 KMS 키를 MSP 외부 계정과
-공유합니다.
-https://docs.aws.amazon.com/ko_kr/kms/latest/developerguide/key-policy-modifying-ex
-ternal-accounts.html
-
----
-
-# Q81 
-
-**정답: C**
-
-https://www.examtopics.com/discussions/amazon/view/86621-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명:・
-"처리해야 하는 작업을 보관할 Amazon SQS 대기열을 생성합니다.
-컴퓨팅 애플리케이션에 대한 Amazon EC2 Auto Scaling 그룹을 생성합니다. SQS 대기열의
-항목 수에 따라 노드를 추가 및 제거하도록 Auto Scaling 그룹에 대한 조정 정책을
-설정합니다.
-Amazon SQS 는 이 사용 사례에 이상적이며 대기열에서 대기 중인 작업 수에 따라 동적
-조정을 사용하도록 구성할 수 있습니다. 이 조정을 구성하려면 유지 관리할 인스턴스당
-허용되는 백로그인 대상 값과 함께 인스턴스당 백로그 메트릭을 사용할 수 있습니다.
-이러한 수치는 다음과 같이 계산할 수 있습니다.
-인스턴스당 백로그:
-인스턴스당 백로그를 계산하려면 ApproximateNumberOfMessages 대기열 속성으로
-시작하여 SQS 대기열의 길이를 결정합니다.
-
----
-
-# Q82 
-
-**정답: B**
-
-https://www.examtopics.com/discussions/amazon/view/85615-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명:
-A(X) : 30일 전에 통보하랬지 맨날 통보하란 이야기는 없었음.
-B(O) : AWS Config 를 사용하여 만료 날짜가 가까워지는 인증서를 확인할 수 있습니다.
-인증서 만료 날짜가 가까워지면 Amazon EventBridge를 사용하여 이메일 알림을 받을 수도
-있습니다.
-https://aws.amazon.com/ko/premiumsupport/knowledge-center/acm-certificate-expiratio
-n/
-C(X) : Trusted Advisor는 ""AWS 환경을 검사한 후 비용 절감, 시스템 가용성 및 성능 향상
-또는 보안 격차를 해결할 기회가 있을 때 권장 사항을 제시
-https://docs.aws.amazon.com/ko_kr/awssupport/latest/user/trusted-advisor.html
-하는 서비스로 이 경우엔 해당 사항이 없음.
-D(X) : EventBridge 는 이벤트 발생을 감지해서 뭔가를 하는 서비스이지 이벤트 발생 전에
-뭔가 감지해서 하는 게 아님
-참고
-https://repost.aws/ko/knowledge-center/acm-certificate-expiration
-https://aws.amazon.com/ko/premiumsupport/knowledge-center/acm-certificate-expiratio
-n/
-
----
-
-# Q83 
-
-**정답: C**
-
-https://www.examtopics.com/discussions/amazon/view/85902-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:・
-https://aws.amazon.com/pt/blogs/aws/amazon-cloudfront-support-for-custom-origins/
-이제 사용자 지정 오리진을 사용하여 CloudFront 배포를 생성할 수 있습니다. 각 배포는
-S3 또는 사용자 지정 오리진을 가리킬 수 있습니다. 이것은 다른 스토리지 서비스일 수도
-있고 EC2 인스턴스 또는 Elastic Load Balancer 와 같이 더 흥미롭고 동적인 것일 수도
-있습니다.
-설명2:
-A(X) : 유럽과 가까워야 하므로 us-east-1은 오답.
-B(X) : 동적 웹 사이트라고 했으므로 S3가 들어가지 않음.
-C(O) : CloudFront는 사용자 지정 오리진으로 온프레미스 서버를 가리킬 수 있음.
-사용자 지정 출처는 웹 서버와 같은 HTTP 서버입니다. HTTP 서버는 Amazon EC2
-인스턴스이거나 다른 곳에서 호스팅하는 HTTP 서버일 수 있습니다. 웹 사이트
-엔드포인트로 구성된 Amazon S3 오리진도 사용자 지정 오리진으로 간주됩니다.자체 HTTP
-서버를 사용자 지정 오리진으로 사용하는 경우 오리진에서 객체를 가져올 때
-CloudFront 에서 사용할 HTTP 및 HTTPS 포트 및 프로토콜과 함께 서버의 DNS 이름을
-지정합니다.
-https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistS
-3AndCustomOrigins.html#concept_CustomOrigin
-D(X) : 웹 사이트엔 CDN 서비스인 CloudFront가 필요.
-
----
-
-# Q84 
-
-**정답: B**
-
-https://www.examtopics.com/discussions/amazon/view/85665-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-해설:・
-A(X) : 하루 24 시간 실행하는 프로덕션 EC2 인스턴스에 스팟 인스턴스는 적절치 않음.
-스팟 인스턴스는 도중에 중지될 가능성이 높은 인스턴스에 더 적합.
-B(O) : 1 년 또는 3 년 단위로 예약 인스턴스를 계약해서 사용하면 비용이 절감됨. 개발 및
-테스트용 EC2 인스턴스는 매일 최소 8 시간 이상 실행된다고 했으므로 그 이상 사용될 수
-있어 Scheduled Reserved 인스턴스보다는 온디맨드 인스턴스를 사용하는 것이 더 적절함
-C(X) : 스팟 블록은 기간이 정의된 스팟 인스턴스로 A와 같은 이유로 오답.
-""기간이 정의된 스팟 인스턴스(스팟 블록이라고도 함)는 2021년 7월 1일부로 신규 고객이
-더 이상 사용할 수 없습니다.
-https://aws.amazon.com/ko/blogs/aws/new-ec2-spot-blocks-for-defined-duration-wor
-kloads/
-D(X) : 24 시간 동안 사용할 EC2 인스턴스에는 예약 인스턴스 방식을 사용해 비용을 더
-절감할 수 있음.
-
----
-
-# Q85 
-
-**정답: A**
-
-https://www.examtopics.com/discussions/amazon/view/85751-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명:・
-수정하거나 삭제할 수 없음 = S3 Object Lock.
-S3 객체 잠금을 사용하면 write-once-read-many(WORM) 모델을 사용하여 객체를 저장할
-수 있습니다. 객체 잠금은 고정된 시간 동안 또는 무기한으로 객체의 삭제 또는 덮어쓰기를
-방지하는 데 도움이 될 수 있습니다.
-https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/userguide/object-lock.html
-
----
-
-# Q86 
-
-**정답: A**
-
-https://www.examtopics.com/discussions/amazon/view/85753-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:・
-AWS Secrets Manager 는 애플리케이션, 서비스 및 IT 리소스에 액세스하는 데 필요한
-암호를 보호하는 데 도움이 됩니다. 이 서비스를 사용하면 수명 주기 동안 데이터베이스
-자격 증명, API 키 및 기타 암호를 쉽게 교체, 관리 및 검색할 수 있습니다.
-https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html
-Secrets Manager 를 사용하면 암호를 포함하여 코드의 하드코딩된 자격 증명을 Secrets
-Manager 에 대한 API 호출로 대체하여 프로그래밍 방식으로 암호를 검색할 수 있습니다.
-이렇게 하면 비밀이 코드에 더 이상 존재하지 않기 때문에 코드를 검사하는 누군가가
-비밀을 손상시킬 수 없습니다. 또한 지정된 일정에 따라 암호를 자동으로 교체하도록
-Secrets Manager 를 구성할 수 있습니다. 이를 통해 장기 비밀을 단기 비밀로 대체하여
-손상 위험을 크게 줄일 수 있습니다.
-설명2:
-사용자 자격 증명을 자주 바꿈 + 안전한 방법 = Secrets Manager.
-Secrets Manager 를 사용하면 애플리케이션 소스 코드에서 하드 코딩된 자격 증명을
-제거하고 애플리케이션 자체에 자격 증명을 저장하지 않음으로써 보안 태세를 개선할 수
-있습니다. 사용자의 개입 없이 지정한 일정에 따라 자동으로 보안 암호를 교체하도록
-Secrets Manager 를 구성할 수 있습니다. 교체는 AWS Lambda 함수를 사용하여 정하고
-실행합니다.
-https://docs.aws.amazon.com/ko_kr/secretsmanager/latest/userguide/intro.html
-또한 여러 리전과 여러 AZ에 걸쳐 작동.
-https://docs.aws.amazon.com/ko_kr/secretsmanager/latest/userguide/disaster-recovery-
-resiliency.html
-
----
-
-# Q87 
+# Q75
 
 **정답: D**
 
-https://www.examtopics.com/discussions/amazon/view/85319-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:
-잠시 고객 데이터를 저장하는 솔루션 = SQS. 손실될 위험이 있는 처리 대상 데이터를 잠시
-보관하는 용도로는 SQS가 주로 쓰인다고 보면 됨. 답은 D.
-설명2:
-https://www.learnaws.org/2020/12/13/aws-rds-proxy-deep-dive/
-RDS 프록시는 새 데이터베이스 인스턴스가 작동할 때까지 대기하고 이 시간 동안
-애플리케이션에서 받은 모든 요청을 유지함으로써 이러한 상황에서 애플리케이션 가용성을
-향상시킬 수 있습니다. 최종 결과는 응용 프로그램이 기본 데이터베이스의 문제에 대해 더
-탄력적이라는 것입니다. 이렇게 하면 DB 가 정상으로 돌아올 때까지 솔루션이 데이터를
-보유할 수 있습니다. RDS 프록시는 Lambda 와 DB 간의 연결을 최적으로 활용하기 위한
-것입니다. Lambda 는 DB 컴퓨팅 리소스에 부담을 줄 수 있는 여러 연결을 동시에 열 수
-있습니다.
+**해설:**
+- 다계층 RESTful 애플리케이션. 오버로드 시 트랜잭션 삭제 문제 해결
+- **D (SQS + EC2 Auto Scaling)**: SQS가 계층 간 메시지 버퍼링하여 오버로드 시 트랜잭션 보존. Auto Scaling이 SQS 대기열 길이 기반 확장. 비용 효율적이고 운영 효율적
+- A (API Gateway + Lambda + SQS): Lambda는 짧은 실행 시간 제한. 장기 실행 트랜잭션 부적합. EC2 Auto Scaling이 더 유연
+- B (EC2 크기 증가): 정적 크기 증가는 비용 비효율. 수요 변동 대응 불가
+- C (SNS + EC2): SNS는 pub/sub 메시징으로 버퍼링 없음. SQS가 메시지 대기열로 더 적합
 
 ---
 
-# Q88 
-
-**정답: A**
-
-https://www.examtopics.com/discussions/amazon/view/85738-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:
-요청자 지불 버킷을 사용하면 버킷 소유자 대신 요청자가 버킷에서 데이터 다운로드 및
-요청 비용을 지불합니다. 버킷 소유자는 항상 데이터 저장 비용을 지불합니다.
-https://docs.aws.amazon.com/AmazonS3/latest/userguide/RequesterPaysBuckets.html
-설명2:
-"일반적으로 데이터를 공유하고 싶지만 데이터에 액세스하는 다른 사람과 관련된 요금을
-부과하지 않으려면 버킷을 요청자 지불 버킷으로 구성합니다.
-예를 들어 우편 번호 디렉터리, 참조 데이터 지리 공간 정보 또는 웹 크롤링 데이터와 같은
-대용량 데이터 세트를 만들 때 요청자 지불 버킷을 사용할 수 있습니다."
-https://docs.aws.amazon.com/AmazonS3/latest/userguide/RequesterPaysBuckets.html
-
----
-
-# Q89 
-
-**정답: A**
-
-https://www.examtopics.com/discussions/amazon/view/85808-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명:・
-・버전 관리는 실수로 삭제했을 때 이전 버전의 파일을 불러올 수 있도록 해줌.
-Amazon S3 의 버전 관리는 동일 버킷 내에 여러 개의 객체 변형을 보유하는 수단입니다.
-S3 버전 관리를 사용하면 버킷에 저장된 모든 버전의 객체를 모두 보존, 검색 및 복원할
-수 있습니다.
-https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/userguide/Versioning.html
-・MFA Delete는 함부로 삭제하지 못하도록 막음.
-MFA Delete 는 다음 작업에 대해 추가 인증을 요구합니다. ◎버킷의 버전 관리 상태 변경
-◎객체 버전 영구 삭제
-https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/userguide/MultiFactorAuthenticatio
-nDelete.html
-
----
-
-# Q90 
+# Q76
 
 **정답: B**
 
-https://www.examtopics.com/discussions/amazon/view/85339-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명:・
-・스크립트는 데이터베이스에 추가된 새로운 영화의 수를 기록하기 위해 매일 임의의
-간격으로 쿼리를 실행합니다. = 스크립트는 쿼리를 수행하고 있음
-・'회사의 개발 팀은 스크립트가 실행 중일 때 데이터베이스 성능이 개발 작업에
-부적절하다는 것을 알아차렸습니다.' = 스크립트 때문에 데이터베이스 성능이 떨어지고
-있음.
-따라서 쿼리가 너무 많이 수행되어서 데이터베이스 성능에 영향이 가는 상황입니다. 이런
-경우 read replica를 통해 쿼리 부하를 분산할 수 있습니다.
-B(O) : 애플리케이션에서 읽기 전용 복제본으로 읽기 쿼리를 라우팅하여 기본 DB
-인스턴스의 로드를 줄일 수 있습니다.
-https://docs.aws.amazon.com/ko_kr/AmazonRDS/latest/UserGuide/USER_ReadRepl.html
-D(X) : ElastiCache는 웹 애플리케이션 성능 향상 용도로 주로 사용됨.
-Amazon ElastiCache 는 더 느린 디스크 기반 데이터베이스에 전적으로 의존하기보다는
-신속한 관리형 인 메모리 시스템에서 정보를 검색할 수 있는 기능을 지원함으로써 웹
-애플리케이션의 성능을 향상합니다. https://aws.amazon.com/ko/elasticache/faqs/
+**해설:**
+- 공장에서 매일 10TB JSON 데이터를 S3로 안전하고 안정적으로 전송
+- **B (DataSync + Direct Connect)**: DataSync는 대용량 데이터 전송 최적화. Direct Connect는 전용선으로 안정적이고 보안 전송(암호화). 일일 10TB는 Direct Connect 대역폭으로 처리 가능
+- A (DataSync + 인터넷): 공용 인터넷은 보안과 안정성에서 Direct Connect보다 낮음. 대역폭 변동 가능
+- C, D (DMS): DMS는 데이터베이스 마이그레이션용. JSON 파일 전송은 DataSync가 적합
 
 ---
 
-# Q91 
+# Q77
 
-**정답: A**
+**정답: C**
 
-https://www.examtopics.com/discussions/amazon/view/85667-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-해설:・
-B. 프라이빗 서브넷에서 S3 를 생성하면 버킷에 대한 직접적인 인터넷 액세스가 제한되지만
-EC2 와 S3 간의 직접적이고 안전한 연결은 제공되지 않습니다. 애플리케이션은 여전히 S3
-API에 액세스하기 위해 인터넷을 통과해야 합니다.
-C. EC2 와 동일한 지역에 S3 를 생성한다고 해서 본질적으로 트래픽이 인터넷을 통과하는
-것을 막지는 않습니다.
-D. NAT 게이트웨이를 구성하면 프라이빗 서브넷의 리소스에 대한 아웃바운드 인터넷
-연결이 허용되지만 S3 서비스에 대한 직접적이고 안전한 연결은 제공되지 않습니다.
-EC2에서 S3 API로의 트래픽은 여전히 인터넷을 통과합니다.
-가장 적합한 솔루션은 S3 게이트웨이 엔드포인트를 구성하는 것입니다(옵션 A). 트래픽이
-인터넷을 통과할 필요 없이 VPC 와 S3 서비스 간에 안전한 비공개 연결을 제공합니다. S3
-게이트웨이 엔드포인트를 통해 EC2 는 VPC 내에서 직접 S3 API 에 액세스할 수 있으므로
-트래픽이 인터넷을 통해 이동하지 못하도록 하는 보안 요구 사항을 충족합니다.
-참고:
-https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/userguide/privatelink-interface-en
-dpoints.html#types-of-vpc-endpoints-for-s3
-https://docs.aws.amazon.com/ko_kr/vpc/latest/privatelink/vpc-endpoints-s3.html
+**해설:**
+- 실시간 데이터 수집, 스트리밍 변환, S3 저장. 최소 운영 오버헤드
+- **C (API Gateway → Kinesis Data Streams → Firehose + Lambda → S3)**: API Gateway가 서버리스 API. Kinesis Data Streams가 스트리밍 수집. Firehose가 Lambda로 변환하고 S3 자동 전송. 완전 서버리스로 관리 불필요
+- A (EC2 + Kinesis): EC2 호스팅은 운영 오버헤드 증가. API Gateway가 더 간단
+- B (EC2 + Glue): EC2 관리 필요. Glue는 ETL이지만 실시간 스트리밍에는 Kinesis가 더 적합
+- D (API Gateway + Glue): Glue는 배치 ETL. 실시간 스트리밍은 Kinesis가 전문
 
 ---
 
-# Q92 
-
-**정답: A**
-
-https://www.examtopics.com/discussions/amazon/view/85903-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명:・
-A(O) : Gateway Endpoint는 퍼블릭 인터넷망을 통과하지 않는 전용 연결.
-게이트웨이 엔드포인트는 VPC 용 인터넷 게이트웨이 또는 NAT 디바이스가 없어도 Amazon
-S3 및 DynamoDB 에 대한 안정적인 연결을 제공합니다. 게이트웨이 엔드포인트는 AWS
-PrivateLink를 활성화하지 않습니다.
-https://docs.aws.amazon.com/ko_kr/vpc/latest/privatelink/vpce-gateway.html
-B(X) : 객체를 퍼블릭으로 만드는 것은 보안과는 거리가 멈.
-C(O) : 버킷 정책으로 버킷에 대한 액세스 제어.
-버킷 정책은 버킷과 해당 버킷의 객체에 대한 액세스 권한을 부여할 수 있는 리소스 기반
-정책입니다.
-https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/userguide/example-bucket-policie
-s.html
-D(X) : 차라리 IAM 사용자 정책을 사용하는 것이 더 나음.
-Amazon S3 에 대한 사용자 액세스를 제어하는 IAM 사용자 정책을 생성하고 구성할 수
-있습니다.
-https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/userguide/user-policies.html
-E(X) : Gateway Endpoint가 더 좋은 선택임.
-
----
-
-# Q93 
+# Q78
 
 **정답: B**
 
-https://www.examtopics.com/discussions/amazon/view/85729-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명:・
-RDS 에 비해 Aurora 는 항상 3 개의 AZ 에 6 개의 복제본(Replica)를 보유하고 있으므로
-애플리케이션 가용성에 더 유리. A,B 둘 중 하나가 답.여기서 mysqldump가 문젠데,
-Q: MySQL에서 Amazon Aurora로 또는 그 반대로 마이그레이션하려면 어떻게 해야 하나요?
-여러 가지 옵션이 있습니다. 표준 mysqldump 유틸리티를 사용하여 MySQL 에서 데이터를
-내보내고 mysqlimport 유틸리티를 사용하여 Amazon Aurora 로 데이터를 가져올 수
-있습니다. 그 반대도 마찬가지입니다. 또한, AWS 관리 콘솔에서 Amazon RDS의 DB 스냅샷
-마이그레이션 기능을 이용하여 Amazon RDS for MySQL DB 스냅샷을 Amazon Aurora 로
-마이그레이션할 수 있습니다. 대부분 고객은 [1시간 이내]에 마이그레이션을 완료하지만
-https://aws.amazon.com/ko/rds/aurora/faqs/
-최대 1GB 정도의 소규모 데이터베이스라면 mysqldump를 실행
-https://aws.amazon.com/ko/rds/mysql/features/
-이걸로 봤을 때 mysqldump 는 데이터백업에 많은 시간이 소요되는 방법으로 보이므로 A
-제외. 답은 B.
-참고
-https://aws.amazon.com/blogs/aws/amazon-aurora-fast-database-cloning/
+**해설:**
+- DynamoDB 테이블 7년 보관. 최소 운영 오버헤드
+- **B (AWS Backup)**: AWS Backup이 DynamoDB 백업 자동화 및 보존 정책 관리. 중앙 집중식 백업 관리. 7년 보존 정책 설정 가능. 운영 효율적
+- A (PITR): PITR은 35일까지만 보관. 7년 보관 불가
+- C (주문형 백업 + S3): 주문형 백업은 수동. 자동화 없어 운영 오버헤드 높음
+- D (EventBridge + Lambda): 수동 구현은 AWS Backup보다 복잡. 운영 오버헤드 높음
 
 ---
 
-# Q94 
+# Q79
+
+**정답: A**
+
+**해설:**
+- DynamoDB 사용 패턴: 아침 미사용, 저녁 예측 불가능한 급증. 비용 최적화
+- **A (온디맨드 용량 모드)**: 온디맨드는 사용한 만큼만 과금. 예측 불가능한 트래픽과 간헐적 사용에 최적. 급증 시 자동 확장. 미사용 시 비용 없음
+- B (GSI): GSI는 쿼리 패턴 최적화용. 비용 최적화와 무관
+- C (프로비저닝 + Auto Scaling): 급증이 매우 빠르면 Auto Scaling 반응 지연 가능. 기본 프로비저닝 용량에도 비용 발생
+- D (프로비저닝 + Global Table): Global Table은 다중 리전 복제용. 비용 증가
+
+---
+
+# Q80
+
+**정답: B**
+
+**해설:**
+- KMS 암호화된 AMI를 MSP 파트너 계정과 공유. 최소 권한
+- **B (launchPermission + KMS 키 정책)**: AMI의 launchPermission을 파트너 계정에만 부여. KMS 키 정책에 파트너 계정 추가하여 복호화 허용. 최소 권한 원칙
+- A (공개): AMI와 스냅샷을 공개하면 누구나 접근 가능. 보안 위험
+- C (새 KMS 키): 파트너의 키를 신뢰하는 것은 불필요. 기존 키 공유가 더 간단하고 안전
+- D (S3 내보내기): AMI를 S3로 내보내는 것은 복잡하고 불필요. launchPermission이 표준 방법
+
+---
+
+# Q81
 
 **정답: C**
 
-https://www.examtopics.com/discussions/amazon/view/86676-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:・
-A(X) : EMR 은 빅데이터 플랫폼 서비스라 사용 분야가 좀 다르고, 파일을 업로드하지 않는
-날이나 업로드가 거의 없는 날에는 과도한 지출이 발생할 우려가 있음.
-B(X) : 파일에 일회성 단순 처리가 필요하다고 했으므로 EC2 인스턴스로 처리하는
-것보다는 Lambda가 더 지문 요구사항에 부합.
-C(O) : 유일하게 마음에 걸리는 게 '업로드 후 최대한 빨리 처리'해야한다는 건데 가장
-정답에 가까운 선택지로 보임. 업로드하는 파일 숫자도 변동이 심한데 이를 SQS 대기열에
-집어넣음으로서 대처할 수 있고, Lambda 함수로 파일에 일회성 단순 처리가 가능하며
-추가적인 SQS->Lambda->DynamoDB 에 저장이라는 단순한 프로세스로 인해 운영
-오버헤드도 매우 적음. DynamoDB는 JSON 파일을 지원
-DynamoDB 는 JSON 을 사용하여 문서에 대한 기본 지원을 제공합니다. 따라서
-DynamoDB 는 Tags 같은 반정형 데이터를 저장하는 데 적합합니다. JSON 문서 안에서
-데이터를 가져오고 조작할 수도 있습니다.
-https://docs.aws.amazon.com/ko_kr/amazondynamodb/latest/developerguide/SQLtoNoS
-QL.WriteData.html
-D(X) : 파일에 일회성 단순 처리가 필요하다고 했으므로 Kinesis Data Streams 로 처리하는
-것보다는 Lambda 가 더 지문 요구사항에 부합. 또한 파일 업로드가 없거나 거의 없는
-날에는 Kinesis 사용은 과도한 지출을 야기할 우려가 있음.
-설명2:
-Amazon S3 는 S3 버킷(예: 객체 생성, 객체 제거 또는 객체 복원)에 대한 이벤트 알림을
-동일한 리전의 SNS 주제로 보냅니다.
-SNS 주제는 중앙 리전의 SQS 대기열에 이벤트를 게시합니다.
-SQS 대기열은 Lambda 함수의 이벤트 소스로 구성되며 Lambda 함수의 이벤트 메시지를
-버퍼링합니다.
-Lambda 함수는 메시지에 대한 SQS 대기열을 폴링하고 애플리케이션의 요구 사항에 따라
-Amazon S3 이벤트 알림을 처리합니다.
-https://docs.aws.amazon.com/ko_kr/prescriptive-guidance/latest/patterns/subscribe-a-l
-ambda-function-to-event-notifications-from-s3-buckets-in-different-aws-regions.html
+**해설:**
+- 병렬 처리, 상태 비저장, 노드 동적 추가/제거, 작업 영구 저장
+- **C (SQS + Auto Scaling + 대기열 길이 기반 확장)**: SQS가 작업 영구 저장 및 느슨한 결합. 대기열 길이 기반 Auto Scaling이 작업 수에 따라 정확히 확장. 시작 템플릿 사용이 최신 방식
+- A (SNS + CPU 기반): SNS는 메시지 저장 안 함. CPU 사용률은 작업 수와 직접 상관 없음
+- B (SQS + 네트워크 기반): 네트워크 사용률은 작업 수 측정에 부정확. 대기열 길이가 더 정확
+- D (SNS): SNS는 메시지 영구 저장 불가. 푸시 방식으로 작업 버퍼링 안 됨
 
 ---
 
-# Q95 
+# Q82
 
 **정답: D**
 
-https://www.examtopics.com/discussions/amazon/view/85906-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-해설:・
-복제가 효과적으로 작동하려면 각 읽기 전용 복제본에 원본 DB 인스턴스와 동일한 양의
-컴퓨팅 및 스토리지 리소스가 있어야 합니다. 원본 DB 인스턴스를 확장하는 경우 읽기
-전용 복제본도 확장합니다.
-https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_MySQL.Replication.R
-eadReplicas.html
-참조
-https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_MySQL.Replication.R
-eadReplicas.html
+**해설:**
+- ACM에 가져온 인증서 만료 30일 전 알림
+- **D (EventBridge + Lambda + SNS)**: ACM은 가져온 인증서 만료 시 EventBridge로 이벤트 발생. Lambda가 이벤트 처리하여 SNS로 알림. 자동화된 방식
+- A (ACM 규칙): ACM 자체에 커스텀 알림 규칙 추가 기능 없음
+- B (AWS Config): AWS Config는 리소스 구성 준수 확인용. 인증서 만료 감지는 EventBridge가 더 적합
+- C (Trusted Advisor): Trusted Advisor는 수동 확인. 자동 알림은 EventBridge가 더 효율적
 
 ---
 
-# Q96 
+# Q83
 
 **정답: C**
 
-https://www.examtopics.com/discussions/amazon/view/86460-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:
-Allow문 해석 : 소스 IP가 10.100.100.0/24인 모든 리소스(*)에 대해 ec2 인스턴스 종료를
-허용.
-Deny 문 해석 : ec2 리전이 us-east-1 이 아닌 모든 리소스(*)에 대해 ec2 의 모든 작업을
-불허. 따라서 정답은 C.
-설명2:
-정책은 us-east-1을 제외한 모든 지역에서 EC2 작업을 수행하는 것을 금지하고 소스 IP가
-10.100.100.0/24 인 사용자만 인스턴스를 종료하도록 허용하기 때문입니다. 따라서 소스
-IP가 10.100.100.254인 사용자는 us-east-1 지역의 인스턴스를 종료할 수 있습니다.
+**해설:**
+- 미국 온프레미스 웹사이트. 유럽 사용자 로딩 속도 개선. 백엔드는 미국 유지. 즉각 솔루션
+- **C (CloudFront + 온프레미스 오리진)**: CloudFront 엣지가 유럽에 콘텐츠 캐싱하여 로딩 속도 개선. 온프레미스 서버를 커스텀 오리진으로 설정. 며칠 내 배포 가능. 백엔드 이전 불필요
+- A (EC2 마이그레이션): 며칠 내 마이그레이션 어려움. 백엔드 이전 요구되지 않음
+- B (S3 + CRR): S3는 정적 사이트만 가능. 동적 웹사이트는 온프레미스 서버 필요
+- D (Route 53 지리 근접): 라우팅만으로는 속도 개선 불가. 콘텐츠 캐싱 없음
 
 ---
 
-# Q97 
+# Q84
+
+**정답: B**
+
+**해설:**
+- 3계층 아키텍처. 프로덕션 24/7, 개발/테스트 8시간+자동 중지. 비용 절감
+- **B (프로덕션 예약, 개발/테스트 온디맨드)**: 프로덕션은 24/7이므로 예약 인스턴스로 최대 할인. 개발/테스트는 8시간만 사용하고 자동 중지하므로 온디맨드가 유연하고 저렴. 중지 시 과금 없음
+- A (프로덕션 스팟): 스팟은 중단 가능하여 프로덕션 부적합
+- C (프로덕션 스팟 블록): 스팟 블록은 중단되며 프로덕션 부적합
+- D (프로덕션 온디맨드, 개발/테스트 스팟): 프로덕션 온디맨드는 예약보다 비쌈. 개발/테스트 스팟은 중단 위험
+
+---
+
+# Q85
+
+**정답: A**
+
+**해설:**
+- 문서 저장 후 수정/삭제 불가. 규제 준수
+- **A (S3 버전 관리 + Object Lock)**: Object Lock은 WORM(Write Once Read Many) 모델로 삭제/수정 불가. 버전 관리로 모든 버전 보호. 규제 준수에 최적
+- B (수명 주기 정책): 수명 주기는 자동 전환/삭제용. 수정/삭제 방지 불가
+- C (버전 관리 + ACL): ACL만으로는 권한 있는 사용자의 삭제 방지 불가. Object Lock 필요
+- D (EFS 읽기 전용): EFS는 파일 시스템으로 객체 잠금 기능 없음. S3 Object Lock이 더 적합
+
+---
+
+# Q86
+
+**정답: A**
+
+**해설:**
+- 여러 웹 서버에서 RDS 접근. 자격 증명 자주 교체
+- **A (Secrets Manager)**: Secrets Manager는 RDS 자격 증명 자동 순환 지원. 여러 웹 서버가 IAM 역할로 암호 검색. 중앙 집중식 자격 증명 관리
+- B (OpsCenter): OpsCenter는 운영 이슈 관리용. 자격 증명 순환 기능 없음
+- C (S3): S3는 자격 증명 자동 순환 불가. 수동 관리 필요
+- D (KMS 암호화 파일): 파일 시스템 저장은 인스턴스별 관리 필요. 자동 순환 불가
+
+---
+
+# Q87
 
 **정답: D**
 
-https://www.examtopics.com/discussions/amazon/view/86626-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명:
-Mcrosoft Active Directory용 AWS Directory Service :
-AWS Managed Microsoft AD 에 대한 패치 및 유지 관리. 기본적으로 각 디렉터리는 서로
-다른 가용 영역에 설치된 두 개의 DC로 구성됩니다.
-https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_key_concepts_
-maintenance.html
-Windows 파일 서버용 FSx 를 AWS Managed Microsoft AD 와 통합하면 Windows 기반
-애플리케이션 및 클라이언트(공유 파일 스토리지 활용)를 AWS 로 쉽게 이동할 수 있는
-완전 관리형 기본 Microsoft Windows 기반 서버 메시지 블록(SMB) 프로토콜 파일
-시스템을 제공합니다.
-https://docs.aws.amazon.com/directoryservice/latest/admin-guide/usecase1.html
+**해설:**
+- Lambda에서 Aurora 접근. DB 업그레이드 중 연결 실패로 데이터 손실
+- **D (SQS FIFO + Lambda)**: API Gateway가 SQS FIFO에 데이터 전송. 대기열이 데이터 보존. 별도 Lambda가 대기열에서 읽어 DB 저장. DB 업그레이드 중에도 데이터 안전 보관. FIFO로 순서 보장
+- A (RDS Proxy): RDS Proxy는 연결 풀링이지만 DB 업그레이드 중 연결 불가는 해결 안 됨
+- B (재시도 메커니즘): Lambda 최대 실행 시간 15분. 장기 업그레이드는 재시도 실패
+- C (Lambda 로컬 스토리지): Lambda는 임시 스토리지. 함수 종료 시 데이터 손실
 
 ---
 
-# Q98 
+# Q88
+
+**정답: A**
+
+**해설:**
+- 미국 S3 버킷 3TB. 유럽 회사와 공유. 데이터 전송 비용 최소화
+- **A (요청자 지불)**: 요청자 지불 설정 시 마케팅 회사가 데이터 전송 비용 부담. 미국 회사는 스토리지 비용만. 데이터 이동 없이 비용 절감
+- B (CRR): 교차 리전 복제는 3TB 복제 비용과 추가 스토리지 비용 발생. 비효율
+- C (교차 계정 액세스): 액세스 권한만으로는 유럽에서 미국으로 데이터 전송 비용 발생. 요청자 지불보다 비쌈
+- D (S3 Intelligent-Tiering + 동기화): Intelligent-Tiering은 비용 최적화지만 전송 비용 해결 안 됨. 동기화는 중복 비용
+
+---
+
+# Q89
+
+**정답: A**
+
+**해설:**
+- S3 감사 문서 실수 삭제 방지. 더 안전한 솔루션
+- **A (버전 관리 + MFA 삭제)**: 버전 관리로 삭제된 객체 복구 가능. MFA 삭제는 객체 버전 영구 삭제 시 MFA 인증 필요. 이중 보호
+- B (IAM MFA): IAM MFA는 로그인 보호. 로그인 후 삭제 작업은 막지 못함
+- C (수명 주기 정책): 수명 주기 정책으로 DeleteObject 거부는 불가능. 정책 오류
+- D (KMS 암호화): 암호화는 읽기 제어이지 삭제 방지 아님. KMS 액세스 제한해도 삭제 가능
+
+---
+
+# Q90
+
+**정답: B**
+
+**해설:**
+- RDS 단일 AZ. 스크립트 쿼리 시 개발 작업 성능 저하
+- **B (읽기 전용 복제본 + 스크립트 쿼리 분리)**: 읽기 복제본이 쿼리 부하 분산. 스크립트는 복제본 쿼리하여 프로덕션 DB 영향 없음. 최소 운영 오버헤드로 즉시 성능 개선
+- A (Multi-AZ): Multi-AZ는 고가용성용. 읽기 부하 분산 불가. 대기 인스턴스는 읽기 불가
+- C (수동 내보내기): 수동 작업은 운영 오버헤드 높음. 자동화 불가
+- D (ElastiCache): 쿼리 결과 캐싱은 도움되지만 읽기 복제본이 더 직접적이고 간단
+
+---
+
+# Q91
+
+**정답: A**
+
+**해설:**
+- VPC EC2에서 S3 API 호출. 인터넷 통과 금지
+- **A (S3 게이트웨이 엔드포인트)**: Gateway Endpoint는 VPC 내부에서 S3로 AWS 네트워크 경로 제공. 인터넷 미경유. 무료
+- B (프라이빗 서브넷에 S3): S3 버킷은 글로벌 서비스로 서브넷 배치 불가
+- C (동일 리전): 동일 리전도 인터넷 통과 가능. 엔드포인트 필요
+- D (NAT 게이트웨이): NAT는 인터넷 경유. 요구사항 위배
+
+---
+
+# Q92
+
+**정답: A, C**
+
+**해설:**
+- VPC EC2에서 S3 버킷 보안 액세스
+- **A (VPC 게이트웨이 엔드포인트)**: VPC 내부에서 S3로 프라이빗 연결. 인터넷 미경유
+- **C (VPC로 제한하는 버킷 정책)**: 버킷 정책에서 VPC 엔드포인트만 허용하여 외부 접근 차단. 최소 권한
+- B (퍼블릭 정책): 보안 위배. 누구나 접근 가능
+- D (IAM 자격 증명 복사): 자격 증명 하드코딩은 보안 취약. IAM 역할 사용 필요
+- E (NAT): NAT는 아웃바운드용. 엔드포인트가 더 안전하고 저렴
+
+---
+
+# Q93
+
+**정답: B**
+
+**해설:**
+- MySQL 온프레미스 → AWS. 읽기 많음. 4시간마다 전체 내보내기로 지연 발생. 개발팀은 준비 환경 필요
+- **B (Aurora Multi-AZ + 데이터베이스 복제)**: Aurora는 읽기 복제본으로 읽기 부하 분산. 데이터베이스 복제(cloning)는 스냅샷 기반 즉시 준비 DB 생성. 프로덕션 영향 없이 개발 환경 제공. 지연 없음
+- A (Aurora + mysqldump): mysqldump는 여전히 전체 내보내기로 지연 발생. 개선 안 됨
+- C (RDS Multi-AZ + 대기): Multi-AZ 대기는 읽기 불가. 개발 환경으로 사용 불가
+- D (RDS + mysqldump): RDS 읽기 복제본은 읽기 부하 분산하지만 mysqldump는 여전히 지연
+
+---
+
+# Q94
 
 **정답: C**
 
-https://www.examtopics.com/discussions/amazon/view/85185-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명:・
-A(X) : 긴 폴링 대기 시간의 최대값은 20초입니다.
-https://docs.aws.amazon.com/ko_kr/AWSSimpleQueueService/latest/SQSDeveloperGuide
-/working-with-messages.html
-B(X) : 솔루션 설계자는 SQS 메시지가 Lambda 함수를 두 번 이상 호출하여 여러 이메일
-메시지를 생성하는 것이 문제의 원인이라고 보고 있음. 즉, SQS 쪽 문제이지 이미지 생성
-및 업로드까지는 문제가 없다는 것. 중복 ID 제거는 생산자가 중복 메시지를 발생시키는
-문제를 SQS FIFO Queue에서 해결하는 서비스 유형이므로 지문의 상황에는 적합하지 않음.
-더군다나 모든 이미지 업로드 시마다 같은 문제가 계속 발생한다는 건 가끔 중복 메시지가
-유입되는 정도가 아니라 SQS 대기열 쪽에서 처리가 이루어질 때 문제가 발생했을
-가능성이 더 높음.
-FIFO 대기열은 중복 메시지가 절대 유입되지 않도록 설계되었습니다. 다만 일부
-시나리오에서는 메시지 생산자가 중복 메시지를 유입할 수도 있습니다.
-https://aws.amazon.com/ko/sqs/faqs/
-C(O) : 하지만 소비자가 메시지를 삭제하기 전에 실패할 경우 제한 시간 초과가 만료되기
-전에 시스템에서 해당 메시지에 대한 DeleteMessage 작업을 호출하지 않으면 다른
-소비자가 메시지를 볼 수 있게 되고 메시지가 다시 수신됩니다. 일반적으로
-애플리케이션에서 대기열의 메시지를 처리하고 삭제하는 데 소요되는 최대 시간으로 제한
-시간 초과를 설정해야 합니다. 메시지의 제한 시간을 단축하거나 늘리기 위해
-ChangeMessageVisibility 작업을 사용하여 새 제한 시간 값을 지정할 수 있습니다.
-https://docs.aws.amazon.com/ko_kr/AWSSimpleQueueService/latest/SQSDeveloperGuide
-/sqs-visibility-timeout.html#configuring-visibility-timeout
-D(X) : Lambda 함수가 메시지 처리 및 삭제까지 담당하게 되므로 Lambda 비용이 추가로
-발생하여 다른 방법보다 더 비용이 발생. 굳이 이 방법을 사용할 이유가 없음.
+**해설:**
+- S3에 파일 업로드 후 JSON 변환. 수요 변동. 최소 운영 오버헤드
+- **C (S3 → SQS → Lambda → DynamoDB)**: S3 이벤트가 SQS로 알림. Lambda가 대기열에서 읽어 처리. 서버리스로 자동 확장. DynamoDB는 JSON 저장에 최적. 완전 관리형
+- A (EMR): EMR은 대규모 데이터 분석용. 간단한 파일 처리에 과도. 클러스터 관리 필요
+- B (SQS + EC2): EC2는 서버 관리 필요. Lambda보다 운영 오버헤드 높음
+- D (EventBridge + Kinesis): Kinesis는 스트리밍용. 파일 업로드는 이벤트 기반이라 S3 → SQS가 더 간단
 
 ---
 
-# Q99 
+# Q95
 
 **정답: D**
 
-https://www.examtopics.com/discussions/amazon/view/85811-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명:・
-A. AWS Storage Gateway 파일 게이트웨이는 Lustre 클라이언트 액세스를 지원하지
-않습니다.
-B. EC2 Windows 인스턴스에서 Windows 파일 공유를 생성하는 것은 Windows 기반 파일
-공유에 적합하지만 필요한 Lustre 클라이언트 액세스를 제공하지 않습니다. Lustre는 고성능
-컴퓨팅(HPC) 환경에서 주로 사용되는 고성능 병렬 파일 시스템입니다.
-C. EFS는 기본적으로 Lustre 클라이언트 액세스를 지원하지 않습니다. EFS는 관리형 파일
-스토리지 서비스이지만 범용 파일 스토리지용으로 설계되었으며 Lustre 워크로드에
-최적화되어 있지 않습니다.
-D. Amazon FSx for Lustre 는 Lustre 클라이언트를 포함하여 고성능 컴퓨팅 워크로드에
-최적화된 완전관리형 파일 시스템입니다. Lustre 클라이언트를 사용하여 관리되고 확장
-가능한 방식으로 데이터에 액세스할 수 있는 기능을 제공합니다. 이 옵션을 선택함으로써
-회사는 Lustre 클라이언트 액세스 요구 사항을 충족하면서 Amazon FSx for Lustre 의 성능
-및 관리 용이성으로부터 이점을 얻을 수 있습니다.
+**해설:**
+- RDS MySQL 읽기/쓰기 트래픽 분리. 성능 신속 개선
+- **D (읽기 전용 복제본 + 원본과 동일 리소스)**: 읽기 복제본이 읽기 부하 분산. 원본과 동일한 컴퓨팅/스토리지로 복제 지연 최소화. 즉시 배포 가능
+- A (Multi-AZ + 기본 AZ 읽기): Multi-AZ는 고가용성용. 기본 AZ에서 읽기는 부하 분산 안 됨
+- B (Multi-AZ + 보조 AZ 읽기): 보조 AZ는 대기 인스턴스로 읽기 불가
+- C (읽기 복제본 + 절반 리소스): 절반 리소스는 복제 지연 발생. 성능 저하
 
 ---
 
-# Q100 
+# Q96
 
 **정답: C**
 
-https://www.examtopics.com/discussions/amazon/view/85186-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명:・
-고가용성 저장소 = S3. B,C 둘 중 하나가 답.
-Lambda보다 KMS가 암호화 및 해독에 적합. 정답은 C.
+**해설:**
+- IAM 정책: Allow는 10.100.100.0/24에서 EC2 종료 허용. Deny는 us-east-1 아닌 리전에서 EC2 작업 거부
+- **C (소스 IP 10.100.100.254, us-east-1에서 종료 가능)**: Allow 조건(소스 IP 10.100.100.0/24)과 Deny 조건(리전 us-east-1 제외) 모두 충족. 10.100.100.254는 범위 내. us-east-1에서만 허용
+- A (us-east-1 제외 종료): Deny가 us-east-1 제외 모든 리전 차단. 반대
+- B (IP 10.100.100.1 인스턴스): 인스턴스 IP가 아닌 사용자 소스 IP 조건
+- D (종료 불가): 조건 충족 시 종료 가능. Deny는 us-east-1 제외만 적용
+
+---
+
+# Q97
+
+**정답: D**
+
+**해설:**
+- Microsoft SharePoint. Windows 공유 파일 저장소. 고가용성. Active Directory 통합
+- **D (FSx for Windows + Active Directory)**: FSx for Windows는 완전 관리형 Windows 파일 서버. SMB 프로토콜. Active Directory 네이티브 통합. Multi-AZ 고가용성
+- A (EFS + AD): EFS는 Linux NFS 전용. Windows SMB 미지원
+- B (Storage Gateway): Storage Gateway는 하이브리드용. AWS 네이티브 파일 서버인 FSx가 더 적합
+- C (S3 마운트): S3는 객체 스토리지로 Windows 파일 공유 부적합. SMB 미지원
+
+---
+
+# Q98
+
+**정답: C**
+
+**해설:**
+- S3 → SQS → Lambda. 중복 이메일 발생. Lambda가 두 번 이상 호출
+- **C (가시성 시간 초과 증가)**: Lambda가 메시지 처리 중 가시성 시간 초과 전 삭제 못 하면 다른 Lambda가 재수신. 가시성 시간을 함수 실행 시간 + 배치 창보다 길게 설정하면 중복 방지
+- A (긴 폴링 30초): 긴 폴링은 메시지 수신 효율. 중복 방지 무관. 최대 20초 제한
+- B (SQS FIFO): FIFO는 생산자 중복 방지. 문제는 SQS 소비자(Lambda) 쪽 중복 처리. 메시지 중복 제거 ID는 생산자 중복만 해결
+- D (즉시 삭제): 처리 전 삭제는 실패 시 메시지 손실. 재처리 불가
+
+---
+
+# Q99
+
+**정답: D**
+
+**해설:**
+- 온프레미스 게임 애플리케이션. Lustre 클라이언트 액세스. 완전 관리형
+- **D (FSx for Lustre)**: FSx for Lustre는 Lustre 파일 시스템 완전 관리형 서비스. Lustre 클라이언트 네이티브 지원. 고성능 병렬 파일 시스템. HPC 워크로드 최적화
+- A (Storage Gateway): File Gateway는 NFS/SMB. Lustre 미지원
+- B (EC2 Windows): Windows 파일 공유는 SMB. Lustre 아님
+- C (EFS): EFS는 NFS. Lustre 프로토콜 미지원
+
+---
+
+# Q100
+
+**정답: C**
+
+**해설:**
+- 컨테이너 앱에서 인증서 암호화/해독. 고가용성 스토리지. 최소 운영 오버헤드
+- **C (KMS + S3)**: KMS는 AWS 관리형 암호화 서비스로 거의 실시간 암호화/해독. S3는 고가용성(99.999999999%). EC2 역할이 KMS 키 사용 권한으로 안전. 서버리스로 관리 불필요
+- A (Secrets Manager): Secrets Manager는 자격 증명 관리용. 일반 인증서 암호화는 KMS가 더 적합
+- B (Lambda): Lambda로 암호화 구현은 복잡. KMS가 전문 서비스
+- D (KMS + EBS): EBS는 단일 인스턴스 볼륨. 고가용성 미흡. S3가 더 내구성 높음
+
+---
