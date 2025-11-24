@@ -592,12 +592,12 @@ https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html#how-it-works-ec2
 
 **정답: D**
 
-## 문제 요약
+ **문제 요약**
 - 하루 24시간 동안 하나의 제품만 판매하는 전자상거래 웹사이트
 - 피크 시간에 시간당 수백만 개의 요청을 밀리초 지연시간으로 처리
 - 최소한의 운영 오버헤드 필요
 
-## 옵션 분석
+**옵션 분석**
 
 **A. S3 + CloudFront + S3에 주문 데이터 저장**
 - ❌ S3는 객체 스토리지로 트랜잭션 데이터 처리에 부적합
@@ -660,7 +660,7 @@ flowchart LR
 
 
 ```
-## 선택 이유
+**선택 이유
 서버리스 아키텍처는 인프라 프로비저닝, 패치, 확장 관리가 모두 자동화되어 있어 운영 오버헤드를 최소화하면서도 피크 트래픽을 효과적으로 처리할 수 있습니다. 모든 구성 요소가 관리형 서비스로 자동 확장되어 밀리초 단위 응답 시간을 보장합니다.
 
 ---
@@ -669,12 +669,12 @@ flowchart LR
 
 **정답: B**
 
-## 문제 요구사항
+**문제 요구사항**
 - 가용 영역 손실에 대한 복원력 필요
 - 일부 파일은 자주 액세스, 다른 파일은 예측 불가능한 패턴으로 거의 액세스
 - 저장 및 검색 비용 최소화
 
-## 옵션 분석
+**옵션 분석**
 
 **A. S3 Standard**
 - ✅ 가용 영역 복원력 (최소 3개 AZ)
@@ -701,7 +701,7 @@ flowchart LR
 - ❌ **단일 가용 영역만 사용** → AZ 손실 시 데이터 손실
 - ❌ 복원력 요구사항 미충족
 
-## 선택 이유
+**선택 이유
 핵심 키워드는 **"예측 불가능한 액세스 패턴 (unpredictable patterns)"**입니다. S3 Intelligent-Tiering은 액세스 빈도를 자동으로 모니터링하여 적절한 스토리지 계층으로 객체를 이동시킵니다. 자주 액세스되는 파일은 빠른 액세스를, 거의 사용하지 않는 파일은 저렴한 비용을 자동으로 제공하므로 혼합된 액세스 패턴에 최적입니다.
 
 ---
@@ -710,14 +710,14 @@ flowchart LR
 
 **정답: B**
 
-## 문제 요구사항
+**문제 요구사항
 - S3 Standard에 백업 파일 저장
 - 1개월 동안 자주 액세스
 - 1개월 이후에는 액세스하지 않음
 - 파일을 무기한 보관 필요
 - 가장 비용 효율적인 솔루션
 
-## 옵션 분석
+**옵션 분석
 
 **A. S3 Intelligent-Tiering**
 - ❌ 객체 모니터링 비용 발생
@@ -742,7 +742,7 @@ flowchart LR
 - ❌ 단일 AZ → 내구성 낮음 (백업 파일에 부적합)
 - ❌ 비용 최적화 부족
 
-## 선택 이유
+**선택 이유
 핵심 키워드는 **"1개월 이후 액세스하지 않음 + 무기한 보관"**입니다. 이는 전형적인 장기 아카이브 시나리오입니다. S3 Glacier Deep Archive는 장기 보관용 데이터에 최적화되어 있으며 S3 스토리지 클래스 중 가장 저렴합니다. 검색에 최대 12시간이 걸리지만, 액세스하지 않는 백업 파일이므로 문제가 되지 않습니다.
 
 ---
@@ -751,13 +751,13 @@ flowchart LR
 
 **정답: B**
 
-## 문제 요구사항
+**문제 요구사항
 - 지난 2개월간 EC2 비용 비교 그래프 생성
 - 인스턴스 유형별 심층 분석 수행
 - 수직적 확장의 근본 원인 식별
 - 운영 오버헤드가 가장 적은 방법
 
-## 옵션 분석
+**옵션 분석
 
 **A. AWS Budgets으로 예산 보고서 생성**
 - ❌ Budgets는 예산 설정 및 임계값 알림용 도구
@@ -785,7 +785,7 @@ flowchart LR
 - ❌ **매우 높은 운영 오버헤드**
 - ❌ 복잡한 커스텀 분석에는 유용하지만 이 문제에는 과도함
 
-## 선택 이유
+**선택 이유
 핵심 키워드는 **"운영 오버헤드가 가장 적은"**입니다. AWS Cost Explorer는 별도 설정 없이 AWS 콘솔에서 즉시 사용할 수 있으며, 인스턴스 유형별 필터링과 시계열 비교 그래프를 손쉽게 생성할 수 있습니다. 지난 12개월 데이터를 지원하므로 2개월 비교는 물론, 심층 분석을 위한 다양한 필터링 옵션을 제공합니다.
 
 ---
@@ -794,12 +794,12 @@ flowchart LR
 
 **정답: D**
 
-## 문제 상황
+**문제 상황
 - API Gateway → Lambda → Aurora PostgreSQL 구조
 - 대용량 데이터 처리 시 Lambda 할당량을 크게 늘려야 함
 - 확장성 개선 + 구성 노력 최소화 필요
 
-## 옵션 분석
+**옵션 분석
 
 **A. Lambda를 EC2 + Tomcat + JDBC로 리팩터링**
 - ❌ 전체 아키텍처 리팩터링 필요 → 매우 높은 구성 노력
@@ -829,7 +829,7 @@ flowchart LR
 - ✅ **구성 노력 최소** (기존 Lambda 코드 재사용 가능)
 - ✅ Lambda 할당량 증가 불필요
 
-## 선택 이유
+**선택 이유
 핵심 문제는 **"Lambda 동시 실행 한계"**입니다. SQS 큐를 중간에 두면:
 1. 첫 번째 Lambda는 빠르게 메시지를 SQS에 넣고 종료 → API 응답 빠름
 2. SQS가 대량의 메시지를 안전하게 버퍼링
@@ -846,11 +846,11 @@ flowchart LR
 
 **정답: A**
 
-## 문제 요구사항
+**문제 요구사항
 - Amazon S3 버킷에 무단 구성 변경이 없는지 확인
 - AWS 클라우드 배포 검토
 
-## 옵션 분석
+**옵션 분석
 
 **A. AWS Config를 적절한 규칙으로 켜기** ✅
 - ✅ **리소스 구성 변경을 지속적으로 모니터링 및 기록**
@@ -886,7 +886,7 @@ flowchart LR
 - ❌ 복잡한 수동 구성 및 로그 파싱 필요
 - ❌ 구성 준수 평가 기능 없음
 
-## 선택 이유
+**선택 이유
 핵심은 **"구성 변경 감지 및 추적"**입니다. AWS Config는 AWS 리소스의 구성 변경을 지속적으로 모니터링하고 기록하며, 정의된 규칙에 따라 준수 여부를 자동으로 평가합니다. S3 버킷의 퍼블릭 액세스 설정, 암호화, 버전 관리 등의 구성 변경을 감지하고 규칙 위반 시 알림을 보냅니다.
 
 **AWS Config vs S3 액세스 로그:**
@@ -1094,23 +1094,33 @@ https://docs.aws.amazon.com/ko_kr/IAM/latest/UserGuide/id_roles_providers.html
 
 **정답: A**
 
-https://www.examtopics.com/discussions/amazon/view/85198-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:・
-사후 대응적 거버넌스는 Resource Groups Tagging API, AWS Config Rules, 사용자 지정
-스크립트 등의 도구를 사용하여 제대로 태그가 지정되지 않은 리소스를 찾습니다.
-https://docs.aws.amazon.com/ko_kr/general/latest/gr/aws_tagging.html
-설명2:
-모든 Amazon EC2 인스턴스, Amazon RDS DB 인스턴스 및 Amazon Redshift 클러스터가
-태그로 구성되도록 하려면 솔루션 설계자가 AWS Config 규칙을 사용하여 적절하게 태그가
-지정되지 않은 리소스를 정의하고 감지해야 합니다. AWS Config 규칙은 AWS Config 가
-모범 사례 및 회사 정책을 준수하는지 AWS 리소스 구성을 평가하는 데 사용하는 사용자
-지정 가능한 규칙 세트입니다. AWS Config 규칙을 사용하면 비준수 리소스를 식별하고
-담당 팀에 알리는 프로세스를 자동화하므로 이 검사를 구성하고 운영하는 노력을 최소화할
-수 있습니다.
-참조: AWS Config 규칙:
-(https://docs.aws.amazon.com/ko_kr/config/latest/developerguide/evaluate-config_use-
-managed-rules.html)
+핵심 요구사항:
+- EC2, RDS, Redshift가 태그로 구성되어 있는지 확인
+- **운영 노력 최소화**
+
+**선택지 분석:**
+
+A. ✅ **AWS Config 규칙 사용**
+   - AWS Config는 리소스 규정 준수 확인을 위한 관리형 서비스
+   - `required-tags` 규칙으로 태그 검증 자동화
+   - 지속적인 모니터링과 자동 탐지 제공
+   - 완전 관리형으로 운영 노력 최소화
+
+B. ❌ Cost Explorer + 수동 태그 지정
+   - 수동 작업이 필요하여 운영 노력이 큼
+   - 지속적인 모니터링 불가
+
+C. ❌ API 호출 + EC2에서 주기적 실행
+   - EC2 인스턴스 관리 필요 (패치, 가용성 등)
+   - 커스텀 코드 유지보수 필요
+   - 운영 노력이 큼
+
+D. ❌ API 호출 + Lambda + CloudWatch
+   - 서버리스이지만 커스텀 코드 작성/유지보수 필요
+   - AWS Config가 이미 제공하는 기능을 재구현하는 것
+   - A보다 운영 노력이 더 큼
+
+**정답: A** - AWS Config는 리소스 태그 검증을 위한 완전 관리형 솔루션으로 운영 노력을 최소화합니다.
 
 ---
 
@@ -1118,255 +1128,455 @@ managed-rules.html)
 
 **정답: B**
 
-https://www.examtopics.com/discussions/amazon/view/85199-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:・
-정적 웹 사이트에서 웹 페이지는 사전 구축된 서버에 의해 반환됩니다. HTML, CSS 또는
-JavaScript 와 같은 간단한 언어를 사용합니다. 정적 웹 사이트에서는 서버에서(사용자에
-따라) 콘텐츠를 처리하지 않습니다. 웹 페이지는 변경 없이 서버에 의해 반환되므로 정적
-웹 사이트는 빠릅니다. 데이터베이스와의 상호 작용이 없습니다.
-또한 호스트가 다른 언어로 서버 측 처리를 지원할 필요가 없기 때문에 비용이 적게 듭니다.
-동적 웹 사이트에서 웹 페이지는 런타임 중에 처리되는 서버에 의해 반환됩니다. 즉, 사전
-구축된 웹 페이지가 아니라 사용자의 요구에 따라 런타임 중에 구축됩니다. 이들은 PHP,
-Node.js, ASP.NET 및 서버에서 지원하는 더 많은 것과 같은 서버 측 스크립팅 언어를
-사용합니다. 따라서 정적 웹 사이트보다 느리지만 업데이트 및 데이터베이스와의 상호
-작용이 가능합니다.
-설명2:
-모두 정적 웹사이트 콘텐츠 유형에 해당.
-Amazon S3 를 사용하여 웹 서버를 구성하거나 관리할 필요 없이 정적 웹 사이트를
-호스팅할 수 있습니다. 다음 단계를 완료하여 웹사이트에 모든 고정 자산을 호스팅할 새
-Amazon S3 버킷을 생성합니다. 이 자산에는 HTML, CSS, JavaScript, 이미지 파일이
-포함됩니다.
-https://aws.amazon.com/ko/getting-started/hands-on/app-onboarding/module-5/
+**해설:**
+
+핵심 요구사항:
+- 웹사이트 콘텐츠: HTML, CSS, JavaScript, 이미지 (정적 콘텐츠만)
+- **가장 비용 효율적인** 호스팅 방법
+
+**선택지 분석:**
+
+A. ❌ 컨테이너화 + Fargate
+   - 컨테이너 오케스트레이션 서비스 (vCPU, 메모리 기반 과금)
+   - 정적 콘텐츠 호스팅에는 과도한 솔루션
+   - 비용이 S3보다 훨씬 높음
+
+B. ✅ **Amazon S3 정적 웹사이트 호스팅**
+   - 정적 콘텐츠 호스팅에 최적화된 서비스
+   - 서버 관리 불필요 (완전 관리형)
+   - 스토리지 및 데이터 전송 비용만 발생
+   - 가장 비용 효율적
+
+C. ❌ EC2 + 웹 서버
+   - 인스턴스 24/7 실행 비용 발생
+   - 서버 패치, 보안 업데이트 등 관리 필요
+   - 정적 콘텐츠에는 과도한 솔루션
+
+D. ❌ ALB + Lambda + Express.js
+   - Lambda 실행 비용 + ALB 운영 비용
+   - 정적 콘텐츠에는 불필요한 복잡도
+   - S3보다 비용이 높음
+
+```mermaid
+flowchart LR
+    User[사용자 브라우저] 
+        -->|HTTP/HTTPS 요청| CF[Amazon CloudFront<br/>CDN]
+    CF -->|정적 파일 요청| S3[(S3 Static Website Bucket)]
+
+    subgraph AWS
+        S3:::aws
+        CF:::aws
+    end
+
+    classDef aws fill:#F7F7F7,stroke:#232F3E,stroke-width:2px;
+
+```
+
+**정답: B** - 정적 웹사이트(HTML, CSS, JS, 이미지)는 S3 정적 웹사이트 호스팅이 가장 비용 효율적인 솔루션입니다.
 
 ---
 
-# Q33 
+# Q33
 
 **정답: C**
 
-https://www.examtopics.com/discussions/amazon/view/85201-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:・
-피크 시간에 수십만 명의 사용자에게 서비스 제공 = Kinesis 사용. B,C 둘 중 하나가 답.
-B(X) : Kinesis Data Firehose는 데이터 변환 및 전송 서비스. 데이터 수집을 하려면 Kinesis
-Data Streams가 필요.
-Kinesis Data Firehose 로 데이터를 보내도록 데이터 생산자를 구성하면 지정한 대상으로
-데이터가 자동으로 전달됩니다. 데이터를 전송하기 전에 변환하도록 Kinesis Data
-Firehose를 구성할 수도 있습니다.
-https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html
-C(O) : Amazon Kinesis Data Streams를 사용하면 특수 요구에 맞춰 스트리밍 데이터를 처리
-또는 분석하는 사용자 지정 애플리케이션을 구축할 수 있습니다. 수십 만개의 소스에서
-클릭 스트림, 애플리케이션 로그, 소셜 미디어와 같은 다양한 유형의 데이터를 Kinesis
-데이터 스트림에 추가할 수 있습니다. 그러면 몇 초 안에 애플리케이션에서 스트림의 해당
-데이터를 읽고 처리할 수 있습니다.
-https://aws.amazon.com/ko/kinesis/data-streams/faqs/?nc=sn&loc=6
-설명2:
-Kinesis Data Firehose 전송 스트림의 대상입니다. Kinesis Data Firehose는 Amazon Simple
-Storage Service(Amazon S3), Amazon을 비롯한 다양한 대상으로 데이터 레코드를 보낼 수
-있습니다.
-Redshift, Amazon OpenSearch Service 및 귀하 또는 귀하의 제 3 자 서비스 공급자가
-소유한 모든 HTTP 엔드포인트.
-다음은 지원되는 대상입니다.
-* Amazon 오픈서치 서비스(Amazon OpenSearch Service)
-* Amazon S3
-* 데이터독(Datadog)
-* 다이나트레이스(Dynatrace)
-* 벌집(Honeycomb)
-* HTTP 끝점(Endpoint)
-* 로직 모니터(Logic Monitor)
-* 몽고디비 클라우드(MongoDB Cloud)
-* 새로운 유물(New Relic)
-* 스플렁크(Splunk)
-* 스모 로직(Sumo Logic)
-https://docs.aws.amazon.com/firehose/latest/dev/create-name.html
-https://aws.amazon.com/kinesis/data-streams/
-Amazon Kinesis Data Streams(KDS)는 확장성과 내구성이 뛰어난 실시간 데이터 스트리밍
-서비스입니다.
-KDS 는 웹사이트 클릭 스트림, 데이터베이스 이벤트 스트림, 금융 거래, 소셜 미디어 피드,
-IT 로그 및 위치 추적 이벤트와 같은 수십만 개의 소스에서 초당 기가바이트의 데이터를
-지속적으로 캡처할 수 있습니다.
+**해설:**
+
+핵심 요구사항:
+- 피크 시간에 수십만 사용자 (대규모 트래픽)
+- 수백만 건의 금융 거래 데이터
+- **확장 가능한 거의 실시간 솔루션**
+- 여러 내부 애플리케이션과 데이터 공유
+- 민감한 데이터 제거 처리
+- 문서 데이터베이스(DynamoDB)에 저장
+- 지연 시간이 짧은 검색
+
+**선택지 분석:**
+
+A. ❌ DynamoDB 직접 저장 + DynamoDB 규칙 + DynamoDB Streams
+   - DynamoDB에는 쓰기 시 민감한 데이터를 제거하는 "규칙" 기능이 없음
+   - 이러한 기능은 존재하지 않는 가상의 기능
+
+B. ❌ Kinesis Data Firehose + Lambda + DynamoDB & S3
+   - Firehose는 **전송/전달 서비스** (delivery service)
+   - 버퍼링 메커니즘으로 인해 실시간성 저하 (최소 60초 버퍼)
+   - 다른 애플리케이션이 S3 파일을 읽어야 함 (거의 실시간 불가)
+   - 여러 컨슈머가 동시에 스트림 읽기 불가
+
+C. ✅ **Kinesis Data Streams + Lambda + DynamoDB**
+   - Kinesis Data Streams: **실시간 데이터 스트리밍 수집**
+   - 여러 애플리케이션이 **동시에** 스트림에서 데이터 소비 가능
+   - Lambda로 실시간 민감한 데이터 제거 (스트림 처리 중)
+   - 처리된 데이터를 DynamoDB에 저장
+   - 확장 가능 (샤드 추가로 처리량 증가)
+   - 진정한 거의 실시간 솔루션
+
+D. ❌ S3 일괄 처리 + Lambda + DynamoDB
+   - 일괄 처리 방식 = 실시간 아님
+   - 파일 기반 처리로 지연 시간 증가
+   - 거의 실시간 요구사항 미충족
+
+**Kinesis Data Streams vs Firehose:**
+- **Data Streams**: 실시간 스트리밍 **수집 및 처리**, 여러 컨슈머, 사용자 정의 처리
+- **Firehose**: 데이터 **전송/전달** 서비스, 지정된 대상으로 자동 전달, 버퍼링
+
+**정답: C** - 실시간 데이터 수집 및 여러 애플리케이션 공유는 Kinesis Data Streams가 최적입니다.
 
 ---
 
-# Q34 
+# Q34
 
 **정답: B**
 
-https://www.examtopics.com/discussions/amazon/view/85202-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:・
-리소스 구성 사항 변경 추적 = AWS Config / 리소스 내역 기록 = CloudTrail
-AWS Config 는 AWS 리소스 인벤토리, 구성 기록, 구성 변경 알림을 제공하여 보안 및
-거버넌스를 실현하는 완벽한 관리형 서비스입니다.
-https://aws.amazon.com/ko/config/faq/
-AWS Cloudtrail 은 사용자 활동 및 API 사용을 추적하여 감사, 보안 모니터링 및 운영 문제
-해결을 지원합니다. CloudTrail 은 AWS 인프라 전체에서 작업과 관련된 계정 활동을
-로그하고 지속적으로 모니터링하고 보존하여 스토리지, 분석 및 해결 작업을 제어할 수
-있도록 합니다.
-https://aws.amazon.com/ko/cloudtrail/faqs/
-설명2:
-AWS Config 는 회사가 AWS 리소스의 구성을 평가, 감사 및 평가할 수 있는 완전관리형
-서비스입니다. 사용 중인 리소스에 대한 자세한 인벤토리를 제공하고 리소스 구성에 대한
-변경 사항을 추적합니다. AWS Config 는 구성 변경을 감지하고 변경이 발생하면 회사에
-알릴 수 있습니다. 또한 규정 준수 및 거버넌스 목적에 필수적인 변경 기록 보기를
-제공합니다. AWS CloudTrail 은 회사의 AWS 리소스에 대한 자세한 API 호출 기록을
-제공하는 완전 관리형 서비스입니다. API 호출을 한 사람, 호출한 시간, 호출의 영향을 받은
-리소스를 포함하여 AWS 계정의 모든 API 활동을 기록합니다. 이 정보를 통해 회사는 AWS
-리소스에서 발생할 수 있는 의심스러운 활동을 조사할 수 있으므로 보안 및 감사 목적에
-매우 중요합니다.
+**해설:**
+
+핵심 요구사항:
+- AWS 리소스의 **구성 변경 사항 추적**
+- AWS 리소스에 대한 **API 호출 기록**
+- 규정 준수, 거버넌스, 감사, 보안 목적
+
+**AWS 서비스 역할 구분:**
+- **AWS Config**: 리소스 구성 변경 추적 및 규정 준수 평가
+- **AWS CloudTrail**: API 호출 기록 및 사용자 활동 감사
+- **Amazon CloudWatch**: 모니터링, 메트릭, 로그 수집 (API 호출 기록 아님)
+
+**선택지 분석:**
+
+A. ❌ CloudTrail로 구성 변경 + Config로 API 호출
+   - 서비스 역할이 완전히 반대로 설정됨
+   - CloudTrail은 구성 변경 추적 서비스가 아님
+   - Config는 API 호출 기록 서비스가 아님
+
+B. ✅ **Config로 구성 변경 + CloudTrail로 API 호출**
+   - AWS Config: 리소스 구성 변경 추적, 규정 준수 평가
+   - AWS CloudTrail: API 호출 기록, 사용자 활동 감사
+   - 각 서비스가 본래 목적에 맞게 사용됨
+
+C. ❌ Config로 구성 변경 + CloudWatch로 API 호출
+   - CloudWatch는 API 호출 기록 서비스가 아님
+   - CloudWatch는 모니터링 및 메트릭 수집 서비스
+
+D. ❌ CloudTrail로 구성 변경 + CloudWatch로 API 호출
+   - CloudTrail은 구성 변경 추적 전문 서비스가 아님
+   - CloudWatch는 API 호출 기록 서비스가 아님
+
+**핵심 개념:**
+- **AWS Config**: "무엇이(What) 변경되었나?" - 리소스 구성 상태 추적
+  - EC2 인스턴스 타입 변경, 보안 그룹 규칙 변경 등
+  - 규정 준수 확인 (required-tags, encrypted-volumes 등)
+
+- **AWS CloudTrail**: "누가(Who) 언제(When) 무엇을(What) 했나?" - API 활동 기록
+  - CreateBucket, TerminateInstances, PutBucketPolicy 등
+  - 사용자 활동 감사 추적
+
+**정답: B** - 구성 변경은 AWS Config, API 호출 기록은 AWS CloudTrail을 사용합니다.
 
 ---
 
-# Q35 
+# Q35
 
 **정답: D**
 
-https://www.examtopics.com/discussions/amazon/view/85203-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-해설:・
-A(X) : GuardDuty는 계정 보호 서비스.
-Amazon GuardDuty 는 AWS 계정 및 워크로드에서 악의적 활동을 모니터링하고 상세한
-보안 결과를 제공하여 가시성 및 해결을 촉진하는 위협 탐지 서비스입니다.
-https://aws.amazon.com/ko/guardduty/
-B(X) : Amazon Inspector는 취약점 스캔 서비스.
-Amazon Inspector는 지속적으로 스캔하는 취약성 관리 서비스입니다.
-https://docs.aws.amazon.com/ko_kr/inspector/latest/user/what-is-inspector.html
-C(X) : 대규모 DDoS 방어는 AWS Shield Advanced가 더 적합.
-D(O) : AWS Shield Advanced 는 정교한 대규모 DDoS 공격에 대한 추가 보호 및 완화,
-실시간에 가까운 공격에 대한 가시성, 웹 애플리케이션 방화벽 AWS WAF 와의 통합을
-제공합니다. DDoS 관련 급증 시 Amazon Elastic Compute Cloud(EC2), Elastic Load
-Balancing(ELB), Amazon CloudFront, AWS Global Accelerator 및 Amazon Route 53 요금
-보호를 제공합니다.
-https://aws.amazon.com/ko/shield/?whats-new-cards.sort-by=item.additionalFields.post
-DateTime&whats-new-cards.sort-order=desc
+**해설:**
+
+핵심 요구사항:
+- 공개 웹 애플리케이션
+- 아키텍처: ELB + VPC + EC2
+- DNS는 **타사 서비스** 사용
+- **대규모 DDoS 공격 감지 및 보호**
+
+**AWS 보안 서비스 역할:**
+- **AWS Shield**: DDoS 보호 (Standard: 무료 기본 보호, Advanced: 고급 보호)
+- **Amazon GuardDuty**: 위협 탐지 (악의적 활동, 비정상 동작 모니터링)
+- **Amazon Inspector**: 취약성 평가 (소프트웨어 취약점 스캔)
+
+**선택지 분석:**
+
+A. ❌ Amazon GuardDuty
+   - 위협 탐지 서비스 (계정 보안, 악의적 활동 모니터링)
+   - DDoS 보호 전문 서비스가 아님
+   - 이상 행위 탐지에 특화
+
+B. ❌ Amazon Inspector
+   - 취약성 평가 서비스 (보안 취약점 스캔)
+   - EC2, ECR, Lambda의 취약점 평가
+   - DDoS 보호와는 전혀 관련 없음
+
+C. ❌ AWS Shield + Route 53 할당
+   - DNS는 **타사 서비스를 사용 중**이므로 Route 53 사용 불가
+   - Shield Standard는 기본 DDoS 보호만 제공
+   - 대규모 DDoS 공격에는 부족
+
+D. ✅ **AWS Shield Advanced + ELB 할당**
+   - Shield Advanced: 정교한 대규모 DDoS 공격 보호
+   - ELB를 Shield Advanced로 보호
+   - **주요 기능:**
+     - 실시간 공격 알림 및 탐지
+     - DDoS Response Team (DRT) 24/7 지원
+     - AWS WAF와 통합
+     - DDoS로 인한 스케일링 비용 보호 (비용 환불)
+     - 고급 공격 완화 및 분석
+   - ELB, CloudFront, Route 53, Global Accelerator, EC2 보호 가능
+
+**AWS Shield Standard vs Advanced:**
+| 구분 | Standard | Advanced |
+|------|----------|----------|
+| 비용 | 무료 | 유료 ($3,000/월) |
+| 보호 수준 | 기본 L3/L4 DDoS 보호 | 고급 L3/L4/L7 DDoS 보호 |
+| DRT 지원 | 없음 | 24/7 지원 |
+| 비용 보호 | 없음 | DDoS 스케일링 비용 환불 |
+
+**정답: D** - 대규모 DDoS 공격 보호는 AWS Shield Advanced + ELB 조합이 최적입니다.
 
 ---
 
-# Q36 
+# Q36
 
 **정답: B**
 
-https://www.examtopics.com/discussions/amazon/view/84747-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:
-https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.ht
-ml
-대부분의 사용자는 FIPS 140-2 인증 암호화 모듈로 보호되는 기본 AWS KMS 키 스토어가
-보안 요구 사항을 충족합니다. 추가 유지 관리 책임 계층이나 추가 서비스에 대한 종속성을
-추가할 필요가 없습니다. 그러나 조직에 다음과 같은 요구 사항이 있는 경우 사용자 지정
-키 스토어 생성을 고려할 수 있습니다. 키 자료는 공유 환경에 저장할 수 없습니다. 키
-자료는 독립적인 보조 감사 경로를 따라야 합니다. 키 자료를 생성하고 저장하는 HSM 은
-FIPS 140-2 레벨 3에서 인증을 받아야 합니다.
-https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.ht
-ml
-https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.ht
-ml
-설명2:
-A(X) : SSE-S3은 AWS에서 데이터 키와 마스터 키 모두 관리하기 때문에 고객 관리형 키가
-사용되지 않음.
-참고: AWS KMS 키로 암호화된 개체를 업로드하려면 키와 S3 버킷이 동일한 AWS 리전에
-있어야 합니다.
-Note: To upload an object encrypted by an AWS KMS key, the key and the S3 bucket must be
-in the same AWS Region.
-https://aws.amazon.com/ko/premiumsupport/knowledge-center/s3-bucket-store-kms-e
-ncrypted-objects/
-B(O) : 고객 관리형 다중 리전 KMS 키 생성. 각 리전에 S3 버킷 생성. S3 버킷 간 복제
-설정. 클라이언트 측 암호화로 KMS키 사용하도록 애플리케이션 설정
-C(X) : A와 같은 이유로 오답.
-D(X) : 각 리전에 고객 관리형 KMS 키 및 S3 버킷 생성. AWS KMS keys(SSE-KMS)로 KMS
-키(SSE-KMS)로 서버 측 암호화 사용하도록 S3 버킷 설정. S3 버킷 간 복제 설정.
+**해설:**
+
+핵심 요구사항:
+- 두 AWS 리전의 S3 버킷에 데이터 저장
+- AWS KMS **고객 관리형 키** 사용
+- 두 S3 버킷의 데이터는 **동일한 KMS 키**로 암호화/복호화
+- **데이터와 키는 두 지역 각각에 저장**
+- 최소한의 운영 오버헤드
+
+**KMS 키 개념:**
+- **단일 리전 KMS 키**: 한 리전에서만 사용 가능
+- **다중 리전 KMS 키**: 여러 리전에 복제되며, 동일한 키 구성으로 상호 교환 가능
+
+**선택지 분석:**
+
+A. ❌ SSE-S3 (Amazon S3 관리형 암호화 키)
+   - AWS가 키를 완전히 관리 (고객 관리형 키 아님)
+   - 요구사항 위반: "고객 관리형 키 사용" 미충족
+
+B. ✅ **다중 리전 KMS 키 + 클라이언트 측 암호화**
+   - 고객 관리형 **다중 리전 KMS 키** 생성
+   - 각 리전에 키 복제본 존재 (동일한 키 ID 및 구성)
+   - 각 리전에 S3 버킷 생성
+   - S3 버킷 간 복제 설정
+   - 클라이언트 측 암호화: 애플리케이션이 KMS 키로 암호화
+   - **장점:**
+     - 각 리전에 키가 존재 (데이터 주권 요구사항 충족)
+     - 동일한 키 패밀리로 암호화/복호화
+     - 암호화된 데이터를 그대로 복제 (재암호화 불필요)
+
+C. ❌ 각 리전에 별도 KMS 키 + SSE-S3
+   - SSE-S3는 고객 관리형 키 사용 안 함
+   - 요구사항 위반
+
+D. ❌ 각 리전에 별도 KMS 키 + SSE-KMS
+   - 각 리전에 **별도의** KMS 키 생성
+   - 두 키는 완전히 다른 키 (다른 키 ID, 다른 키 구성)
+   - 요구사항 위반: "동일한 KMS 키" 미충족
+   - 리전 A의 키로 암호화한 데이터는 리전 B의 키로 복호화 불가
+
+**다중 리전 KMS 키의 작동 방식:**
+- 주 리전에 주 키 생성
+- 다른 리전에 복제본 키 생성
+- 모든 복제본 키는 동일한 키 구성 및 키 자료 공유
+- 각 복제본은 독립적으로 작동하지만 상호 교환 가능
+- 한 리전의 복제본 키로 암호화된 데이터는 다른 리전의 복제본 키로 복호화 가능
+
+**왜 클라이언트 측 암호화인가?**
+- 클라이언트 측 암호화: 애플리케이션이 암호화하고 암호화된 데이터를 S3에 업로드
+- 복제 시 암호화된 데이터를 그대로 복제 (동일한 암호화 유지)
+- 진정한 의미의 "동일한 키로 암호화된 데이터"
+
+**정답: B** - 다중 리전 KMS 키를 사용하면 각 리전에 키가 있으면서도 동일한 키로 암호화/복호화할 수 있습니다.
 
 ---
 
-# Q37 
+# Q37
 
 **정답: B**
 
-https://www.examtopics.com/discussions/amazon/view/85037-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명:・
-A(X) : 물리적으로 케이블 갖다 꽂는 것이기 때문에 원격 접속이 아님.
-B(O) : 세션 관리자는 사용자 인스턴스에 SSH 키 또는 인증서를 유지하거나 인바운드
-포트를 열도록 요구하지 않고 보안 태세를 강화합니다. 또한, AWS IAM 을 사용하여
-인스턴스 액세스를 중앙에서 관리합니다. 세션 관리자를 사용하면 Linux 또는 Windows
-EC2 인스턴스와 연결하여 각 인스턴스에서 세션을 시작한 각 사용자를 추적할 수 있습니다.
-인스턴스에 액세스한 사용자와 AWS CloudTrail 을 사용한 시점을 감사할 수 있으며,
-인스턴스에서 실행된 각 명령을 Amazon S3 또는 Amazon CloudWatch Logs 에 기록할 수
-있습니다. 끝으로 Session Manager 를 사용하면 배스쳔 호스트를 운영하고 관리하기 위한
-초기 투자 비용이 들지 않습니다. https://aws.amazon.com/ko/systems-manager/faq/
-C(X) : SSH키 쌍이 필요하므로 B보다 운영 오버헤드가 많이 발생함.
-D(X) : C와 동일한 이유로 오답.
-참고
-https://docs.aws.amazon.com/ko_kr/systems-manager/latest/userguide/setup-instance-
-permissions.html
+**해설:**
+
+핵심 요구사항:
+- EC2 인스턴스에 원격으로 안전하게 액세스 및 관리
+- 기본 AWS 서비스와 작동
+- AWS Well-Architected 프레임워크 준수
+- 반복 가능한 프로세스
+- **최소한의 운영 오버헤드**
+
+**선택지 분석:**
+
+A. ❌ EC2 직렬 콘솔
+   - 물리적 터미널 인터페이스 (케이블 연결 방식)
+   - 트러블슈팅 및 비상 액세스용
+   - 원격 관리 솔루션 아님
+   - 반복 가능한 프로세스 불가
+
+B. ✅ **IAM 역할 + AWS Systems Manager Session Manager**
+   - **완전 관리형 서비스** (운영 오버헤드 최소)
+   - SSH 키 관리 불필요
+   - 인바운드 포트 열기 불필요 (보안 강화)
+   - IAM을 통한 중앙 집중식 액세스 제어
+   - **자동 감사 로깅:**
+     - CloudTrail: 누가 언제 세션 시작했는지 추적
+     - S3 또는 CloudWatch Logs: 실행된 명령 기록
+   - 배스천 호스트 불필요
+   - 반복 가능하고 표준화된 프로세스
+   - Well-Architected 프레임워크 준수
+
+C. ❌ SSH 키 쌍 + 배스천 호스트
+   - 배스천 호스트 관리 필요 (패치, 가용성, 보안)
+   - SSH 키 관리 및 배포 필요 (운영 오버헤드)
+   - 배스천 호스트 비용 발생
+   - 퍼블릭 서브넷 노출 (보안 위험)
+   - 높은 운영 오버헤드
+
+D. ❌ Site-to-Site VPN + SSH 키
+   - VPN 연결 설정 및 관리 복잡
+   - SSH 키 관리 필요
+   - 온프레미스 네트워크 구성 필요
+   - 높은 초기 설정 비용 및 운영 오버헤드
+
+**AWS Systems Manager Session Manager 장점:**
+- ✅ SSH 키 불필요 (IAM 기반 인증)
+- ✅ 인바운드 포트 열기 불필요 (아웃바운드만 사용)
+- ✅ 배스천 호스트 불필요
+- ✅ 자동 감사 추적 (CloudTrail + S3/CloudWatch)
+- ✅ 중앙 집중식 액세스 관리 (IAM)
+- ✅ Linux 및 Windows 지원
+- ✅ 운영 오버헤드 최소
+
+**정답: B** - Systems Manager Session Manager는 최소 운영 오버헤드로 안전한 원격 액세스를 제공합니다.
 
 ---
 
-# Q38 
+# Q38
 
 **정답: C**
 
-https://www.examtopics.com/discussions/amazon/view/85238-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:・
-A(X) : S3 버킷을 각 리전마다 복제하면 콘텐츠가 업로드될 때마다 각 리전의 버킷에
-복제해야하므로 낭비임. CloudFront를 사용하는 것이 훨씬 더 효율적이고 경제적.
-B(X) : AWS Global Accelerator 는 TCP/UDP 를 사용하는 네트워크 계층에서 동작하는데,
-지문에서 사용된 Route 53은 DNS 서비스로서, 애플리케이션 계층에서 동작.
-C(O) : Route 53으로 CloudFront 배포를 가리킬 수 있음.
-S3 를 사용해 정적 콘텐츠를 저장하면 다양한 이점이 있습니다. 하지만 비용을 효과적으로
-관리하는 동시에 애플리케이션의 성능과 보안까지 최적화하려면 Amazon CloudFront 를
-설정해 S3 버킷과 함께 사용하면서 콘텐츠를 제공하고 보호하는 것이 좋습니다.
-CloudFront는 전 세계의 정적/동적 웹 콘텐츠, 비디오 스트림 및 API를 안전하게 대규모로
-전송할 수 있는 콘텐츠 전송 네트워크(CDN) 서비스입니다. CloudFront 에서 데이터를
-전송하면 설계상 S3에서 직접 사용자에게 전송하는 것보다 더욱 비용 효율적입니다.
-https://aws.amazon.com/ko/blogs/korea/amazon-s3-amazon-cloudfront-a-match-mad
-e-in-the-cloud/
-자체 도메인 이름을 사용하려는 경우 Amazon Route 53 을 사용하여 CloudFront 배포를
-가리키는 별칭 레코드(alias record)를 생성합니다
-https://docs.aws.amazon.com/ko_kr/Route53/latest/DeveloperGuide/routing-to-cloudfro
-nt-distribution.html
-D(X) : S3 Transfer Acceleration은 각지에서 중앙 S3 버킷으로 업로드하는 서비스.
-S3 Transfer Acceleration 은 전 세계에서 S3 버킷으로 전송되는 속도를 최적화하도록
-설계되었습니다. 지리적으로 분산된 위치에서 중앙 집중식 버킷으로 데이터를 업로드하거나,
-대륙 간에 GB 또는 TB 규모의 데이터를 정기적으로 전송하는 경우, S3 Transfer
-Acceleration을 사용하면 몇 시간 또는 며칠의 데이터 전송 시간을 절약할 수 있습니다.
-https://aws.amazon.com/ko/s3/faqs/#s3ta
-설명2:
-Amazon CloudFront는 전 세계 엣지 로케이션에서 콘텐츠를 캐싱하여 콘텐츠에 액세스하는
-사용자에게 짧은 지연 시간과 빠른 전송 속도를 제공하는 콘텐츠 전송
-네트워크(CDN)입니다. S3 버킷 앞에 CloudFront 배포를 추가하면 전 세계 엣지 위치에서
-정적 웹 사이트의 콘텐츠를 캐싱하여 웹 사이트에 액세스하는 사용자의 지연 시간을
-줄입니다. 또한 이 솔루션은 CloudFront 엣지 로케이션에서 콘텐츠에 액세스하는 사용자의
-데이터 전송 및 요청에 대해서만 비용을 청구하므로 비용 효율적입니다. 또한 이 솔루션은
-CloudFront 가 자동으로 확장하여 수요 증가를 처리하고 웹 사이트에 고가용성을 제공할 수
-있으므로 확장성과 안정성 이점을 제공합니다.
+**해설:**
+
+핵심 요구사항:
+- S3에서 정적 웹사이트 호스팅
+- 전 세계적으로 수요 증가
+- **사용자 대기 시간 감소**
+- **가장 비용 효율적인** 솔루션
+
+**선택지 분석:**
+
+A. ❌ S3 버킷을 모든 AWS 리전에 복제 + Route 53 지리적 위치 라우팅
+   - **모든 AWS 리전**에 버킷 복제는 매우 높은 비용
+   - 복제 비용 + 스토리지 비용 + 데이터 전송 비용 중복
+   - 콘텐츠 업데이트 시 모든 버킷에 복제 필요 (관리 복잡)
+   - 비용 효율적이지 않음
+
+B. ❌ AWS Global Accelerator + S3 버킷
+   - Global Accelerator는 고정 비용 발생 (시간당 과금)
+   - TCP/UDP 기반 네트워크 가속 (동적 애플리케이션에 적합)
+   - 정적 콘텐츠 캐싱 기능 없음
+   - 정적 웹사이트에는 과도한 솔루션
+
+C. ✅ **Amazon CloudFront 배포 + S3 버킷**
+   - **CDN (콘텐츠 전송 네트워크)**으로 전 세계 엣지 로케이션에서 캐싱
+   - 400개 이상의 엣지 로케이션에서 콘텐츠 제공
+   - **대기 시간 감소:**
+     - 사용자와 가장 가까운 엣지에서 콘텐츠 제공
+     - 캐시 히트 시 S3까지 갈 필요 없음
+   - **비용 효율적:**
+     - CloudFront의 데이터 전송 비용이 S3보다 저렴
+     - 캐싱으로 S3 요청 수 감소
+     - 사용량 기반 과금 (고정 비용 없음)
+   - Route 53 별칭 레코드로 CloudFront 배포 연결
+   - 자동 확장 및 고가용성
+
+D. ❌ S3 Transfer Acceleration
+   - **업로드** 속도 향상용 (클라이언트 → S3)
+   - **다운로드** 성능 향상에는 효과 없음
+   - 사용자가 웹사이트에 액세스하는 것은 다운로드
+   - 요구사항과 맞지 않음
+
+**CloudFront vs Global Accelerator:**
+| 구분 | CloudFront | Global Accelerator |
+|------|------------|-------------------|
+| 용도 | 정적/동적 콘텐츠 전송 (CDN) | 네트워크 가속 (TCP/UDP) |
+| 캐싱 | O (엣지 로케이션 캐싱) | X (캐싱 없음) |
+| 비용 | 사용량 기반 (저렴) | 고정 비용 + 사용량 |
+| 적합 사례 | 정적 웹사이트, API, 미디어 | 게임, IoT, VoIP |
+
+**CloudFront가 비용 효율적인 이유:**
+- S3에서 직접 전송보다 CloudFront 데이터 전송 비용이 저렴
+- 캐싱으로 S3 요청 수 감소 → S3 비용 절감
+- 고정 비용 없음 (사용한 만큼만 과금)
+
+**정답: C** - CloudFront는 전 세계 사용자에게 낮은 지연 시간으로 정적 콘텐츠를 제공하는 가장 비용 효율적인 솔루션입니다.
 
 ---
 
-# Q39 
+# Q39
 
 **정답: A**
 
-https://www.examtopics.com/discussions/amazon/view/84748-exam-aws-certified-solut
-ions-architect-associate-saa-c03/
-설명1:・
-https://aws.amazon.com/ebs/features/
-프로비저닝된 IOPS 볼륨은 솔리드 스테이트 드라이브(SSD)로 지원되며 중요한 I/O
-집약적인 데이터베이스 애플리케이션을 위해 설계된 최고 성능의 EBS 볼륨입니다.
-이러한 볼륨은 극히 짧은 대기 시간이 필요한 IOPS 집약적 워크로드와 처리량 집약적
-워크로드 모두에 이상적입니다.
-https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html
-설명2:
-'삽입' 작업이라고 했으므로 I/O 성능과 관련되어있음을 유추할 수 있음. 그리고 '저장소
-성능'이 문제라고 판단했고, 범용 'SSD' 스토리지가 있다고 했으므로 A가 정답.
-D(X) : 버스트 가능한 성능 인스턴스는 잠시 I/O 성능을 끌어올리는 것일 뿐 근본적인 I/O
-성능 개선은 하지 못함.
-획득한 크레딧이 남아 있지 않으면 인스턴스가 기준 CPU 사용률로 점진적으로 저하되고
-크레딧이 더 많이 적립될 때까지 기준 이상으로 버스트할 수 없습니다.
-https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/burstable-credits-baselin
-e-concepts.html
+**해설:**
+
+핵심 요구사항:
+- RDS for MySQL 데이터베이스 (천만 개 이상의 행)
+- 현재: 2TB 범용 SSD 스토리지
+- 매일 수백만 건의 업데이트 (쓰기 집약적)
+- **삽입 작업이 10초 이상 소요** (성능 문제)
+- 회사 판단: **데이터베이스 스토리지 성능이 문제**
+
+**EBS 스토리지 유형:**
+- **범용 SSD (gp2/gp3)**: 범용 워크로드, 중간 수준 IOPS
+- **프로비저닝된 IOPS SSD (io1/io2)**: I/O 집약적 워크로드, 높은 IOPS 보장
+
+**선택지 분석:**
+
+A. ✅ **스토리지를 프로비저닝된 IOPS SSD로 변경**
+   - **스토리지 성능 문제를 직접 해결**
+   - 프로비저닝된 IOPS SSD (io1/io2):
+     - 일관되고 예측 가능한 높은 IOPS 제공
+     - 최대 64,000 IOPS (io2 Block Express: 256,000 IOPS)
+     - I/O 집약적 데이터베이스 워크로드에 최적화
+     - 짧은 지연 시간 보장
+   - 범용 SSD 한계:
+     - gp2: 최대 16,000 IOPS (크기에 따라 제한)
+     - gp3: 최대 16,000 IOPS (기본 3,000 IOPS)
+     - 수백만 건의 삽입/업데이트에는 부족
+   - **근본 원인 해결**
+
+B. ❌ 메모리 최적화 인스턴스 클래스로 변경
+   - CPU 및 메모리 성능 향상
+   - **스토리지 IOPS는 개선되지 않음**
+   - 문제의 원인이 스토리지 성능이므로 효과 없음
+   - 인스턴스 클래스는 연산 성능, 스토리지는 별도
+
+C. ❌ 버스트 가능한 성능 인스턴스 클래스로 변경
+   - CPU 크레딧 기반 버스트 (t2, t3, t4g)
+   - 일시적인 CPU 성능 향상 (크레딧 소진 시 기준 성능으로 저하)
+   - **스토리지 IOPS는 개선되지 않음**
+   - 오히려 일반 인스턴스보다 성능 저하 가능
+
+D. ❌ 다중 AZ 읽기 전용 복제본 활성화
+   - 읽기 전용 복제본은 **읽기 성능 향상**용
+   - 쓰기(삽입, 업데이트)는 주 DB에서만 수행
+   - **삽입 작업 성능은 개선되지 않음**
+   - 문제의 핵심인 쓰기 성능과 무관
+
+**범용 SSD vs 프로비저닝된 IOPS SSD:**
+| 구분 | 범용 SSD (gp2/gp3) | 프로비저닝된 IOPS SSD (io1/io2) |
+|------|-------------------|--------------------------------|
+| 최대 IOPS | 16,000 IOPS | 64,000 IOPS (io2 BE: 256,000) |
+| IOPS 일관성 | 버스트 가능 (gp2) | 일관되고 예측 가능 |
+| 지연 시간 | 밀리초 단위 | 서브 밀리초 단위 |
+| 용도 | 범용 워크로드 | I/O 집약적 DB 워크로드 |
+| 비용 | 저렴 | 높음 (성능 대비 적정) |
+
+**왜 A가 정답인가?**
+- 회사가 **스토리지 성능이 문제**라고 명확히 판단
+- 수백만 건의 쓰기 작업 = 높은 IOPS 필요
+- 범용 SSD의 IOPS 한계를 넘어섬
+- 프로비저닝된 IOPS SSD로 근본 원인 해결
+
+**정답: A** - 스토리지 성능 문제는 프로비저닝된 IOPS SSD로 전환하여 높은 IOPS를 제공해야 합니다.
 
 ---
 
