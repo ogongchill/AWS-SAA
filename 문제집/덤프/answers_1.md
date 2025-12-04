@@ -1318,7 +1318,8 @@ D. ✅ **AWS Shield Advanced + ELB 할당**
      - 고급 공격 완화 및 분석
    - ELB, CloudFront, Route 53, Global Accelerator, EC2 보호 가능
 
-**AWS Shield Standard vs Advanced:**
+**AWS Shield Standard vs Advanced:
+
 | 구분 | Standard | Advanced |
 |------|----------|----------|
 | 비용 | 무료 | 유료 ($3,000/월) |
@@ -1495,6 +1496,7 @@ D. ❌ S3 Transfer Acceleration
    - 요구사항과 맞지 않음
 
 **CloudFront vs Global Accelerator:**
+
 | 구분 | CloudFront | Global Accelerator |
 |------|------------|-------------------|
 | 용도 | 정적/동적 콘텐츠 전송 (CDN) | 네트워크 가속 (TCP/UDP) |
@@ -1562,6 +1564,7 @@ D. ❌ 다중 AZ 읽기 전용 복제본 활성화
    - 문제의 핵심인 쓰기 성능과 무관
 
 **범용 SSD vs 프로비저닝된 IOPS SSD:**
+
 | 구분 | 범용 SSD (gp2/gp3) | 프로비저닝된 IOPS SSD (io1/io2) |
 |------|-------------------|--------------------------------|
 | 최대 IOPS | 16,000 IOPS | 64,000 IOPS (io2 BE: 256,000) |

@@ -16,6 +16,14 @@ flowchart LR
 
 > _네트워크가 느리거나 차단된 환경에서 데이터를 물리 장비로 수집 후 AWS로 전송._
 
+|장비|유형|저장 용량|특징|
+|---|---|---|---|
+|**Snowcone**|소형 Edge 디바이스|**8 TB HDD** (유효 약 4–5 TB)|가장 작음, 휴대 가능, 저전력|
+|**Snowcone SSD**|소형 Edge 디바이스|**14 TB SSD** (유효 약 8 TB)|에지 컴퓨팅 및 빠른 로컬 처리|
+|**Snowball Edge – Storage Optimized**|중형 장비|**80 TB 사용 가능**|대규모 데이터 전송, 적재 최적화|
+|**Snowball Edge – Compute Optimized**|중형 장비|**42 TB SSD**|CPU·GPU 포함, ML/edge compute|
+|**Snowmobile**|초대형(트럭)|**100 PB**|데이터센터 수준 마이그레이션, EB급 지원
+
 ```mermaid
 flowchart LR 
 	DataSource --> SnowDevice --> AWS_Import

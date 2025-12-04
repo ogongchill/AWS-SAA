@@ -75,6 +75,16 @@
 
 `전통적인 OLTP 트랜잭션 애플리케이션에서 백업/패치/복구/확장 관리를 자동화하고 싶을 때`
 
+| Family         | 벤더                  | 특징                                | OS Access | 확장성 | 고가용성         |
+| -------------- | ------------------- | --------------------------------- | --------- | --- | ------------ |
+| **Aurora**     | AWS                 | 최고 성능, 자동 확장, MySQL/PostgreSQL 호환 | ❌         | 최고  | 최고           |
+| **MySQL**      | 오픈소스                | 대중적, 안정적                          | ❌         | 중   | 중 (Multi-AZ) |
+| **PostgreSQL** | 오픈소스                | 기능 강력, 확장성 우수                     | ❌         | 중   | 중            |
+| **MariaDB**    | 오픈소스                | MySQL 계열, 경량/저비용                  | ❌         | 중   | 중            |
+| **Oracle**     | 상용                  | 기업용 DB, 복잡한 기능                    | ❌         | 중   | 중            |
+| **SQL Server** | Microsoft           | .NET 환경과 최적화                      | ❌         | 중   | 중            |
+| **RDS Custom** | Oracle / SQL Server | OS Access 가능, 커스텀 구성 가능           | **✔**     | 중   | 중            |
+
 ---
 
 # Amazon Keyspaces (for Apache Cassandra)

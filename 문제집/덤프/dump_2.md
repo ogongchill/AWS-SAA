@@ -11,12 +11,13 @@
 합니까?
 ```
 
-| |      |
-|-|------|
-| A | 각 AZ 의 각 퍼블릭 서브넷에 대해 하나씩 3 개의 NAT 게이트웨이를 생성합니다. 비 VPC 트래픽을 해당 AZ 의 NAT 게이트웨이로 전달하는 각 AZ 에 대한 프라이빗 라우팅 테이블을 생성합니다. |
-| B | 각 AZ 의 프라이빗 서브넷마다 하나씩 3 개의 NAT 인스턴스를 생성합니다. 비 VPC 트래픽을 해당 AZ 의 NAT 인스턴스로 전달하는 각 AZ 에 대한 프라이빗 라우팅 테이블을 생성합니다. |
-| C | 프라이빗 서브넷 중 하나에 두 번째 인터넷 게이트웨이를 생성합니다. VPC 가 아닌 트래픽을 프라이빗 인터넷 게이트웨이로 전달하는 프라이빗 서브넷의 라우팅 테이블을 업데이트합니다. |
-| D | 퍼블릭 서브넷 중 하나에 송신 전용 인터넷 게이트웨이를 생성합니다. VPC 가 아닌 트래픽을 외부 전용 인터넷 게이트웨이로 전달하는 프라이빗 서브넷에 대한 라우팅 테이블을 업데이트합니다. |
+|     |                                                                                                                                            |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| A   | 각 AZ 의 각 퍼블릭 서브넷에 대해 하나씩 3 개의 NAT 게이트웨이를 생성합니다. 비 VPC 트래픽을 해당 AZ 의 [[ETC#AWS NAT Gateway\|NAT 게이트웨이]]로 전달하는 각 AZ 에 대한 프라이빗 라우팅 테이블을 생성합니다. |
+| B   | 각 AZ 의 프라이빗 서브넷마다 하나씩 3 개의 NAT 인스턴스를 생성합니다. 비 VPC 트래픽을 해당 AZ 의 NAT 인스턴스로 전달하는 각 AZ 에 대한 프라이빗 라우팅 테이블을 생성합니다.                               |
+| C   | 프라이빗 서브넷 중 하나에 두 번째 인터넷 게이트웨이를 생성합니다. VPC 가 아닌 트래픽을 프라이빗 인터넷 게이트웨이로 전달하는 프라이빗 서브넷의 라우팅 테이블을 업데이트합니다.                                       |
+| D   | 퍼블릭 서브넷 중 하나에 송신 전용 인터넷 게이트웨이를 생성합니다. VPC 가 아닌 트래픽을 외부 전용 인터넷 게이트웨이로 전달하는 프라이빗 서브넷에 대한 라우팅 테이블을 업데이트합니다.                                   |
+|     |                                                                                                                                            |
 
 [[answers_2#Q101|정답]]
 
@@ -33,13 +34,13 @@ EFS) 파일 시스템을 사용하는 Amazon EC2 인스턴스에서 호스팅되
 선택하세요.)
 ```
 
-| |      |
-|-|------|
-| A | EFS 파일 시스템과 동일한 가용 영역에서 EC2 인스턴스를 시작합니다. |
-| B | 온프레미스 데이터 센터에 AWS DataSync 에이전트를 설치합니다. |
-| C | 데이터에 대한 EC2 인스턴스에 보조 Amazon Elastic Block Store(Amazon EBS) 볼륨을 생성합니다. |
-| D | 수동으로 운영 체제 복사 명령을 사용하여 데이터를 EC2 인스턴스로 푸시합니다. |
-| E | AWS DataSync를 사용하여 온프레미스 SFTP 서버에 적합한 위치 구성을 생성합니다. |
+|     |                                                                        |
+| --- | ---------------------------------------------------------------------- |
+| A   | [[Storage#Amazon EFS\|EFS]] 파일 시스템과 동일한 가용 영역에서 EC2 인스턴스를 시작합니다.       |
+| B   | 온프레미스 데이터 센터에 [[Storage#AWS DataSync\|AWS DataSync]] 에이전트를 설치합니다.      |
+| C   | 데이터에 대한 EC2 인스턴스에 보조 Amazon Elastic Block Store(Amazon EBS) 볼륨을 생성합니다. |
+| D   | 수동으로 운영 체제 복사 명령을 사용하여 데이터를 EC2 인스턴스로 푸시합니다.                           |
+| E   | AWS DataSync를 사용하여 온프레미스 [[ETC#SFTP 서버\|SFTP 서버]]에 적합한 위치 구성을 생성합니다.   |
 
 [[answers_2#Q102|정답]]
 
@@ -55,13 +56,14 @@ EFS) 파일 시스템을 사용하는 Amazon EC2 인스턴스에서 호스팅되
 솔루션 아키텍트는 AWS Glue가 오래된 데이터를 재처리하지 못하도록 하려면 어떻게 해야
 합니까?
 ```
+[[Analytics#AWS Glue|AWS Glue]]
 
-| |      |
-|-|------|
-| A | 작업 북마크를 사용하도록 작업을 편집합니다. |
-| B | 데이터가 처리된 후 데이터를 삭제하도록 작업을 편집합니다. |
-| C | NumberOfWorkers 필드를 1로 설정하여 작업을 편집합니다. |
-| D | FindMatches 기계 학습(ML) 변환을 사용합니다. |
+|     |                                        |
+| --- | -------------------------------------- |
+| A   | 작업 북마크를 사용하도록 작업을 편집합니다.               |
+| B   | 데이터가 처리된 후 데이터를 삭제하도록 작업을 편집합니다.       |
+| C   | NumberOfWorkers 필드를 1로 설정하여 작업을 편집합니다. |
+| D   | FindMatches 기계 학습(ML) 변환을 사용합니다.       |
 
 [[answers_2#Q103|정답]]
 
@@ -78,13 +80,13 @@ Amazon EC2 인스턴스에서 실행되는 Windows 웹 서버에 의해 구동�
 합니까? (2개를 선택하세요.)
 ```
 
-| |      |
-|-|------|
-| A | AWS Shield Advanced를 사용하여 DDoS 공격을 차단하십시오. |
-| B | 공격자를 자동으로 차단하도록 Amazon GuardDuty를 구성합니다. |
-| C | 정적 및 동적 콘텐츠 모두에 Amazon CloudFront 를 사용하도록 웹 사이트를 구성합니다. |
-| D | AWS Lambda 함수를 사용하여 VPC 네트워크 ACL 에 공격자 IP 주소를 자동으로 추가합니다. |
-| E | 80% CPU 사용률로 설정된 대상 추적 조정 정책과 함께 Auto Scaling 그룹의 EC2 스팟 인스턴스를 사용합니다. |
+|     |                                                                                |
+| --- | ------------------------------------------------------------------------------ |
+| A   | AWS Shield Advanced를 사용하여 DDoS 공격을 차단하십시오.                                     |
+| B   | 공격자를 자동으로 차단하도록 [[Security#Amazaon GuardDuty\|Amazon GuardDuty]]를 구성합니다.       |
+| C   | 정적 및 동적 콘텐츠 모두에 Amazon CloudFront 를 사용하도록 웹 사이트를 구성합니다.                        |
+| D   | AWS Lambda 함수를 사용하여 VPC [[ETC#Network ACL\|네트워크 ACL]] 에 공격자 IP 주소를 자동으로 추가합니다. |
+| E   | 80% CPU 사용률로 설정된 대상 추적 조정 정책과 함께 Auto Scaling 그룹의 EC2 스팟 인스턴스를 사용합니다.          |
 
 [[answers_2#Q104|정답]]
 
@@ -99,12 +101,12 @@ Amazon EventBridge(Amazon CloudWatch Events) 규칙이 함수를 호출합니다
 어떤 솔루션이 이러한 요구 사항을 충족합니까?
 ```
 
-| |      |
-|-|------|
-| A | lambda:InvokeFunction 을 작업으로, *를 보안 주체로 사용하여 함수에 실행 역할을 추가합니다. |
-| B | 작업으로 lambda:InvokeFunction 을 사용하고 보안 주체로 Service: lambda.amazonaws.com을 사용하여 함수에 실행 역할을 추가합니다. |
-| C | 작업으로 lambda:*를 사용하고 보안 주체로 Service: events.amazonaws.com 을 사용하여 리소스 기반 정책을 함수에 추가합니다. |
-| D | lambda:InvokeFunction 을 작업으로, Service: events.amazonaws.com 을 보안 주체로 사용하여 리소스 기반 정책을 함수에 추가합니다. |
+|     |                                                                                                 |
+| --- | ----------------------------------------------------------------------------------------------- |
+| A   | lambda:InvokeFunction 을 작업으로, \*를 보안 주체로 사용하여 함수에 실행 역할을 추가합니다.                                 |
+| B   | 작업으로 lambda:InvokeFunction 을 사용하고 보안 주체로 Service: lambda.amazonaws.com을 사용하여 함수에 실행 역할을 추가합니다.  |
+| C   | 작업으로 lambda:*를 사용하고 보안 주체로 Service: events.amazonaws.com 을 사용하여 리소스 기반 정책을 함수에 추가합니다.           |
+| D   | lambda:InvokeFunction 을 작업으로, Service: events.amazonaws.com 을 보안 주체로 사용하여 리소스 기반 정책을 함수에 추가합니다. |
 
 [[answers_2#Q105|정답]]
 
@@ -119,12 +121,12 @@ Amazon EventBridge(Amazon CloudWatch Events) 규칙이 함수를 호출합니다
 어떤 솔루션이 이러한 요구 사항을 충족하고 운영상 가장 효율적입니까?
 ```
 
-| |      |
-|-|------|
-| A | 고객 제공 키를 사용한 서버 측 암호화(SSE-C) |
-| B | Amazon S3 관리형 키를 사용한 서버 측 암호화(SSE-S3) |
-| C | 수동 교체가 있는 AWS KMS 키(SSE-KMS)를 사용한 서버 측 암호화 |
-| D | 자동 교체 기능이 있는 AWS KMS 키(SSE-KMS)를 사용한 서버 측 암호화 |
+|     |                                                                                                 |
+| --- | ----------------------------------------------------------------------------------------------- |
+| A   | 고객 제공 키를 사용한 서버 측 암호화(SSE-C)                                                                    |
+| B   | Amazon S3 관리형 키를 사용한 서버 측 암호화(SSE-S3)                                                           |
+| C   | 수동 교체가 있는 AWS KMS 키(SSE-KMS)를 사용한 서버 측 암호화                                                      |
+| D   | 자동 교체 기능이 있는 [[Security#AWS Key Management Service(AWS KMS)\|AWS KMS]] 키(SSE-KMS)를 사용한 서버 측 암호화 |
 
 [[answers_2#Q106|정답]]
 
@@ -140,12 +142,12 @@ Amazon EventBridge(Amazon CloudWatch Events) 규칙이 함수를 호출합니다
 위치 데이터 저장 및 검색에 대한 이러한 요구 사항을 충족하는 작업은 무엇입니까?
 ```
 
-| |      |
-|-|------|
-| A | Amazon S3와 함께 Amazon Athena를 사용하십시오. |
-| B | AWS Lambda와 함께 Amazon API Gateway를 사용합니다. |
-| C | Amazon Redshift와 함께 Amazon QuickSight를 사용합니다. |
-| D | Amazon Kinesis Data Analytics와 함께 Amazon API Gateway를 사용합니다. |
+|     |                                                                                                               |
+| --- | ------------------------------------------------------------------------------------------------------------- |
+| A   | Amazon S3와 함께 Amazon Athena를 사용하십시오.                                                                          |
+| B   | AWS Lambda와 함께 [[Front-End Web & Mobile#Amazon API Gateway\|Amazon API Gateway]]를 사용합니다.                      |
+| C   | [[Analytics#Amazon Redshift\|Amazon Redshift]]와 함께 [[Analytics#Amazon QuickSight\|Amazon QuickSight]]를 사용합니다. |
+| D   | [[Analytics#Amazon Kinesis\|Amazon Kinesis Data Analytics]]와 함께 Amazon API Gateway를 사용합니다.                    |
 
 [[answers_2#Q107|정답]]
 
@@ -160,12 +162,12 @@ Amazon EventBridge(Amazon CloudWatch Events) 규칙이 함수를 호출합니다
 솔루션 아키텍트는 어떤 디자인을 추천해야 할까요?
 ```
 
-| |      |
-|-|------|
-| A | Amazon RDS 의 데이터베이스가 업데이트되어 대상이 소비할 Amazon Simple Queue Service(Amazon SQS) 대기열로 정보를 보내도록 업데이트될 때 트리거되는 AWS Lambda 함수를 생성합니다. |
-| B | Amazon RDS의 데이터베이스가 대상이 사용할 Amazon Simple Queue Service(Amazon SQS) FIFO 대기열로 정보를 보내도록 업데이트될 때 트리거되는 AWS Lambda 함수를 생성합니다. |
-| C | RDS 이벤트 알림을 구독하고 여러 Amazon Simple Notification Service(Amazon SNS) 주제로 팬아웃된 Amazon Simple Queue Service(Amazon SQS) 대기열을 보냅니다. AWS Lambda 함수를 사용하여 대상을 업데이트합니다. |
-| D | RDS 이벤트 알림을 구독하고 Amazon Simple Notification Service(Amazon SNS) 주제를 여러 Amazon Simple Queue Service(Amazon SQS) 대기열로 보냅니다. AWS Lambda 함수를 사용하여 대상을 업데이트합니다. |
+|     |                                                                                                                                                                                                                                                                                                 |
+| --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A   | Amazon RDS 의 데이터베이스가 업데이트되어 대상이 소비할 Amazon Simple Queue Service(Amazon SQS) 대기열로 정보를 보내도록 업데이트될 때 트리거되는 AWS Lambda 함수를 생성합니다.                                                                                                                                                                   |
+| B   | Amazon RDS의 데이터베이스가 대상이 사용할 Amazon Simple Queue Service(Amazon SQS) FIFO 대기열로 정보를 보내도록 업데이트될 때 트리거되는 AWS Lambda 함수를 생성합니다.                                                                                                                                                                      |
+| C   | RDS 이벤트 알림을 구독하고 여러 Amazon Simple Notification Service(Amazon SNS) 주제로 팬아웃된 Amazon Simple Queue Service(Amazon SQS) 대기열을 보냅니다. AWS Lambda 함수를 사용하여 대상을 업데이트합니다.                                                                                                                                 |
+| D   | RDS 이벤트 알림을 구독하고 [[Application Integration#Amazon Simple Notification Service (SNS)\|Amazon Simple Notification Service]](Amazon SNS) 주제를 여러 [[Application Integration#Amazon Simple Queue Service (SQS)\|Amazon Simple Queue Service]](Amazon SQS) 대기열로 보냅니다. AWS Lambda 함수를 사용하여 대상을 업데이트합니다. |
 
 [[answers_2#Q108|정답]]
 
@@ -181,12 +183,12 @@ Amazon EventBridge(Amazon CloudWatch Events) 규칙이 함수를 호출합니다
 솔루션 설계자는 이러한 요구 사항을 충족하기 위해 무엇을 해야 합니까?
 ```
 
-| |      |
-|-|------|
-| A | S3 Glacier 볼트를 생성합니다. WORM(Write-Once, Read-Many) 볼트 잠금 정책을 개체에 적용합니다. |
-| B | S3 객체 잠금이 활성화된 S3 버킷을 생성합니다. 버전 관리를 활성화합니다. 보존 기간을 100 년으로 설정합니다. 거버넌스 모드를 새 객체에 대한 S3 버킷의 기본 보존 모드로 사용합니다. |
-| C | S3 버킷을 생성합니다. AWS CloudTrail 을 사용하여 객체를 수정하는 모든 S3 API 이벤트를 추적합니다. 통지 시 회사가 보유한 모든 백업 버전에서 수정된 개체를 복원합니다. |
-| D | S3 객체 잠금이 활성화된 S3 버킷을 생성합니다. 버전 관리를 활성화합니다. 개체에 법적 보존을 추가합니다. 객체를 삭제해야 하는 사용자의 IAM 정책에 s3:PutObjectLegalHold 권한을 추가합니다. |
+|     |                                                                                                                                                       |
+| --- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A   | S3 Glacier 볼트를 생성합니다. WORM(Write-Once, Read-Many) 볼트 잠금 정책을 개체에 적용합니다.                                                                                |
+| B   | S3 객체 잠금이 활성화된 S3 버킷을 생성합니다. 버전 관리를 활성화합니다. 보존 기간을 100 년으로 설정합니다. 거버넌스 모드를 새 객체에 대한 S3 버킷의 기본 보존 모드로 사용합니다.                                           |
+| C   | S3 버킷을 생성합니다. [[Management & Governance#AWS CloudTrail\|AWS CloudTrail]] 을 사용하여 객체를 수정하는 모든 S3 API 이벤트를 추적합니다. 통지 시 회사가 보유한 모든 백업 버전에서 수정된 개체를 복원합니다. |
+| D   | S3 객체 잠금이 활성화된 S3 버킷을 생성합니다. 버전 관리를 활성화합니다. 개체에 법적 보존을 추가합니다. 객체를 삭제해야 하는 사용자의 IAM 정책에 s3:PutObjectLegalHold 권한을 추가합니다.                               |
 
 [[answers_2#Q109|정답]]
 
@@ -205,13 +207,13 @@ Amazon EventBridge(Amazon CloudWatch Events) 규칙이 함수를 호출합니다
 (2개를 선택하세요.)
 ```
 
-| |      |
-|-|------|
-| A | S3 Glacier에 이미지를 업로드하도록 애플리케이션을 구성합니다. |
-| B | 원본 이미지를 Amazon S3에 업로드하도록 웹 서버를 구성합니다. |
-| C | 미리 서명된 URL 을 사용하여 각 사용자의 브라우저에서 Amazon S3 로 이미지를 직접 업로드하도록 애플리케이션 구성 |
-| D | 이미지가 업로드될 때 AWS Lambda 함수를 호출하도록 S3 이벤트 알림을 구성합니다. 기능을 사용하여 이미지 크기를 조정합니다. |
-| E | 업로드된 이미지의 크기를 조정하기 위해 일정에 따라 AWS Lambda 함수를 호출하는 Amazon EventBridge(Amazon CloudWatch Events) 규칙을 생성합니다. |
+|     |                                                                                                          |
+| --- | -------------------------------------------------------------------------------------------------------- |
+| A   | S3 Glacier에 이미지를 업로드하도록 애플리케이션을 구성합니다.                                                                   |
+| B   | 원본 이미지를 Amazon S3에 업로드하도록 웹 서버를 구성합니다.                                                                   |
+| C   | 미리 서명된 URL 을 사용하여 각 사용자의 브라우저에서 Amazon S3 로 이미지를 직접 업로드하도록 애플리케이션 구성                                     |
+| D   | 이미지가 업로드될 때 AWS Lambda 함수를 호출하도록 S3 이벤트 알림을 구성합니다. 기능을 사용하여 이미지 크기를 조정합니다.                               |
+| E   | 업로드된 이미지의 크기를 조정하기 위해 일정에 따라 AWS Lambda 함수를 호출하는 Amazon EventBridge(Amazon CloudWatch Events) 규칙을 생성합니다. |
 
 [[answers_2#Q110|정답]]
 
@@ -228,12 +230,12 @@ EC2 에서 실행되는 소비자 애플리케이션에 의해 처리됩니다. 
 가장 높은 가용성을 제공하는 아키텍처는 무엇입니까?
 ```
 
-| |      |
-|-|------|
-| A | 다른 가용 영역에 두 번째 ActiveMQ 서버를 추가합니다. 다른 가용 영역에 소비자 EC2 인스턴스를 추가합니다. MySQL 데이터베이스를 다른 가용 영역에 복제합니다. |
-| B | 두 가용 영역에 구성된 활성/대기 브로커와 함께 Amazon MQ 를 사용합니다. 다른 가용 영역에 소비자 EC2 인스턴스를 추가합니다. MySQL 데이터베이스를 다른 가용 영역에 복제합니다. |
-| C | 두 가용 영역에 구성된 활성/대기 브로커와 함께 Amazon MQ 를 사용합니다. 다른 가용 영역에 소비자 EC2 인스턴스를 추가합니다. 다중 AZ 가 활성화된 MySQL 용 Amazon RDS를 사용합니다. |
-| D | 두 가용 영역에 구성된 활성/대기 브로커와 함께 Amazon MQ 를 사용합니다. 두 가용 영역에 걸쳐 소비자 EC2 인스턴스에 대한 Auto Scaling 그룹을 추가합니다. 다중 AZ 가 활성화된 MySQL용 Amazon RDS를 사용합니다. |
+|     |                                                                                                                                           |
+| --- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| A   | 다른 가용 영역에 두 번째 [[Application Integration#Amazon MQ\|ActiveMQ]] 서버를 추가합니다. 다른 가용 영역에 소비자 EC2 인스턴스를 추가합니다. MySQL 데이터베이스를 다른 가용 영역에 복제합니다.   |
+| B   | 두 가용 영역에 구성된 활성/대기 브로커와 함께 Amazon MQ 를 사용합니다. 다른 가용 영역에 소비자 EC2 인스턴스를 추가합니다. MySQL 데이터베이스를 다른 가용 영역에 복제합니다.                               |
+| C   | 두 가용 영역에 구성된 활성/대기 브로커와 함께 Amazon MQ 를 사용합니다. 다른 가용 영역에 소비자 EC2 인스턴스를 추가합니다. 다중 AZ 가 활성화된 MySQL 용 Amazon RDS를 사용합니다.                      |
+| D   | 두 가용 영역에 구성된 활성/대기 브로커와 함께 Amazon MQ 를 사용합니다. 두 가용 영역에 걸쳐 소비자 EC2 인스턴스에 대한 Auto Scaling 그룹을 추가합니다. 다중 AZ 가 활성화된 MySQL용 Amazon RDS를 사용합니다. |
 
 [[answers_2#Q111|정답]]
 
@@ -249,12 +251,12 @@ EC2 에서 실행되는 소비자 애플리케이션에 의해 처리됩니다. 
 최소한의 운영 오버헤드로 이러한 요구 사항을 충족하는 솔루션은 무엇입니까?
 ```
 
-| |      |
-|-|------|
-| A | Amazon Elastic Container Service(Amazon ECS)에서 AWS Fargate를 사용하여 Service Auto Scaling 으로 컨테이너화된 웹 애플리케이션을 실행합니다. Application Load Balancer를 사용하여 수신 요청을 배포합니다. |
-| B | 두 개의 Amazon EC2 인스턴스를 사용하여 컨테이너화된 웹 애플리케이션을 호스팅합니다. Application Load Balancer를 사용하여 수신 요청을 배포합니다. |
-| C | 지원되는 언어 중 하나를 사용하는 새 코드와 함께 AWS Lambda를 사용합니다. 로드를 지원하기 위해 여러 Lambda 함수를 생성합니다. Amazon API Gateway 를 Lambda 함수에 대한 진입점으로 사용합니다. |
-| D | AWS ParallelCluster 와 같은 고성능 컴퓨팅(HPC) 솔루션을 사용하여 적절한 규모로 들어오는 요청을 처리할 수 있는 HPC 클러스터를 설정합니다. |
+|     |                                                                                                                                                                                                                 |
+| --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A   | [[Compute#Amazon ECS\|Amazon Elastic Container Service(Amazon ECS)]]에서 [[Compute#AWS Fargate\|AWS Fargate]]를 사용하여 Service Auto Scaling 으로 컨테이너화된 웹 애플리케이션을 실행합니다. Application Load Balancer를 사용하여 수신 요청을 배포합니다. |
+| B   | 두 개의 Amazon EC2 인스턴스를 사용하여 컨테이너화된 웹 애플리케이션을 호스팅합니다. Application Load Balancer를 사용하여 수신 요청을 배포합니다.                                                                                                               |
+| C   | 지원되는 언어 중 하나를 사용하는 새 코드와 함께 AWS Lambda를 사용합니다. 로드를 지원하기 위해 여러 Lambda 함수를 생성합니다. Amazon API Gateway 를 Lambda 함수에 대한 진입점으로 사용합니다.                                                                                 |
+| D   | AWS ParallelCluster 와 같은 고성능 컴퓨팅(HPC) 솔루션을 사용하여 적절한 규모로 들어오는 요청을 처리할 수 있는 HPC 클러스터를 설정합니다.                                                                                                                      |
 
 [[answers_2#Q112|정답]]
 
@@ -273,12 +275,12 @@ AWS 로 이동하려고 합니다. 회사 데이터 센터의 사용자 지정 �
 최소한의 운영 오버헤드로 이러한 요구 사항을 충족하는 솔루션은 무엇입니까?
 ```
 
-| |      |
-|-|------|
-| A | AWS DataSync 를 사용하여 데이터를 이동합니다. AWS Glue 를 사용하여 사용자 지정 변환 작업을 생성합니다. |
-| B | AWS Snowcone 디바이스에 데이터를 이동하도록 주문합니다. 장치에 변환 응용 프로그램을 배포합니다. |
-| C | AWS Snowball Edge Storage Optimized 디바이스를 주문합니다. 데이터를 장치에 복사합니다. AWS Glue를 사용하여 사용자 지정 변환 작업을 생성합니다. |
-| D | Amazon EC2 컴퓨팅이 포함된 AWS Snowball Edge Storage Optimized 디바이스를 주문합니다. 데이터를 장치에 복사합니다. AWS 에서 새 EC2 인스턴스를 생성하여 변환 애플리케이션을 실행합니다. |
+|     |                                                                                                                                |
+| --- | ------------------------------------------------------------------------------------------------------------------------------ |
+| A   | AWS DataSync 를 사용하여 데이터를 이동합니다. AWS Glue 를 사용하여 사용자 지정 변환 작업을 생성합니다.                                                           |
+| B   | [[Compute#AWS Snow Family\|AWS Snowcone]] 디바이스에 데이터를 이동하도록 주문합니다. 장치에 변환 응용 프로그램을 배포합니다.                                       |
+| C   | AWS Snowball Edge Storage Optimized 디바이스를 주문합니다. 데이터를 장치에 복사합니다. AWS Glue를 사용하여 사용자 지정 변환 작업을 생성합니다.                           |
+| D   | Amazon EC2 컴퓨팅이 포함된 AWS Snowball Edge Storage Optimized 디바이스를 주문합니다. 데이터를 장치에 복사합니다. AWS 에서 새 EC2 인스턴스를 생성하여 변환 애플리케이션을 실행합니다. |
 
 [[answers_2#Q113|정답]]
 
@@ -297,12 +299,12 @@ DynamoDB를 사용하여 메타데이터를 저장합니다.
 어떤 솔루션이 이러한 요구 사항을 충족합니까?
 ```
 
-| |      |
-|-|------|
-| A | AWS Lambda 를 사용하여 사진을 처리합니다. 사진과 메타데이터를 DynamoDB 에 저장합니다. |
-| B | Amazon Kinesis Data Firehose 를 사용하여 사진을 처리하고 사진과 메타데이터를 저장합니다. |
-| C | AWS Lambda 를 사용하여 사진을 처리합니다. Amazon S3 에 사진을 저장합니다. DynamoDB를 유지하여 메타데이터를 저장합니다. |
-| D | EC2 인스턴스 수를 3개로 늘립니다. 프로비저닝된 IOPS SSD(io2) Amazon Elastic Block Store(Amazon EBS) 볼륨을 사용하여 사진과 메타데이터를 저장합니다. |
+|     |                                                                                                              |
+| --- | ------------------------------------------------------------------------------------------------------------ |
+| A   | AWS Lambda 를 사용하여 사진을 처리합니다. 사진과 메타데이터를 DynamoDB 에 저장합니다.                                                    |
+| B   | Amazon Kinesis Data Firehose 를 사용하여 사진을 처리하고 사진과 메타데이터를 저장합니다.                                               |
+| C   | AWS Lambda 를 사용하여 사진을 처리합니다. Amazon S3 에 사진을 저장합니다. DynamoDB를 유지하여 메타데이터를 저장합니다.                             |
+| D   | EC2 인스턴스 수를 3개로 늘립니다. 프로비저닝된 IOPS SSD(io2) Amazon Elastic Block Store(Amazon EBS) 볼륨을 사용하여 사진과 메타데이터를 저장합니다. |
 
 [[answers_2#Q114|정답]]
 
@@ -321,12 +323,12 @@ DynamoDB를 사용하여 메타데이터를 저장합니다.
 사항은 무엇입니까?
 ```
 
-| |      |
-|-|------|
-| A | NAT 게이트웨이를 생성합니다. NAT 게이트웨이를 통해 Amazon S3 로 트래픽을 전송하도록 퍼블릭 서브넷에 대한 라우팅 테이블을 구성합니다. |
-| B | S3 접두사 목록에 대한 트래픽만 허용되도록 아웃바운드 트래픽을 제한하도록 EC2 인스턴스에 대한 보안 그룹을 구성합니다. |
-| C | EC2 인스턴스를 프라이빗 서브넷으로 이동합니다. Amazon S3 용 VPC 엔드포인트를 생성하고 엔드포인트를 프라이빗 서브넷의 라우팅 테이블에 연결합니다. |
-| D | VPC에서 인터넷 게이트웨이를 제거합니다. AWS Direct Connect 연결을 설정하고 Direct Connect 연결을 통해 Amazon S3로 트래픽을 라우팅합니다. |
+|     |                                                                                                   |
+| --- | ------------------------------------------------------------------------------------------------- |
+| A   | NAT 게이트웨이를 생성합니다. NAT 게이트웨이를 통해 Amazon S3 로 트래픽을 전송하도록 퍼블릭 서브넷에 대한 라우팅 테이블을 구성합니다.                |
+| B   | S3 접두사 목록에 대한 트래픽만 허용되도록 아웃바운드 트래픽을 제한하도록 EC2 인스턴스에 대한 보안 그룹을 구성합니다.                              |
+| C   | EC2 인스턴스를 프라이빗 서브넷으로 이동합니다. Amazon S3 용 VPC 엔드포인트를 생성하고 엔드포인트를 프라이빗 서브넷의 라우팅 테이블에 연결합니다.          |
+| D   | VPC에서 인터넷 게이트웨이를 제거합니다. AWS Direct Connect 연결을 설정하고 Direct Connect 연결을 통해 Amazon S3로 트래픽을 라우팅합니다. |
 
 [[answers_2#Q115|정답]]
 
@@ -343,13 +345,13 @@ DynamoDB를 사용하여 메타데이터를 저장합니다.
 선택하세요.)
 ```
 
-| |      |
-|-|------|
-| A | HTTPS 기능을 사용하도록 웹 사이트 앞에 Amazon CloudFront를 구성합니다. |
-| B | 웹 사이트 앞에 AWS WAF 웹 ACL을 배포하여 HTTPS 기능을 제공합니다. |
-| C | 웹 사이트 콘텐츠를 관리하고 제공하기 위해 AWS Lambda 함수를 생성 및 배포합니다. |
-| D | 새 웹 사이트와 Amazon S3 버킷을 생성합니다. 정적 웹 사이트 호스팅이 활성화된 S3 버킷에 웹 사이트를 배포합니다. |
-| E | 새 웹사이트를 만듭니다. Application Load Balancer 뒤에서 Amazon EC2 인스턴스의 Auto Scaling 그룹을 사용하여 웹 사이트를 배포합니다. |
+|     |                                                                                                  |
+| --- | ------------------------------------------------------------------------------------------------ |
+| A   | HTTPS 기능을 사용하도록 웹 사이트 앞에 Amazon CloudFront를 구성합니다.                                               |
+| B   | 웹 사이트 앞에 [[Security#AWS 웹 어플리케이션 방화벽(WAF)\|AWS WAF]] 웹 ACL을 배포하여 HTTPS 기능을 제공합니다.                |
+| C   | 웹 사이트 콘텐츠를 관리하고 제공하기 위해 AWS Lambda 함수를 생성 및 배포합니다.                                               |
+| D   | 새 웹 사이트와 Amazon S3 버킷을 생성합니다. 정적 웹 사이트 호스팅이 활성화된 S3 버킷에 웹 사이트를 배포합니다.                            |
+| E   | 새 웹사이트를 만듭니다. Application Load Balancer 뒤에서 Amazon EC2 인스턴스의 Auto Scaling 그룹을 사용하여 웹 사이트를 배포합니다. |
 
 [[answers_2#Q116|정답]]
 
@@ -364,12 +366,12 @@ Service)에 모든 애플리케이션 로그를 저장해야 합니다.
 최소한의 운영 오버헤드로 이 요구 사항을 충족하는 솔루션은 무엇입니까?
 ```
 
-| |      |
-|-|------|
-| A | 로그를 Amazon OpenSearch Service(Amazon Elasticsearch Service)로 스트리밍하도록 CloudWatch Logs 구독을 구성합니다. |
-| B | AWS Lambda 함수를 생성합니다. 로그 그룹을 사용하여 함수를 호출하여 Amazon OpenSearch Service(Amazon Elasticsearch Service)에 로그를 기록합니다. |
-| C | Amazon Kinesis Data Firehose 전송 스트림을 생성합니다. 전송 스트림 소스로 로그 그룹을 구성합니다. Amazon OpenSearch Service(Amazon Elasticsearch Service)를 전송 스트림의 대상으로 구성합니다. |
-| D | 각 애플리케이션 서버에 Amazon Kinesis Agent 를 설치하고 구성하여 Amazon Kinesis Data Streams 에 로그를 전달합니다. Amazon OpenSearch Service(Amazon Elasticsearch Service)에 로그를 전달하도록 Kinesis Data Streams를 구성합니다. |
+|     |                                                                                                                                                                                        |
+| --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A   | 로그를 Amazon OpenSearch Service(Amazon Elasticsearch Service)로 스트리밍하도록 CloudWatch Logs 구독을 구성합니다.                                                                                        |
+| B   | AWS Lambda 함수를 생성합니다. 로그 그룹을 사용하여 함수를 호출하여 Amazon OpenSearch Service(Amazon Elasticsearch Service)에 로그를 기록합니다.                                                                         |
+| C   | Amazon Kinesis Data Firehose 전송 스트림을 생성합니다. 전송 스트림 소스로 로그 그룹을 구성합니다. Amazon OpenSearch Service(Amazon Elasticsearch Service)를 전송 스트림의 대상으로 구성합니다.                                      |
+| D   | 각 애플리케이션 서버에 Amazon Kinesis Agent 를 설치하고 구성하여 Amazon Kinesis Data Streams 에 로그를 전달합니다. Amazon OpenSearch Service(Amazon Elasticsearch Service)에 로그를 전달하도록 Kinesis Data Streams를 구성합니다. |
 
 [[answers_2#Q117|정답]]
 
@@ -408,12 +410,12 @@ REST API를 보호하는 솔루션을 설계해야 합니다.
 최소한의 관리 노력으로 이러한 요구 사항을 충족하는 솔루션은 무엇입니까?
 ```
 
-| |      |
-|-|------|
-| A | 두 리전에 AWS WAF를 설정합니다. 리전 웹 ACL을 API 단계와 연결합니다. |
-| B | 두 리전에 AWS Firewall Manager를 설정합니다. AWS WAF 규칙을 중앙에서 구성합니다. |
-| C | 목욕 리전에서 AWS Shield를 설정합니다. 리전 웹 ACL을 API 단계와 연결합니다. |
-| D | 한 리전에서 AWS Shield를 설정합니다. 리전 웹 ACL을 API 단계와 연결합니다. |
+|     |                                                            |
+| --- | ---------------------------------------------------------- |
+| A   | 두 리전에 AWS WAF를 설정합니다. 리전 웹 ACL을 API 단계와 연결합니다.             |
+| B   | 두 리전에 AWS Firewall Manager를 설정합니다. AWS WAF 규칙을 중앙에서 구성합니다. |
+| C   | 목욕 리전에서 AWS Shield를 설정합니다. 리전 웹 ACL을 API 단계와 연결합니다.        |
+| D   | 한 리전에서 AWS Shield를 설정합니다. 리전 웹 ACL을 API 단계와 연결합니다.         |
 
 [[answers_2#Q119|정답]]
 
@@ -431,12 +433,12 @@ eu-west-1 리전에서 3개의 EC2 인스턴스를 시작 및 구성하고 EC2 �
 무엇입니까?
 ```
 
-| |      |
-|-|------|
-| A | 두 NLB 중 하나로 요청을 라우팅하는 Amazon Route 53 지리적 위치 라우팅 정책을 생성합니다. Amazon CloudFront 배포를 생성합니다. Route 53 레코드를 배포의 오리진으로 사용합니다. |
-| B | AWS Global Accelerator 에서 표준 액셀러레이터를 생성합니다. us-west-2 및 eu-west-1 에서 엔드포인트 그룹을 생성합니다. 엔드포인트 그룹에 대한 엔드포인트로 두 개의 NLB를 추가하십시오. |
-| C | 탄력적 IP 주소를 6 개의 EC2 인스턴스에 연결합니다. 6 개의 EC2 인스턴스 중 하나로 요청을 라우팅하는 Amazon Route 53 지리적 위치 라우팅 정책을 생성합니다. Amazon CloudFront 배포를 생성합니다. Route 53 레코드를 배포의 오리진으로 사용합니다. |
-| D | 2개의 NLB를 2개의 ALB(Application Load Balancer)로 교체합니다. 두 ALB 중 하나로 요청을 라우팅하는 Amazon Route 53 지연 시간 라우팅 정책을 생성합니다. Amazon CloudFront 배포를 생성합니다. Route 53 레코드를 배포의 오리진으로 사용합니다. |
+|     |                                                                                                                                                                            |
+| --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A   | 두 NLB 중 하나로 요청을 라우팅하는 Amazon Route 53 지리적 위치 라우팅 정책을 생성합니다. Amazon CloudFront 배포를 생성합니다. Route 53 레코드를 배포의 오리진으로 사용합니다.                                                    |
+| B   | AWS Global Accelerator 에서 표준 액셀러레이터를 생성합니다. us-west-2 및 eu-west-1 에서 엔드포인트 그룹을 생성합니다. 엔드포인트 그룹에 대한 엔드포인트로 두 개의 NLB를 추가하십시오.                                                |
+| C   | 탄력적 IP 주소를 6 개의 EC2 인스턴스에 연결합니다. 6 개의 EC2 인스턴스 중 하나로 요청을 라우팅하는 Amazon Route 53 지리적 위치 라우팅 정책을 생성합니다. Amazon CloudFront 배포를 생성합니다. Route 53 레코드를 배포의 오리진으로 사용합니다.           |
+| D   | 2개의 NLB를 2개의 ALB(Application Load Balancer)로 교체합니다. 두 ALB 중 하나로 요청을 라우팅하는 Amazon Route 53 지연 시간 라우팅 정책을 생성합니다. Amazon CloudFront 배포를 생성합니다. Route 53 레코드를 배포의 오리진으로 사용합니다. |
 
 [[answers_2#Q120|정답]]
 
@@ -452,12 +454,12 @@ eu-west-1 리전에서 3개의 EC2 인스턴스를 시작 및 구성하고 EC2 �
 합니까?
 ```
 
-| |      |
-|-|------|
-| A | 최신 DB 스냅샷 사본을 암호화합니다. 암호화된 스냅샷을 복원하여 기존 DB 인스턴스를 교체합니다. |
-| B | 새 암호화된 Amazon Elastic Block Store(Amazon EBS) 볼륨을 생성하고 여기에 스냅샷을 복사합니다. DB 인스턴스에서 암호화를 활성화합니다. |
-| C | AWS Key Management Service(AWS KMS)를 사용하여 스냅샷을 복사하고 암호화를 활성화합니다. 암호화된 스냅샷을 기존 DB 인스턴스로 복원합니다. |
-| D | AWS Key Management Service(AWS KMS) 관리형 키(SSE-KMS)로 서버 측 암호화를 사용하여 암호화된 Amazon S3 버킷에 스냅샷을 복사합니다. |
+|     |                                                                                                   |
+| --- | ------------------------------------------------------------------------------------------------- |
+| A   | 최신 DB 스냅샷 사본을 암호화합니다. 암호화된 스냅샷을 복원하여 기존 DB 인스턴스를 교체합니다.                                           |
+| B   | 새 암호화된 Amazon Elastic Block Store(Amazon EBS) 볼륨을 생성하고 여기에 스냅샷을 복사합니다. DB 인스턴스에서 암호화를 활성화합니다.     |
+| C   | AWS Key Management Service(AWS KMS)를 사용하여 스냅샷을 복사하고 암호화를 활성화합니다. 암호화된 스냅샷을 기존 DB 인스턴스로 복원합니다.     |
+| D   | AWS Key Management Service(AWS KMS) 관리형 키(SSE-KMS)로 서버 측 암호화를 사용하여 암호화된 Amazon S3 버킷에 스냅샷을 복사합니다. |
 
 [[answers_2#Q121|정답]]
 
@@ -492,12 +494,12 @@ eu-west-1 리전에서 3개의 EC2 인스턴스를 시작 및 구성하고 EC2 �
 솔루션 설계자는 애플리케이션의 성능을 향상시키기 위해 무엇을 해야 합니까?
 ```
 
-| |      |
-|-|------|
-| A | AWS Certificate Manager(ACM)를 사용하여 새 SSL 인증서를 생성합니다. 각 인스턴스에 ACM 인증서를 설치합니다. |
-| B | Amazon S3 버킷 생성 SSL 인증서를 S3 버킷으로 마이그레이션합니다. SSL 종료를 위해 버킷을 참조하도록 EC2 인스턴스를 구성합니다. |
-| C | 다른 EC2 인스턴스를 프록시 서버로 생성합니다. SSL 인증서를 새 인스턴스로 마이그레이션하고 기존 EC2 인스턴스에 직접 연결하도록 구성합니다. |
-| D | SSL 인증서를 AWS Certificate Manager(ACM)로 가져옵니다. ACM 의 SSL 인증서를 사용하는 HTTPS 리스너로 Application Load Balancer를 생성합니다. |
+|     |                                                                                                                |
+| --- | -------------------------------------------------------------------------------------------------------------- |
+| A   | AWS Certificate Manager(ACM)를 사용하여 새 SSL 인증서를 생성합니다. 각 인스턴스에 ACM 인증서를 설치합니다.                                   |
+| B   | Amazon S3 버킷 생성 SSL 인증서를 S3 버킷으로 마이그레이션합니다. SSL 종료를 위해 버킷을 참조하도록 EC2 인스턴스를 구성합니다.                              |
+| C   | 다른 EC2 인스턴스를 프록시 서버로 생성합니다. SSL 인증서를 새 인스턴스로 마이그레이션하고 기존 EC2 인스턴스에 직접 연결하도록 구성합니다.                             |
+| D   | SSL 인증서를 AWS Certificate Manager(ACM)로 가져옵니다. ACM 의 SSL 인증서를 사용하는 HTTPS 리스너로 Application Load Balancer를 생성합니다. |
 
 [[answers_2#Q123|정답]]
 
@@ -514,12 +516,12 @@ eu-west-1 리전에서 3개의 EC2 인스턴스를 시작 및 구성하고 EC2 �
 솔루션 설계자는 무엇을 권장해야 합니까?
 ```
 
-| |      |
-|-|------|
-| A | EC2 스팟 인스턴스를 구현합니다. |
-| B | EC2 예약 인스턴스 구매. |
-| C | EC2 온디맨드 인스턴스를 구현합니다. |
-| D | AWS Lambda에서 처리를 구현합니다. |
+|     |                                    |
+| --- | ---------------------------------- |
+| A   | [[EC2#비용 옵션\|EC2]] 스팟 인스턴스를 구현합니다. |
+| B   | EC2 예약 인스턴스 구매.                    |
+| C   | EC2 온디맨드 인스턴스를 구현합니다.              |
+| D   | AWS Lambda에서 처리를 구현합니다.            |
 
 [[answers_2#Q124|정답]]
 
@@ -536,13 +538,13 @@ EC2 인스턴스로 보내는 로드 밸런서로 구성됩니다. 데이터베�
 이러한 요구 사항을 충족하는 구성 옵션의 조합은 무엇입니까? (2개를 선택하세요.)
 ```
 
-| |      |
-|-|------|
-| A | Auto Scaling 그룹을 사용하여 프라이빗 서브넷에서 EC2 인스턴스를 시작합니다. 프라이빗 서브넷에 RDS 다중 AZ DB 인스턴스를 배포합니다. |
-| B | 2 개의 가용 영역에 걸쳐 2 개의 프라이빗 서브넷과 2 개의 NAT 게이트웨이가 있는 VPC를 구성합니다. 프라이빗 서브넷에 Application Load Balancer를 배포합니다. |
-| C | Auto Scaling 그룹을 사용하여 2 개의 가용 영역에 걸쳐 퍼블릭 서브넷에서 EC2 인스턴스를 시작합니다. 프라이빗 서브넷에 RDS 다중 AZ DB 인스턴스를 배포합니다. |
-| D | 2 개의 가용 영역에 걸쳐 1 개의 퍼블릭 서브넷, 1 개의 프라이빗 서브넷 및 2 개의 NAT 게이트웨이로 VPC 를 구성합니다. 퍼블릭 서브넷에 Application Load Balancer 를 배포합니다. |
-| E | 2 개의 가용 영역에 걸쳐 2 개의 퍼블릭 서브넷, 2 개의 프라이빗 서브넷 및 2 개의 NAT 게이트웨이로 VPC 를 구성합니다. 퍼블릭 서브넷에 Application Load Balancer 를 배포합니다. |
+|     |                                                                                                                                                |
+| --- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| A   | Auto Scaling 그룹을 사용하여 프라이빗 서브넷에서 EC2 인스턴스를 시작합니다. 프라이빗 서브넷에 RDS 다중 AZ DB 인스턴스를 배포합니다.                                                          |
+| B   | 2 개의 가용 영역에 걸쳐 2 개의 프라이빗 서브넷과 2 개의 NAT 게이트웨이가 있는 VPC를 구성합니다. 프라이빗 서브넷에 Application Load Balancer를 배포합니다.                                       |
+| C   | Auto Scaling 그룹을 사용하여 2 개의 가용 영역에 걸쳐 퍼블릭 서브넷에서 EC2 인스턴스를 시작합니다. 프라이빗 서브넷에 RDS 다중 AZ DB 인스턴스를 배포합니다.                                            |
+| D   | 2 개의 가용 영역에 걸쳐 1 개의 퍼블릭 서브넷, 1 개의 프라이빗 서브넷 및 2 개의 [[ETC#AWS NAT Gateway\|NAT 게이트웨이]]로 VPC 를 구성합니다. 퍼블릭 서브넷에 Application Load Balancer 를 배포합니다. |
+| E   | 2 개의 가용 영역에 걸쳐 2 개의 퍼블릭 서브넷, 2 개의 프라이빗 서브넷 및 2 개의 NAT 게이트웨이로 VPC 를 구성합니다. 퍼블릭 서브넷에 Application Load Balancer 를 배포합니다.                          |
 
 [[answers_2#Q125|정답]]
 
@@ -558,12 +560,12 @@ immediately retrievable.
 Which solution will meet these requirements?
 ```
 
-| |      |
-|-|------|
-| A | Set up an S3 Lifecycle policy to transition objects to S3 Glacier Deep Archive immediately. |
-| B | Set up an S3 Lifecycle policy to transition objects to S3 Glacier Deep Archive after 2 years. |
-| C | Use S3 Intelligent-Tiering. Activate the archiving option to ensure that data is archived in S3 Glacier Deep Archive. |
-| D | Set up an S3 Lifecycle policy to transition objects to S3 One Zone-Infrequent Access (S3 One Zone-IA) immediately and to S3 Glacier Deep Archive after 2 years. |
+|     |                                                                                                                                                                 |
+| --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A   | Set up an S3 Lifecycle policy to transition objects to S3 Glacier Deep Archive immediately.                                                                     |
+| B   | Set up an S3 Lifecycle policy to transition objects to S3 Glacier Deep Archive after 2 years.                                                                   |
+| C   | Use S3 Intelligent-Tiering. Activate the archiving option to ensure that data is archived in S3 Glacier Deep Archive.                                           |
+| D   | Set up an S3 Lifecycle policy to transition objects to S3 One Zone-Infrequent Access (S3 One Zone-IA) immediately and to S3 Glacier Deep Archive after 2 years. |
 
 [[answers_2#Q126|정답]]
 
@@ -579,12 +581,13 @@ Which solution will meet these requirements?
 솔루션 설계자는 이러한 요구 사항을 충족하기 위해 어떤 서비스 세트를 권장해야 합니까?
 ```
 
-| |      |
-|-|------|
-| A | 최고의 성능을 위한 Amazon EBS, 내구성 있는 데이터 스토리지를 위한 Amazon S3, 아카이브 스토리지를 위한 Amazon S3 Glacier |
-| B | 최고의 성능을 위한 Amazon EBS, 내구성 있는 데이터 스토리지를 위한 Amazon EFS, 아카이브 스토리지를 위한 Amazon S3 Glacier |
-| C | 최고의 성능을 위한 Amazon EC2 인스턴스 스토어, 내구성 있는 데이터 스토리지를 위한 Amazon EFS, 아카이브 스토리지를 위한 Amazon S3 |
-| D | 최고의 성능을 위한 Amazon EC2 인스턴스 스토어, 내구성 있는 데이터 스토리지를 위한 Amazon S3, 아카이브 스토리지를 위한 Amazon S3 Glacier |
+|     |                                                                                                                |
+| --- | -------------------------------------------------------------------------------------------------------------- |
+| A   | 최고의 성능을 위한 Amazon EBS, 내구성 있는 데이터 스토리지를 위한 Amazon S3, 아카이브 스토리지를 위한 Amazon S3 Glacier                          |
+| B   | 최고의 성능을 위한 Amazon EBS, 내구성 있는 데이터 스토리지를 위한 [[Storage#Amazon EFS\|Amazon EFS]], 아카이브 스토리지를 위한 Amazon S3 Glacier |
+| C   | 최고의 성능을 위한 Amazon EC2 인스턴스 스토어, 내구성 있는 데이터 스토리지를 위한 Amazon EFS, 아카이브 스토리지를 위한 Amazon S3                        |
+| D   | 최고의 성능을 위한 Amazon EC2 인스턴스 스토어, 내구성 있는 데이터 스토리지를 위한 Amazon S3, 아카이브 스토리지를 위한 Amazon S3 Glacier                 |
+|     |                                                                                                                |
 
 [[answers_2#Q127|정답]]
 
@@ -599,12 +602,12 @@ Which solution will meet these requirements?
 솔루션 설계자는 이러한 요구 사항을 충족하기 위해 무엇을 해야 합니까?
 ```
 
-| |      |
-|-|------|
-| A | Amazon EC2 Auto Scaling 그룹의 스팟 인스턴스를 사용하여 애플리케이션 컨테이너를 실행합니다. |
-| B | Amazon Elastic Kubernetes Service(Amazon EKS) 관리형 노드 그룹에서 스팟 인스턴스를 사용합니다. |
-| C | Amazon EC2 Auto Scaling 그룹의 온디맨드 인스턴스를 사용하여 애플리케이션 컨테이너를 실행합니다. |
-| D | Amazon Elastic Kubernetes Service(Amazon EKS) 관리형 노드 그룹에서 온디맨드 인스턴스를 사용합니다. |
+|     |                                                                             |
+| --- | --------------------------------------------------------------------------- |
+| A   | Amazon EC2 Auto Scaling 그룹의 스팟 인스턴스를 사용하여 애플리케이션 컨테이너를 실행합니다.               |
+| B   | Amazon Elastic Kubernetes Service(Amazon EKS) 관리형 노드 그룹에서 스팟 인스턴스를 사용합니다.   |
+| C   | Amazon EC2 Auto Scaling 그룹의 온디맨드 인스턴스를 사용하여 애플리케이션 컨테이너를 실행합니다.             |
+| D   | Amazon Elastic Kubernetes Service(Amazon EKS) 관리형 노드 그룹에서 온디맨드 인스턴스를 사용합니다. |
 
 [[answers_2#Q128|정답]]
 
@@ -621,13 +624,13 @@ Which solution will meet these requirements?
 솔루션 설계자는 이를 달성하기 위해 어떤 조합의 조치를 취해야 합니까? (2개 선택)
 ```
 
-| |      |
-|-|------|
-| A | PostgreSQL 데이터베이스를 Amazon Aurora로 마이그레이션합니다. |
-| B | Amazon EC2 인스턴스에서 호스팅할 웹 애플리케이션을 마이그레이션합니다. |
-| C | 웹 애플리케이션 콘텐츠에 대한 Amazon CloudFront 배포를 설정합니다. |
-| D | 웹 애플리케이션과 PostgreSQL 데이터베이스 간에 Amazon ElastiCache를 설정합니다. |
-| E | Amazon Elastic Container Service(Amazon ECS)를 사용하여 AWS Fargate에서 호스팅할 웹 애플리케이션을 마이그레이션합니다. |
+|     |                                                                                            |
+| --- | ------------------------------------------------------------------------------------------ |
+| A   | PostgreSQL 데이터베이스를 Amazon Aurora로 마이그레이션합니다.                                               |
+| B   | Amazon EC2 인스턴스에서 호스팅할 웹 애플리케이션을 마이그레이션합니다.                                                |
+| C   | 웹 애플리케이션 콘텐츠에 대한 Amazon CloudFront 배포를 설정합니다.                                              |
+| D   | 웹 애플리케이션과 PostgreSQL 데이터베이스 간에 Amazon ElastiCache를 설정합니다.                                  |
+| E   | Amazon Elastic Container Service(Amazon ECS)를 사용하여 AWS Fargate에서 호스팅할 웹 애플리케이션을 마이그레이션합니다. |
 
 [[answers_2#Q129|정답]]
 
@@ -644,12 +647,12 @@ Application Load Balancer 뒤의 Amazon EC2 Auto Scaling 그룹에서 실행됩�
 합니까?
 ```
 
-| |      |
-|-|------|
-| A | Auto Scaling 그룹을 동적으로 확장하려면 간단한 확장 정책을 사용합니다. |
-| B | 대상 추적 정책을 사용하여 Auto Scaling 그룹을 동적으로 확장합니다. |
-| C | AWS Lambda 함수를 사용하여 원하는 Auto Scaling 그룹 용량을 업데이트합니다. |
-| D | 예약된 조정 작업을 사용하여 Auto Scaling 그룹을 확장 및 축소합니다. |
+|     |                                                      |
+| --- | ---------------------------------------------------- |
+| A   | Auto Scaling 그룹을 동적으로 확장하려면 간단한 확장 정책을 사용합니다.        |
+| B   | 대상 추적 정책을 사용하여 Auto Scaling 그룹을 동적으로 확장합니다.          |
+| C   | AWS Lambda 함수를 사용하여 원하는 Auto Scaling 그룹 용량을 업데이트합니다. |
+| D   | 예약된 조정 작업을 사용하여 Auto Scaling 그룹을 확장 및 축소합니다.         |
 
 [[answers_2#Q130|정답]]
 
@@ -664,12 +667,12 @@ S3 URL에 대한 직접 탐색을 통해 파일에 액세스하는 것을 원하
 솔루션 설계자는 이러한 요구 사항을 충족하기 위해 무엇을 해야 합니까?
 ```
 
-| |      |
-|-|------|
-| A | 각 S3 버킷에 대한 개별 정책을 작성하여 CloudFront 액세스에 대해서만 읽기 권한을 부여합니다. |
-| B | IAM 사용자를 생성합니다. 사용자에게 S3 버킷의 객체에 대한 읽기 권한을 부여합니다. 사용자를 CloudFront에 할당합니다. |
-| C | CloudFront 배포 ID 를 보안 주체로 할당하고 대상 S3 버킷을 Amazon 리소스 이름(ARN)으로 할당하는 S3 버킷 정책을 작성합니다. |
-| D | 원본 액세스 ID(OAI)를 생성합니다. CloudFront 배포에 OAI 를 할당합니다. OAI 만 읽기 권한을 갖도록 S3 버킷 권한을 구성합니다. |
+|     |                                                                                      |
+| --- | ------------------------------------------------------------------------------------ |
+| A   | 각 S3 버킷에 대한 개별 정책을 작성하여 CloudFront 액세스에 대해서만 읽기 권한을 부여합니다.                           |
+| B   | IAM 사용자를 생성합니다. 사용자에게 S3 버킷의 객체에 대한 읽기 권한을 부여합니다. 사용자를 CloudFront에 할당합니다.            |
+| C   | CloudFront 배포 ID 를 보안 주체로 할당하고 대상 S3 버킷을 Amazon 리소스 이름(ARN)으로 할당하는 S3 버킷 정책을 작성합니다.  |
+| D   | 원본 액세스 ID(OAI)를 생성합니다. CloudFront 배포에 OAI 를 할당합니다. OAI 만 읽기 권한을 갖도록 S3 버킷 권한을 구성합니다. |
 
 [[answers_2#Q131|정답]]
 
@@ -685,12 +688,12 @@ S3 URL에 대한 직접 탐색을 통해 파일에 액세스하는 것을 원하
 솔루션 설계자는 이러한 요구 사항을 충족하기 위해 어떤 조합을 권장해야 합니까?
 ```
 
-| |      |
-|-|------|
-| A | Amazon CloudFront 및 Amazon S3 |
-| B | AWS Lambda 및 Amazon DynamoDB |
-| C | Amazon EC2 Auto Scaling이 있는 Application Load Balancer |
-| D | 내부 Application Load Balancer가 있는 Amazon Route 53 |
+|     |                                                       |
+| --- | ----------------------------------------------------- |
+| A   | Amazon CloudFront 및 Amazon S3                         |
+| B   | AWS Lambda 및 Amazon DynamoDB                          |
+| C   | Amazon EC2 Auto Scaling이 있는 Application Load Balancer |
+| D   | 내부 Application Load Balancer가 있는 Amazon Route 53      |
 
 [[answers_2#Q132|정답]]
 
@@ -707,12 +710,12 @@ S3 URL에 대한 직접 탐색을 통해 파일에 액세스하는 것을 원하
 어떤 솔루션이 이러한 요구 사항을 충족합니까?
 ```
 
-| |      |
-|-|------|
-| A | Oracle 데이터베이스를 Amazon EC2 인스턴스로 마이그레이션합니다. 다른 AWS 리전으로 데이터베이스 복제를 설정합니다. |
-| B | Oracle 데이터베이스를 Oracle 용 Amazon RDS 로 마이그레이션합니다. 교차 리전 자동 백업을 활성화하여 다른 AWS 리전에 스냅샷을 복제합니다. |
-| C | Oracle 데이터베이스를 Oracle 용 Amazon RDS Custom 으로 마이그레이션합니다. 다른 AWS 리전의 데이터베이스에 대한 읽기 전용 복제본을 생성합니다. |
-| D | Oracle 데이터베이스를 Oracle용 Amazon RDS로 마이그레이션합니다. 다른 가용 영역에 대기 데이터베이스를 생성합니다. |
+|     |                                                                                                                          |
+| --- | ------------------------------------------------------------------------------------------------------------------------ |
+| A   | Oracle 데이터베이스를 Amazon EC2 인스턴스로 마이그레이션합니다. 다른 AWS 리전으로 데이터베이스 복제를 설정합니다.                                                 |
+| B   | Oracle 데이터베이스를 Oracle 용 Amazon RDS 로 마이그레이션합니다. 교차 리전 자동 백업을 활성화하여 다른 AWS 리전에 스냅샷을 복제합니다.                                |
+| C   | Oracle 데이터베이스를 Oracle 용 [[Database#Amazon RDS\|Amazon RDS Custom]] 으로 마이그레이션합니다. 다른 AWS 리전의 데이터베이스에 대한 읽기 전용 복제본을 생성합니다. |
+| D   | Oracle 데이터베이스를 Oracle용 Amazon RDS로 마이그레이션합니다. 다른 가용 영역에 대기 데이터베이스를 생성합니다.                                                |
 
 [[answers_2#Q133|정답]]
 
@@ -722,7 +725,7 @@ S3 URL에 대한 직접 탐색을 통해 파일에 액세스하는 것을 원하
 
 ```
 한 회사에서 애플리케이션을 서버리스 솔루션으로 이동하려고 합니다. 서버리스 솔루션은
-SL 을 사용하여 기존 및 신규 데이터를 분석해야 합니다. 회사는 데이터를 Amazon S3
+SQL 을 사용하여 기존 및 신규 데이터를 분석해야 합니다. 회사는 데이터를 Amazon S3
 버킷에 저장합니다. 데이터는 암호화가 필요하며 다른 AWS 리전에 복제해야 합니다.
 최소한의 운영 오버헤드로 이러한 요구 사항을 충족하는 솔루션은 무엇입니까?
 ```
@@ -747,12 +750,12 @@ SL 을 사용하여 기존 및 신규 데이터를 분석해야 합니다. 회�
 어떤 솔루션이 이러한 요구 사항을 충족합니까?
 ```
 
-| |      |
-|-|------|
-| A | 회사의 VPC 와 공급자의 VPC 간에 VPC 피어링 연결을 생성합니다. 대상 서비스에 연결하도록 라우팅 테이블을 업데이트합니다. |
-| B | 공급자에게 VPC 에 가상 프라이빗 게이트웨이를 생성하도록 요청합니다. AWS PrivateLink를 사용하여 대상 서비스에 연결합니다. |
-| C | 회사의 VPUpdate 라우팅 테이블의 퍼블릭 서브넷에 NAT 게이트웨이를 생성하여 대상 서비스에 연결합니다. |
-| D | 공급자에게 대상 서비스에 대한 VPC 엔드포인트를 생성하도록 요청합니다. AWS PrivateLink를 사용하여 대상 서비스에 연결합니다. |
+|     |                                                                                                                                                       |
+| --- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A   | 회사의 VPC 와 공급자의 VPC 간에 VPC 피어링 연결을 생성합니다. 대상 서비스에 연결하도록 라우팅 테이블을 업데이트합니다.                                                                              |
+| B   | 공급자에게 VPC 에 가상 [[VPC#💡 예제 문제 포인트\|프라이빗 게이트웨이]]를 생성하도록 요청합니다.[[Network & Content Delivery#**AWS PrivateLink**\|AWS PrivateLink]]를 사용하여 대상 서비스에 연결합니다. |
+| C   | 회사의 VPUpdate 라우팅 테이블의 퍼블릭 서브넷에 NAT 게이트웨이를 생성하여 대상 서비스에 연결합니다.                                                                                         |
+| D   | 공급자에게 대상 서비스에 대한[[VPC#AWS VPC (Virtual Private Cloud)#💡 예제 문제 포인트\| VPC 엔드포인트]]를 생성하도록 요청합니다. AWS PrivateLink를 사용하여 대상 서비스에 연결합니다.                   |
 
 [[answers_2#Q135|정답]]
 
@@ -769,13 +772,13 @@ SL 을 사용하여 기존 및 신규 데이터를 분석해야 합니다. 회�
 (2개를 선택하세요.)
 ```
 
-| |      |
-|-|------|
-| A | 지속적인 복제 작업을 만듭니다. |
-| B | 온프레미스 데이터베이스의 데이터베이스 백업을 생성합니다. |
-| C | AWS Database Migration Service(AWS DMS) 복제 서버를 생성합니다. |
-| D | AWS Schema Conversion Tool(AWS SCT)을 사용하여 데이터베이스 스키마를 변환합니다. |
-| E | 데이터베이스 동기화를 모니터링하는 Amazon EventBridge(Amazon CloudWatch Events) 규칙을 생성합니다. |
+|     |                                                                                  |
+| --- | -------------------------------------------------------------------------------- |
+| A   | [[Migration & Transfer#AWS Database Migration Service (DMS)\|지속적인 복제 작업]]을 만듭니다. |
+| B   | 온프레미스 데이터베이스의 데이터베이스 백업을 생성합니다.                                                  |
+| C   | AWS Database Migration Service(AWS DMS) 복제 서버를 생성합니다.                            |
+| D   | AWS Schema Conversion Tool(AWS SCT)을 사용하여 데이터베이스 스키마를 변환합니다.                     |
+| E   | 데이터베이스 동기화를 모니터링하는 Amazon EventBridge(Amazon CloudWatch Events) 규칙을 생성합니다.       |
 
 [[answers_2#Q136|정답]]
 
@@ -791,12 +794,12 @@ SL 을 사용하여 기존 및 신규 데이터를 분석해야 합니다. 회�
 어떤 솔루션이 이러한 요구 사항을 충족합니까?
 ```
 
-| |      |
-|-|------|
-| A | AWS 계정 루트 사용자 이메일 주소로 전송되는 알림 이메일 메시지를 조직의 모든 사용자에게 전달하도록 회사 이메일 서버를 구성합니다. |
-| B | 모든 AWS 계정 루트 사용자 이메일 주소를 알림에 응답할 수 있는 소수의 관리자에게 전달되는 배포 목록으로 구성합니다. AWS Organizations 콘솔에서 또는 프로그래밍 방식으로 AWS 계정 대체 연락처를 구성합니다. |
-| C | 경보를 모니터링하고 해당 경보를 적절한 그룹에 전달할 책임이 있는 한 명의 관리자에게 모든 AWS 계정 루트 사용자 이메일 메시지를 보내도록 구성합니다. |
-| D | 동일한 루트 사용자 이메일 주소를 사용하도록 기존의 모든 AWS 계정과 새로 생성된 모든 계정을 구성합니다. AWS Organizations 콘솔에서 또는 프로그래밍 방식으로 AWS 계정 대체 연락처를 구성합니다. |
+|     |                                                                                                                                |
+| --- | ------------------------------------------------------------------------------------------------------------------------------ |
+| A   | AWS 계정 루트 사용자 이메일 주소로 전송되는 알림 이메일 메시지를 조직의 모든 사용자에게 전달하도록 회사 이메일 서버를 구성합니다.                                                    |
+| B   | 모든 AWS 계정 루트 사용자 이메일 주소를 알림에 응답할 수 있는 소수의 관리자에게 전달되는 배포 목록으로 구성합니다. AWS Organizations 콘솔에서 또는 프로그래밍 방식으로 AWS 계정 대체 연락처를 구성합니다. |
+| C   | 경보를 모니터링하고 해당 경보를 적절한 그룹에 전달할 책임이 있는 한 명의 관리자에게 모든 AWS 계정 루트 사용자 이메일 메시지를 보내도록 구성합니다.                                          |
+| D   | 동일한 루트 사용자 이메일 주소를 사용하도록 기존의 모든 AWS 계정과 새로 생성된 모든 계정을 구성합니다. AWS Organizations 콘솔에서 또는 프로그래밍 방식으로 AWS 계정 대체 연락처를 구성합니다.        |
 
 [[answers_2#Q137|정답]]
 
@@ -806,7 +809,7 @@ SL 을 사용하여 기존 및 신규 데이터를 분석해야 합니다. 회�
 
 ```
 회사는 AWS 에서 전자 상거래 애플리케이션을 실행합니다. 모든 새 주문은 단일 가용
-영역의 Amazon EC2 인스턴스에서 실행되는 RabbitMQ 대기열에 마사지로 게시됩니다.
+영역의 Amazon EC2 인스턴스에서 실행되는 RabbitMQ 대기열에 메시지로 게시됩니다.
 이러한 메시지는 별도의 EC2 인스턴스에서 실행되는 다른 애플리케이션에서 처리됩니다.
 이 애플리케이션은 다른 EC2 인스턴스의 PostgreSQL 데이터베이스에 세부 정보를
 저장합니다. 모든 EC2 인스턴스는 동일한 가용 영역에 있습니다.
@@ -815,19 +818,19 @@ SL 을 사용하여 기존 및 신규 데이터를 분석해야 합니다. 회�
 솔루션 설계자는 이러한 요구 사항을 충족하기 위해 무엇을 해야 합니까?
 ```
 
-| |      |
-|-|------|
-| A | 대기열을 Amazon MQ 에서 RabbitMQ 인스턴스의 중복 쌍(활성/대기)으로 마이그레이션합니다. 애플리케이션을 호스팅하는 EC2 인스턴스에 대한 다중 AZ Auto Scaling 그룹을 생성합니다. PostgreSQL 데이터베이스를 호스팅하는 EC2 인스턴스에 대해 다른 다중 AZ Auto Scaling 그룹을 생성합니다. |
-| B | 대기열을 Amazon MQ 에서 RabbitMQ 인스턴스의 중복 쌍(활성/대기)으로 마이그레이션합니다. 애플리케이션을 호스팅하는 EC2 인스턴스에 대한 다중 AZ Auto Scaling 그룹을 생성합니다. PostgreSQL 용 Amazon RDS 의 다중 AZ 배포에서 실행하도록 데이터베이스를 마이그레이션합니다. |
-| C | RabbitMQ 대기열을 호스팅하는 EC2 인스턴스용 다중 AZ Auto Scaling 그룹을 생성합니다. 애플리케이션을 호스팅하는 EC2 인스턴스에 대해 다른 다중 AZ Auto Scaling 그룹을 생성합니다. PostgreSQL 용 Amazon RDS 의 다중 AZ 배포에서 실행하도록 데이터베이스를 마이그레이션합니다. |
-| D | RabbitMQ 대기열을 호스팅하는 EC2 인스턴스용 다중 AZ Auto Scaling 그룹을 생성합니다. 애플리케이션을 호스팅하는 EC2 인스턴스에 대해 다른 다중 AZ Auto Scaling 그룹을 생성합니다. PostgreSQL 데이터베이스를 호스팅하는 EC2 인스턴스에 대한 세 번째 다중 AZ Auto Scaling 그룹을 생성합니다. |
+|     |                                                                                                                                                                                                  |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| A   | 대기열을 Amazon MQ 에서 RabbitMQ 인스턴스의 중복 쌍(활성/대기)으로 마이그레이션합니다. 애플리케이션을 호스팅하는 EC2 인스턴스에 대한 다중 AZ Auto Scaling 그룹을 생성합니다. PostgreSQL 데이터베이스를 호스팅하는 EC2 인스턴스에 대해 다른 다중 AZ Auto Scaling 그룹을 생성합니다.        |
+| B   | 대기열을 Amazon MQ 에서 RabbitMQ 인스턴스의 중복 쌍(활성/대기)으로 마이그레이션합니다. 애플리케이션을 호스팅하는 EC2 인스턴스에 대한 다중 AZ Auto Scaling 그룹을 생성합니다. PostgreSQL 용 Amazon RDS 의 다중 AZ 배포에서 실행하도록 데이터베이스를 마이그레이션합니다.                 |
+| C   | RabbitMQ 대기열을 호스팅하는 EC2 인스턴스용 다중 AZ Auto Scaling 그룹을 생성합니다. 애플리케이션을 호스팅하는 EC2 인스턴스에 대해 다른 다중 AZ Auto Scaling 그룹을 생성합니다. PostgreSQL 용 Amazon RDS 의 다중 AZ 배포에서 실행하도록 데이터베이스를 마이그레이션합니다.            |
+| D   | RabbitMQ 대기열을 호스팅하는 EC2 인스턴스용 다중 AZ Auto Scaling 그룹을 생성합니다. 애플리케이션을 호스팅하는 EC2 인스턴스에 대해 다른 다중 AZ Auto Scaling 그룹을 생성합니다. PostgreSQL 데이터베이스를 호스팅하는 EC2 인스턴스에 대한 세 번째 다중 AZ Auto Scaling 그룹을 생성합니다. |
 
 [[answers_2#Q138|정답]]
 
 ---
 
 # Q139 
-
+[[Analytics#Amazon QuickSight]]
 ```
 보고 팀은 Amazon S3 버킷에서 매일 파일을 수신합니다. 보고 팀은 이 초기 S3 버킷의
 파일을 수동으로 검토하고 Amazon QuickSight 와 함께 사용하기 위해 매일 같은 시간에
@@ -841,12 +844,12 @@ SL 을 사용하여 기존 및 신규 데이터를 분석해야 합니다. 회�
 합니까?
 ```
 
-| |      |
-|-|------|
-| A | 분석 S3 버킷에 파일을 복사하는 Lambda 함수를 생성합니다. 분석 S3 버킷에 대한 S3 이벤트 알림을 생성합니다. 이벤트 알림의 대상으로 Lambda 및 SageMaker 파이프라인을 구성합니다. s3:ObjectCreated:Put을 이벤트 유형으로 구성합니다. |
-| B | 분석 S3 버킷에 파일을 복사하는 Lambda 함수를 생성합니다. Amazon EventBridge(Amazon CloudWatch Events)에 이벤트 알림을 보내도록 분석 S3 버킷을 구성합니다. EventBridge(CloudWatch 이벤트)에서 ObjectCreated 규칙을 구성합니다. 규칙의 대상으로 Lambda 및 SageMaker 파이프라인을 구성합니다. |
-| C | S3 버킷 간에 S3 복제를 구성합니다. 분석 S3 버킷에 대한 S3 이벤트 알림을 생성합니다. 이벤트 알림의 대상으로 Lambda 및 SageMaker 파이프라인을 구성합니다. s3:ObjectCreated:Put을 이벤트 유형으로 구성합니다. |
-| D | S3 버킷 간에 S3 복제를 구성합니다. Amazon EventBridge(Amazon CloudWatch Events)에 이벤트 알림을 보내도록 분석 S3 버킷을 구성합니다. EventBridge(CloudWatch 이벤트)에서 ObjectCreated 규칙을 구성합니다. 규칙의 대상으로 Lambda 및 SageMaker 파이프라인을 구성합니다. |
+|     |                                                                                                                                                                                                                   |
+| --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A   | 분석 S3 버킷에 파일을 복사하는 Lambda 함수를 생성합니다. 분석 S3 버킷에 대한 S3 이벤트 알림을 생성합니다. 이벤트 알림의 대상으로 Lambda 및 [[Analytics#Amazon SageMaker\|SageMaker]] 파이프라인을 구성합니다. s3:ObjectCreated:Put을 이벤트 유형으로 구성합니다.                           |
+| B   | 분석 S3 버킷에 파일을 복사하는 Lambda 함수를 생성합니다. Amazon EventBridge(Amazon CloudWatch Events)에 이벤트 알림을 보내도록 분석 S3 버킷을 구성합니다. EventBridge(CloudWatch 이벤트)에서 ObjectCreated 규칙을 구성합니다. 규칙의 대상으로 Lambda 및 SageMaker 파이프라인을 구성합니다. |
+| C   | S3 버킷 간에 S3 복제를 구성합니다. 분석 S3 버킷에 대한 S3 이벤트 알림을 생성합니다. 이벤트 알림의 대상으로 Lambda 및 SageMaker 파이프라인을 구성합니다. s3:ObjectCreated:Put을 이벤트 유형으로 구성합니다.                                                                         |
+| D   | S3 버킷 간에 S3 복제를 구성합니다. Amazon EventBridge(Amazon CloudWatch Events)에 이벤트 알림을 보내도록 분석 S3 버킷을 구성합니다. EventBridge(CloudWatch 이벤트)에서 ObjectCreated 규칙을 구성합니다. 규칙의 대상으로 Lambda 및 SageMaker 파이프라인을 구성합니다.               |
 
 [[answers_2#Q139|정답]]
 
@@ -866,13 +869,13 @@ EC2 인스턴스는 애플리케이션의 데이터 수집 계층을 실행합�
 무엇입니까? (2개 선택)
 ```
 
-| |      |
-|-|------|
-| A | 데이터 수집 계층에 스팟 인스턴스 사용 |
-| B | 데이터 수집 계층에 온디맨드 인스턴스 사용 |
-| C | 프런트 엔드 및 API 계층에 대한 1년 Compute Savings Plan을 구매합니다. |
-| D | 데이터 수집 계층에 대한 1년 전체 선결제 예약 인스턴스를 구매합니다. |
-| E | 프런트 엔드 및 API 계층을 위한 1년 EC2 인스턴스 Savings Plan을 구매합니다. |
+|     |                                                      |
+| --- | ---------------------------------------------------- |
+| A   | 데이터 수집 계층에 스팟 인스턴스 사용                                |
+| B   | 데이터 수집 계층에 온디맨드 인스턴스 사용                              |
+| C   | 프런트 엔드 및 API 계층에 대한 1년 Compute Savings Plan을 구매합니다.  |
+| D   | 데이터 수집 계층에 대한 1년 전체 선결제 예약 인스턴스를 구매합니다.              |
+| E   | 프런트 엔드 및 API 계층을 위한 1년 EC2 인스턴스 Savings Plan을 구매합니다. |
 
 [[answers_2#Q140|정답]]
 
@@ -890,12 +893,12 @@ EC2 인스턴스는 애플리케이션의 데이터 수집 계층을 실행합�
 합니까?
 ```
 
-| |      |
-|-|------|
-| A | 단일 AWS 리전에 애플리케이션 스택을 배포합니다. Amazon CloudFront 를 사용하여 ALB를 오리진으로 지정하여 모든 정적 및 동적 콘텐츠를 제공합니다. |
-| B | 두 AWS 리전에 애플리케이션 스택을 배포합니다. Amazon Route 53 지연 시간 라우팅 정책을 사용하여 가장 가까운 리전의 ALB에서 모든 콘텐츠를 제공합니다. |
-| C | 단일 AWS 리전에 애플리케이션 스택을 배포합니다. Amazon CloudFront 를 사용하여 정적 콘텐츠를 제공합니다. ALB에서 직접 동적 콘텐츠를 제공합니다. |
-| D | 두 AWS 리전에 애플리케이션 스택을 배포합니다. Amazon Route 53 지리적 위치 라우팅 정책을 사용하여 가장 가까운 리전에서 ALB의 모든 콘텐츠를 제공합니다. |
+|     |                                                                                                 |
+| --- | ----------------------------------------------------------------------------------------------- |
+| A   | 단일 AWS 리전에 애플리케이션 스택을 배포합니다. Amazon CloudFront 를 사용하여 ALB를 오리진으로 지정하여 모든 정적 및 동적 콘텐츠를 제공합니다.    |
+| B   | 두 AWS 리전에 애플리케이션 스택을 배포합니다. Amazon Route 53 지연 시간 라우팅 정책을 사용하여 가장 가까운 리전의 ALB에서 모든 콘텐츠를 제공합니다.  |
+| C   | 단일 AWS 리전에 애플리케이션 스택을 배포합니다. Amazon CloudFront 를 사용하여 정적 콘텐츠를 제공합니다. ALB에서 직접 동적 콘텐츠를 제공합니다.    |
+| D   | 두 AWS 리전에 애플리케이션 스택을 배포합니다. Amazon Route 53 지리적 위치 라우팅 정책을 사용하여 가장 가까운 리전에서 ALB의 모든 콘텐츠를 제공합니다. |
 
 [[answers_2#Q141|정답]]
 
@@ -912,12 +915,12 @@ EC2 인스턴스는 애플리케이션의 데이터 수집 계층을 실행합�
 솔루션 설계자는 이러한 요구 사항을 충족하기 위해 무엇을 해야 합니까?
 ```
 
-| |      |
-|-|------|
-| A | 요청을 Application Load Balancer로 전달하도록 Amazon Route 53을 구성합니다. AWS Application Auto Scaling의 애플리케이션에 AWS Lambda를 사용합니다. |
-| B | 요청을 Network Load Balancer로 전달하도록 Amazon CloudFront를 구성합니다. AWS Application Auto Scaling 그룹의 애플리케이션에 AWS Lambda를 사용합니다. |
-| C | 요청을 Network Load Balancer 로 전달하도록 AWS Global Accelerator 를 구성합니다. EC2 Auto Scaling 그룹의 애플리케이션에 Amazon EC2 인스턴스를 사용합니다. |
-| D | 요청을 Application Load Balancer 로 전달하도록 Amazon API Gateway 를 구성합니다. EC2 Auto Scaling 그룹의 애플리케이션에 Amazon EC2 인스턴스를 사용합니다. |
+|     |                                                                                                                        |
+| --- | ---------------------------------------------------------------------------------------------------------------------- |
+| A   | 요청을 Application Load Balancer로 전달하도록 Amazon Route 53을 구성합니다. AWS Application Auto Scaling의 애플리케이션에 AWS Lambda를 사용합니다.  |
+| B   | 요청을 Network Load Balancer로 전달하도록 Amazon CloudFront를 구성합니다. AWS Application Auto Scaling 그룹의 애플리케이션에 AWS Lambda를 사용합니다. |
+| C   | 요청을 Network Load Balancer 로 전달하도록 AWS Global Accelerator 를 구성합니다. EC2 Auto Scaling 그룹의 애플리케이션에 Amazon EC2 인스턴스를 사용합니다. |
+| D   | 요청을 Application Load Balancer 로 전달하도록 Amazon API Gateway 를 구성합니다. EC2 Auto Scaling 그룹의 애플리케이션에 Amazon EC2 인스턴스를 사용합니다. |
 
 [[answers_2#Q142|정답]]
 
@@ -934,12 +937,12 @@ EC2 인스턴스는 애플리케이션의 데이터 수집 계층을 실행합�
 어떤 솔루션이 이러한 요구 사항을 충족합니까?
 ```
 
-| |      |
-|-|------|
-| A | AWS Lambda 에서 애플리케이션을 호스팅합니다. 애플리케이션을 Amazon API Gateway와 통합합니다. |
-| B | AWS Amplify를 사용하여 애플리케이션을 호스팅합니다. AWS Lambda와 통합된 Amazon API Gateway API에 애플리케이션을 연결합니다. |
-| C | Amazon EC2 인스턴스에서 애플리케이션을 호스팅합니다. Auto Scaling 그룹의 EC2 인스턴스를 대상으로 하여 Application Load Balancer를 설정합니다. |
-| D | Amazon Elastic Container Service(Amazon ECS)에서 애플리케이션을 호스팅합니다. Amazon ECS를 대상으로 하여 Application Load Balancer를 설정합니다. |
+|     |                                                                                                                                  |
+| --- | -------------------------------------------------------------------------------------------------------------------------------- |
+| A   | AWS Lambda 에서 애플리케이션을 호스팅합니다. 애플리케이션을 Amazon API Gateway와 통합합니다.                                                                 |
+| B   | [[Front-End Web & Mobile#AWS Amplify\|AWS Amplify]]를 사용하여 애플리케이션을 호스팅합니다. AWS Lambda와 통합된 Amazon API Gateway API에 애플리케이션을 연결합니다. |
+| C   | Amazon EC2 인스턴스에서 애플리케이션을 호스팅합니다. Auto Scaling 그룹의 EC2 인스턴스를 대상으로 하여 Application Load Balancer를 설정합니다.                           |
+| D   | Amazon Elastic Container Service(Amazon ECS)에서 애플리케이션을 호스팅합니다. Amazon ECS를 대상으로 하여 Application Load Balancer를 설정합니다.             |
 
 [[answers_2#Q143|정답]]
 
@@ -956,12 +959,12 @@ EC2 인스턴스는 애플리케이션의 데이터 수집 계층을 실행합�
 가장 비용 효율적인 솔루션은 무엇입니까?
 ```
 
-| |      |
-|-|------|
-| A | 월별 보고를 Amazon Redshift로 마이그레이션합니다. |
-| B | 월별 보고를 Aurora 복제본으로 마이그레이션합니다. |
-| C | Aurora 데이터베이스를 더 큰 인스턴스 클래스로 마이그레이션합니다. |
-| D | Aurora 인스턴스에서 프로비저닝된 IOPS를 늘립니다. |
+|     |                                                   |
+| --- | ------------------------------------------------- |
+| A   | 월별 보고를 Amazon Redshift로 마이그레이션합니다.                |
+| B   | 월별 보고를 [[Amazon Aurora\|Aurora]] 복제본으로 마이그레이션합니다. |
+| C   | Aurora 데이터베이스를 더 큰 인스턴스 클래스로 마이그레이션합니다.           |
+| D   | Aurora 인스턴스에서 프로비저닝된 IOPS를 늘립니다.                  |
 
 [[answers_2#Q144|정답]]
 
@@ -978,12 +981,12 @@ EC2 인스턴스는 애플리케이션의 데이터 수집 계층을 실행합�
 어떤 솔루션이 이러한 요구 사항을 가장 비용 효율적으로 충족합니까?
 ```
 
-| |      |
-|-|------|
-| A | 데이터베이스를 Amazon RDS for MySQL DB 인스턴스로 마이그레이션합니다. 웹 애플리케이션의 AMI 를 생성합니다. AMI 를 사용하여 두 번째 EC2 온디맨드 인스턴스를 시작합니다. Application Load Balancer를 사용하여 각 EC2 인스턴스에 로드를 분산합니다. |
-| B | 데이터베이스를 Amazon RDS for MySQL DB 인스턴스로 마이그레이션합니다. 웹 애플리케이션의 AMI 를 생성합니다. AMI 를 사용하여 두 번째 EC2 온디맨드 인스턴스를 시작합니다. Amazon Route 53 가중 라우팅을 사용하여 두 EC2 인스턴스에 로드를 분산합니다. |
-| C | 데이터베이스를 Amazon Aurora MySQL DB 인스턴스로 마이그레이션합니다. AWS Lambda 함수를 생성하여 EC2 인스턴스를 중지하고 인스턴스 유형을 변경합니다. CPU 사용률이 75%를 초과할 때 Lambda 함수를 호출하는 Amazon CloudWatch 경보를 생성합니다. |
-| D | 데이터베이스를 Amazon Aurora MySQL DB 인스턴스로 마이그레이션합니다. 웹 애플리케이션의 AMI 를 생성합니다. 시작 템플릿에 AMI 를 적용합니다. 시작 템플릿으로 Auto Scaling 그룹 생성 스팟 집합을 사용하도록 시작 템플릿을 구성합니다. Auto Scaling 그룹에 Application Load Balancer를 연결합니다. |
+|     |                                                                                                                                                                                                        |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| A   | 데이터베이스를 Amazon RDS for MySQL DB 인스턴스로 마이그레이션합니다. 웹 애플리케이션의 AMI 를 생성합니다. AMI 를 사용하여 두 번째 EC2 온디맨드 인스턴스를 시작합니다. Application Load Balancer를 사용하여 각 EC2 인스턴스에 로드를 분산합니다.                                   |
+| B   | 데이터베이스를 Amazon RDS for MySQL DB 인스턴스로 마이그레이션합니다. 웹 애플리케이션의 AMI 를 생성합니다. AMI 를 사용하여 두 번째 EC2 온디맨드 인스턴스를 시작합니다. Amazon Route 53 가중 라우팅을 사용하여 두 EC2 인스턴스에 로드를 분산합니다.                                      |
+| C   | 데이터베이스를 Amazon Aurora MySQL DB 인스턴스로 마이그레이션합니다. AWS Lambda 함수를 생성하여 EC2 인스턴스를 중지하고 인스턴스 유형을 변경합니다. CPU 사용률이 75%를 초과할 때 Lambda 함수를 호출하는 Amazon CloudWatch 경보를 생성합니다.                                    |
+| D   | 데이터베이스를 Amazon Aurora MySQL DB 인스턴스로 마이그레이션합니다. 웹 애플리케이션의 AMI 를 생성합니다. 시작 템플릿에 AMI 를 적용합니다. 시작 템플릿으로 Auto Scaling 그룹 생성 스팟 집합을 사용하도록 시작 템플릿을 구성합니다. Auto Scaling 그룹에 Application Load Balancer를 연결합니다. |
 
 [[answers_2#Q145|정답]]
 
@@ -1001,12 +1004,12 @@ EC2 인스턴스는 애플리케이션의 데이터 수집 계층을 실행합�
 어떤 솔루션이 이러한 요구 사항을 충족합니까?
 ```
 
-| |      |
-|-|------|
-| A | 전체 워크로드에 대해 스팟 인스턴스를 사용합니다. |
-| B | 기본 사용량 수준에 대해 예약 인스턴스를 사용합니다. 애플리케이션에 필요한 추가 용량에 대해 스팟 인스턴스를 사용합니다. |
-| C | 기준 사용 수준에 대해 온디맨드 인스턴스를 사용합니다. 애플리케이션에 필요한 추가 용량에 대해 스팟 인스턴스를 사용합니다. |
-| D | 기본 사용량 수준에 대해 전용 인스턴스를 사용합니다. 애플리케이션에 필요한 추가 용량에 대해 온디맨드 인스턴스를 사용합니다. |
+|     |                                                                       |
+| --- | --------------------------------------------------------------------- |
+| A   | 전체 워크로드에 대해 스팟 인스턴스를 사용합니다.                                           |
+| B   | 기본 사용량 수준에 대해 예약 인스턴스를 사용합니다. 애플리케이션에 필요한 추가 용량에 대해 스팟 인스턴스를 사용합니다.   |
+| C   | 기준 사용 수준에 대해 온디맨드 인스턴스를 사용합니다. 애플리케이션에 필요한 추가 용량에 대해 스팟 인스턴스를 사용합니다.  |
+| D   | 기본 사용량 수준에 대해 전용 인스턴스를 사용합니다. 애플리케이션에 필요한 추가 용량에 대해 온디맨드 인스턴스를 사용합니다. |
 
 [[answers_2#Q146|정답]]
 
@@ -1022,12 +1025,12 @@ EC2 인스턴스는 애플리케이션의 데이터 수집 계층을 실행합�
 이러한 요구 사항을 가장 비용 효율적으로 충족하는 스토리지 옵션은 무엇입니까?
 ```
 
-| |      |
-|-|------|
-| A | Amazon S3에 로그를 저장합니다. AWS Backup을 사용하여 1개월 이상 된 로그를 S3 Glacier Deep Archive로 이동합니다. |
-| B | Amazon S3에 로그를 저장합니다. S3 수명 주기 정책을 사용하여 1개월 이상 된 로그를 S3 Glacier Deep Archive로 이동합니다. |
-| C | Amazon CloudWatch Logs에 로그를 저장합니다. AWS Backup을 사용하여 1개월 이상 된 로그를 S3 Glacier Deep Archive로 이동합니다. |
-| D | Amazon CloudWatch Logs에 로그를 저장합니다. Amazon S3 수명 주기 정책을 사용하여 1개월 이상 된 로그를 S3 Glacier Deep Archive로 이동합니다. |
+|     |                                                                                                          |
+| --- | -------------------------------------------------------------------------------------------------------- |
+| A   | Amazon S3에 로그를 저장합니다. AWS Backup을 사용하여 1개월 이상 된 로그를 S3 Glacier Deep Archive로 이동합니다.                      |
+| B   | Amazon S3에 로그를 저장합니다. S3 수명 주기 정책을 사용하여 1개월 이상 된 로그를 S3 Glacier Deep Archive로 이동합니다.                     |
+| C   | Amazon CloudWatch Logs에 로그를 저장합니다. AWS Backup을 사용하여 1개월 이상 된 로그를 S3 Glacier Deep Archive로 이동합니다.         |
+| D   | Amazon CloudWatch Logs에 로그를 저장합니다. Amazon S3 수명 주기 정책을 사용하여 1개월 이상 된 로그를 S3 Glacier Deep Archive로 이동합니다. |
 
 [[answers_2#Q147|정답]]
 
@@ -1088,12 +1091,12 @@ IOPS 가 동시에 높다면 회사에서 최대한 빨리 조치를 취해야 �
 솔루션 설계자는 이러한 요구 사항을 충족하기 위해 무엇을 해야 합니까?
 ```
 
-| |      |
-|-|------|
-| A | 가능한 경우 Amazon CloudWatch 복합 경보를 생성합니다. |
-| B | Amazon CloudWatch 대시보드를 생성하여 지표를 시각화하고 문제에 신속하게 대응합니다. |
-| C | Amazon CloudWatch Synthetics 카나리아를 생성하여 애플리케이션을 모니터링하고 경보를 발생시킵니다. |
-| D | 가능한 경우 여러 지표 임계값으로 단일 Amazon CloudWatch 지표 경보를 생성합니다. |
+|     |                                                                    |
+| --- | ------------------------------------------------------------------ |
+| A   | 가능한 경우 Amazon CloudWatch 복합 경보를 생성합니다.                             |
+| B   | Amazon CloudWatch 대시보드를 생성하여 지표를 시각화하고 문제에 신속하게 대응합니다.             |
+| C   | Amazon CloudWatch Synthetics 카나리아를 생성하여 애플리케이션을 모니터링하고 경보를 발생시킵니다. |
+| D   | 가능한 경우 여러 지표 임계값으로 단일 Amazon CloudWatch 지표 경보를 생성합니다.              |
 
 [[answers_2#Q150|정답]]
 
